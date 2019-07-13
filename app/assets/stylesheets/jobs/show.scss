@@ -2,4 +2,111 @@
   height: 100vh;
   background-color:#d58af3;
   width:100%;
+  .st__my__header{
+    width: 100%;
+    background-color: #ffffff;
+  }
+  .st__my__main{
+    padding: 50px 30px;
+    .st__my__main__applying{
+      .st__my__main__applying__title{
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .st__my__main__applying__table{
+        .st__my__main__applying__table__tr{
+          .st__my__main__applying__table__tr__th__status{
+            min-width: 250px;
+            background-color: blue;
+            color:#ffffff;
+          }
+          .st__my__main__applying__table__tr__th__date{
+            min-width: 250px;
+            background-color: blue;
+            color:#ffffff;
+          }
+          .st__my__main__applying__table__tr__th__name{
+            min-width: 250px;
+            background-color: blue;
+            color:#ffffff;
+          }
+          .st__my__main__applying__table__tr__th__position{
+            min-width: 250px;
+            background-color: blue;
+            color:#ffffff;
+          }
+          .st__my__main__applying__table__tr__th__salary{
+            min-width: 250px;
+            background-color: blue;
+            color:#ffffff;
+          }
+        //.st__my__main__applying__table__tr  ignore
+          .st__my__main__applying__table__tr__td__status{
+            background-color: gray;
+          }
+          .st__my__main__applying__table__tr__td__date{
+            background-color: gray;
+          }
+          .st__my__main__applying__table__tr__td__name{
+            background-color: gray;
+          }
+          .st__my__main__applying__table__tr__td__position{
+            background-color: gray;
+          }
+          .st__my__main__applying__table__tr__td__salary{
+            background-color: gray;
+          }
+        }
+      }
+      .st__my__main__applying__page{
+        float: left;
+      }
+      .st__my__main__applying__all{
+        float: right;
+      }
+    }
+    .st__my__main__keepca{
+      clear: both;
+      padding-top: 50px;
+      .st__my__main__keepca__title{
+      }
+      .st__my__main__keepca__table{
+        .st__my__main__keepca__table__tr{
+          .st__my__main__keepca__table__tr__th__name{
+            min-width: 150px;
+          }
+          .st__my__main__keepca__table__tr__th__position{
+            min-width: 150px;
+          }
+          .st__my__main__keepca__table__tr__th__salary{
+            min-width: 150px;
+          }
+          .st__my__main__keepca__table__tr__th__location{
+            min-width: 150px;
+          }
+          .st__my__main__keepca__table__tr__th__action{
+            min-width: 150px;
+          }
+          //.st__my__main__keepca__table__tr
+          .st__my__main__keepca__table__tr__td__name{}
+          .st__my__main__keepca__table__tr__td__position{}
+          .st__my__main__keepca__table__tr__td__salary{}
+          .st__my__main__keepca__table__tr__td__location{}
+          .st__my__main__keepca__table__tr__td__action{
+            .st__my__main__keepca__table__tr__td__action__apply{
+              float:left;
+              padding-right: 10px;
+            }
+            .st__my__main__keepca__table__tr__td__action__detail{
+              float:left;
+              padding-right: 10px;
+            }
+            .st__my__main__keepca__table__tr__td__action__remove{
+              float:left;
+            }
+          }
+        }
+      }
+    }
+  }
 }
