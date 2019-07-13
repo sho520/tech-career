@@ -1,29 +1,96 @@
-<h2>Sign up</h2>
+<div class="from-wrapper">
+  <div class="from-wrapper__inner">
+    <section class="from-wrapper__inner__title">受講生登録フォーム</section>
+    <section class="from-wrapper__inner__text">TECH::EXPERT求人system</section>
+    <div class="from-wrapper__inner__main">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="from-wrapper__inner__main__formarea">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <!-- ここから画像アップロード -->
+            <label for="file_photo" class="rounded-circle from-wrapper__inner__main__formarea__image">
+              <div class="from-wrapper__inner__main__formarea__image__title">画像をアップロード</div>
+              <i class="fa fa-camera fa-3x"></i>
+              <%= f.file_field :image, id: "file_photo" %>
+            </label>
+            <!-- ここから画像プレビュー -->
+            <div class="from-wrapper__inner__main__formarea__preview" id="userImgPreview">
+              <img id="thumbnail" class="from-wrapper__inner__main__formarea__preview__pic" accept="image/*" src="">
+              <p class="from-wrapper__inner__main__formarea__preview__text">画像をアップロードしました</p>
+            </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :名前,class: 'from-wrapper__inner__main__formarea__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "鈴木 一郎", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :メールアドレス %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "techcamp@techcamp", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :住所 %><br/>
+              <%= f.email_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__birthday">
+              <%= f.label :生年月日 %><br/>
+              <div class="from-wrapper__inner__main__formarea__birthday__field">
+                <%= f.select :birth_year, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "--", class: "from-wrapper__inner__main__formarea__birthday__field__select" %>
+                <span>年</span>
+              </div>
+              <div class="from-wrapper__inner__main__formarea__birthday__field">
+                <%= f.select :birth_month, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "--", class: "from-wrapper__inner__main__formarea__birthday__field__select" %>
+                <span>月</span>
+              </div>
+              <div class="from-wrapper__inner__main__formarea__birthday__field">
+                <%= f.select :birth_day, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "--", class: "from-wrapper__inner__main__formarea__birthday__field__select" %>
+                <span>日</span>
+              </div>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :年齢 %><br/>
+              <%= f.email_field :age, autofocus: true, autocomplete: "email", placeholder: "25", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :受講期 %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
+              <%= f.email_field :period, autofocus: true, autocomplete: "email", placeholder: "45", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :チーム %><br/>
+              <%= f.email_field :team, autofocus: true, autocomplete: "email", placeholder: "A", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :担当のキャリアアドバイザー %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
+              <%= f.email_field :advisor_id, autofocus: true, autocomplete: "email", placeholder: "tech@tech", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力してください", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードをもう一度入力してください", class: "from-wrapper__inner__main__formarea__field__input" %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__submit">
+              <%= f.button "新規登録する",class: "from-wrapper__inner__main__formarea__submit__btn" %>
+            </div>
+
+          </div>
+      <% end %>
+
+      <%= render "students/shared/links" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "students/shared/links" %>
+</div>
