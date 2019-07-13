@@ -62,7 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'mini_magick'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
