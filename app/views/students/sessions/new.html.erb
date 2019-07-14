@@ -1,34 +1,33 @@
 <div class="login-wrapper">
   <div class="login-wrapper__inner">
+    <%= image_tag 'logo.png',class: "login-wrapper__inner__img" %>
+    <section class="login-wrapper__inner__text">TECH::EXPERT求人system</section>
+    <div class="login-wrapper__inner__main">
+      <h2 class="login-wrapper__inner__main__text">受講生ログイン</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-
-  <h2>Log in</h2>
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password" %>
-    </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+      <div class="login-wrapper__inner__main__field">
+        <%= f.label :email %><span class="login-wrapper__inner__main__field__flag">必須</span><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "login-wrapper__inner__main__field__input" %>
       </div>
-    <% end %>
 
-    <div class="actions">
-      <%= f.submit "Log in" %>
+      <div class="login-wrapper__inner__main__field">
+        <%= f.label :password %><span class="login-wrapper__inner__main__field__flag">必須</span><br />
+        <%= f.password_field :password, autocomplete: "current-password", class: "login-wrapper__inner__main__field__input" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="login-wrapper__inner__main__field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+      <div class="login-wrapper__inner__main__submit">
+        <%= f.button "ログイン", class: "login-wrapper__inner__main__submit__btn" %>
+      </div>
+      <% end %>
+      <%= render "students/shared/links" %>
     </div>
-  <% end %>
-
-  <%= render "students/shared/links" %>
-
   </div>
-
 </div>
