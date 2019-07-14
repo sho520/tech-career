@@ -1,4 +1,5 @@
 
+
 <body>
   <div class = "top">
     <div class = "top__contentbox">
@@ -122,8 +123,41 @@
       </div>
 
       <div class="top__contentbox__right">
-        <div class = "top__contentbox__right__chatbox"></div>
-        <div class = "top__contentbox__right__comment"></div>
+
+        <div class = "top__contentbox__right__comments">
+<%# 左コメント %>
+          <div class="top__contentbox__right__comments__commentleft">
+            <div class="top__contentbox__right__comments__commentleft__box">
+              <div class="top__contentbox__right__comments__commentleft__box__content">
+                <div class="top__contentbox__right__comments__commentleft__box__content__text">就職についてご相談があるのですが本日ははお時間ありますでしょうか</div>
+              </div>
+            </div>
+          </div>
+          <div class="top__contentbox__right__comments__leftimage">
+            <img src="image.jpg" width="40" height="40" class="icon">
+          </div>
+          <div class="top__contentbox__right__comments__clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
+<%# 右コメント %>
+          <div class="top__contentbox__right__comments__commentright">
+            <div class="top__contentbox__right__comments__commentright__box">
+              <div class="top__contentbox__right__comments__commentright__box__content">
+                <div class="top__contentbox__right__comments__commentright__box__content__text">本日はお休みなので明日の14時はご都合いかがでしょうか？</div>
+              </div>
+            </div>
+          </div>
+          <div class="top__contentbox__right__comments__rightimage">
+            <img src="image.jpg" width="40" height="40" class="icon">
+          </div>
+          <div class="top__contentbox__right__comments__clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
+
+        </div>
+
+
+        <div class="top__contentbox__right__submit">
+          <textarea class="top__contentbox__right__submit__message"></textarea>
+          <div class="top__contentbox__right__submit__btn">送信</div>
+        </div>
+
       </div>
   </div>
 </body>
