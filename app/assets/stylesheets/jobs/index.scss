@@ -1,50 +1,156 @@
-.page{
+.top{
 width: 100vw;
 height: 100vh;
 background-color: red;
 position: absolute;
-}
-.content__box{
-position: relative;
-width: auto;
-height: auto;
-}
+  &__contentbox{
+    position: relative;
+    width: auto;
+    height: auto;
 
-.medium__left{
-  width: 800px;
-  height: 100vh;
-  background-color: gray;
-  float: left;
+    &__left{
+      width: 800px;
+      height: 100vh;
+      background-color: gray;
+      float: left;
   // padding: 40px;
+
+      &__search{
+        height: 50px;
+        // background-color: green;
+        margin: 40px;
+        // box-sizing: border-box;
+        border: none;
+          &__box{
+            height: 50px;
+            width:90%;
+            border: 1px solid #999;
+            padding: 3px 5px;
+            border-radius: 20px;
+            overflow: hidden;
+          }
+          &__button{
+            cursor: pointer;
+            font-family: FontAwesome;
+            font-size: 1.3em;
+            border: none;
+            background: none;
+            color: wheat;
+            outline : none;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+
+      &__maincontent{
+        height: 80%;
+        background-color: blue;
+        margin: 40px;
+
+        &__jobbox{
+          height: 200px;
+          // background-color: gray;
+          padding: 0.5em 1em;
+          margin: 2em 0;
+          // color: #5d627b;
+          background: white;
+          border-top: solid 5px #5d627b;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+
+          &__upbox{
+            height: 50px;
+            // background-color: yellow;
+            margin-bottom: 25px;
+            &__left{
+              float: left;
+              width: 50%;
+              height: 50px;
+              // background-color: red;
+            }
+
+            &__right{
+              float: right;
+              width: 50%;
+              height: 50px;
+              // background-color: green;
+              &__1{
+                width: 100px;
+                height: 50px;
+                display: inline-block;
+              }
+              &__2{
+                width: 100px;
+                height: 50px;
+                display: inline-block;
+              }
+              &__3{
+                width: 100px;
+                height: 50px;
+                display: inline-block;
+              }
+            }
+          }
+          &__downbox{
+            // height: 150px;
+            width: 100%;
+            margin:0 auto;
+            border-radius:10px;
+            -webkit-border-radius:10px;
+            -moz-border-radius:10px;
+            border:1px solid #666;
+            border-spacing: 0;
+            overflow:hidden;
+
+            &__left{
+              width: 20%;
+              height: 20px;
+                padding:2px;
+              border-bottom:1px solid #666;
+              background:#EFEFEF;
+            }
+            &__right{
+              width: 80%;
+              height: 20px;
+                padding:2px;
+              text-align: center;
+              border-bottom:1px solid #666;
+              border-left:1px solid #666;
+            }
+
+          }
+        }
+      }
+    }
+
+    &__right{
+      width: 500px;
+      height: 100vh;
+      background-color: green;
+      float: right;
+      position: relative;
+
+      &__chatbox{
+        height: 100px;
+        width: 100%;
+        background-color: pink;
+        position: absolute;
+        bottom: 0px
+      }
+      &__comment{
+        height: calc(100% - 180px);
+        background-color: black;
+        padding: 30px;
+      }
+    }
+  }
 }
-.search{
-height: 50px;
-background-color: green;
-margin: 40px;
-}
-.maincontent{
-  // width: 50px;
-  height: 80%;
-  background-color: blue;
-  margin: 40px;
-}
-.midium__right{
-  width: 500px;
-  height: 100vh;
-  background-color: green;
-  float: right;
-  position: relative;
-}
-.chat__box{
-  height: 100px;
-  width: 100%;
-  background-color: pink;
-  position: absolute;
-bottom: 0px
-}
-.comment{
-  // width: 100%;
-  height: calc(100% - 180px);
-background-color: black;
-padding: 30px;
-}
+// table{
+//   margin:0 auto;
+//   border-radius:10px;
+//   -webkit-border-radius:10px;
+//   -moz-border-radius:10px;
+//   border:1px solid #666;
+//   border-spacing: 0;
+//   overflow:hidden;
+// }
+
