@@ -1,6 +1,9 @@
 @import 'font-awesome';
 @import "./reset";
+@import "./password";
 @import "jobs/show";
 @import "jobs/index";
 @import "students/registrationsnew";
 @import "students/sessionsnew";
+@import "advisors/registrationsnew";
+@import "advisors/sessionsnew";
