@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_093336) do
+ActiveRecord::Schema.define(version: 2019_07_15_113659) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -129,6 +129,23 @@ ActiveRecord::Schema.define(version: 2019_07_15_093336) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "number"
+  end
+
+  create_table "student_job_states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "student_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "job_id", null: false
+    t.bigint "student_job_state_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_student_jobs_on_job_id"
+    t.index ["student_id"], name: "index_student_jobs_on_student_id"
+    t.index ["student_job_state_id"], name: "index_student_jobs_on_student_job_state_id"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
