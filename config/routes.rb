@@ -10,10 +10,13 @@ Rails.application.routes.draw do
     passwords:     'students/passwords',
     registrations: 'students/registrations'
   }
-  root to: 'jobs#index'
-  resources :jobs
-
-
+  root to: 'jobs#index'    # TOPページ
+  resources :jobs do
+    resources :students, only: [:show]  #生徒idの企業詳細ページ
+    resources :advisors, only: [:show]  #CAidの企業詳細ページ
+  end
+  get "students/:id" => "students#show"  #生徒のmy page
+  get "advisors/:id" => "advisors#show"  #CAのmy page
 
 
 
