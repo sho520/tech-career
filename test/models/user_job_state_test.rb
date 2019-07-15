@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UserJobStatusTest < ActiveSupport::TestCase
+class UserJobStateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

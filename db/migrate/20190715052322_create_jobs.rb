@@ -2,10 +2,10 @@ class CreateJobs < ActiveRecord::Migration[5.2]
   def change
     create_table :jobs do |t|
       t.string :name, null: false 
-      t.references :industry_id, null: false
+      t.references :industry, null: false
       t.integer :capital
       t.integer :sales
-      t.references :number_of_employee_id, null: false
+      t.references :number_of_employee, null: false
       t.string :establish_date 
       t.string :market_information 
       t.string :market_system
@@ -36,14 +36,14 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :discretionary_labor_system
       t.integer :fixed_overtime_pay
       t.text :add_info_fixed_overtime_pay
-      t.integer :age
+      t.string :age
       t.text :reason_for_age_restriction
       t.integer :number_of_interviews
       t.string :educational_background
       t.text :required_qualification
       t.text :ideal_candidate
       t.text :contents_of_test
-      t.string :commut_allowance
+      t.string :commute_allowance
       t.string :overtime_pay
       t.string :other_allowance
       t.string :various_insurance
@@ -56,7 +56,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :working_place_3
       t.string :working_place_4
       t.text :remark
-      t.references :status_id, null: false
+      t.references :job_state, null: false
       t.timestamps
     end
   end

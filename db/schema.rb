@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_053025) do
+ActiveRecord::Schema.define(version: 2019_07_15_093336) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,46 +29,36 @@ ActiveRecord::Schema.define(version: 2019_07_15_053025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comment", null: false
-    t.bigint "student_id_id", null: false
-    t.bigint "advisor_id_id", null: false
-    t.index ["advisor_id_id"], name: "index_chats_on_advisor_id_id"
-    t.index ["student_id_id"], name: "index_chats_on_student_id_id"
+    t.bigint "student_id", null: false
+    t.bigint "advisor_id", null: false
+    t.index ["advisor_id"], name: "index_chats_on_advisor_id"
+    t.index ["student_id"], name: "index_chats_on_student_id"
   end
 
   create_table "employee_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "full_time"
-    t.string "part_time"
-    t.string "dispatch"
+    t.string "name"
   end
 
   create_table "industries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "SIer"
-    t.string "communication__carrire"
-    t.string "internet__web__service__ASP"
-    t.string "web_marketing__internet_advertisement"
-    t.string "mobile__application_service"
-    t.string "IT_consulting"
-    t.string "software__package_vendor"
-    t.string "other_IT__web__telecommunication__internet"
-    t.string "IoT__M2M__robot"
-    t.string "AR__VR__MR"
+    t.string "name"
   end
 
-  create_table "job_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "job_states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "industry_id_id", null: false
+    t.bigint "industry_id", null: false
     t.integer "capital"
     t.integer "sales"
-    t.bigint "number_of_employee_id_id", null: false
+    t.bigint "number_of_employee_id", null: false
     t.string "establish_date"
     t.string "market_information"
     t.string "market_system"
@@ -99,14 +89,14 @@ ActiveRecord::Schema.define(version: 2019_07_15_053025) do
     t.string "discretionary_labor_system"
     t.integer "fixed_overtime_pay"
     t.text "add_info_fixed_overtime_pay"
-    t.integer "age"
+    t.string "age"
     t.text "reason_for_age_restriction"
     t.integer "number_of_interviews"
     t.string "educational_background"
     t.text "required_qualification"
     t.text "ideal_candidate"
     t.text "contents_of_test"
-    t.string "commut_allowance"
+    t.string "commute_allowance"
     t.string "overtime_pay"
     t.string "other_allowance"
     t.string "various_insurance"
@@ -119,14 +109,14 @@ ActiveRecord::Schema.define(version: 2019_07_15_053025) do
     t.string "working_place_3"
     t.string "working_place_4"
     t.text "remark"
-    t.bigint "status_id_id", null: false
+    t.bigint "job_state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employment_type_id"], name: "index_jobs_on_employment_type_id"
-    t.index ["industry_id_id"], name: "index_jobs_on_industry_id_id"
+    t.index ["industry_id"], name: "index_jobs_on_industry_id"
+    t.index ["job_state_id"], name: "index_jobs_on_job_state_id"
     t.index ["location_id"], name: "index_jobs_on_location_id"
-    t.index ["number_of_employee_id_id"], name: "index_jobs_on_number_of_employee_id_id"
-    t.index ["status_id_id"], name: "index_jobs_on_status_id_id"
+    t.index ["number_of_employee_id"], name: "index_jobs_on_number_of_employee_id"
   end
 
   create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -138,7 +128,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_053025) do
   create_table "number_of_employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "numuber_of_people"
+    t.string "number"
   end
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -164,14 +154,21 @@ ActiveRecord::Schema.define(version: 2019_07_15_053025) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
-  create_table "user_job_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "user_job_states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "job_id", null: false
+    t.bigint "user_job_state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_user_jobs_on_job_id"
+    t.index ["student_id"], name: "index_user_jobs_on_student_id"
+    t.index ["user_job_state_id"], name: "index_user_jobs_on_user_job_state_id"
   end
 
   add_foreign_key "students", "advisors"
