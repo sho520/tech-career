@@ -3,6 +3,7 @@ class CreateLocations < ActiveRecord::Migration[5.2]
     create_table :locations do |t|
 
       t.timestamps
+      t.string :prefecture,
     end
   end
 end
