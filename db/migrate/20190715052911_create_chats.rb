@@ -4,9 +4,9 @@ class CreateChats < ActiveRecord::Migration[5.2]
 
       t.timestamps
       t.text :comment, null: false
-      t.references :student_id, null: false 
+      t.references :student, null: false 
       # foreign_key: true
-      t.references :advisor_id, null: false
+      t.references :advisor, null: false
       #  foreign_key: true
     end
   end

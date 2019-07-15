@@ -1,5 +1,5 @@
 class UserJob < ApplicationRecord
-  belongs_to :student
-  belongs_to :job
-  belongs_to :user_job_status
+  belongs_to :student, optional: true
+  belongs_to :job, optional: true
+  belongs_to :user_job_state, optional: true
 end
