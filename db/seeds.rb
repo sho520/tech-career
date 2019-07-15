@@ -8,13 +8,13 @@
 
 
 
-UserJobState.create(name: "キープ")
-UserJobState.create(name: "応募中")
-UserJobState.create(name: "CAオススメ")
-UserJobState.create(name: "選考中")
-UserJobState.create(name: "内定済")
-UserJobState.create(name: "選考落ち")
-UserJobState.create(name: "辞退")
+StudentJobState.create(name: "キープ")
+StudentJobState.create(name: "応募中")
+StudentJobState.create(name: "CAオススメ")
+StudentJobState.create(name: "選考中")
+StudentJobState.create(name: "内定済")
+StudentJobState.create(name: "選考落ち")
+StudentJobState.create(name: "辞退")
 
 JobState.create(name: "募集中")
 JobState.create(name: "募集終了")
