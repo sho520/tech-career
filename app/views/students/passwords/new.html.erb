@@ -1,16 +1,24 @@
-<h2>Forgot your password?</h2>
+<div class="password-forget">
+  <div class="password-forget__inner">
+    <section class="password-forget__inner__title">パスワードを忘れた方</section>
+    <section class="password-forget__inner__text">会員登録時に登録されたメールアドレスを入力してください。</section>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="password-forget__inner__main">
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="password-forget__inner__main__field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@gmail.com", class: "password-forget__inner__main__field__input" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="password-forget__inner__main__submit">
+        <%= f.submit " メールを送信する", class: "password-forget__inner__main__submit__btn" %>
+      </div>
+    <% end %>
+
+    <%= render "students/shared/links" %>
+
+    </div>
+
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "students/shared/links" %>
+</div>
