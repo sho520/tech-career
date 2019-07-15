@@ -4,6 +4,7 @@ class Advisor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has many :students
+  has_many :students
+  has_many :chats
   
 end

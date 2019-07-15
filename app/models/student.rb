@@ -5,4 +5,6 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :image, ImageUploader
+  has_many :jobs, through: :user_jobs
+  has_many :user_jobs
 end

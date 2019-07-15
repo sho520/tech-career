@@ -2,19 +2,19 @@ class CreateJobs < ActiveRecord::Migration[5.2]
   def change
     create_table :jobs do |t|
       t.string :name, null: false 
-      t.references :industry_id, null: false, foreign_key: true 
+      t.references :industry_id, null: false
       t.integer :capital
-      t.integer :sales 
-      t.references :number_of_employee_id, null: false, foreign_key: true 
+      t.integer :sales
+      t.references :number_of_employee_id, null: false
       t.string :establish_date 
       t.string :market_information 
       t.string :market_system
       t.text :url
-      t.references :location, null: false, foreign_key: true
+      t.references :location, null: false
       t.text :business
       t.text :company_feature
       t.string :position, null: false
-      t.references :employment_type, null: false, foreign_key: true
+      t.references :employment_type, null: false
       t.text :job_description, null: false
       t.text :required_work_experience
       t.string :working_hours
@@ -56,7 +56,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :working_place_3
       t.string :working_place_4
       t.text :remark
-      t.references :status_id, null: false, foreign_key: true
+      t.references :status_id, null: false
       t.timestamps
     end
   end
