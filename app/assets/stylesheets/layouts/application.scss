@@ -35,7 +35,7 @@
       width: 160px;
       margin-top: 30px;
       margin-left: 20px;
-      margin-right: 100px;
+      margin-right: 30px;
     }
   }
   &__content{
@@ -71,7 +71,7 @@
         margin-top: 18px;
         padding-left:10px;
         height: 40px;
-        width: 80px;
+        width: 90px;
         border-radius: 5px;
         background-color: #fff;
         border: solid 2px #C34035;
@@ -79,8 +79,56 @@
         text-decoration: none;
         margin-left: 10px;
         letter-spacing: 0.05em;
-        &__text {
+        &__link {
           font-size: 14px;
+        }
+        &:hover {
+          background-color: #C34035;
+          color: #fff;
+        }
+      }
+      &__job {
+        display: inline-block;
+        line-height: 40px;
+        margin-top: 18px;
+        padding-left:10px;
+        height: 40px;
+        width: 90px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: solid 2px #C34035;
+        color: #C34035;
+        text-decoration: none;
+        margin-left: 10px;
+        letter-spacing: 0.05em;
+        &__link {
+          font-size: 14px;
+        }
+        &:hover {
+          background-color: #C34035;
+          color: #fff;
+        }
+      }
+      &__students {
+        display: inline-block;
+        line-height: 40px;
+        margin-top: 18px;
+        padding-left:10px;
+        height: 40px;
+        width: 90px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: solid 2px #C34035;
+        color: #C34035;
+        text-decoration: none;
+        margin-left: 10px;
+        letter-spacing: 0.05em;
+        &__link {
+          font-size: 14px;
+        }
+        &:hover {
+          background-color: #C34035;
+          color: #fff;
         }
       }
     }
@@ -114,6 +162,8 @@
         .current_student-name {
           color: #333;
           font-size: 14px;
+          font-weight: bold;
+          margin-right: 10px;
         }
         &__image {
           position:  absolute;
