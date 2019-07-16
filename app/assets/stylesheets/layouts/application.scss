@@ -1,6 +1,6 @@
 .notice {
-  background-color: #8EF1FF;
-  color: #white;
+  background-color: #2d2d2d;
+  color: #fff;
   text-align: center;
   height: 40px;
   line-height: 40px;
@@ -8,14 +8,17 @@
 
 .alert {
   background-color: red;
-  color: #white;
+  color: white;
   text-align: center;
+  height: 40px;
+  line-height: 40px;
 }
 
 .main-header {
   height: 80px;
   width: calc(100vw - 60px);
   padding: 0 30px;
+  background-color: #fbfbfb;
   &__logo {
     float: left;
     &__link {
@@ -28,6 +31,7 @@
   &__content{
     height: 80px;
     width: 100%;
+    position: relative;
     &__left {
       float: left;
       &__bloak {
@@ -35,7 +39,7 @@
           display: inline-block;
           font-size: 14px;
           line-height: 40px;
-          margin-top: 15px;
+          margin-top: 18px;
           margin-left: 10px;
           height: 40px;
           width: 100px;
@@ -51,15 +55,34 @@
           }
         }
       }
+      &__home {
+        display: inline-block;
+        line-height: 40px;
+        margin-top: 18px;
+        padding-left:10px;
+        height: 40px;
+        width: 80px;
+        border-radius: 5px;
+        background-color: #fff;
+        border: solid 2px #C34035;
+        color: #C34035;
+        text-decoration: none;
+        margin-left: 10px;
+        letter-spacing: 0.05em;
+        &__text {
+          font-size: 14px;
+        }
+      }
     }
     &__right {
       float: right;
+
       &__bloak {
         &__link-st {
           font-size: 14px;
           display: inline-block;
           line-height: 40px;
-          margin-top: 15px;
+          margin-top: 18px;
           padding-left:16px;
           height: 40px;
           width: 100px;
@@ -72,6 +95,59 @@
           letter-spacing: 0.05em;
           &:hover {
             opacity: 0.7;
+          }
+        }
+        // ここからログイン後
+        &__login {
+          display: inline-block;
+        }
+        .current_student-name {
+          color: #333;
+          font-size: 14px;
+        }
+        &__image {
+          position:  absolute;
+          right: 340px;
+          top: 16px;
+          border-radius: 50px;
+        }
+        &__mypage {
+          font-size: 14px;
+          display: inline-block;
+          line-height: 40px;
+          margin-top: 18px;
+          padding-left:16px;
+          height: 40px;
+          width: 90px;
+          border-radius: 5px;
+          background-color: #C34035;
+          border: solid 2px #C34035;
+          color: #fff;
+          text-decoration: none;
+          margin-left: 10px;
+          letter-spacing: 0.05em;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+        &__logout {
+          font-size: 14px;
+          display: inline-block;
+          line-height: 40px;
+          margin-top: 18px;
+          padding-left:16px;
+          height: 40px;
+          width: 90px;
+          border-radius: 5px;
+          background-color: #fff;
+          border: solid 2px #C34035;
+          color: #C34035;
+          text-decoration: none;
+          margin-left: 10px;
+          letter-spacing: 0.05em;
+          &:hover {
+            opacity: 0.7;
+            text-decoration: underline;
           }
         }
       }
