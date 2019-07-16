@@ -7,13 +7,23 @@
 }
 
 .alert {
-  background-color: red;
-  color: white;
+  background-color: #FF0033;
+  color: #fff;
   text-align: center;
   height: 40px;
   line-height: 40px;
 }
-
+.header-title {
+  height: 20px;
+  width: 100vw;
+  background-color: #2d2d2d;
+  p {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+}
 .main-header {
   height: 80px;
   width: calc(100vw - 60px);

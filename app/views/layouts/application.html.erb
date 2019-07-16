@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <div class="header-title">
+      <p>「人生にサプライズを」divは人生を変える機会をつくる会社です。</p>
+    </div>
     <% if student_signed_in? %>
       <div class="main-header">
         <div class="main-header__logo">
@@ -23,13 +26,16 @@
             <%= link_to root_path, class: "main-header__content__left__home" do %>
               <i class="fa fa-home"><span class="main-header__content__left__home__text">HOME</span></i>
             <% end %>
+            <%= link_to root_path, class: "main-header__content__left__home" do %>
+              <i class="fa fa-home"><span class="main-header__content__left__home__text">応募中</span></i>
+            <% end %>
           </div>
           <div class="main-header__content__right">
             <ul class="main-header__content__right__bloak">
               <li class="main-header__content__right__bloak__login current_student-name"><%= current_student.name %></li>
 
               <% if current_student.image.present? %>
-              <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image, size: '32x32', class: "main-header__content__right__bloak__image" %></li>
+              <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image.url, size: '48x48', class: "main-header__content__right__bloak__image" %></li>
               <% else %>
               <li class="main-header__content__right__bloak__login"><%= image_tag 'mypage.jpg', size: '48x48', class: "main-header__content__right__bloak__image" %></li>
               <% end %>
@@ -40,6 +46,30 @@
           </div>
         </div>
       </div>
+    <% elsif advisor_signed_in? %>
+    <div class="main-header">
+      <div class="main-header__logo">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.png', class: "main-header__logo__link" %>
+        <% end %>
+      </div>
+
+      <div class="main-header__content">
+        <div class="main-header__content__left">
+          <%= link_to root_path, class: "main-header__content__left__home" do %>
+            <i class="fa fa-home"><span class="main-header__content__left__home__text">HOME</span></i>
+          <% end %>
+        </div>
+        <div class="main-header__content__right">
+          <ul class="main-header__content__right__bloak">
+            <li class="main-header__content__right__bloak__login current_student-name"><%= current_advisor.name %></li>
+
+            <li class="main-header__content__right__bloak__login"><%= link_to "生徒一覧", root_path, class: "main-header__content__right__bloak__mypage" %></li>
+            <li class="main-header__content__right__bloak__login"><%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "main-header__content__right__bloak__logout" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <% else %>
     <div class="main-header">
 
@@ -72,8 +102,8 @@
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
     <script>
-      $('.notice').fadeOut(4000);
-      $('.alert').fadeOut(4000);
+      $('.notice').fadeOut(5000);
+      $('.alert').fadeOut(5000);
     </script>
 
     <%= yield %>
