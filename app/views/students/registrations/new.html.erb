@@ -31,7 +31,7 @@
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :住所 %><br/>
-              <%= f.email_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.text_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__birthday">
@@ -52,22 +52,17 @@
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :年齢 %><br/>
-              <%= f.email_field :age, autofocus: true, autocomplete: "email", placeholder: "25", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.text_field :age, autofocus: true, autocomplete: "email", placeholder: "25", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :受講期 %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
-              <%= f.email_field :period, autofocus: true, autocomplete: "email", placeholder: "45", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.text_field :period, autofocus: true, autocomplete: "email", placeholder: "45", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :チーム %><br/>
-              <%= f.email_field :team, autofocus: true, autocomplete: "email", placeholder: "A", class: "from-wrapper__inner__main__formarea__field__input" %>
-            </div>
-
-            <div class="from-wrapper__inner__main__formarea__field">
-              <%= f.label :担当のキャリアアドバイザー %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
-              <%= f.email_field :advisor_id, autofocus: true, autocomplete: "email", placeholder: "tech@tech", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.text_field :team, autofocus: true, autocomplete: "email", placeholder: "A", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
