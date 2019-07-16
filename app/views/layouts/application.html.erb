@@ -10,6 +10,74 @@
   </head>
 
   <body>
+    <% if student_signed_in? %>
+      <div class="main-header">
+        <div class="main-header__logo">
+          <%= link_to root_path do %>
+            <%= image_tag 'logo.png', class: "main-header__logo__link" %>
+          <% end %>
+        </div>
+
+        <div class="main-header__content">
+          <div class="main-header__content__left">
+            <%= link_to root_path, class: "main-header__content__left__home" do %>
+              <i class="fa fa-home"><span class="main-header__content__left__home__text">HOME</span></i>
+            <% end %>
+          </div>
+          <div class="main-header__content__right">
+            <ul class="main-header__content__right__bloak">
+              <li class="main-header__content__right__bloak__login current_student-name"><%= current_student.name %></li>
+
+              <% if current_student.image.present? %>
+              <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image, size: '32x32', class: "main-header__content__right__bloak__image" %></li>
+              <% else %>
+              <li class="main-header__content__right__bloak__login"><%= image_tag 'mypage.jpg', size: '48x48', class: "main-header__content__right__bloak__image" %></li>
+              <% end %>
+
+              <li class="main-header__content__right__bloak__login"><%= link_to "マイページ", root_path, class: "main-header__content__right__bloak__mypage" %></li>
+              <li class="main-header__content__right__bloak__login"><%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "main-header__content__right__bloak__logout" %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% else %>
+    <div class="main-header">
+
+      <div class="main-header__logo">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.png', class: "main-header__logo__link" %>
+        <% end %>
+      </div>
+
+      <div class="main-header__content">
+        <div class="main-header__content__left">
+          <ul class="main-header__content__left__bloak">
+            <%= link_to "CA新規登録", new_advisor_registration_path, class: "main-header__content__left__bloak__link-ca" %>
+            <%= link_to "CAログイン", new_advisor_session_path, class: "main-header__content__left__bloak__link-ca" %>
+          </ul>
+        </div>
+
+        <div class="main-header__content__right">
+          <ul class="main-header__content__right__bloak">
+            <%= link_to "生徒新規登録", new_student_registration_path, class: "main-header__content__right__bloak__link-st" %>
+            <%= link_to "生徒ログイン", new_student_session_path, class: "main-header__content__right__bloak__link-st" %>
+          </ul>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    <script>
+      $('.notice').fadeOut(4000);
+      $('.alert').fadeOut(4000);
+    </script>
+
     <%= yield %>
+
   </body>
+
 </html>
