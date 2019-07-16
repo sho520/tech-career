@@ -7,3 +7,5 @@
 @import "students/sessionsnew";
 @import "advisors/registrationsnew";
 @import "advisors/sessionsnew";
+@import "advisors/show";
+@import "students/show";
