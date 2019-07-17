@@ -1,6 +1,10 @@
 class AdvisorsController < ApplicationController
 
-  def show
+  # def show
+  # end
+
+  def students
   end
+
 
 end

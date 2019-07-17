@@ -10,3 +10,4 @@
 @import "advisors/show";
 @import "students/show";
 @import "layouts/application";
+@import "advisors/students"
