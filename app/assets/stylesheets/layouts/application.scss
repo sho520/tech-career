@@ -1,5 +1,6 @@
 .notice {
   background-color: #2d2d2d;
+  opacity: 0.9;
   color: #fff;
   text-align: center;
   height: 40px;
@@ -12,6 +13,7 @@
   text-align: center;
   height: 40px;
   line-height: 40px;
+  opacity: 0.9;
 }
 .header-title {
   height: 20px;
@@ -167,9 +169,12 @@
         }
         &__image {
           position:  absolute;
-          right: 340px;
+          right: 350px;
           top: 16px;
           border-radius: 50px;
+          &:hover {
+            border-radius: 0px;
+          }
         }
         &__mypage {
           font-size: 14px;
