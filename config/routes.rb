@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     passwords:     'advisors/passwords',
     registrations: 'advisors/registrations'
   }
+  resources :advisors do
+    get 'students', to: 'advisors#students', on: :collection
+  end
   devise_for :students, controllers: {
     sessions:      'students/sessions',
     passwords:     'students/passwords',
