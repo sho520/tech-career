@@ -9,10 +9,11 @@
       height: auto;
   
       &__left{
-        width: 900px;
+        width: 100%;
         height: 100vh;
-        background-color: gray;
+        background-color: rgb(251, 251, 251);
         float: left;
+        // position: fixed;
     // padding: 40px;
   
         &__search{
@@ -35,7 +36,7 @@
               font-size: 1.8em;
               border: none;
               background: none;
-              color: wheat;
+              color: rgb(213, 38, 31);
               outline : none;
               display: inline-block;
               vertical-align: middle;
@@ -47,7 +48,7 @@
           // background-color: blue;
           margin: 40px;
           overflow: auto;
-  
+          overflow-y:scroll;
           &__jobbox{
             height: 200px;
             // background-color: gray;
@@ -55,7 +56,7 @@
             margin: 2em 0;
             // color: #5d627b;
             background: white;
-            border-top: solid 5px #5d627b;
+            border-top: solid 5px  rgb(213, 38, 31);
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
   
             &__upbox{
@@ -130,17 +131,19 @@
         background-color: gray;
         float: right;
         position: relative;
+        // position: fixed;
 
         &__comments{
           height: calc(100% - 120px);
           // background-color: red;
           padding: 30px;
           overflow: auto;
+          overflow-y:scroll;
 
           &__commentleft{
             // float: left;/*吹き出しをbms_messagesに対して左寄せ*/
             line-height: 1.3em;
-
+            
             cposition: relative; /* 三角の位置を固定するために設定 */
             max-width: 300px;
             margin: 10px 20px 20px; /* 上 左右 下のマージン */
@@ -216,7 +219,7 @@
 
 
         &__submit{
-          // height: 100px;
+          height: 120px;
           width: 100%;
           // background-color: pink;
           position: absolute;
@@ -259,3 +262,26 @@
   }
 
 
+  // .container {position: relative;}
+
+ .bnrL {
+      position: fixed;
+      top: 50px;
+      right: -600px;
+      width: 600px;
+      // height: 100px;
+      // background: #eee;
+  }
+
+
+  .bnrL button {
+      position: absolute;
+      top: 0px;
+      right: 600px;
+      width: 50px;
+      height: 200px;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border: none;
+  }
