@@ -9,7 +9,7 @@ $(function(){
     }).on('mouseout',function(){//マウスアウトした場合
         $aside.toggleClass('open');
             $aside.stop(true).animate({
-                right: '-600px'
+                right: '-0px'
             },duration);
     });
 });
