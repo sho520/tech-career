@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     registrations: 'advisors/registrations'
   }
   resources :advisors do
-    get 'students', to: 'advisors#students', on: :collection
+    get 'students', to: 'advisors#students', on: :collection   #生徒一覧ページ
   end
   devise_for :students, controllers: {
     sessions:      'students/sessions',
@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     registrations: 'students/registrations'
   }
   root to: 'jobs#index'    # TOPページ
+  resources :jobs do
+    get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
+  end
   resources :jobs do
     resources :students, only: [:show]  #生徒idの企業詳細ページ
     resources :advisors, only: [:show]  #CAidの企業詳細ページ

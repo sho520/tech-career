@@ -24,6 +24,7 @@ EmployeeType.create(name: "契約社員/嘱託社員")
 EmployeeType.create(name: "パートタイマー")
 EmployeeType.create(name: "アルバイト")
 
+NumberOfEmployee.create(number: "30名未満")
 NumberOfEmployee.create(number: "30名以上〜50名未満")
 NumberOfEmployee.create(number: "50名以上〜100名未満")
 NumberOfEmployee.create(number: "100名以上〜300名未満")
