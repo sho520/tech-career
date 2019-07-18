@@ -9,153 +9,154 @@
 <!-- 会社概要 -->
         <section class="job-form__inner__left__company__text">会社概要</section>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :企業名,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :企業名,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :業種,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :業種,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :資本金,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :資本金,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :売上高,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :売上高,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :従業員数,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :従業員数,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
+          <%= f.select :number_of_employee_id_id, [["10人", 1], ["30人", "30"], ["50人", "50"], ["100人", "100"], ["300人", "300"], ["500人", "500"]] ,class:"form-control" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :設立年月,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :設立年月,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :市場情報,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :市場情報,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :資本系,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :資本系,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :URL,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :URL,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :所在地,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :所在地,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :事業内容,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :事業内容,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :会社特徴,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :会社特徴,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 <!-- 採用条件 -->
         <section class="job-form__inner__left__company__text">採用条件</section>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :年齢,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :年齢,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :年齢制限理由,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :年齢制限理由,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :面接回数,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :面接回数,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :学歴,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :学歴,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :必要資格,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :必要資格,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :求める人物像,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :求める人物像,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :試験内容,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :試験内容,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 <!-- 待遇 -->
         <section class="job-form__inner__left__company__text">待遇</section>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :通勤手当,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :通勤手当,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :残業手当,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :残業手当,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :その他手当,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :その他手当,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :各種保険,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :各種保険,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :諸手当,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :諸手当,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :休日手当,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :休日手当,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :年間休日,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :年間休日,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :転勤の有無,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :転勤の有無,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :勤務地1,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :勤務地1,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
-        <div class="job-form__inner__main__company__field">
-          <%= f.label :勤務地2,class: 'job-form__inner__main__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__main__company__field__input" %>
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :勤務地2,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
         </div>
 
 
@@ -165,129 +166,146 @@
     </div>
     <div class="job-form__inner__right">
 
-      <section class="job-form__inner__right__job__text">求人内容</section>
+
 
       <div class="job-form__inner__right__job">
 
+        <section class="job-form__inner__right__job__text">求人内容</section>
+
         <div class="job-form__inner__right__job__field">
           <%= f.label :募集職種,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :雇用形態,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <label><%= f.radio_button :sex, "男" %> 正社員 </label>
+          <label><%= f.radio_button :sex, "女" %> 契約社員</label>
+          <label><%= f.radio_button :sex, "女" %> パートタイマー</label>
+          <label><%= f.radio_button :sex, "女" %> アルバイト</label>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :職務内容,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :必要業務経験,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :就業時間,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :休憩時間,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :残業の有無,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :採用時期,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :採用人数,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :雇用期間,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :就業時間補足,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :給与形態,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :基本給,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :昇給の有無,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :賞与,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :年収,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :年収補足,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :モデル年収,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :試用期間,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :試用期間補足,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :裁量労働制,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :固定残業代,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :固定残業代補足,class: 'job-form__inner__right__job__field__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__field__input" %>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
         </div>
+
+
 
 
       </div>
 
       <section class="job-form__inner__left__company__text">その他</section>
+
+      <div class="job-form__inner__right__job__field">
+        <%= f.label :備考,class: 'job-form__inner__right__job__field__field__label' %><br>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
+      </div>
+
+      <div class="job-form__inner__right__job__field">
+        <%= f.label :状態,class: 'job-form__inner__right__job__field__field__label' %><br>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__right__job__field__input" %>
+      </div>
     </div>
     <%= f.submit %>
   <% end %>
