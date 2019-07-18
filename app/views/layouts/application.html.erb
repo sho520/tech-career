@@ -29,6 +29,9 @@
             <%= link_to root_path, class: "main-header__content__left__home" do %>
               <i class="fa fa-home"><span class="main-header__content__left__home__text">応募中</span></i>
             <% end %>
+            <%= link_to root_path, class: "main-header__content__left__students" do %>
+            <i class="fa fa-comments"><span class="main-header__content__left__students__link"> チャット</span></i>
+          <% end %>
           </div>
           <div class="main-header__content__right">
             <ul class="main-header__content__right__bloak">
@@ -59,7 +62,7 @@
           <%= link_to root_path, class: "main-header__content__left__home" do %>
             <i class="fa fa-home"><span class="main-header__content__left__home__link"> HOME</span></i>
           <% end %>
-          <%= link_to root_path, class: "main-header__content__left__job" do %>
+          <%= link_to new_job_path, class: "main-header__content__left__job" do %>
             <i class="fa fa-book"><span class="main-header__content__left__job__link"> 求人登録</span></i>
           <% end %>
           <%= link_to root_path, class: "main-header__content__left__job" do %>
@@ -74,7 +77,7 @@
         </div>
         <div class="main-header__content__right">
           <ul class="main-header__content__right__bloak">
-            <li class="main-header__content__right__bloak__login current_student-name">キャリアアドバイザーNO.<%= current_advisor.id %></li>
+            <li class="main-header__content__right__bloak__login current_student-name">CA.<%= current_advisor.id %></li>
             <li class="main-header__content__right__bloak__login current_student-name"><%= current_advisor.name %></li>
             <li class="main-header__content__right__bloak__login"><%= link_to "ログアウト", destroy_advisor_session_path, method: :delete, class: "main-header__content__right__bloak__logout" %></li>
           </ul>
