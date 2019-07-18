@@ -15,19 +15,12 @@ Rails.application.routes.draw do
   }
   root to: 'jobs#index'    # TOPページ
   resources :jobs do
-    get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
-  end
-  resources :jobs do
     resources :students, only: [:show]  #生徒idの企業詳細ページ
-    resources :advisors, only: [:show]  #CAidの企業詳細ページ
+    # resources :advisors, only: [:show]  #CAidの企業詳細ページ
+    get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
   end
   get "students/:id" => "students#show"  #生徒のmy page
   get "advisors/:id" => "advisors#show"  #CAのmy page
-
-
-
-
-
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

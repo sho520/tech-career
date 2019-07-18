@@ -49,7 +49,7 @@ Location.create(prefecture: "九州地方")
 Location.create(prefecture: "沖縄県")
 Location.create(prefecture: "海外")
 
-Industry.create(name:"システムインテグレータ・ソフトハウス")
+Industry.create(name:"システムインテグレータ・\n ソフトハウス")
 Industry.create(name:"通信キャリア・データセンター・ISP")
 Industry.create(name:"インターネット/Webサービス・ASP")
 Industry.create(name:"Webマーケティング・ネット広告")
