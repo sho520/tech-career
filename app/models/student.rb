@@ -7,4 +7,5 @@ class Student < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :jobs, through: :student_jobs
   has_many :student_jobs
+  belongs_to :advisor
 end

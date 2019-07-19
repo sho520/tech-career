@@ -68,11 +68,13 @@
             height: 40px;
             padding-left: 5px;
             border-top-left-radius: 10px;
+            font-weight: bold;
           }
           .job__main__detail__content__table__tr__th__blank{
             width: 80%;
             background-color: #C34035;
             border-top-right-radius: 10px;
+            font-weight: bold;
           }
           //.ca__my__main__keepca__table__tr
           .job__main__detail__content__table__tr__td__title{
@@ -80,7 +82,6 @@
             padding-left: 5px;
             height: 30px;
             border: solid 1px #9a9a9a;
-            font-weight: bold;
           }
           .job__main__detail__content__table__tr__td__detail{
             background-color: #ffffff;
@@ -105,9 +106,69 @@
     width: 30%;
     padding-left: 15px;
     box-sizing: border-box;
-    font-size: 1.5rem;
-    font-weight: bold;
     padding-bottom: 10px;
-
+    .job__main__student__title{
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .job__main__student__contents{
+      padding-top: 23px;
+      .job__main__student__contents__content{
+        clear: both;
+        margin-top: 20px;
+        background-color: #ffffff;
+        border: solid 2px #C34035;
+        border-radius: 10px;
+        min-height: 95px;
+        .job__main__student__contents__content__name{
+          padding-left: 10px;
+          padding-top: 10px;
+          float: left;
+          .job__main__student__contents__content__name__value{
+            float:right;
+            font-weight: bold;
+          }
+        }
+        .job__main__student__contents__content__term{
+          clear: both;
+          float:left;
+          padding-left: 26px;
+          padding-right: 150px;
+          .job__main__student__contents__content__term__value{
+            float:right;
+            font-weight: bold;
+          }
+        }
+        .job__main__student__contents__content__ca{
+          padding-left: 10px;
+          float:left;
+          .job__main__student__contents__content__ca__value{
+            float:right;
+            font-weight: bold;
+          }
+        }
+        .job__main__student__contents__content__state{
+          padding-left: 10px;
+          clear: both;
+          float:left;
+          .job__main__student__contents__content__state__value{
+            float:right;
+            font-weight: bold;
+            background-color:yellow;
+            margin-bottom: 5px;
+          }
+        }
+        .job__main__student__contents__content__hr{
+          clear: both
+        }
+        .job__main__student__contents__content__change{
+          height: 50px;
+          
+          padding-left: 10px;
+        }
+        .job__main__student__contents__content__change__detail{
+        }
+      }
+    }
   }
 }

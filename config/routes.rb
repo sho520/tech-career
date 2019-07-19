@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     # resources :advisors, only: [:show]  #CAidの企業詳細ページ
     get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
   end
-  get "students/:id" => "students#show"  #生徒のmy page
+  resources :students, only: [:show]
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
 
