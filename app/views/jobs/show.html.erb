@@ -9,19 +9,69 @@
     <div class = "job__main__detail__1">
       ▼募集要項
     </div>
+    <script>
+      $(".job__main__detail__1").click(function(){
+        var position = $("#job_description").offset().top;
+          $("html,body").animate({
+              scrollTop : position
+          }, {
+              queue : false
+          });
+      });
+    </script>
     <div class = "job__main__detail__2">
       ▼採用条件
     </div>
+    <script>
+      $(".job__main__detail__2").click(function(){
+        var position = $("#requirement").offset().top;
+          $("html,body").animate({
+              scrollTop : position
+          }, {
+              queue : false
+          });
+      });
+    </script>
     <div class = "job__main__detail__3">
       ▼待遇
     </div>
+    <script>
+      $(".job__main__detail__3").click(function(){
+        var position = $("#treatment").offset().top;
+          $("html,body").animate({
+              scrollTop : position
+          }, {
+              queue : false
+          });
+      });
+    </script>
     <div class = "job__main__detail__4">
       ▼会社概要
     </div>
+    <script>
+      $(".job__main__detail__4").click(function(){
+        var position = $("#company").offset().top;
+          $("html,body").animate({
+              scrollTop : position
+          }, {
+              queue : false
+          });
+      });
+    </script>
     <div class = "job__main__detail__5">
       ▼その他
     </div>
-    <div class = "job__main__detail__content">
+    <script>
+      $(".job__main__detail__5").click(function(){
+        var position = $("#other").offset().top;
+          $("html,body").animate({
+              scrollTop : position
+          }, {
+              queue : false
+          });
+      });
+    </script>
+    <div class = "job__main__detail__content" id = "job_description">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
           <th class = "job__main__detail__content__table__tr__th__top">
@@ -131,7 +181,7 @@
             基本給
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.basic_salary.to_s(:delimited) %>円
+            <%= @job.basic_salary.to_s(:delimited) %>万円
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -155,7 +205,7 @@
             年収
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.min_annual_income.to_s(:delimited) %>円 〜 <%= @job.max_annual_income.to_s(:delimited) %>円
+            <%= @job.min_annual_income.to_s(:delimited) %>百円 〜 <%= @job.max_annual_income.to_s(:delimited) %>百円
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -217,7 +267,7 @@
       </table>
     </div>
 
-    <div class = "job__main__detail__content">
+    <div class = "job__main__detail__content" id = "requirement">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
           <th class = "job__main__detail__content__table__tr__th__top">
@@ -285,7 +335,7 @@
       </table>
     </div>
 
-    <div class = "job__main__detail__content">
+    <div class = "job__main__detail__content" id = "treatment">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
           <th class = "job__main__detail__content__table__tr__th__top">
@@ -393,7 +443,7 @@
       </table>
     </div>
 
-    <div class = "job__main__detail__content">
+    <div class = "job__main__detail__content" id = "company">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
           <th class = "job__main__detail__content__table__tr__th__top">
@@ -423,7 +473,7 @@
             資本金
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.capital.to_s(:delimited) %>円
+            <%= @job.capital.to_s(:delimited) %>千円
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -431,7 +481,7 @@
             売上高
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.sales.to_s(:delimited) %>円
+            <%= @job.sales.to_s(:delimited) %>千円
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -501,7 +551,7 @@
       </table>
     </div>
 
-    <div class = "job__main__detail__content">
+    <div class = "job__main__detail__content" id = "other">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
           <th class = "job__main__detail__content__table__tr__th__top">
@@ -528,9 +578,76 @@
   </div>
   <section class = "job__main__student">
     <div class = "job__main__student__title">
-    選考状況
+      選考状況
     </div>
-    <div class = "job__main__student__list">
+    <div class = "job__main__student__contents">
+      <div class = "job__main__student__contents__content">
+        <div class = "job__main__student__contents__content__name">
+          名前：
+          <div class = "job__main__student__contents__content__name__value">
+            雨傘しょう
+          </div>
+        </div>
+        <div class = "job__main__student__contents__content__term">
+          期：
+          <div class = "job__main__student__contents__content__term__value">
+            52
+          </div>
+        </div>
+        <div class = "job__main__student__contents__content__ca">
+          CA：
+          <div class = "job__main__student__contents__content__ca__value">
+            半谷
+          </div>
+        </div>
+        <div class = "job__main__student__contents__content__state">
+          状況：
+          <div class = "job__main__student__contents__content__state__value">
+            選考中
+          </div>
+        </div>
+        <hr class = "job__main__student__contents__content__hr">
+        <div class = "job__main__student__contents__content__change">
+          変更：
+        </div>
+        <div class = "job__main__student__contents__content__change__detail">
+          
+        </div>
+      </div>
+
+      <div class = "job__main__student__contents__content">
+        <div class = "job__main__student__contents__content__name">
+          名前：
+          <div class = "job__main__student__contents__content__name__value">
+            雨傘しょう
+          </div>
+        </div>
+        <div class = "job__main__student__contents__content__term">
+          期：
+          <div class = "job__main__student__contents__content__term__value">
+            52
+          </div>
+        </div>
+        <div class = "job__main__student__contents__content__ca">
+          CA：
+          <div class = "job__main__student__contents__content__ca__value">
+            半谷
+          </div>
+        </div>
+        <div class = "job__main__student__contents__content__state">
+          状況：
+          <div class = "job__main__student__contents__content__state__value">
+            選考中
+          </div>
+        </div>
+        <hr class = "job__main__student__contents__content__hr">
+        <div class = "job__main__student__contents__content__change">
+          変更：
+        </div>
+        <div class = "job__main__student__contents__content__change__detail">
+          
+        </div>
+      </div>
 
     </div>
   </section>
