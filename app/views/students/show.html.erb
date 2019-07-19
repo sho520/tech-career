@@ -1,6 +1,8 @@
 <main class = "st__my">
   <header class = "st__my__header">
-    雨笠 賞 / 52期 / 担当CA：半谷
+    <% @students.each do |student| %>
+    雨笠 賞 / 52期 / 担当CA：<%= student.advisors.name%>
+    <% end %>
   </header>
 
   <div class = "st__my__main">
