@@ -120,123 +120,175 @@ Job.create(
   job_state_id:1, 
   )
 
-  Job.create(
-    name: "株式会社Div2",
-    industry_id:2,
-    capital:2000000,
-    sales:2000000,
-    number_of_employee_id:2,
-    establish_date: "2012-03-22",
-    market_information: "未上場",
-    market_system: "自己資本",
-    url: "https://di-v.co.jp/",
-    location_id:4,
-    business: "プログラミング教室",
-    company_feature: "風通し良い、若い",
-    position: "ライフコーチ",
-    employee_type_id:2,
-    job_description: "受講生のライフコーチ、および教室の運営",
-    required_work_experience: "社会人経験4年以上、プログラミングの知識",
-    working_hours: "06:00 - 23:00",
-    break_time: "10分",
-    about_overtime: "有(月100時間想定固定、超過分は別途追加支給)",
-    recruitment_period: "通年",
-    number_of_recruitment_people:10,
-    employment_period: "期間の定めのない雇用契約",
-    add_info_working_time: "残業時間（月平均100時間以下）",
-    salary_type: "月給制",
-    basic_salary:1000000,
-    promotion: "有",
-    bonus: "2",
-    min_annual_income:18000000,
-    max_annual_income:18000000,
-    add_info_income: "特になし",
-    example_annual_income: "30歳 2000万",
-    trial_period: "有 6ヶ月",
-    add_info_trial_period: "6か月間は有期の雇用とする。",
-    discretionary_labor_system: "有",
-    fixed_overtime_pay: "有",
-    add_info_fixed_overtime_pay: "月100時間相当の固定残業代を給与に含み支給。※超過分支給有",
-    age: "不問",
-    reason_for_age_restriction: "長期勤続によるキャリアの形成を図る観点から、若年者等を期間の定めのない労働契約の対象として募集・採用する場合",
-    number_of_interviews:3,
-    educational_background: "不問",
-    required_qualification: "フレームワークを利用したWebアプリケーション開発経験",
-    ideal_candidate: "モチベーションが高く、向上心がある方",
-    contents_of_test: "例）1次面接：人事面接  2次面接：部門面接  3次面接：役員面接   ※4回実施するケースがございます",
-    commute_allowance: "無",
-    overtime_pay: "有",
-    other_allowance: "有",
-    # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
-    # various_allowance: "通勤費全額支給",
-    # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-    yearly_holiday: "3日",
-    work_transfer: "有",
-    working_place_1: "ロサンゼルス",
-    working_place_2: "ラスベガス",
-    working_place_3: "ニューヨーク",
-    working_place_4: "ロンドン",
-    remark: "特に無し",
-    job_state_id:1,
-    )
+Job.create(
+  name: "株式会社Div2",
+  industry_id:2,
+  capital:2000000,
+  sales:2000000,
+  number_of_employee_id:2,
+  establish_date: "2012-03-22",
+  market_information: "未上場",
+  market_system: "自己資本",
+  url: "https://di-v.co.jp/",
+  location_id:4,
+  business: "プログラミング教室",
+  company_feature: "風通し良い、若い",
+  position: "ライフコーチ",
+  employee_type_id:2,
+  job_description: "受講生のライフコーチ、および教室の運営",
+  required_work_experience: "社会人経験4年以上、プログラミングの知識",
+  working_hours: "06:00 - 23:00",
+  break_time: "10分",
+  about_overtime: "有(月100時間想定固定、超過分は別途追加支給)",
+  recruitment_period: "通年",
+  number_of_recruitment_people:10,
+  employment_period: "期間の定めのない雇用契約",
+  add_info_working_time: "残業時間（月平均100時間以下）",
+  salary_type: "月給制",
+  basic_salary:1000000,
+  promotion: "有",
+  bonus: "2",
+  min_annual_income:18000000,
+  max_annual_income:18000000,
+  add_info_income: "特になし",
+  example_annual_income: "30歳 2000万",
+  trial_period: "有 6ヶ月",
+  add_info_trial_period: "6か月間は有期の雇用とする。",
+  discretionary_labor_system: "有",
+  fixed_overtime_pay: "有",
+  add_info_fixed_overtime_pay: "月100時間相当の固定残業代を給与に含み支給。※超過分支給有",
+  age: "不問",
+  reason_for_age_restriction: "長期勤続によるキャリアの形成を図る観点から、若年者等を期間の定めのない労働契約の対象として募集・採用する場合",
+  number_of_interviews:3,
+  educational_background: "不問",
+  required_qualification: "フレームワークを利用したWebアプリケーション開発経験",
+  ideal_candidate: "モチベーションが高く、向上心がある方",
+  contents_of_test: "例）1次面接：人事面接  2次面接：部門面接  3次面接：役員面接   ※4回実施するケースがございます",
+  commute_allowance: "無",
+  overtime_pay: "有",
+  other_allowance: "有",
+  # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
+  # various_allowance: "通勤費全額支給",
+  # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
+  yearly_holiday: "3日",
+  work_transfer: "有",
+  working_place_1: "ロサンゼルス",
+  working_place_2: "ラスベガス",
+  working_place_3: "ニューヨーク",
+  working_place_4: "ロンドン",
+  remark: "特に無し",
+  job_state_id:1,
+)
 
-    Job.create(
-      name: "株式会社Div3",
-      industry_id:3,
-      capital:1000000,
-      sales:1000000,
-      number_of_employee_id:3,
-      establish_date: "2012-03-22",
-      market_information: "一部上場",
-      market_system: "自己資本",
-      url: "https://di-v.co.jp/",
-      location_id:3,
-      business: "プログラミング教室",
-      company_feature: "風通し良い、若い",
-      position: "キャリアアドバイザー",
-      employee_type_id:3,
-      job_description: "プログラミング初学者のキャリアドバイス、および教室の運営",
-      required_work_experience: "社会人経験7年以上、プログラミングの知識不問",
-      working_hours: "06:00 - 23:00",
-      break_time: "90分",
-      about_overtime: "有(月100時間想定固定、超過分は別途追加支給)",
-      recruitment_period: "通年",
-      number_of_recruitment_people:30,
-      employment_period: "期間の定めのない雇用契約",
-      add_info_working_time: "残業時間（月平均100時間以下）",
-      salary_type: "年俸制",
-      basic_salary:1100000,
-      promotion: "有",
-      bonus: "1",
-      min_annual_income:20000000,
-      max_annual_income:20000000,
-      add_info_income: "特になし",
-      example_annual_income: "30歳 2000万",
-      trial_period: "有 6ヶ月",
-      add_info_trial_period: "6か月間は有期の雇用とする。",
-      discretionary_labor_system: "有",
-      fixed_overtime_pay: "有",
-      add_info_fixed_overtime_pay: "月100時間相当の固定残業代を給与に含み支給。※超過分支給有",
-      age: "不問",
-      reason_for_age_restriction: "長期勤続によるキャリアの形成を図る観点から、若年者等を期間の定めのない労働契約の対象として募集・採用する場合",
-      number_of_interviews:4,
-      educational_background: "不問",
-      required_qualification: "フレームワークを利用したWebアプリケーション開発経験",
-      ideal_candidate: "モチベーションが高く、向上心がある方",
-      contents_of_test: "例）1次面接：人事面接  2次面接：部門面接  3次面接：鈴木さん面接  4次面接：役員面接   ※5回実施するケースがございます",
-      commute_allowance: "無",
-      overtime_pay: "有",
-      other_allowance: "有",
-      # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
-      # various_allowance: "通勤費全額支給",
-      # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-      yearly_holiday: "3日",
-      work_transfer: "有",
-      working_place_1: "ロサンゼルス",
-      working_place_2: "ラスベガス",
-      working_place_3: "ニューヨーク",
-      working_place_4: "ロンドン",
-      remark: "特に無し",
-      job_state_id:2, 
-      )
+Job.create(
+  name: "株式会社Div3",
+  industry_id:3,
+  capital:1000000,
+  sales:1000000,
+  number_of_employee_id:3,
+  establish_date: "2012-03-22",
+  market_information: "一部上場",
+  market_system: "自己資本",
+  url: "https://di-v.co.jp/",
+  location_id:3,
+  business: "プログラミング教室",
+  company_feature: "風通し良い、若い",
+  position: "キャリアアドバイザー",
+  employee_type_id:3,
+  job_description: "プログラミング初学者のキャリアドバイス、および教室の運営",
+  required_work_experience: "社会人経験7年以上、プログラミングの知識不問",
+  working_hours: "06:00 - 23:00",
+  break_time: "90分",
+  about_overtime: "有(月100時間想定固定、超過分は別途追加支給)",
+  recruitment_period: "通年",
+  number_of_recruitment_people:30,
+  employment_period: "期間の定めのない雇用契約",
+  add_info_working_time: "残業時間（月平均100時間以下）",
+  salary_type: "年俸制",
+  basic_salary:1100000,
+  promotion: "有",
+  bonus: "1",
+  min_annual_income:20000000,
+  max_annual_income:20000000,
+  add_info_income: "特になし",
+  example_annual_income: "30歳 2000万",
+  trial_period: "有 6ヶ月",
+  add_info_trial_period: "6か月間は有期の雇用とする。",
+  discretionary_labor_system: "有",
+  fixed_overtime_pay: "有",
+  add_info_fixed_overtime_pay: "月100時間相当の固定残業代を給与に含み支給。※超過分支給有",
+  age: "不問",
+  reason_for_age_restriction: "長期勤続によるキャリアの形成を図る観点から、若年者等を期間の定めのない労働契約の対象として募集・採用する場合",
+  number_of_interviews:4,
+  educational_background: "不問",
+  required_qualification: "フレームワークを利用したWebアプリケーション開発経験",
+  ideal_candidate: "モチベーションが高く、向上心がある方",
+  contents_of_test: "例）1次面接：人事面接  2次面接：部門面接  3次面接：鈴木さん面接  4次面接：役員面接   ※5回実施するケースがございます",
+  commute_allowance: "無",
+  overtime_pay: "有",
+  other_allowance: "有",
+  # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
+  # various_allowance: "通勤費全額支給",
+  # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
+  yearly_holiday: "3日",
+  work_transfer: "有",
+  working_place_1: "ロサンゼルス",
+  working_place_2: "ラスベガス",
+  working_place_3: "ニューヨーク",
+  working_place_4: "ロンドン",
+  remark: "特に無し",
+  job_state_id:2, 
+)
 
+VariousInsurance.create(name: "各種社会保険完備")
+VariousInsurance.create(name: "雇用保険")
+VariousInsurance.create(name: "労災保険")
+VariousInsurance.create(name: "健康保険")
+VariousInsurance.create(name: "介護保険")
+VariousInsurance.create(name: "厚生年金保険")
+
+VariousAllowance.create(name: "通勤手当")
+VariousAllowance.create(name: "残業手当")
+VariousAllowance.create(name: "休日手当")
+VariousAllowance.create(name: "深夜手当")
+VariousAllowance.create(name: "役職手当")
+VariousAllowance.create(name: "資格手当")
+VariousAllowance.create(name: "皆勤手当")
+VariousAllowance.create(name: "家族手当")
+VariousAllowance.create(name: "住宅手当")
+
+HolidayVacation.create(name: "完全週休2日制")
+HolidayVacation.create(name: "週休2日制")
+HolidayVacation.create(name: "祝祭日")
+HolidayVacation.create(name: "夏期休暇")
+HolidayVacation.create(name: "年末年始休暇")
+HolidayVacation.create(name: "年次有給休暇")
+HolidayVacation.create(name: "リフレッシュ休暇")
+HolidayVacation.create(name: "災害休暇")
+HolidayVacation.create(name: "慶弔休暇")
+HolidayVacation.create(name: "結婚休暇")
+HolidayVacation.create(name: "バースデー休暇")
+HolidayVacation.create(name: "ボランティア休暇")
+HolidayVacation.create(name: "教育訓練休暇")
+HolidayVacation.create(name: "病気休暇")
+HolidayVacation.create(name: "出産休暇")
+HolidayVacation.create(name: "転勤時休暇")
+HolidayVacation.create(name: "異動休暇")
+HolidayVacation.create(name: "アニバーサリー休暇")
+HolidayVacation.create(name: "永年勤続休暇")
+
+Language.create(language: "java")
+Language.create(language: "Ruby")
+Language.create(language: "PHP")
+Language.create(language: "python")
+Language.create(language: "Go")
+Language.create(language: "JavaScript")
+Language.create(language: "C++")
+Language.create(language: "C#")
+Language.create(language: "unity")
+Language.create(language: "COBOL")
+Language.create(language: "swift")
+Language.create(language: "scala")
+Language.create(language: "R")
+Language.create(language: "VB")
+Language.create(language: "Kotlin")
