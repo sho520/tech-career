@@ -11,6 +11,7 @@ class JobsController < ApplicationController
   end
 
   def all
+    @jobs = Job.all
   end
 
   def show
