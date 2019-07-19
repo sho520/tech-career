@@ -147,7 +147,7 @@
             賞与
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.bonus %>
+            年<%= @job.bonus %>回
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -155,7 +155,7 @@
             年収
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.annual_income.to_s(:delimited) %>円
+            <%= @job.min_annual_income.to_s(:delimited) %>円 〜 <%= @job.max_annual_income.to_s(:delimited) %>円
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -323,7 +323,7 @@
             各種保険
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.various_insurance %>
+            <%# <%= @job.various_insurance %> %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -331,7 +331,7 @@
             諸手当
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.various_allowances %>
+            <%# <%= @job.various_allowance %> %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -339,7 +339,7 @@
             休日休暇
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.holiday_vacation %>
+            <%# <%= @job.holiday_vacation %> %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
