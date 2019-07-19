@@ -21,12 +21,12 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :資本金,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :capital, autofocus: true, autocomplete: "name", placeholder: "7000", class: "job-form__inner__left__company__field__input-price" %><span>万円</span>
+          <%= f.text_field :capital, autofocus: true, autocomplete: "name", placeholder: "7000", class: "job-form__inner__left__company__field__input-price" %><span>千円</span>
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :売上高,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "非公開", class: "job-form__inner__left__company__field__input-price" %><span>万円</span>
+          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "非公開", class: "job-form__inner__left__company__field__input-price" %><span>千円<</span>
         </div>
 
         <div class="job-form__inner__left__company__field">
@@ -97,10 +97,10 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :学歴,class: 'job-form__inner__left__company__field__label' %><br>
-          <label><%= f.radio_button :educational_background, "学齢不問" %><span> 学齢不問 </span></label>
-          <label><%= f.radio_button :educational_background, "高卒以上" %><span> 高卒以上 </span></label>
-          <label><%= f.radio_button :educational_background, "大卒以上" %><span> 大卒以上 </span></label>
-          <label><%= f.radio_button :educational_background, "大学院以上" %><span> 大学院以上 </span></label>
+          <label><%= f.radio_button :educational_background, "学齢不問",class: "job-form__inner__left__company__field__radio" %><span> 学齢不問 </span></label>
+          <label><%= f.radio_button :educational_background, "高卒以上",class: "job-form__inner__left__company__field__radio" %><span> 高卒以上 </span></label>
+          <label><%= f.radio_button :educational_background, "大卒以上",class: "job-form__inner__left__company__field__radio" %><span> 大卒以上 </span></label>
+          <label><%= f.radio_button :educational_background, "大学院以上",class: "job-form__inner__left__company__field__radio" %><span> 大学院以上 </span></label>
 
         </div>
 
@@ -141,28 +141,61 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :各種保険,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
+
+          <%=check_box_tag :various_insurance_id,2,false,class: "job-form__inner__left__company__field__checkbox" %><span> 雇用保険 </span>
+          <%=check_box_tag :various_insurance_id,3,false,class: "job-form__inner__left__company__field__checkbox" %><span> 労災保険 </span>
+          <%=check_box_tag :various_insurance_id,1,false,class: "job-form__inner__left__company__field__checkbox" %><span> 各種社会保険完備 </span><br>
+          <%=check_box_tag :various_insurance_id,4,false,class: "job-form__inner__left__company__field__checkbox" %><span> 健康保険 </span>
+          <%=check_box_tag :various_insurance_id,5,false,class: "job-form__inner__left__company__field__checkbox" %><span> 介護保険 </span>
+          <%=check_box_tag :various_insurance_id,6,false,class: "job-form__inner__left__company__field__checkbox" %><span> 厚生年金保険 </span>
+
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :諸手当,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
+          <%=check_box_tag :various_allowance_id,1,false,class: "job-form__inner__left__company__field__checkbox" %><span> 通勤手当 </span>
+          <%=check_box_tag :various_allowance_id,2,false,class: "job-form__inner__left__company__field__checkbox" %><span> 残業手当 </span>
+          <%=check_box_tag :various_allowance_id,3,false,class: "job-form__inner__left__company__field__checkbox" %><span> 休日手当 </span>
+          <%=check_box_tag :various_allowance_id,4,false,class: "job-form__inner__left__company__field__checkbox" %><span> 深夜手当 </span><br>
+          <%=check_box_tag :various_allowance_id,5,false,class: "job-form__inner__left__company__field__checkbox" %><span> 役職手当 </span>
+          <%=check_box_tag :various_allowance_id,6,false,class: "job-form__inner__left__company__field__checkbox" %><span> 資格手当 </span>
+          <%=check_box_tag :various_allowance_id,7,false,class: "job-form__inner__left__company__field__checkbox" %><span> 皆勤手当 </span>
+          <%=check_box_tag :various_allowance_id,8,false,class: "job-form__inner__left__company__field__checkbox" %><span> 家族手当 </span><br>
+          <%=check_box_tag :various_allowance_id,9,false,class: "job-form__inner__left__company__field__checkbox" %><span> 住宅手当 </span>
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :休日手当,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "1", class: "job-form__inner__left__company__field__input" %>
+          <%= f.label :休日休暇,class: 'job-form__inner__left__company__field__label' %><br>
+          <%=check_box_tag :holiday_vacation_id,1,false,class: "job-form__inner__left__company__field__checkbox" %><span> 完全週休2日制 </span>
+          <%=check_box_tag :holiday_vacation_id,2,false,class: "job-form__inner__left__company__field__checkbox" %><span> 週休2日制 </span>
+          <%=check_box_tag :holiday_vacation_id,3,false,class: "job-form__inner__left__company__field__checkbox" %><span> 祝祭日 </span>
+          <%=check_box_tag :holiday_vacation_id,4,false,class: "job-form__inner__left__company__field__checkbox" %><span> 夏期休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,5,false,class: "job-form__inner__left__company__field__checkbox" %><span> 年末年始休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,6,false,class: "job-form__inner__left__company__field__checkbox" %><span> 年次有給休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,7,false,class: "job-form__inner__left__company__field__checkbox" %><span> リフレッシュ休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,8,false,class: "job-form__inner__left__company__field__checkbox" %><span> 災害休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,9,false,class: "job-form__inner__left__company__field__checkbox" %><span> 慶弔休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,10,false,class: "job-form__inner__left__company__field__checkbox" %><span> 結婚休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,11,false,class: "job-form__inner__left__company__field__checkbox" %><span> バースデー休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,12,false,class: "job-form__inner__left__company__field__checkbox" %><span> ボランティア休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,13,false,class: "job-form__inner__left__company__field__checkbox" %><span> 教育訓練休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,14,false,class: "job-form__inner__left__company__field__checkbox" %><span> 病気休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,15,false,class: "job-form__inner__left__company__field__checkbox" %><span> 出産休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,16,false,class: "job-form__inner__left__company__field__checkbox" %><span> 転勤時休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,17,false,class: "job-form__inner__left__company__field__checkbox" %><span> 異動休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,18,false,class: "job-form__inner__left__company__field__checkbox" %><span> アニバーサリー休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,19,false,class: "job-form__inner__left__company__field__checkbox" %><span> 永年勤続休暇 </span>
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :年間休日,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :yearly_holiday, autofocus: true, autocomplete: "name", placeholder: "120", class: "job-form__inner__left__company__field__input" %><span>日</span>
+          <%= f.text_field :yearly_holiday, autofocus: true, autocomplete: "name", placeholder: "120", class: "job-form__inner__left__company__field__input-price" %><span>日</span>
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :転勤の有無,class: 'job-form__inner__left__company__field__label' %><br>
-          <label><%= f.radio_button :work_transfer, 1 %><span> 有 </span></label>
-          <label><%= f.radio_button :work_transfer, 2 %><span> 無 </span></label>
+          <label><%= f.radio_button :work_transfer, 1,class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :work_transfer, 2,class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
         </div>
 
         <div class="job-form__inner__left__company__field">
