@@ -16,6 +16,7 @@
       background-color: #fbfbfb;
       width: 600px;
       float: left;
+      margin-bottom: 40px;
       &__company {
         padding: 40px;
         &__text {
@@ -32,6 +33,7 @@
             margin-top: 10px;
             &__label {
               margin-left: 20px;
+              letter-spacing: 0.05em;
             }
             &__input {
               margin-left: 20px;
@@ -80,6 +82,7 @@
       background-color: #fbfbfb;
       width: 600px;
       float: right;
+      margin-bottom: 40px;
       &__job {
         padding: 40px;
         &__text {
@@ -94,15 +97,64 @@
         &__field {
           margin-top: 10px;
           &__label {
-
+            margin-left: 20px;
+            letter-spacing: 0.05em;
           }
           &__input {
-            margin-top: 5px;
+            margin-left: 20px;
             height: 30px;
-            width: 450px;
+            width: 470px;
+            font-size: 13px;
+          }
+          &__radio {
+            margin-left: 20px;
+          }
+          &__textarea {
+            margin-left: 20px;
+            font-size: 13px;
+            width: 470px;
+            height: 250px;
+          }
+          #working_hours {
+            margin-left: 20px;
+            font-size: 13px;
+          }
+          #recruitment_period {
+            margin-left: 20px;
+            font-size: 13px;
+          }
+          #number_of_recruitment_poeple {
+            margin-left: 20px;
+            font-size: 13px;
+          }
+          &__textarea-min {
+            margin-left: 20px;
+            font-size: 13px;
+            width: 470px;
+            height: 125px;
+          }
+          &__price {
+            margin-left: 20px;
+            height: 30px;
+            width: 180px;
+            font-size: 13px;
+          }
+          &__price-second {
+            height: 30px;
+            width: 180px;
+            font-size: 13px;
+          }
+          &__textarea-mic {
+            margin-left: 20px;
+            font-size: 13px;
+            width: 470px;
+            height: 60px;
           }
         }
 
+      }
+      &__submittext {
+        text-align: center;
       }
       &__submit {
         margin: 40px auto;
