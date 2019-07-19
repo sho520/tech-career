@@ -28,7 +28,8 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.integer :basic_salary
       t.string :promotion
       t.string :bonus
-      t.integer :annual_income
+      t.integer :min_annual_income
+      t.integer :max_annual_income
       t.text :add_info_income
       t.string :example_annual_income
       t.string :trial_period
@@ -46,9 +47,10 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :commute_allowance
       t.string :overtime_pay
       t.string :other_allowance
-      t.string :various_insurance
-      t.string :various_allowances
-      t.string :holiday_vacation
+      # t.string :various_insurance_id
+      # t.string :various_allowance_id
+      # t.string :holiday_vacation_id
+      # t.string :language_id
       t.string :yearly_holiday
       t.string :work_transfer
       t.string :working_place_1
