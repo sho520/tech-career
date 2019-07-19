@@ -70,19 +70,19 @@ ActiveRecord::Schema.define(version: 2019_07_19_045735) do
 
   create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.bigint "industry_id", null: false
+    t.integer "industry_id", null: false
     t.integer "capital"
     t.integer "sales"
-    t.bigint "number_of_employee_id", null: false
+    t.integer "number_of_employee_id", null: false
     t.string "establish_date"
     t.string "market_information"
     t.string "market_system"
     t.text "url"
-    t.bigint "location_id", null: false
+    t.integer "location_id", null: false
     t.text "business"
     t.text "company_feature"
     t.string "position", null: false
-    t.bigint "employee_type_id", null: false
+    t.integer "employee_type_id", null: false
     t.text "job_description", null: false
     t.text "required_work_experience"
     t.string "working_hours"
@@ -105,7 +105,8 @@ ActiveRecord::Schema.define(version: 2019_07_19_045735) do
     t.string "discretionary_labor_system"
     t.integer "fixed_overtime_pay"
     t.text "add_info_fixed_overtime_pay"
-    t.string "age"
+    t.string "min_age"
+    t.string "max_age"
     t.text "reason_for_age_restriction"
     t.integer "number_of_interviews"
     t.string "educational_background"
@@ -122,7 +123,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_045735) do
     t.string "working_place_3"
     t.string "working_place_4"
     t.text "remark"
-    t.bigint "job_state_id", null: false
+    t.integer "job_state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["employee_type_id"], name: "index_jobs_on_employee_type_id"
