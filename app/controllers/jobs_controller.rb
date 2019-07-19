@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def index
-    # @Chat = Chat.new
+    @jobs = Job.all
   end
 
   def new
