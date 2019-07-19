@@ -14,14 +14,14 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.text :business
       t.text :company_feature
       t.string :position, null: false
-      t.references :employment_type, null: false
+      t.references :employee_type, null: false
       t.text :job_description, null: false
       t.text :required_work_experience
       t.string :working_hours
       t.string :break_time
       t.string :about_overtime
       t.string :recruitment_period
-      t.integer :number_of_recruitment_poeple
+      t.integer :number_of_recruitment_people
       t.string :employment_period
       t.text :add_info_working_time
       t.string :salary_type
