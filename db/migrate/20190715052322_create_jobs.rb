@@ -37,7 +37,8 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :discretionary_labor_system
       t.integer :fixed_overtime_pay
       t.text :add_info_fixed_overtime_pay
-      t.string :age
+      t.string :min_age
+      t.string :max_age
       t.text :reason_for_age_restriction
       t.integer :number_of_interviews
       t.string :educational_background
