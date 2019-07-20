@@ -365,20 +365,120 @@ Job.create(
   job_state_id:1, 
 )
 
-# Student.create(
-#   email: "sho@sho.sho",
-#   encrypted_password: "1234567890",
-#   name: "sho",
-#   address: "東京都",
-#   birth_year:1992,
-#   birth_month:11,
-#   birth_day:11,
-#   age:27,
-#   period:52,
-#   team:"e",
-#   image:"",
-#   advisor_id:1,
-# )
+Advisor.create(
+  email: "hangai@hangai",
+  password:"123456",
+  name:"hangai",
+)
+Advisor.create(
+  email: "suzuki@suzuki",
+  password:"123456",
+  name:"suzuki",
+)
+Advisor.create(
+  email: "abe@abe",
+  password:"123456",
+  name:"abe",
+)
+
+Student.create(
+  email: "sho@sho",
+  password: "1234567890",
+  name: "sho",
+  address: "東京都",
+  birth_year:1992,
+  birth_month:11,
+  birth_day:11,
+  age:27,
+  period:52,
+  team:"e",
+  image:"",
+  advisor_id:1,
+)
+Student.create(
+  email: "tsuru@tsuru",
+  password: "1234567890",
+  name: "tsuru",
+  address: "東京都",
+  birth_year:1993,
+  birth_month:11,
+  birth_day:25,
+  age:25,
+  period:52,
+  team:"e",
+  image:"",
+  advisor_id:1,
+)
+Student.create(
+  email: "shimpei@shimpei",
+  password: "1234567890",
+  name: "shimpei",
+  address: "兵庫県",
+  birth_year:1987,
+  birth_month:11,
+  birth_day:11,
+  age:31,
+  period:52,
+  team:"e",
+  image:"",
+  advisor_id:2,
+)
+Student.create(
+  email: "usui@usui",
+  password: "1234567890",
+  name: "usui",
+  address: "群馬県",
+  birth_year:1995,
+  birth_month:1,
+  birth_day:19,
+  age:22,
+  period:53,
+  team:"a",
+  image:"",
+  advisor_id:2,
+)
+Student.create(
+  email: "goto@goto",
+  password: "1234567890",
+  name: "goto",
+  address: "千葉県",
+  birth_year:1991,
+  birth_month:11,
+  birth_day:11,
+  age:28,
+  period:53,
+  team:"e",
+  image:"",
+  advisor_id:1,
+)
+Student.create(
+  email: "kato@kato",
+  password: "1234567890",
+  name: "kato",
+  address: "山梨県",
+  birth_year:1990,
+  birth_month:5,
+  birth_day:3,
+  age:29,
+  period:53,
+  team:"a",
+  image:"",
+  advisor_id:3,
+)
+Student.create(
+  email: "watanabe@watanabe",
+  password: "1234567890",
+  name: "watanabe",
+  address: "東京都",
+  birth_year:1993,
+  birth_month:10,
+  birth_day:10,
+  age:25,
+  period:53,
+  team:"d",
+  image:"",
+  advisor_id:3,
+)
 
 VariousInsurance.create(name: "各種社会保険完備")
 VariousInsurance.create(name: "雇用保険")
