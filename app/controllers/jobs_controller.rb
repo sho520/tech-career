@@ -5,10 +5,17 @@ class JobsController < ApplicationController
   end
 
   def new
-    
+    @job = Job.new
   end
 
   def create
+    @job = Job.new(job_params)
+    if @job.save
+      flash[:success] = "求人登録が完了しました"
+      redirect_to :root
+    else
+      
+    end
   end
 
   def all
@@ -19,5 +26,10 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
- 
+  private
+
+  def job_params
+    params.require(:job).permit(:name, :industry_id, :capital, :sales)
+  end
+
 end
