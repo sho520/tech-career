@@ -1,5 +1,5 @@
 $(function(){
-    $('.btn_menu').click(function(){
-      $('nav').toggleClass('open');}
-    });
+    $('#chatbutton').click(function(){
+        console.log("aaa")
+      $('.top__contentbox__right').toggleClass('open');})
   })
