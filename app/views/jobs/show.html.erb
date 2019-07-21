@@ -635,39 +635,41 @@
         選考状況
       </div>
       <div class = "job__main__student__contents">
-        <div class = "job__main__student__contents__content">
-          <div class = "job__main__student__contents__content__name">
-            名前：
-            <div class = "job__main__student__contents__content__name__value">
-              雨傘しょう
+        <% @job_state.each do |job|%>
+          <div class = "job__main__student__contents__content">
+            <div class = "job__main__student__contents__content__name">
+              名前：
+              <div class = "job__main__student__contents__content__name__value">
+                <%= job.student.name%>
+              </div>
+            </div>
+            <div class = "job__main__student__contents__content__term">
+              期：
+              <div class = "job__main__student__contents__content__term__value">
+                <%= job.student.period%>
+              </div>
+            </div>
+            <div class = "job__main__student__contents__content__ca">
+              CA：
+              <div class = "job__main__student__contents__content__ca__value">
+                <%= job.student.advisor.name%>
+              </div>
+            </div>
+            <div class = "job__main__student__contents__content__state">
+              状況：
+              <div class = "job__main__student__contents__content__state__value">
+                <%= job.student_job_state.name%>
+              </div>
+            </div>
+            <hr class = "job__main__student__contents__content__hr">
+            <div class = "job__main__student__contents__content__change">
+              変更：
+            </div>
+            <div class = "job__main__student__contents__content__change__detail">
+              
             </div>
           </div>
-          <div class = "job__main__student__contents__content__term">
-            期：
-            <div class = "job__main__student__contents__content__term__value">
-              52
-            </div>
-          </div>
-          <div class = "job__main__student__contents__content__ca">
-            CA：
-            <div class = "job__main__student__contents__content__ca__value">
-              半谷
-            </div>
-          </div>
-          <div class = "job__main__student__contents__content__state">
-            状況：
-            <div class = "job__main__student__contents__content__state__value">
-              選考中
-            </div>
-          </div>
-          <hr class = "job__main__student__contents__content__hr">
-          <div class = "job__main__student__contents__content__change">
-            変更：
-          </div>
-          <div class = "job__main__student__contents__content__change__detail">
-            
-          </div>
-        </div>
+        <% end %>
       </div>
     </section>
   <% end %>
