@@ -2,7 +2,7 @@
   <section class="job-form__inner__title">求人登録フォーム</section>
   <section class="adviser-new__inner__text">TECH::EXPERT求人system</section>
   <div class="job-form__inner">
-    <%= form_with model: @job do |f| %>
+    <%= form_for(@job) do |f| %>
     <div class="job-form__inner__left">
 
       <div class="job-form__inner__left__company">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :業種,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.label :業種,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
           <%= f.select :industry_id, [["システムインテグレータ・ソフトハウス", 1],["通信キャリア・データセンター・ISP", 2],["インターネット/Webサービス・ASP", 3],["Webマーケティング・ネット広告", 4],["モバイル/アプリサービス", 5],["ITコンサルティング", 6],["ソフトウェア/パッケージベンダ", 7],["その他IT/Web・通信・インターネット系", 8],["IoT・M2M・ロボット", 9],["AR/VR/MR", 10]],prompt: "--" %>
         </div>
 
@@ -26,11 +26,11 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :売上高,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "非公開", class: "job-form__inner__left__company__field__input-price" %><span>千円<</span>
+          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "非公開", class: "job-form__inner__left__company__field__input-price" %><span>千円</span>
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :従業員数,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.label :従業員数,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
           <%= f.select :number_of_employee_id, [["30名未満", 1],["30名以上〜50名未満", 2], ["50名以上〜100名未満", 3], ["100名以上〜300名未満", 4], ["300名以上〜500名未満", 5], ["500名以上〜1000名未満", 6], ["1000名以上〜", 7]],prompt: "--" %>
         </div>
 
@@ -60,8 +60,9 @@
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :所在地,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "東京都", class: "job-form__inner__left__company__field__input" %>
+          <%= f.label :所在地,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.select :location_id, [["北海道", 1],["青森", 2]],prompt: "--" %>
+
         </div>
 
         <div class="job-form__inner__left__company__field">
@@ -123,8 +124,8 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :通勤手当,class: 'job-form__inner__left__company__field__label' %><br>
-          <label><%= f.radio_button :educational_background, 1,class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
-          <label><%= f.radio_button :educational_background, 2,class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+          <label><%= f.radio_button :commute_allowance, 1,class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :commute_allowance, 2,class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
         </div>
 
         <div class="job-form__inner__left__company__field">
@@ -140,7 +141,7 @@
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :各種保険,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.label :各種保険,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
 
           <%=check_box_tag :various_insurance_id,2,false,class: "job-form__inner__left__company__field__checkbox" %><span> 雇用保険 </span>
           <%=check_box_tag :various_insurance_id,3,false,class: "job-form__inner__left__company__field__checkbox" %><span> 労災保険 </span>
@@ -152,7 +153,7 @@
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :諸手当,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.label :諸手当,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
           <%=check_box_tag :various_allowance_id,1,false,class: "job-form__inner__left__company__field__checkbox" %><span> 通勤手当 </span>
           <%=check_box_tag :various_allowance_id,2,false,class: "job-form__inner__left__company__field__checkbox" %><span> 残業手当 </span>
           <%=check_box_tag :various_allowance_id,3,false,class: "job-form__inner__left__company__field__checkbox" %><span> 休日手当 </span>
@@ -165,7 +166,7 @@
         </div>
 
         <div class="job-form__inner__left__company__field">
-          <%= f.label :休日休暇,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.label :休日休暇,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
           <%=check_box_tag :holiday_vacation_id,1,false,class: "job-form__inner__left__company__field__checkbox" %><span> 夏期休暇 </span>
           <%=check_box_tag :holiday_vacation_id,2,false,class: "job-form__inner__left__company__field__checkbox" %><span> 災害休暇 </span>
           <%=check_box_tag :holiday_vacation_id,3,false,class: "job-form__inner__left__company__field__checkbox" %><span> 年末年始休暇 </span><br>
@@ -238,11 +239,12 @@
         </div>
 
         <div class="job-form__inner__right__job__field">
-          <%= f.label :雇用形態,class: 'job-form__inner__right__job__field__label' %><br>
-          <label><%= f.radio_button :employment_type_id, 1,class: "job-form__inner__right__job__field__radio" %><span> 正社員 </span></label>
-          <label><%= f.radio_button :employment_type_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 契約社員 </span></label>
-          <label><%= f.radio_button :employment_type_id, 3,class: "job-form__inner__right__job__field__radio" %><span> パートタイマー </span></label>
-          <label><%= f.radio_button :employment_type_id, 4,class: "job-form__inner__right__job__field__radio" %><span> アルバイト </span></label>
+          <%= f.label :雇用形態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span>
+          <br>
+          <label><%= f.radio_button :employee_type_id, 1,class: "job-form__inner__right__job__field__radio" %><span> 正社員 </span></label>
+          <label><%= f.radio_button :employee_type_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 契約社員 </span></label>
+          <label><%= f.radio_button :employee_type_id, 3,class: "job-form__inner__right__job__field__radio" %><span> パートタイマー </span></label>
+          <label><%= f.radio_button :employee_type_id, 4,class: "job-form__inner__right__job__field__radio" %><span> アルバイト </span></label>
         </div>
 
         <div class="job-form__inner__right__job__field">
@@ -283,7 +285,7 @@
 
         <div class="job-form__inner__right__job__field">
           <%= f.label :採用人数,class: 'job-form__inner__right__job__field__label' %><br>
-          <%= f.select :number_of_recruitment_poeple, [["1", 1]],prompt: "--" ,class:"form-control" %><span>人</span>
+          <%= f.select :number_of_recruitment_people, [["1", 1]],prompt: "--" ,class:"form-control" %><span>人</span>
         </div>
 
         <div class="job-form__inner__right__job__field">
@@ -380,7 +382,7 @@
       </div>
 
       <div class="job-form__inner__right__job__field">
-        <%= f.label :状態,class: 'job-form__inner__right__job__field__label' %><br>
+        <%= f.label :状態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
         <label><%= f.radio_button :job_state_id, 1,class: "job-form__inner__right__job__field__radio" %><span> 募集中 </span></label>
         <label><%= f.radio_button :job_state_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 募集終了 </span></label>
       </div>

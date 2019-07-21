@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  belongs_to :location, optional: true
+  belongs_to :location, required: false
   belongs_to :employee_type, optional: true
   belongs_to :number_of_employee, optional: true
   belongs_to :industry, optional: true

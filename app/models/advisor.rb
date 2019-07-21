@@ -6,5 +6,5 @@ class Advisor < ApplicationRecord
 
   has_many :students
   has_many :chats
-  
+
 end

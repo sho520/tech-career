@@ -115,9 +115,12 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
+    <% if flash[:success] %>
+    <% end %>
     <script>
       $('.notice').fadeOut(3000);
       $('.alert').fadeOut(3000);
+      $('.success').fadeOut(3000);
     </script>
 
     <%= yield %>
