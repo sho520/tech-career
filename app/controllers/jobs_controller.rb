@@ -18,7 +18,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       flash[:success] = "求人登録が完了しました"
-      redirect_to :root
+      redirect_to :all_jobs
     else
       flash[:failure] = "入力に誤りがあります"
       render "new"
