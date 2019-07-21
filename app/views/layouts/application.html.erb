@@ -26,7 +26,7 @@
             <%= link_to root_path, class: "main-header__content__left__home" do %>
               <i class="fa fa-home"><span class="main-header__content__left__home__text">HOME</span></i>
             <% end %>
-            <%= link_to root_path, class: "main-header__content__left__home" do %>
+            <%= link_to student_path(id: current_student), class: "main-header__content__left__home" do %>
               <i class="fa fa-home"><span class="main-header__content__left__home__text">応募中</span></i>
             <% end %>
             <div class="main-header__content__left__students" , id="chatbutton">
@@ -43,7 +43,7 @@
               <li class="main-header__content__right__bloak__login"><%= image_tag 'mypage.jpg', size: '48x48', class: "main-header__content__right__bloak__image" %></li>
               <% end %>
 
-              <li class="main-header__content__right__bloak__login"><%= link_to "マイページ", root_path, class: "main-header__content__right__bloak__mypage" %></li>
+              <li class="main-header__content__right__bloak__login"><%= link_to "マイページ", student_path(id: current_student), class: "main-header__content__right__bloak__mypage" %></li>
               <li class="main-header__content__right__bloak__login"><%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "main-header__content__right__bloak__logout" %></li>
             </ul>
           </div>
@@ -65,10 +65,10 @@
           <%= link_to new_job_path, class: "main-header__content__left__job" do %>
             <i class="fa fa-book"><span class="main-header__content__left__job__link"> 求人登録</span></i>
           <% end %>
-          <%= link_to root_path, class: "main-header__content__left__job" do %>
+          <%= link_to all_jobs_path, class: "main-header__content__left__job" do %>
             <i class="fa fa-search"><span class="main-header__content__left__job__link"> 求人一覧</span></i>
           <% end %>
-          <%= link_to root_path, class: "main-header__content__left__students" do %>
+          <%= link_to students_advisors_path, class: "main-header__content__left__students" do %>
             <i class="fa fa-users"><span class="main-header__content__left__students__link"> 生徒一覧</span></i>
           <% end %>
           <%= link_to root_path, class: "main-header__content__left__students" do %>

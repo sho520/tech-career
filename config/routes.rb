@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   root to: 'jobs#index'    # TOPページ
   resources :jobs do
     resources :students, only: [:show]  #生徒idの企業詳細ページ
-    # resources :advisors, only: [:show]  #CAidの企業詳細ページ
     get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
   end
   resources :students, only: [:show]
