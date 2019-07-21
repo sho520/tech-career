@@ -34,6 +34,16 @@ class JobsController < ApplicationController
     @allowances = @job.various_allowances.all
     @holiday_vacations = @job.holiday_vacations.all
     @languages = @job.languages.all
+    if student_signed_in?
+      @number = current_student.id
+      # @job_state = StudentJob.where(student == current_student.id).all
+      # @job_state = @job.student_jobs.find_by(student == current_student.id)
+    end
+    # binding.pry
+  end
+
+  def keep
+    
   end
 
   private
