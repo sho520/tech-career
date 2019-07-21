@@ -106,6 +106,16 @@
         </tr>
         <tr class = "job__main__detail__content__table__tr">
           <td class = "job__main__detail__content__table__tr__td__title">
+            使用言語
+          </td>
+          <td class = "job__main__detail__content__table__tr__td__detail">
+            <% @languages.each do |language| %>
+              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= language.language %> </span>
+            <% end %>
+          </td>
+        </tr>
+        <tr class = "job__main__detail__content__table__tr">
+          <td class = "job__main__detail__content__table__tr__td__title">
             必要業務経験
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
@@ -381,7 +391,9 @@
             各種保険
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%# <%= @job.various_insurance %> %>
+            <% @insurances.each do |insurance| %>
+              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= insurance.name %> </span>
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -389,7 +401,9 @@
             諸手当
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%# <%= @job.various_allowance %> %>
+            <% @allowances.each do |allowance| %>
+              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= allowance.name %> </span>
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -397,7 +411,9 @@
             休日休暇
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%# <%= @job.holiday_vacation %> %>
+            <% @holiday_vacations.each do |holiday_vacation| %>
+              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= holiday_vacation.name %> </span>
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
