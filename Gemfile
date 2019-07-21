@@ -71,4 +71,4 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'ransack'
 gem "font-awesome-rails"
-gem 'rails-i18n'
+gem 'pry-rails'
