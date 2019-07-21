@@ -20,8 +20,8 @@ class JobsController < ApplicationController
       flash[:success] = "求人登録が完了しました"
       redirect_to :all_jobs
     else
-      flash[:failure] = "入力に誤りがあります"
-      render "new"
+      flash.now[:alert] = "入力に誤りがあります"
+      render :new
     end
   end
 
