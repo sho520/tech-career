@@ -24,6 +24,10 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @insurances = @job.various_insurances.all
+    @allowances = @job.various_allowances.all
+    @holiday_vacations = @job.holiday_vacations.all
+    @languages = @job.languages.all
   end
 
   private

@@ -7,10 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
+StudentJobState.create(name: "CAオススメ")
 StudentJobState.create(name: "キープ")
 StudentJobState.create(name: "応募中")
-StudentJobState.create(name: "CAオススメ")
 StudentJobState.create(name: "選考中")
 StudentJobState.create(name: "内定済")
 StudentJobState.create(name: "選考落ち")
@@ -366,6 +365,11 @@ Job.create(
 )
 
 Advisor.create(
+  email: "notyet@notyet",
+  password:"123456",
+  name:"（未登録）",
+)
+Advisor.create(
   email: "hangai@hangai",
   password:"123456",
   name:"hangai",
@@ -393,7 +397,7 @@ Student.create(
   period:52,
   team:"e",
   image:"",
-  advisor_id:1,
+  advisor_id:2,
 )
 Student.create(
   email: "tsuru@tsuru",
@@ -407,7 +411,7 @@ Student.create(
   period:52,
   team:"e",
   image:"",
-  advisor_id:1,
+  advisor_id:2,
 )
 Student.create(
   email: "shimpei@shimpei",
@@ -421,7 +425,7 @@ Student.create(
   period:52,
   team:"e",
   image:"",
-  advisor_id:2,
+  advisor_id:3,
 )
 Student.create(
   email: "usui@usui",
@@ -435,7 +439,7 @@ Student.create(
   period:53,
   team:"a",
   image:"",
-  advisor_id:2,
+  advisor_id:3,
 )
 Student.create(
   email: "goto@goto",
@@ -449,7 +453,7 @@ Student.create(
   period:53,
   team:"e",
   image:"",
-  advisor_id:1,
+  advisor_id:2,
 )
 Student.create(
   email: "kato@kato",
@@ -463,7 +467,7 @@ Student.create(
   period:53,
   team:"a",
   image:"",
-  advisor_id:3,
+  advisor_id:4,
 )
 Student.create(
   email: "watanabe@watanabe",
@@ -477,7 +481,153 @@ Student.create(
   period:53,
   team:"d",
   image:"",
-  advisor_id:3,
+  advisor_id:1,
+)
+
+StudentJob.create(
+  student_id:1,
+  job_id:1,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:1,
+  job_id:2,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:1,
+  job_id:3,
+  student_job_state_id:2,
+)
+StudentJob.create(
+  student_id:1,
+  job_id:4,
+  student_job_state_id:2,
+)
+StudentJob.create(
+  student_id:2,
+  job_id:1,
+  student_job_state_id:3,
+)
+StudentJob.create(
+  student_id:2,
+  job_id:2,
+  student_job_state_id:3,
+)
+StudentJob.create(
+  student_id:2,
+  job_id:3,
+  student_job_state_id:4,
+)
+StudentJob.create(
+  student_id:2,
+  job_id:4,
+  student_job_state_id:4,
+)
+StudentJob.create(
+  student_id:2,
+  job_id:5,
+  student_job_state_id:5,
+)
+StudentJob.create(
+  student_id:3,
+  job_id:1,
+  student_job_state_id:2,
+)
+StudentJob.create(
+  student_id:3,
+  job_id:2,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:3,
+  job_id:3,
+  student_job_state_id:3,
+)
+StudentJob.create(
+  student_id:3,
+  job_id:5,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:4,
+  job_id:1,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:4,
+  job_id:2,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:4,
+  job_id:4,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:4,
+  job_id:5,
+  student_job_state_id:1,
+)
+StudentJob.create(
+  student_id:5,
+  job_id:3,
+  student_job_state_id:3,
+)
+StudentJob.create(
+  student_id:5,
+  job_id:4,
+  student_job_state_id:3,
+)
+StudentJob.create(
+  student_id:5,
+  job_id:5,
+  student_job_state_id:4,
+)
+StudentJob.create(
+  student_id:6,
+  job_id:1,
+  student_job_state_id:4,
+)
+StudentJob.create(
+  student_id:6,
+  job_id:2,
+  student_job_state_id:4,
+)
+StudentJob.create(
+  student_id:6,
+  job_id:3,
+  student_job_state_id:6,
+)
+StudentJob.create(
+  student_id:6,
+  job_id:4,
+  student_job_state_id:6,
+)
+StudentJob.create(
+  student_id:6,
+  job_id:5,
+  student_job_state_id:3,
+)
+StudentJob.create(
+  student_id:7,
+  job_id:1,
+  student_job_state_id:7,
+)
+StudentJob.create(
+  student_id:7,
+  job_id:2,
+  student_job_state_id:6,
+)
+StudentJob.create(
+  student_id:7,
+  job_id:4,
+  student_job_state_id:5,
+)
+StudentJob.create(
+  student_id:7,
+  job_id:5,
+  student_job_state_id:4,
 )
 
 VariousInsurance.create(name: "各種社会保険完備")
@@ -532,3 +682,186 @@ Language.create(language: "scala")
 Language.create(language: "R")
 Language.create(language: "VB")
 Language.create(language: "Kotlin")
+
+
+HolidayVacationJob.create(
+  job_id:1,
+  holiday_vacation_id:1,
+)
+3.upto(10) do |n|
+  HolidayVacationJob.create(
+    job_id:1,
+    holiday_vacation_id:n,
+  )
+end
+
+HolidayVacationJob.create(
+  job_id:2,
+  holiday_vacation_id:1,
+)
+3.upto(16) do |n|
+  HolidayVacationJob.create(
+    job_id:2,
+    holiday_vacation_id:n,
+  )
+end
+
+HolidayVacationJob.create(
+  job_id:3,
+  holiday_vacation_id:2,
+)
+3.upto(5) do |n|
+  HolidayVacationJob.create(
+    job_id:3,
+    holiday_vacation_id:n,
+  )
+end
+15.upto(17) do |n|
+  HolidayVacationJob.create(
+    job_id:3,
+    holiday_vacation_id:n,
+  )
+end
+
+HolidayVacationJob.create(
+  job_id:4,
+  holiday_vacation_id:2,
+)
+3.upto(7) do |n|
+  HolidayVacationJob.create(
+    job_id:4,
+    holiday_vacation_id:n,
+  )
+end
+11.upto(14) do |n|
+  HolidayVacationJob.create(
+    job_id:4,
+    holiday_vacation_id:n,
+  )
+end
+
+HolidayVacationJob.create(
+  job_id:5,
+  holiday_vacation_id:1,
+)
+3.upto(19) do |n|
+  HolidayVacationJob.create(
+    job_id:5,
+    holiday_vacation_id:n,
+  )
+end
+
+LanguageJob.create(
+  job_id:1,
+  language_id:1,
+)
+LanguageJob.create(
+  job_id:1,
+  language_id:6,
+)
+LanguageJob.create(
+  job_id:2,
+  language_id:2,
+)
+LanguageJob.create(
+  job_id:2,
+  language_id:6,
+)
+LanguageJob.create(
+  job_id:3,
+  language_id:1,
+)
+LanguageJob.create(
+  job_id:3,
+  language_id:3,
+)
+LanguageJob.create(
+  job_id:3,
+  language_id:6,
+)
+LanguageJob.create(
+  job_id:4,
+  language_id:4,
+)
+LanguageJob.create(
+  job_id:4,
+  language_id:13,
+)
+LanguageJob.create(
+  job_id:4,
+  language_id:14,
+)
+LanguageJob.create(
+  job_id:5,
+  language_id:5,
+)
+LanguageJob.create(
+  job_id:5,
+  language_id:11,
+)
+LanguageJob.create(
+  job_id:5,
+  language_id:15,
+)
+
+1.upto(9) do |n|
+  VariousAllowanceJob.create(
+    job_id:1,
+    various_allowance_id:n,
+  )
+end
+2.upto(8) do |n|
+  VariousAllowanceJob.create(
+    job_id:2,
+    various_allowance_id:n,
+  )
+end
+3.upto(7) do |n|
+  VariousAllowanceJob.create(
+    job_id:3,
+    various_allowance_id:n,
+  )
+end
+4.upto(6) do |n|
+  VariousAllowanceJob.create(
+    job_id:4,
+    various_allowance_id:n,
+  )
+end
+6.upto(9) do |n|
+  VariousAllowanceJob.create(
+    job_id:5,
+    various_allowance_id:n,
+  )
+end
+
+1.upto(6) do |n|
+  VariousInsuranceJob.create(
+    job_id:1,
+    various_insurance_id:n,
+  )
+end
+2.upto(6) do |n|
+  VariousInsuranceJob.create(
+    job_id:2,
+    various_insurance_id:n,
+  )
+end
+1.upto(1) do |n|
+  VariousInsuranceJob.create(
+    job_id:3,
+    various_insurance_id:n,
+  )
+end
+2.upto(6) do |n|
+  VariousInsuranceJob.create(
+    job_id:4,
+    various_insurance_id:n,
+  )
+end
+2.upto(6) do |n|
+  VariousInsuranceJob.create(
+    job_id:5,
+    various_insurance_id:n,
+  )
+end
