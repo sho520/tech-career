@@ -31,13 +31,13 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :従業員数,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.select :number_of_employee_id, [["30名未満", 1],["30名以上〜50名未満", 2], ["50名以上〜100名未満", 3], ["100名以上〜300名未満", 4], ["300名以上〜500名未満", 5], ["500名以上〜1000名未満", 6], ["1000名以上〜", 7]],prompt: "--" %>
+          <%= f.select :number_of_employee_id, [["30名未満",1],["30名以上〜50名未満",2], ["50名以上〜100名未満",3], ["100名以上〜300名未満",4], ["300名以上〜500名未満",5], ["500名以上〜1000名未満",6], ["1000名以上〜",7]],prompt: "--" %>
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :設立年月,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.select :establish_date, [["1998", 1]],prompt: "--" %><span> 年 </span>
-          <%= f.select :establish_date, [["1", 1],["2", 1],["3", 1],["4", 1]],prompt: "--" %><span> 月 </span>
+          <%= f.select :establish_date, [["1998",1]],prompt: "--" %><span> 年 </span>
+          <%= f.select :establish_date, [["1",1],["2",1],["3",1],["4",1]],prompt: "--" %><span> 月 </span>
         </div>
 
         <div class="job-form__inner__left__company__field">
@@ -78,7 +78,7 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :年齢,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.select :age, [["新卒のみ", 1],["〜29歳", 1],["〜35歳", 1]],prompt: "--" ,class:"form-control" %>
+          <%= f.select :age, [["新卒のみ",1],["〜29歳",1],["〜35歳",1]],prompt: "--" ,class:"form-control" %>
         </div>
 
         <div class="job-form__inner__left__company__field">
