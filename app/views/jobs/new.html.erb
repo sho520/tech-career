@@ -221,13 +221,9 @@
 
 
       </div>
-
-
     </div>
 <!-- ここから右コンテンツ -->
     <div class="job-form__inner__right">
-
-
 
       <div class="job-form__inner__right__job">
 
@@ -368,28 +364,23 @@
           <%= f.text_area :add_info_fixed_overtime_pay, autofocus: true, autocomplete: "name", placeholder: "入力してください", class: "job-form__inner__right__job__field__textarea-mic" %>
         </div>
 
+        <section class="job-form__inner__left__company__text">その他</section>
 
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :備考,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_field :remark, autofocus: true, autocomplete: "name", placeholder: "入力は任意です", class: "job-form__inner__right__job__field__input" %>
+        </div>
 
-
-
-
-      <section class="job-form__inner__left__company__text">その他</section>
-
-      <div class="job-form__inner__right__job__field">
-        <%= f.label :備考,class: 'job-form__inner__right__job__field__label' %><br>
-        <%= f.text_field :remark, autofocus: true, autocomplete: "name", placeholder: "入力は任意です", class: "job-form__inner__right__job__field__input" %>
-      </div>
-
-      <div class="job-form__inner__right__job__field">
-        <%= f.label :状態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
-        <label><%= f.radio_button :job_state_id, 1, :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 募集中 </span></label>
-        <label><%= f.radio_button :job_state_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 募集終了 </span></label>
-      </div>
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :状態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :job_state_id, 1, :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 募集中 </span></label>
+          <label><%= f.radio_button :job_state_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 募集終了 </span></label>
+        </div>
 
 
       </div>
       <p class="job-form__inner__right__submittext">上記の内容で求人を登録しますか？</p>
-      <%= f.button "求人を登録する", class: "job-form__inner__right__submit" %>
+      <%= f.button "求人情報を登録する", class: "job-form__inner__right__submit" %>
     </div>
 
   <% end %>
