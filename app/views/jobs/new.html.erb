@@ -26,7 +26,7 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :売上高,class: 'job-form__inner__left__company__field__label' %><br>
-          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "非公開", class: "job-form__inner__left__company__field__input-price" %><span>千円<</span>
+          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "非公開", class: "job-form__inner__left__company__field__input-price" %><span>千円</span>
         </div>
 
         <div class="job-form__inner__left__company__field">
@@ -124,20 +124,20 @@
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :通勤手当,class: 'job-form__inner__left__company__field__label' %><br>
-          <label><%= f.radio_button :educational_background, 1,class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
-          <label><%= f.radio_button :educational_background, 2,class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+          <label><%= f.radio_button :commute_allowance, "有",class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :commute_allowance, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :残業手当,class: 'job-form__inner__left__company__field__label' %><br>
-          <label><%= f.radio_button :overtime_pay, 1,class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
-          <label><%= f.radio_button :overtime_pay, 2,class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+          <label><%= f.radio_button :overtime_pay, "有",class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :overtime_pay, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
         </div>
 
         <div class="job-form__inner__left__company__field">
           <%= f.label :その他手当,class: 'job-form__inner__left__company__field__label' %><br>
-          <label><%= f.radio_button :other_allowance, 1,class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
-          <label><%= f.radio_button :other_allowance, 2,class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+          <label><%= f.radio_button :other_allowance, "有",class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :other_allowance, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
         </div>
 
         <div class="job-form__inner__left__company__field">
