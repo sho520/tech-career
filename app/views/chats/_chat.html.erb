@@ -28,11 +28,10 @@
 
     </div>
     <div class="top__contentbox__right__chatbox__submit">
-      <%# <%= form_for @Chat do |f| %> 
-      <%# <form action="./jobs/create" method="post"> %>
-      <%# <%= f.text_field :comment, class: "top__contentbox__right__submit__message" %> 
-      <%# <%= f.submit type: "submit" ,class: "top__contentbox__right__submit__btn" %>
-      <%# <% end %>
+      <%= form_for(Chat, url: {controller: 'jobs', action: 'create' }) do |f| %>
+        <%= f.text_field :comment, class: "top__contentbox__right__submit__message" %>
+        <%= f.submit type: "submit" ,class: "top__contentbox__right__submit__btn" %>
+      <% end %>
     </div>
   </div>
 </div>
