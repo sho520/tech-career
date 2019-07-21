@@ -10,43 +10,44 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :market_information, null: true
       t.string :market_system, null: true
       t.text :url
-      t.references :location, null: true
-      t.text :business, null: true
-      t.text :company_feature, null: true
-      t.string :position, null: true
-      t.references :employee_type, null: true
-      t.text :job_description, null: true
-      t.text :required_work_experience, null: true
-      t.string :working_hours, null: true
-      t.string :break_time, null: true
-      t.string :about_overtime, null: true
-      t.string :recruitment_period, null: true
-      t.integer :number_of_recruitment_people, null: true
-      t.string :employment_period, null: true
-      t.text :add_info_working_time, null: true
-      t.string :salary_type, null: true
-      t.integer :basic_salary, null: true
-      t.string :promotion, null: true
-      t.string :bonus, null: true
-      t.integer :min_annual_income, null: true
-      t.integer :max_annual_income, null: true
-      t.text :add_info_income, null: true
-      t.string :example_annual_income, null: true
-      t.string :trial_period, null: true
-      t.text :add_info_trial_period, null: true
-      t.string :discretionary_labor_system, null: true
-      t.integer :fixed_overtime_pay, null: true
-      t.text :add_info_fixed_overtime_pay, null: true
-      t.string :age, null: true
-      t.text :reason_for_age_restriction, null: true
-      t.integer :number_of_interviews, null: true
-      t.string :educational_background, null: true
-      t.text :required_qualification, null: true
-      t.text :ideal_candidate, null: true
-      t.text :contents_of_test, null: true
-      t.string :commute_allowance, null: true
-      t.string :overtime_pay, null: true
-      t.string :other_allowance, null: true
+      t.references :location, null: false
+      t.text :business
+      t.text :company_feature
+      t.string :position, null: false
+      t.references :employee_type, null: false
+      t.text :job_description, null: false
+      t.text :required_work_experience
+      t.string :working_hours
+      t.string :break_time
+      t.string :about_overtime
+      t.string :recruitment_period
+      t.integer :number_of_recruitment_people
+      t.string :employment_period
+      t.text :add_info_working_time
+      t.string :salary_type
+      t.integer :basic_salary
+      t.string :promotion
+      t.string :bonus
+      t.integer :min_annual_income
+      t.integer :max_annual_income
+      t.text :add_info_income
+      t.string :example_annual_income
+      t.string :trial_period
+      t.text :add_info_trial_period
+      t.string :discretionary_labor_system
+      t.integer :fixed_overtime_pay
+      t.text :add_info_fixed_overtime_pay
+      t.string :min_age
+      t.string :max_age
+      t.text :reason_for_age_restriction
+      t.integer :number_of_interviews
+      t.string :educational_background
+      t.text :required_qualification
+      t.text :ideal_candidate
+      t.text :contents_of_test
+      t.string :commute_allowance
+      t.string :overtime_pay
+      t.string :other_allowance
       # t.string :various_insurance_id
       # t.string :various_allowance_id
       # t.string :holiday_vacation_id
