@@ -7,14 +7,36 @@ class StudentsController < ApplicationController
   end
 
   def edit
+    @student = Student.find(params[:id])
   end
 
   def update
+    if current_student.update(student_params)
+      flash[:success] = "情報を変更しました"
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
   end
 
   private
+
+  def student_params
+    params.require(:student).permit(:name,
+                                    :email,
+                                    :address,
+                                    :birth_year,
+                                    :birth_month,
+                                    :birth_day,
+                                    :age,
+                                    :period,
+                                    :team,
+                                    :image,
+                                    :advisor_id,
+                                   )
+  end
 
 end
