@@ -62,6 +62,7 @@ class JobsController < ApplicationController
     else                                                                                        #仮にCAでログインしている場合、勝手に生徒の選考状況を変更するわけに行かないので、トップページに戻る
       redirect_to :root_path
     end
+  end
 
 
   private
