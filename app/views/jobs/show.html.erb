@@ -108,7 +108,7 @@
             職務内容
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.job_description %>
+            <%= simple_format(@job.job_description) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -126,7 +126,7 @@
             必要業務経験
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.required_work_experience %>
+            <%= simple_format(@job.required_work_experience) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -142,7 +142,7 @@
             就業時間補足
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.add_info_working_time %>
+            <%= simple_format(@job.add_info_working_time) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -174,7 +174,7 @@
             採用人数
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.number_of_recruitment_people %>
+            <%= @job.number_of_recruitment_people %>名
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -234,7 +234,7 @@
             年収補足
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.add_info_income %>
+            <%= simple_format(@job.add_info_income) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -242,7 +242,7 @@
             モデル年収
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.example_annual_income %>
+            <%= simple_format(@job.example_annual_income) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -258,7 +258,7 @@
             試用期間補足
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.add_info_trial_period %>
+            <%= simple_format(@job.add_info_trial_period) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -282,7 +282,7 @@
             固定残業代補足
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.add_info_fixed_overtime_pay %>
+            <%= simple_format(@job.add_info_fixed_overtime_pay) %>
           </td>
         </tr>
       </table>
@@ -318,7 +318,7 @@
             年齢制限理由
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.reason_for_age_restriction %>
+            <%= simple_format(@job.reason_for_age_restriction) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -326,7 +326,7 @@
             面接回数
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.number_of_interviews %>
+            <%= @job.number_of_interviews %>回
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -432,7 +432,7 @@
             年間休日
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.yearly_holiday %>
+            <%= @job.yearly_holiday %>日
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -572,7 +572,7 @@
             事業内容
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.business %>
+            <%= simple_format(@job.business) %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -580,7 +580,7 @@
             会社特徴
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.company_feature %>
+            <%= simple_format(@job.company_feature) %>
           </td>
         </tr>
       </table>
@@ -600,7 +600,7 @@
             備考
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.remark %>
+            <%= simple_format(@job.remark) %>
           </td>
         </tr>
       </table>

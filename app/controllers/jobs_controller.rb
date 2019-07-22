@@ -49,7 +49,7 @@ class JobsController < ApplicationController
       @new_state.save                                                                           #student_job_state_idが1に変更されたものを保存している
       redirect_to student_path(id: current_student.id)                                          #元のページに戻る
     else                                                                                        #仮にCAでログインしている場合、勝手に生徒の選考状況を変更するわけに行かないので、トップページに戻る
-      redirect_to :root_path
+      redirect_to root_path
     end
   end
 
@@ -60,7 +60,7 @@ class JobsController < ApplicationController
       @new_state.save                                                                           #student_job_state_idが3に変更されたものを保存している
       redirect_to student_path(id: current_student.id)                                          #元のページに戻る
     else                                                                                        #仮にCAでログインしている場合、勝手に生徒の選考状況を変更するわけに行かないので、トップページに戻る
-      redirect_to :root_path
+      redirect_to root_path
     end
   end
 
