@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get 'change', to: 'jobs#change', on: :member #jobの選考状況を変更(求人詳細にて)
   end
   resources :students, only: [:show,:edit,:update,:destroy] do
-    get 'ca', to: 'students#ca', on: :member　　　#CAが未登録の場合、自分がCAになる
+    get 'ca', to: 'students#ca', on: :member     #CAが未登録の場合、自分がCAになる
   end
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
