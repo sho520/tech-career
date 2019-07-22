@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_045735) do
+ActiveRecord::Schema.define(version: 2019_07_22_083552) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -60,6 +60,14 @@ ActiveRecord::Schema.define(version: 2019_07_19_045735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+  end
+
+  create_table "job_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "job_id", null: false
+    t.string "url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_images_on_job_id"
   end
 
   create_table "job_states", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -230,5 +238,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_045735) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "job_images", "jobs"
   add_foreign_key "students", "advisors"
 end

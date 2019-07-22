@@ -14,4 +14,5 @@ class Job < ApplicationRecord
   has_many :various_allowances, through: :various_allowance_jobs
   has_many :various_insurance_jobs
   has_many :various_insurances, through: :various_insurance_jobs
+  has_many :job_images
 end
