@@ -250,6 +250,20 @@
                   color:red;
                 }
               }
+              .st__my__main__keepca__detail__table__tr__td__action__recommend{
+                float:left;
+                background-color: rgb(240, 238, 125);
+                padding: 2px;
+                border-radius: 5px;
+                cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
+              }
             }
           }
         }
