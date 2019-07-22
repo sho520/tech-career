@@ -64,6 +64,12 @@ class JobsController < ApplicationController
     end
   end
 
+  def change
+    @new_state = StudentJob.find_by(student_id: params[:student_id], job_id: params[:id])
+    @new_state.student_job_state_id = params[:student_job_state_id]
+    @new_state.save
+    redirect_to job_path(id: params[:id])
+  end
 
   private
 

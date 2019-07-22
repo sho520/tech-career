@@ -693,7 +693,11 @@
               変更：
             </div>
             <div class = "job__main__student__contents__content__change__detail">
-              
+              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "応募中", change_job_path(id: job.job.id, student_job_state_id:3, student_id: job.student.id) %></span>
+              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "選考中", change_job_path(id: job.job.id, student_job_state_id:4, student_id: job.student.id) %></span>
+              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "内定", change_job_path(id: job.job.id, student_job_state_id:5, student_id: job.student.id) %></span>
+              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "選考落ち", change_job_path(id: job.job.id, student_job_state_id:6, student_id: job.student.id) %></span>
+              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "辞退", change_job_path(id: job.job.id, student_job_state_id:7, student_id: job.student.id) %></span>
             </div>
           </div>
         <% end %>
