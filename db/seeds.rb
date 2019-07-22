@@ -869,40 +869,40 @@ end
 Chat.create(
   comment:"初めまして",
   student_id:1,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"shoです",
   student_id:1,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"shoさんこんにちは、半谷です",
   student_id:1,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"よろしくお願い致します。",
   student_id:1,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"こんにちは",
   student_id:3,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"shimpeiです",
   student_id:3,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"shimpeiさんこんにちは、半谷です",
   student_id:3,
-  advisor_id:1,
+  advisor_id:2,
 )
 Chat.create(
   comment:"さようなら。",
   student_id:3,
-  advisor_id:1,
+  advisor_id:2,
 )
