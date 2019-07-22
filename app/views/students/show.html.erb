@@ -1,13 +1,17 @@
 <main class = "st__my">
+  <!-- 生徒の基本情報 -->
   <header class = "st__my__header">
     <%=@student.name%> / <%=@student.period%>期 / 担当CA：<%=@student.advisor.name%>
   </header>
 
   <div class = "st__my__main">
     <section class = "st__my__main__applying">
+      <!-- 募集中・選考中などの企業一覧 -->
       <div class = "st__my__main__applying__title">
         <%=@student.name%>様の応募済企業一覧
       </div>
+
+      <!-- テーブルのカラム名 -->
       <table class = "st__my__main__applying__table">
         <tr class = "st__my__main__applying__table__tr">
           <th class = "st__my__main__applying__table__tr__th__status">
@@ -27,6 +31,8 @@
           </th>
         </tr>
       </table>
+
+      <!-- 求人の詳細情報や選考状況 -->
       <div class = "st__my__main__applying__detail">
         <table class = "st__my__main__applying__detail__table">
           <% @job_state.each do |job| %>
@@ -63,10 +69,14 @@
         </table>
       </div>
     </section>
+
+    <!-- 検討中の企業一覧 -->
     <section class = "st__my__main__keepca">
       <div class = "st__my__main__keepca__title">
         検討中の企業一覧
       </div>
+
+      <!-- テーブルのカラム名 -->
       <table class = "st__my__main__keepca__table">
         <tr class = "st__my__main__keepca__table__tr">
           <th class = "st__my__main__keepca__table__tr__th__name">
@@ -86,6 +96,8 @@
           </th>
         </tr>
       </table>
+
+      <!-- 求人の詳細情報やアクション選択 -->
       <div class = "st__my__main__keepca__detail">
         <table class = "st__my__main__keepca__detail__table">
           <% @job_state.each do |job| %>
@@ -124,10 +136,14 @@
         </table>
       </div>
     </section>
+
+    <!-- 未応募の企業一覧（CAのみ閲覧可能にする予定） -->
     <section class = "st__my__main__keepca">
       <div class = "st__my__main__keepca__title">
         その他企業
       </div>
+
+      <!-- テーブルのカラム名 -->
       <table class = "st__my__main__keepca__table">
         <tr class = "st__my__main__keepca__table__tr">
           <th class = "st__my__main__keepca__table__tr__th__name">
@@ -147,6 +163,8 @@
           </th>
         </tr>
       </table>
+
+      <!-- 求人の詳細情報やアクション選択 -->
       <div class = "st__my__main__keepca__detail">
         <table class = "st__my__main__keepca__detail__table">
           <% @job_state.each do |job| %>

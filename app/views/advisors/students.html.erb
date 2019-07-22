@@ -2,11 +2,14 @@
 
   <div class = "ca__my__main">
     <section class = "ca__my__main__applying">
+      <!-- タイトル -->
       <div class = "ca__my__main__applying__title">
         生徒一覧
       </div>
       <div class = "ca__my__main__applying__detail">
+        <!-- テーブル -->
         <table class = "ca__my__main__applying__detail__table">
+          <!-- テーブルのカラム名 -->
           <tr class = "ca__my__main__applying__detail__table__tr">
             <th class = "ca__my__main__applying__detail__table__tr__th__name">
               名前
@@ -24,6 +27,7 @@
               備考
             </th>
           </tr>
+          <!-- テーブルのレコード（全生徒についてeachで繰り返し表示） -->
           <% @students.each do |student| %>
             <tr class = "ca__my__main__applying__detail__table__tr">
               <td class = "ca__my__main__applying__detail__table__tr__td__name">
