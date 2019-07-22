@@ -11,16 +11,17 @@ class JobsController < ApplicationController
 
   def create
 
-    @Chat = Chat.new(message_params)
-    @Chat.save
+    # @Chat = Chat.new(message_params)
+    # @Chat.save
 
 
     @job = Job.new(job_params)
     if @job.save
       flash[:success] = "求人登録が完了しました"
-      redirect_to :root
+      redirect_to :all_jobs
     else
-
+      flash.now[:alert] = "入力に誤りがあります"
+      render :new
     end
   end
 
@@ -39,6 +40,7 @@ class JobsController < ApplicationController
       @state = @job.student_jobs.find_by(student_id: current_student.id)   #対象の求人@jobの求人について、全生徒の選考状況が格納されている中間テーブルstudent_jobsテーブルの中で、生徒idが自分のものだけの1件を取得
     end
   end
+
 
   def keep                                                                                      #jobsコントローラーのkeepアクションは、キープ中となっている選考状況を元に戻す操作を行っている
     if student_signed_in?                                                                       #生徒でログインしている時に、自分の選考状況を操作可能
@@ -60,12 +62,70 @@ class JobsController < ApplicationController
     else                                                                                        #仮にCAでログインしている場合、勝手に生徒の選考状況を変更するわけに行かないので、トップページに戻る
       redirect_to :root_path
     end
-  end
+
 
   private
 
   def job_params
-    params.require(:job).permit(:name, :industry_id, :capital, :sales)
+    params.require(:job).permit(:name,
+                                :industry_id,
+                                :capital,
+                                :sales,
+                                :number_of_employee_id,
+                                :number_of_interviews,
+                                :establish_date,
+                                :market_information,
+                                :market_system,
+                                :url,
+                                :location_id,
+                                :business,
+                                :company_feature,
+                                :min_age,
+                                :max_age,
+                                :reason_for_age_restriction,
+                                :number_of_interviews,
+                                :educational_background,
+                                :overtime_pay,
+                                :commute_allowance,
+                                :other_allowance,
+                                :various_insurance_id,
+                                :various_allowance_id,
+                                :holiday_vacation_id,
+                                :required_qualification,
+                                :ideal_candidate,
+                                :contents_of_test,
+                                :yearly_holiday,
+                                :work_transfer,
+                                :working_place_1,
+                                :working_place_2,
+                                :working_place_3,
+                                :working_place_4,
+                                :position,
+                                :employee_type_id,
+                                :job_description,
+                                :required_work_experience,
+                                :working_hours,
+                                :break_time,
+                                :about_overtime,
+                                :recruitment_period,
+                                :number_of_recruitment_people,
+                                :employment_period,
+                                :add_info_working_time,
+                                :salary_type,
+                                :basic_salary,
+                                :promotion,
+                                :bonus,
+                                :min_annual_income,
+                                :max_annual_income,
+                                :add_info_income,
+                                :example_annual_income,
+                                :trial_period,
+                                :add_info_trial_period,
+                                :discretionary_labor_system,
+                                :fixed_overtime_pay,
+                                :add_info_fixed_overtime_pay,
+                                :remark,
+                                :job_state_id,)
   end
 
   def message_params

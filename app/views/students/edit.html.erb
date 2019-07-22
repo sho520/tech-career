@@ -1,0 +1,45 @@
+<div class="student-edit">
+  <!-- 外枠 -->
+  <div class="student-edit__inner">
+    <!-- 内枠 -->
+    <div class="student-edit__inner__wrapper">
+      <div class="student-edit__inner__wrapper__header">
+        <!-- ヘッダー -->
+        <h1 class="student-edit__inner__wrapper__header__name"><i class="fa fa-user-circle"></i><span><%= @student.name %></span>様の登録情報</h1>
+      </div>
+      <div class="student-edit__inner__wrapper__side">
+        <!-- サイドバー -->
+        <% if current_student.image.present? %>
+          <%= image_tag current_student.image.url, width: '140', class: "student-edit__inner__wrapper__side__img" %>
+        <% else %>
+          <%= image_tag 'mypage.jpg', width: '140', class: "student-edit__inner__wrapper__side__img" %>
+        <% end %>
+        <div class="student-edit__inner__wrapper__side__content">
+          <h2 class="student-edit__inner__wrapper__side__content__title">会員登録情報</h2>
+        </div>
+        <div class="student-edit__inner__wrapper__side__logout">
+          <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "student-edit__inner__wrapper__side__logout__btn" %>
+        </div>
+        <div class="student-edit__inner__wrapper__side__delete">
+          <%= link_to "退会する", student_path(current_student), method: :delete, class: "student-edit__inner__wrapper__side__delete__btn" %>
+        </div>
+      </div>
+      <div class="student-edit__inner__wrapper__main">
+          <!-- メインコンテンツ -->
+          <div class="student-edit__inner__wrapper__main__inner">
+            <h3 class="student-edit__inner__wrapper__main__inner__title">基本情報の変更</h3>
+            <div class="student-edit__inner__wrapper__main__inner__form">
+              <%= form_for(@book) do |f| %>
+
+                <%= f.submit %>
+              <% end %>
+            </div>
+          </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>

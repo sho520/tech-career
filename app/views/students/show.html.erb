@@ -34,7 +34,7 @@
               <tr class = "st__my__main__applying__detail__table__tr">
                 <td class = "st__my__main__applying__detail__table__tr__td__status">
                   <%if job.student_job_state.id == 5%>
-                    <span class = passed><%= job.student_job_state.name %> </span> 
+                    <span class = passed><%= job.student_job_state.name %> </span>
                   <% elsif job.student_job_state.id >= 6%>
                     <span class = failed><%= job.student_job_state.name %> </span>
                   <% else %>
