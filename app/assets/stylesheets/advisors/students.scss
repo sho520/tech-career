@@ -61,6 +61,7 @@
               a{
                 text-decoration: none;
                 color:#2490D0;
+                font-weight: bold;
               }
             }
             .ca__my__main__applying__detail__table__tr__td__term{
@@ -75,6 +76,13 @@
               a{
                 text-decoration: none;
                 color:#2490D0;
+              }
+              .ca__my__main__applying__detail__table__tr__td__ca__pic{
+                color: #2490D0;
+              }
+              .ca__my__main__applying__detail__table__tr__td__ca__pic:hover{
+                color: #b3d4fc;
+                cursor: pointer;
               }
             }
             .ca__my__main__applying__detail__table__tr__td__applying{

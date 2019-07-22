@@ -15,8 +15,13 @@ Rails.application.routes.draw do
   }
   root to: 'jobs#index'    # TOPページ
   resources :jobs do
-    resources :students, only: [:show]  #生徒idの企業詳細ページ
+    resources :students, only: [:show]  do #生徒idの企業詳細ページ
+      # get 'keep', to: 'jobs#keep', on: :collection 
+      # get 'apply', to: 'jobs#apply', on: :collection
+    end
     get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
+    get 'keep', to: 'jobs#keep', on: :member
+    get 'apply', to: 'jobs#apply', on: :member
   end
   resources :students, only: [:show,:edit,:update,:destroy]
   get "advisors/:id" => "advisors#show"  #CAのmy page

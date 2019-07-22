@@ -78,6 +78,9 @@
                 padding: 3px;
                 color: #ffffff;
               }
+              .failed{
+                color: #9a9a9a;
+              }
             }
             .st__my__main__applying__detail__table__tr__td__name{
               background-color: #ffffff;
@@ -210,6 +213,13 @@
                 padding: 2px;
                 border-radius: 5px;
                 cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
               }
               .st__my__main__keepca__detail__table__tr__td__action__detail{
                 float:left;
@@ -222,6 +232,9 @@
                   text-decoration: none;
                   color: #000000;
                 }
+                a:hover{
+                  color:red;
+                }
               }
               .st__my__main__keepca__detail__table__tr__td__action__remove{
                 float:left;
@@ -229,6 +242,13 @@
                 padding: 2px;
                 border-radius: 5px;
                 cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
               }
             }
           }

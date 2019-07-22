@@ -53,6 +53,21 @@
       font-size: 0.8rem;
       cursor: pointer;
     }
+    .job__main__detail__apply{
+      float:right;
+      a{
+        background-color: yellow;
+        padding: 5px;
+        border-radius: 5px;
+        border: solid 1px #9a9a9a;
+        cursor: pointer;
+        text-decoration: none;
+        color: #000000;
+      }
+      a:hover{
+        color:red;
+      }
+    }
     .job__main__detail__content{
       clear: both;
       // max-height: 725px;
@@ -158,8 +173,23 @@
           .job__main__student__contents__content__state__value{
             float:right;
             font-weight: bold;
-            background-color:yellow;
             margin-bottom: 5px;
+            .job__main__student__contents__content__state__value__failed{
+              color: #9a9a9a;
+              padding: 3px;
+            }
+            .job__main__student__contents__content__state__value__passed{
+              background-color: rgb(238, 149, 48);
+              padding: 3px;
+              color: #ffffff;
+              font-weight: normal;
+            }
+            .job__main__student__contents__content__state__value__process{
+              background-color: #2490D0;
+              padding: 3px;
+              color: #ffffff;
+              font-weight: normal;
+            }
           }
         }
         .job__main__student__contents__content__hr{
