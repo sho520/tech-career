@@ -10,9 +10,9 @@
       <div class="student-edit__inner__wrapper__side">
         <!-- サイドバー -->
         <% if current_student.image.present? %>
-          <%= image_tag current_student.image.url, width: '160', class: "student-edit__inner__wrapper__side__img" %>
+          <%= image_tag current_student.image.url, width: '180', class: "student-edit__inner__wrapper__side__img" %>
         <% else %>
-          <%= image_tag 'mypage.jpg', width: '160', class: "student-edit__inner__wrapper__side__img" %>
+          <%= image_tag 'mypage.jpg', width: '180', class: "student-edit__inner__wrapper__side__img" %>
         <% end %>
         <div class="student-edit__inner__wrapper__side__content">
           <h2 class="student-edit__inner__wrapper__side__content__title">会員メニュー</h2>

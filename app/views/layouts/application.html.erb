@@ -35,7 +35,11 @@
           </div>
           <div class="main-header__content__right">
             <ul class="main-header__content__right__bloak">
-              <li class="main-header__content__right__bloak__login current_student-name"><%= current_student.name %></li>
+              <li class="main-header__content__right__bloak__login current_student-name">
+                <%= link_to edit_student_path(current_student), class: "main-header__content__right__bloak__login current_student-name" do %>
+                  <%= current_student.name %>
+                <% end %>
+              </li>
 
               <% if current_student.image.present? %>
               <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image.url, size: '48x48', class: "main-header__content__right__bloak__image" %></li>
