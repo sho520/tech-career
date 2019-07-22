@@ -1,11 +1,13 @@
 <main class = "job__main">
   <div class = "job__main__detail">
+    <!-- タイトル -->
     <div class = "job__main__detail__title">
       <%= @job.name%> / <%= @job.position %>
       <% if @job.job_state_id == 2%>
         <span>※募集終了</span>
       <% end %>
     </div>
+    <!-- jsで各項目へ移動可能 -->
     <div class = "job__main__detail__1">
       ▼募集要項
     </div>
@@ -71,6 +73,7 @@
           });
       });
     </script>
+    <!-- 生徒でログイン時、もし未応募なら応募できる -->
     <% if student_signed_in?%>
       <% if @state.student_job_state.id <= 2 && @job.job_state_id == 1%>
         <div class = "job__main__detail__apply">
@@ -78,6 +81,7 @@
         </div>
       <% end %>
     <% end %>
+    <!-- 募集要項 -->
     <div class = "job__main__detail__content" id = "job_description">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
@@ -288,6 +292,7 @@
       </table>
     </div>
 
+    <!-- 採用条件 -->
     <div class = "job__main__detail__content" id = "requirement">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
@@ -364,6 +369,7 @@
       </table>
     </div>
 
+    <!-- 待遇 -->
     <div class = "job__main__detail__content" id = "treatment">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
@@ -478,6 +484,7 @@
       </table>
     </div>
 
+    <!-- 会社概要 -->
     <div class = "job__main__detail__content" id = "company">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
@@ -586,6 +593,7 @@
       </table>
     </div>
 
+    <!-- その他 -->
     <div class = "job__main__detail__content" id = "other">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
@@ -606,6 +614,8 @@
       </table>
     </div>
   </div>
+
+  <!-- 生徒でログイン時、自分の選考状況が表示 -->
   <% if student_signed_in? %>
     <section class = "job__main__student">
       <div class = "job__main__student__title">
@@ -648,6 +658,8 @@
         </div>
       </div>
     </section>
+    
+  <!-- CAでログイン時、全生徒の選考状況が表示 -->
   <% elsif advisor_signed_in? %>
     <section class = "job__main__student">
       <div class = "job__main__student__title">

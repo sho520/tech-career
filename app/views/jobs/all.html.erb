@@ -2,9 +2,11 @@
 
   <div class = "ca__job__main">
     <section class = "ca__job__main__keepca">
+      <!-- タイトル -->
       <div class = "ca__job__main__keepca__title">
         企業一覧
       </div>
+      <!-- テーブルのカラム名 -->
       <div class = "ca__job__main__keepca__detail">
         <table class = "ca__job__main__keepca__detail__table">
           <tr class = "ca__job__main__keepca__detail__table__tr">
@@ -25,6 +27,7 @@
             </th>
           </tr>
 
+          <!-- 求人の詳細情報 -->
           <% @jobs.each do |job| %>
             <tr class = "ca__job__main__keepca__detail__table__tr">
               <td class = "ca__job__main__keepca__detail__table__tr__td__name">
