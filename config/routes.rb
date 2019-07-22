@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     get 'keep', to: 'jobs#keep', on: :member
     get 'apply', to: 'jobs#apply', on: :member
   end
-  resources :students, only: [:show,:edit,:update,:destroy]
+  resources :students, only: [:show,:edit,:update,:destroy] do
+    get 'ca', to: 'students#ca', on: :member
+  end
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
 

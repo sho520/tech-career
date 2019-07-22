@@ -25,7 +25,7 @@
               border: solid 1px #9a9a9a;
             }
             .ca__my__main__applying__detail__table__tr__th__term{
-              width: 15%;
+              width: 5%;
               background-color: #C34035;
               color:#ffffff;
               text-align: center;
@@ -39,14 +39,14 @@
               border: solid 1px #9a9a9a;
             }
             .ca__my__main__applying__detail__table__tr__th__applying{
-              width: 15%;
+              width: 50%;
               background-color: #C34035;
               color:#ffffff;
               text-align: center;
               border: solid 1px #9a9a9a;
             }
             .ca__my__main__applying__detail__table__tr__th__other{
-              width: 35%;
+              width: 10%;
               background-color: #C34035;
               color:#ffffff;
               text-align: center;
@@ -62,6 +62,9 @@
                 text-decoration: none;
                 color:#2490D0;
                 font-weight: bold;
+              }
+              a:hover{
+                color:#b3d4fc;
               }
             }
             .ca__my__main__applying__detail__table__tr__td__term{
@@ -81,14 +84,17 @@
                 color: #2490D0;
               }
               .ca__my__main__applying__detail__table__tr__td__ca__pic:hover{
+                a{
                 color: #b3d4fc;
                 cursor: pointer;
+                }
               }
             }
             .ca__my__main__applying__detail__table__tr__td__applying{
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              letter-spacing: 0.1em;
             }
             .ca__my__main__applying__detail__table__tr__td__other{
               background-color: #ffffff;

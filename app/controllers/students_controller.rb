@@ -24,6 +24,13 @@ class StudentsController < ApplicationController
   def destroy
   end
 
+  def ca
+    @student = Student.find(params[:id])
+    @student.advisor_id = current_advisor.id
+    @student.save
+    redirect_to students_advisors_path
+  end
+
   private
 
   def student_params
