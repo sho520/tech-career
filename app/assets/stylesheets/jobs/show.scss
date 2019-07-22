@@ -197,10 +197,23 @@
         }
         .job__main__student__contents__content__change{
           height: 50px;
-          
+          float:left;
           padding-left: 10px;
         }
         .job__main__student__contents__content__change__detail{
+          padding-bottom:10px;
+          .job__main__student__contents__content__change__detail__click{
+            background-color: rgb(240, 238, 125);
+            padding: 3px;
+            margin-right: 10px;
+            a{
+              text-decoration:none;
+              color:#000000;
+            }
+            a:hover{
+              color:red;
+            }
+          }
         }
       }
     }

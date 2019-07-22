@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
     get 'keep', to: 'jobs#keep', on: :member
     get 'apply', to: 'jobs#apply', on: :member
+    get 'change', to: 'jobs#change', on: :member
   end
   resources :students, only: [:show,:edit,:update,:destroy] do
     get 'ca', to: 'students#ca', on: :member
