@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
 
   def edit
     @student = Student.find(params[:id])
+    @advisors = Advisor.all.order(id: "ASC")
   end
 
   def update
@@ -44,8 +45,7 @@ class StudentsController < ApplicationController
                                     :period,
                                     :team,
                                     :image,
-                                    :advisor_id,
-                                   )
+                                    :advisor_id,)
   end
 
 end
