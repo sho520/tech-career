@@ -9,12 +9,12 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="adviser-login__inner__main__field">
-          <%= f.label :email %><br />
+          <%= f.label :email, 'メールアドレス' %><span class="login-wrapper__inner__main__field__flag">必須</span><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example", class: "adviser-login__inner__main__field__input" %>
         </div>
 
         <div class="adviser-login__inner__main__field">
-          <%= f.label :password %><br />
+          <%= f.label :password, 'パスワード' %><span class="login-wrapper__inner__main__field__flag">必須</span><br />
           <%= f.password_field :password, autocomplete: "current-password", placeholder: "********", class: "adviser-login__inner__main__field__input" %>
         </div>
 

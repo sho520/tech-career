@@ -35,17 +35,17 @@
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :名前,class: 'from-wrapper__inner__main__formarea__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "鈴木 一郎", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "新垣 結衣", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :メールアドレス %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "techcamp@techcamp", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "yuiaragaki@gmail.com", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :住所 %><br/>
-              <%= f.text_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都", class: "from-wrapper__inner__main__formarea__field__input" %>
+              <%= f.text_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都江東区青海二丁目番***", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__birthday">
@@ -80,15 +80,19 @@
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
-              <%= f.label :password %>
+              <%= f.hidden_field :advisor_id, value: 1 %>
+            </div>
+
+            <div class="from-wrapper__inner__main__formarea__field">
+              <%= f.label :password, 'パスワード' %>
               <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
-              <% end %><br />
+              <em>(<%= @minimum_password_length %> 文字以上で入力してください)</em>
+              <% end %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br />
               <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力してください", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
             <div class="from-wrapper__inner__main__formarea__field">
-              <%= f.label :password_confirmation %><br />
+              <%= f.label :password_confirmation, 'パスワード確認' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードをもう一度入力してください", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
