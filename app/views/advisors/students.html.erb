@@ -31,7 +31,14 @@
           <% @students.each do |student| %>
             <tr class = "ca__my__main__applying__detail__table__tr">
               <td class = "ca__my__main__applying__detail__table__tr__td__name">
-                <%= link_to student.name, student_path(student.id)%>
+              <% if student.image.present? %>
+                <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag student.image.url, size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
+              <% else %>
+                <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag 'mypage.png', size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
+              <% end %>
+                <div class = "ca__my__main__applying__detail__table__tr__td__name__text">
+                  <%= link_to student.name, student_path(student.id)%>
+                </div>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__term">
                 <%= student.period %>
