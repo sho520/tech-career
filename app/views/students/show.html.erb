@@ -109,13 +109,13 @@
                 </td>
                 <td class = "st__my__main__keepca__detail__table__tr__td__action">
                   <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                    応募
+                    <%= link_to "応募", apply_job_path(id: job.job.id) %>
                   </div>
                   <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
                     <%= link_to  "詳細", "/jobs/#{job.job.id}"  %>
                   </div>
                   <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                    削除
+                    <%= link_to "削除", keep_job_path(id: job.job.id) %>
                   </div>
                 </td>
               </tr>

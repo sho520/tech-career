@@ -33,7 +33,10 @@
                 <%= student.period %>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__ca">
-                <%= student.advisor.name %>
+                <span><%= student.advisor.name %></span>
+                <% if student.advisor.id == 1%>
+                  <span class = "ca__my__main__applying__detail__table__tr__td__ca__pic">担当になる</span>
+                <% end %>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__applying">
                 <%= student.student_jobs.count%>社

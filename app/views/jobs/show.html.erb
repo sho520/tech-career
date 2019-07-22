@@ -71,6 +71,13 @@
           });
       });
     </script>
+    <% if student_signed_in?%>
+      <% if @state.student_job_state.id <= 2 && @job.job_state_id == 1%>
+        <div class = "job__main__detail__apply">
+          <%= link_to "応募する", apply_job_path(id: @state.job_id) %>
+        </div>
+      <% end %>
+    <% end %>
     <div class = "job__main__detail__content" id = "job_description">
       <table class = "job__main__detail__content__table">
         <tr class = "job__main__detail__content__table__tr">
@@ -215,7 +222,11 @@
             年収
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.min_annual_income.to_s(:delimited) %>万円 〜 <%= @job.max_annual_income.to_s(:delimited) %>万円
+            <%if @job.min_annual_income == @job.max_annual_income %>
+              <%= @job.min_annual_income %>万円
+            <% else %>
+              <%= @job.min_annual_income %>万円 〜 <%= @job.max_annual_income %>万円
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -623,7 +634,15 @@
           <div class = "job__main__student__contents__content__state">
             状況：
             <div class = "job__main__student__contents__content__state__value">
-              選考中
+              <% if @state.student_job_state.id >= 6%>
+                <span class = "job__main__student__contents__content__state__value__failed" ><%= @state.student_job_state.name%></span>
+              <% elsif @state.student_job_state.id == 5 %>
+                <span class = "job__main__student__contents__content__state__value__passed" ><%= @state.student_job_state.name%></span>
+              <% elsif @state.student_job_state.id >= 3%>
+                <span class = "job__main__student__contents__content__state__value__process" ><%= @state.student_job_state.name%></span>
+              <% else%>
+                <span class = "job__main__student__contents__content__state__value" ><%= @state.student_job_state.name%></span>
+              <% end %>
             </div>
           </div>
         </div>
@@ -658,7 +677,15 @@
             <div class = "job__main__student__contents__content__state">
               状況：
               <div class = "job__main__student__contents__content__state__value">
-                <%= job.student_job_state.name%>
+                <% if job.student_job_state.id >= 6%>
+                  <span class = "job__main__student__contents__content__state__value__failed" ><%= job.student_job_state.name%></span>
+                <% elsif job.student_job_state.id == 5 %>
+                  <span class = "job__main__student__contents__content__state__value__passed" ><%= job.student_job_state.name%></span>
+                <% elsif job.student_job_state.id >= 3%>
+                  <span class = "job__main__student__contents__content__state__value__process" ><%= job.student_job_state.name%></span>
+                <% else%>
+                  <span class = "job__main__student__contents__content__state__value" ><%= job.student_job_state.name%></span>
+                <% end %>
               </div>
             </div>
             <hr class = "job__main__student__contents__content__hr">
