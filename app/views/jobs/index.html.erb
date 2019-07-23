@@ -19,11 +19,8 @@
                     <h3><%= link_to job.name, job_path(job.id) %></h3>
                   </div>
                   <div class="top__contentbox__left__maincontent__jobbox__upbox__right">
-                    <div class="top__contentbox__left__maincontent__jobbox__upbox__right__1">
-                    <p><%= link_to "応募する" %></p>
-                    </div>
                     <div class="top__contentbox__left__maincontent__jobbox__upbox__right__3">
-                    <p><%= link_to "検討する" %></p>
+                    <p><%= link_to "詳細をみる", job_path(job.id) %></p>
                     </div>
                   </div>
                 </div>
@@ -47,51 +44,17 @@
         </div>
       </div>
 
+      <% if student_signed_in? %>
+        <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+      <% end %>
+      <% if advisor_signed_in? %>
+        <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+      <% end %>
 
-      <%= render partial: "chats/chat" , locals: { chats: @chats } %>
 
     </div>
   </div>
 
 </body>
 
-      <%# <div class="top__contentbox__right"> %>
-
-        <%# <div class = "top__contentbox__right__comments">
-          <%# 左コメント %>
-          <%# <div class="top__contentbox__right__comments__commentleft">
-            <div class="top__contentbox__right__comments__commentleft__box">
-              <div class="top__contentbox__right__comments__commentleft__box__content">
-                <div class="top__contentbox__right__comments__commentleft__box__content__text">就職についてご相談があるのですが本日ははお時間ありますでしょうか</div>
-              </div>
-            </div>
-          </div>
-          <div class="top__contentbox__right__comments__leftimage">
-            <img src="image.jpg" width="40" height="40" class="icon">
-          </div> %>
-          <%# <div class="top__contentbox__right__comments__clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） --> %>
-          <%# 右コメント %>
-          <%# <div class="top__contentbox__right__comments__commentright">
-            <div class="top__contentbox__right__comments__commentright__box">
-              <div class="top__contentbox__right__comments__commentright__box__content">
-                <div class="top__contentbox__right__comments__commentright__box__content__text">本日はお休みなので明日の14時はご都合いかがでしょうか？</div>
-              </div>
-            </div>
-          </div>
-          <div class="top__contentbox__right__comments__rightimage">
-            <img src="image.jpg" width="40" height="40" class="icon">
-          </div>
-          <div class="top__contentbox__right__comments__clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
-
-        </div>
- %>
-
-        <%# <div class="top__contentbox__right__submit">
-          <textarea class="top__contentbox__right__submit__message"></textarea>
-          <div class="top__contentbox__right__submit__btn">送信</div>
-        </div> %>
-
-      <%# </div> %>
-    <%# </div> %>
-  
-
+      

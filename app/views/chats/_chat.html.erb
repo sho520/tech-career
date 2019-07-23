@@ -30,10 +30,10 @@
     <div class="top__contentbox__right__chatbox__submit">
       <%# <%= form_for @chat, url: "/chats", method: "post" do |f| %> 
       <%# url: { controller: :chats, action: :create } %>
-      <%= form_for(@chats, url: {controller: "chats", action: "create"}) do |f| %>
+      <%= form_for(@chats , url: {controller: "chats", action: "create"}) do |f| %>
         <%= f.text_field :comment, class: "top__contentbox__right__submit__message" %>
-        <%# <%= f.hidden_field :student_id, value: "1" %> 
-        <%= f.hidden_field :advisor_id, value: "1" %>
+        <%= f.hidden_field :student_id, value: current_student.id %>
+        <%= f.hidden_field :advisor_id, value: current_student.advisor.id %> 
         <%= f.submit %>
       <% end %>
     </div>
