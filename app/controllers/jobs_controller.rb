@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_student!, only: [:show]
 
   def index
     @jobs = Job.all

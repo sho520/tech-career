@@ -7,7 +7,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = Chat.new(message_params)
-    @chat.user = current_student
+    # @chat.user = current_student
     # binding.pry
     @chat.save
     redirect_to controller: 'jobs', action: 'index'
