@@ -2,7 +2,7 @@
   <div class="jobIndex__inner">
     <div class="jobIndex__inner__left">
       <div class="jobIndex__inner__left__wrapper">
-        <div class="jobIndex__inner__left__wrapper__header">興味がある求人があればキャリアアドバイザーに<span>「チャット」</span>で相談してみましょう！</div>
+        <div class="jobIndex__inner__left__wrapper__header">興味がある求人があればログインしてキャリアアドバイザーに<span>「チャット」</span>で相談してみましょう！</div>
         <% @jobs.each do |job| %>
         <div class="jobIndex__inner__left__wrapper__content">
           <%= link_to root_path, class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
@@ -44,8 +44,22 @@
       </div>
     </div>
     <div class="jobIndex__inner__right">
-      <div class="">
-        <!-- 新着コンテンツ -->
+<!-- 新着コンテンツ -->
+      <div class="jobIndex__inner__right__sideContent">
+        <h3 class="jobIndex__inner__right__sideContent__title">応募ランキング</h3>
+        <% @newjobs.each do |job| %>
+        <div class="jobIndex__inner__right__sideContent__box">
+          <%= link_to root_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
+            <div class="jobIndex__inner__right__sideContent__box__link__left">
+              <%= image_tag 'div.png',width: '120',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+            </div>
+            <div class="jobIndex__inner__right__sideContent__box__link__right">
+              <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
+              <p class="jobIndex__inner__right__sideContent__box__link__right__text"><%= job.job_description %></p>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>

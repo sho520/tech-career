@@ -321,8 +321,6 @@
   // ここからニューコンテンツ
 .jobIndex {
   width: 100%;
-
-
   &__inner {
     width: 1300px;
     height: auto;
@@ -332,7 +330,6 @@
       float: left;
       margin: 20px 0 0 20px;
       &__wrapper {
-
         &__header {
           padding:12px;
           text-align: center;
@@ -344,7 +341,7 @@
         }
         &__content {
           height: 180px;
-          background-color: #fff;
+          background-color: #fbfbfb;
           margin: 15px 0 15px 0;
           filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
           &:hover {
@@ -421,8 +418,54 @@
       width: 300px;
       min-height: 800px;
       margin: 20px 20px 0 20px;
-      background-color: #B0C4DE;
+      background-color: #fbfbfb;
       float: left;
+      &__sideContent {
+        &__title {
+          text-align: center;
+          padding:6px;
+          font-size: 14px;
+          background-color: #2d2d2d;
+          color: #fff;
+        }
+        &__box {
+          box-shadow: 1px 1px 2px #333;
+          margin: 10px 0 10px 0;
+          &__link {
+            display: block;
+            padding: 10px 5px;
+            overflow: hidden;
+            height: 90px;
+            width: 290px;
+            text-decoration: none;
+            &__left {
+              float: left;
+              border: 1px solid #e5e5e5;
+              &__img {
+
+              }
+            }
+            &__right {
+              float: left;
+              width: 150px;
+              padding: 5px;
+              overflow: hidden;
+              &__title {
+                font-size: 12px;
+                margin: 0 0 3px;
+                color: #007ebe;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              &__text {
+                font-size: 10px;
+                color: #333;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
