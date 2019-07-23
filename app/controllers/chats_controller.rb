@@ -1,5 +1,11 @@
 class ChatsController < ApplicationController
 
+  def index
+    @jobs = Job.all
+    @chats = Chat.new
+    @images = JobImage.all
+  end
+
   def new
     @chat = Chat.new
   end

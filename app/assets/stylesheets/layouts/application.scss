@@ -27,6 +27,8 @@
   height: 20px;
   width: 100vw;
   background-color: #2d2d2d;
+  z-index: 10;
+  // position: fixed;
   p {
     color: #fff;
     font-size: 12px;
@@ -37,6 +39,9 @@
 .header {
   height: 80px;
   background-color: #C34035;
+  z-index: 10;
+  // position: fixed;
+  // margin-top: 20px;
   &__wrapper {
     text-align: left;
     width: 100vw;
