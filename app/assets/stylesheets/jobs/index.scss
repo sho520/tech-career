@@ -51,7 +51,7 @@
           box-sizing: border-box;
           &__jobbox{
             box-sizing: border-box;
-            height: 200px;
+            height: 350px;
             // background-color: gray;
             padding: 0.5em 1em;
             margin: 2em 0;
@@ -63,7 +63,7 @@
               box-sizing: border-box;
               height: 30px;
               // background-color: yellow;
-              margin-bottom: 10px;
+              margin-bottom: 130px;
               &__left{
                 float: left;
                 // width: 50%;
@@ -75,8 +75,17 @@
                   color:#2490D0;
                 }
               }
-              &__right{
+              &__photo{
+                height: 125px;
+                width: 840px;
                 float: right;
+                &__1{
+                  margin-left: 30px;
+                  float: left;
+                }
+              }
+              &__right{
+                // float: right;
                 // width: 50%;
                 // background-color: green;
                 &__1{
@@ -139,6 +148,22 @@
                 border-bottom:1px solid #666;
                 border-left:1px solid #666;
                 border:1px solid #666;
+              }
+            }
+            .top__contentbox__left__maincontent__jobbox__detail{
+              float:right;
+              background-color: rgb(250, 250, 134);
+              padding: 5px;
+              border-radius: 5px;
+              cursor: pointer;
+              margin-top: 7px;
+              a{
+                text-decoration: none;
+                color: #000000;
+              }
+              a:hover{
+                color: red;
+                background-color: yellow;
               }
             }
           }
