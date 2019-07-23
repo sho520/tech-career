@@ -198,19 +198,19 @@
 
 
         &__chatbox{
+          height:100%;
 
           &__comments{
-            height: calc(100% - 120px);
+            height: calc(100% - 150px);
             // background-color: red;
             padding: 30px;
-            overflow: auto;
-            overflow-y:scroll;
+            overflow: scroll;
+            // overflow-y:scroll;
   
             &__commentleft{
               // float: left;/*吹き出しをbms_messagesに対して左寄せ*/
               line-height: 1.3em;
-              
-              cposition: relative; /* 三角の位置を固定するために設定 */
+              position: relative; /* 三角の位置を固定するために設定 */
               max-width: 300px;
               margin: 10px 20px 20px; /* 上 左右 下のマージン */
               padding: 8px 15px; /* ふきだし内の余白 */
@@ -268,43 +268,35 @@
           }
 
           &__submit{
-            height: 120px;
+            height: 60px;
             width: 100%;
             // background-color: pink;
             position: absolute;
             bottom: 0px;
-  
-            &__message{
-              width: calc(100% - 80px);/*常に送信ボタンの横幅を引いたサイズに動的に計算*/
-              line-height: 16px;
-              padding: 14px 6px 0px 6px;/*文字がテキストエリアの中心になる様に隙間調整*/
-              border: 1px solid #ccc;
-              border-radius: 4px;/*角丸*/
-              text-align: left;/*文字を左寄せ*/
-              box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2) inset;/*内側に影を入れてテキストエリアらしくした*/
-              box-sizing: border-box;
-              margin: 0 0 0 5px;
+            padding-top: 30px;
+            .new_chat{
+              // width: calc(100% - 80px);/*常に送信ボタンの横幅を引いたサイズに動的に計算*/
+                // line-height: 16px;
+                padding: 6px;/*文字がテキストエリアの中心になる様に隙間調整*/
+                // border: 1px solid #ccc;
+                border-radius: 4px;/*角丸*/
+                text-align: left;/*文字を左寄せ*/
+                box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2) inset;/*内側に影を入れてテキストエリアらしくした*/
+                box-sizing: border-box;
+                margin:5px;
+
+              .top__contentbox__right__submit__message{
+                width: calc(100% - 80px);/*常に送信ボタンの横幅を引いたサイズに動的に計算*/
+                // line-height: 16px;
+                padding: 14px 6px 0px 6px;/*文字がテキストエリアの中心になる様に隙間調整*/
+                // border: 1px solid #ccc;
+                border-radius: 4px;/*角丸*/
+                text-align: left;/*文字を左寄せ*/
+                box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2) inset;/*内側に影を入れてテキストエリアらしくした*/
+                box-sizing: border-box;
+                
+                }
               }
-            &__btn{
-              width: 70px;
-              height: 48px;
-              margin: 0 2px 0 0;
-              font-size: 16px;
-              line-height: 3em;
-              float: right;/*bms_sendに対して右寄せ*/
-              color: #fff;
-              font-weight: bold;
-              background: #bcbcbc;
-              text-align: center;/*文字をボタン中央に表示*/
-              border: 1px solid #bbb;
-              border-radius: 4px;/*角丸*/
-              box-sizing: border-box;/*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
-              }
-              &__btn:hover{
-                background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
-                cursor: pointer;
-          }
-  
           }
 
         }
@@ -314,4 +306,24 @@
         transform: translate(0);
       }
     }
+  }
+
+  input[type="submit"]{
+    width: 70px;
+                height: 40px;
+                margin: 0 2px 0 0;
+                font-size: 16px;
+                line-height: 3em;
+                float: right;/*bms_sendに対して右寄せ*/
+                color: #fff;
+                font-weight: bold;
+                background: #bcbcbc;
+                text-align: center;/*文字をボタン中央に表示*/
+                border: 1px solid #bbb;
+                border-radius: 4px;/*角丸*/
+                box-sizing: border-box;/*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
+  }
+  input:hover[type="submit"]{
+    background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
+                  cursor: pointer;
   }

@@ -24,11 +24,6 @@
                     <% end %>
                   </div>
                   <div class="top__contentbox__left__maincontent__jobbox__upbox__right">
-                    <%# <% if student_signed_in? || advisor_signed_in?%>
-                      <%# <div class="top__contentbox__left__maincontent__jobbox__upbox__right__3"> %>
-                      <%# <p><%= link_to "詳細をみる", job_path(job.id)</p> %> 
-                      <%# </div> %>
-                    <%# <% end %> 
                   </div>
                 </div>
                 <table class ="top__contentbox__left__maincontent__jobbox__downbox">
@@ -57,16 +52,15 @@
                   <% end %>
                 </div>
               </div>
-            <%# <% end %> 
           <% end %>
         </div>
       </div>
 
       <% if student_signed_in? %>
-        <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+        <%= render partial: "chats/chat" , locals: { chats: @chat } %>
       <% end %>
       <% if advisor_signed_in? %>
-        <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+        <%= render partial: "chats/chat" , locals: { chats: @chat } %>
       <% end %>
 
 
@@ -74,5 +68,3 @@
   </div>
 
 </body>
-
-      
