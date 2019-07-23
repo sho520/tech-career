@@ -196,7 +196,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_083552) do
     t.integer "age"
     t.integer "period"
     t.string "team"
-    t.string "image"
+    t.string "image_url"
     t.bigint "advisor_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

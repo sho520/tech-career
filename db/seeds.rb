@@ -372,23 +372,23 @@ Advisor.create(
 Advisor.create(
   email: "hangai@hangai",
   password:"123456",
-  name:"hangai",
+  name:"半谷 由香里",
 )
 Advisor.create(
   email: "suzuki@suzuki",
   password:"123456",
-  name:"suzuki",
+  name:"鈴木 太郎",
 )
 Advisor.create(
   email: "abe@abe",
   password:"123456",
-  name:"abe",
+  name:"栗田 友美",
 )
 
 Student.create(
   email: "sho@sho",
   password: "1234567890",
-  name: "sho",
+  name: "雨傘 翔",
   address: "東京都",
   birth_year:1992,
   birth_month:11,
@@ -396,13 +396,13 @@ Student.create(
   age:27,
   period:52,
   team:"e",
-  image:"",
+  image_url:"person1",
   advisor_id:2,
 )
 Student.create(
   email: "tsuru@tsuru",
   password: "1234567890",
-  name: "tsuru",
+  name: "鶴田 誠",
   address: "東京都",
   birth_year:1993,
   birth_month:11,
@@ -410,13 +410,13 @@ Student.create(
   age:25,
   period:52,
   team:"e",
-  image:"",
+  image_url:"person2",
   advisor_id:2,
 )
 Student.create(
   email: "shimpei@shimpei",
   password: "1234567890",
-  name: "shimpei",
+  name: "阿部 慎平",
   address: "兵庫県",
   birth_year:1987,
   birth_month:11,
@@ -424,13 +424,13 @@ Student.create(
   age:31,
   period:52,
   team:"e",
-  image:"",
+  image_url:"person3",
   advisor_id:3,
 )
 Student.create(
   email: "usui@usui",
   password: "1234567890",
-  name: "usui",
+  name: "薄井 海",
   address: "群馬県",
   birth_year:1995,
   birth_month:1,
@@ -438,13 +438,13 @@ Student.create(
   age:22,
   period:53,
   team:"a",
-  image:"",
+  image_url:"person4",
   advisor_id:3,
 )
 Student.create(
   email: "goto@goto",
   password: "1234567890",
-  name: "goto",
+  name: "田中 涼介",
   address: "千葉県",
   birth_year:1991,
   birth_month:11,
@@ -452,13 +452,13 @@ Student.create(
   age:28,
   period:53,
   team:"e",
-  image:"",
+  image_url:"person5",
   advisor_id:2,
 )
 Student.create(
   email: "kato@kato",
   password: "1234567890",
-  name: "kato",
+  name: "古屋 大介",
   address: "山梨県",
   birth_year:1990,
   birth_month:5,
@@ -466,13 +466,13 @@ Student.create(
   age:29,
   period:53,
   team:"a",
-  image:"",
+  image_url:"person6",
   advisor_id:4,
 )
 Student.create(
   email: "watanabe@watanabe",
   password: "1234567890",
-  name: "watanabe",
+  name: "渡辺 久美子",
   address: "東京都",
   birth_year:1993,
   birth_month:10,
@@ -480,7 +480,7 @@ Student.create(
   age:25,
   period:53,
   team:"d",
-  image:"",
+  image_url: "person7",
   advisor_id:1,
 )
 

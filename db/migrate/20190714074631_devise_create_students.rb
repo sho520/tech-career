@@ -14,7 +14,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.2]
       t.integer :age
       t.integer :period
       t.string :team
-      t.string :image
+      t.string :image_url
       t.references :advisor, foreign_key: true
       ## Recoverable
       t.string   :reset_password_token
