@@ -132,6 +132,7 @@
     }
     .job__main__student__contents{
       padding-top: 23px;
+      margin-bottom: 50px;
       .job__main__student__contents__content{
         clear: both;
         margin-top: 20px;
@@ -215,6 +216,15 @@
             }
           }
         }
+      }
+    }
+    .job__main__student__pics{
+      margin-top: 10px;
+      .job__main__student__pics__pic{
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        filter: opacity(85%);
       }
     }
   }
