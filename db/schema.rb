@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_083552) do
   end
 
   create_table "holiday_vacation_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "holiday_vacation_id", null: false
+    t.integer "job_id", null: false
+    t.integer "holiday_vacation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["holiday_vacation_id"], name: "index_holiday_vacation_jobs_on_holiday_vacation_id"
@@ -142,8 +142,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_083552) do
   end
 
   create_table "language_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "language_id", null: false
+    t.integer "job_id", null: false
+    t.integer "language_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_language_jobs_on_job_id"
@@ -209,8 +209,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_083552) do
   end
 
   create_table "various_allowance_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "various_allowance_id", null: false
+    t.integer "job_id", null: false
+    t.integer "various_allowance_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_various_allowance_jobs_on_job_id"
@@ -224,8 +224,8 @@ ActiveRecord::Schema.define(version: 2019_07_22_083552) do
   end
 
   create_table "various_insurance_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "various_insurance_id", null: false
+    t.integer "job_id", null: false
+    t.integer "various_insurance_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_various_insurance_jobs_on_job_id"

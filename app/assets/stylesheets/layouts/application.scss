@@ -34,203 +34,106 @@
     letter-spacing: 0.05em;
   }
 }
-.main-header {
+.header {
   height: 80px;
-  width: calc(100vw - 60px);
-  padding: 0 30px;
-  background-color: #fbfbfb;
+  background-color: #C34035;
+  &__wrapper {
+    text-align: left;
+    width: 100vw;
+    &__inner {
+      width: 980px;
+      height: 80px;
+      margin: 0 auto;
+      position: relative;
+      &__left {
+        float: left;
+        z-index: 2;
+        &__logo {
+          &__link {
+
+          }
+        }
+      }
+      &__right {
+        float: right;
+        z-index: 1;
+        ul li {
+          display: inline-block;
+          line-height: 80px;
+        }
+        &__list {
+          &__img {
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+
+
+            &__pic {
+              border-radius: 50px;
+              position:  absolute;
+              bottom: 15px;
+            }
+          }
+
+          &__name {
+
+            &__link {
+              width: auto;
+              text-align: center;
+              display: inline-block;
+              color: #fff;
+              padding: 0 20px;
+              text-decoration: none;
+              background-color: #C34035;
+              &:hover {
+                background-color: #781f18;
+                color: #fff;
+              }
+            }
+            &__link-ca {
+              width: auto;
+              text-align: center;
+              display: inline-block;
+              color: #fff;
+              padding: 0 20px;
+              text-decoration: none;
+              background-color: #C34035;
+              &:hover {
+                background-color: #781f18;
+                color: #fff;
+              }
+            }
+          }
+          &__icon {
+            &__link {
+              color: #fff;
+              text-align: center;
+              padding: 0 20px;
+              width: 40px;
+              display: inline-block;
+               // transition: 0.5s ;
+              &:hover {
+                background-color: #781f18;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 旧タイプ
+
+.main-header {
   &__logo {
-    float: left;
-    width:210px;
+
     &__link {
       width: 160px;
       margin-top: 30px;
-      margin-left: 20px;
+      margin-left: 5px;
       margin-right: 30px;
-      
     }
   }
-  &__content{
-    height: 80px;
-    width: 100%;
-    position: relative;
-    &__left {
-      float: left;
-      &__bloak {
-        &__link-ca {
-          display: inline-block;
-          font-size: 14px;
-          line-height: 40px;
-          margin-top: 18px;
-          margin-left: 10px;
-          height: 40px;
-          width: 100px;
-          border: solid 2px #C34035;
-          border-radius: 5px;
-          color: #C34035;
-          text-decoration: none;
-          padding-left:16px;
-          letter-spacing: 0.05em;
-          &:hover {
-            opacity: 0.7;
-            text-decoration: underline;
-          }
-        }
-      }
-      &__home {
-        display: inline-block;
-        line-height: 40px;
-        margin-top: 18px;
-        padding-left:10px;
-        height: 40px;
-        width: 90px;
-        border-radius: 5px;
-        background-color: #fff;
-        border: solid 2px #C34035;
-        color: #C34035;
-        text-decoration: none;
-        margin-left: 10px;
-        letter-spacing: 0.05em;
-        &__link {
-          font-size: 14px;
-        }
-        &:hover {
-          background-color: #C34035;
-          color: #fff;
-        }
-      }
-      &__job {
-        display: inline-block;
-        line-height: 40px;
-        margin-top: 18px;
-        padding-left:10px;
-        height: 40px;
-        width: 90px;
-        border-radius: 5px;
-        background-color: #fff;
-        border: solid 2px #C34035;
-        color: #C34035;
-        text-decoration: none;
-        margin-left: 10px;
-        letter-spacing: 0.05em;
-        &__link {
-          font-size: 14px;
-        }
-        &:hover {
-          background-color: #C34035;
-          color: #fff;
-        }
-      }
-      &__students {
-        display: inline-block;
-        line-height: 40px;
-        margin-top: 18px;
-        padding-left:10px;
-        height: 40px;
-        width: 90px;
-        border-radius: 5px;
-        background-color: #fff;
-        border: solid 2px #C34035;
-        color: #C34035;
-        text-decoration: none;
-        margin-left: 10px;
-        letter-spacing: 0.05em;
-        &__link {
-          font-size: 14px;
-        }
-        &:hover {
-          background-color: #C34035;
-          color: #fff;
-        }
-      }
-    }
-    &__right {
-      float: right;
-
-      &__bloak {
-        &__link-st {
-          font-size: 14px;
-          display: inline-block;
-          line-height: 40px;
-          margin-top: 18px;
-          padding-left:16px;
-          height: 40px;
-          width: 100px;
-          border-radius: 5px;
-          background-color: #C34035;
-          border: solid 2px #C34035;
-          color: #fff;
-          text-decoration: none;
-          margin-left: 10px;
-          letter-spacing: 0.05em;
-          &:hover {
-            opacity: 0.7;
-          }
-        }
-        // ここからログイン後
-        &__login {
-          display: inline-block;
-        }
-        .current_student-name {
-          color: #333;
-          font-size: 14px;
-          font-weight: bold;
-          margin-right: 10px;
-          text-decoration: none;
-          &:hover {
-            color: #C34035;
-            text-decoration: underline;
-          }
-        }
-        &__image {
-          position:  absolute;
-          right: 350px;
-          top: 16px;
-          border-radius: 50px;
-        }
-        &__mypage {
-          font-size: 14px;
-          display: inline-block;
-          line-height: 40px;
-          margin-top: 18px;
-          padding-left:16px;
-          height: 40px;
-          width: 90px;
-          border-radius: 5px;
-          background-color: #C34035;
-          border: solid 2px #C34035;
-          color: #fff;
-          text-decoration: none;
-          margin-left: 10px;
-          letter-spacing: 0.05em;
-          &:hover {
-            opacity: 0.7;
-          }
-        }
-        &__logout {
-          font-size: 14px;
-          display: inline-block;
-          line-height: 40px;
-          margin-top: 18px;
-          padding-left:16px;
-          height: 40px;
-          width: 90px;
-          border-radius: 5px;
-          background-color: #fff;
-          border: solid 2px #C34035;
-          color: #C34035;
-          text-decoration: none;
-          margin-left: 10px;
-          letter-spacing: 0.05em;
-          &:hover {
-            opacity: 0.7;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-
-
-
 }
