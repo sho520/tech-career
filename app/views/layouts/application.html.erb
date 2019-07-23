@@ -41,8 +41,8 @@
                 <% end %>
               </li>
 
-              <% if current_student.image.present? %>
-              <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image.url, size: '48x48', class: "main-header__content__right__bloak__image" %></li>
+              <% if current_student.image_url.present? %>
+              <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image_url.url, size: '48x48', class: "main-header__content__right__bloak__image" %></li>
               <% else %>
               <li class="main-header__content__right__bloak__login"><%= image_tag 'mypage.png', size: '48x48', class: "main-header__content__right__bloak__image" %></li>
               <% end %>

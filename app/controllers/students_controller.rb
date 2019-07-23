@@ -44,7 +44,7 @@ class StudentsController < ApplicationController
                                     :age,
                                     :period,
                                     :team,
-                                    :image,
+                                    :image_url,
                                     :advisor_id,)
   end
 
