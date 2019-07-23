@@ -52,16 +52,15 @@
                   <% end %>
                 </div>
               </div>
-            <%# <% end %> 
           <% end %>
         </div>
       </div>
 
       <% if student_signed_in? %>
-        <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+        <%= render partial: "chats/chat" , locals: { chats: @chat } %>
       <% end %>
       <% if advisor_signed_in? %>
-        <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+        <%= render partial: "chats/chat" , locals: { chats: @chat } %>
       <% end %>
 
 
@@ -69,5 +68,3 @@
   </div>
 
 </body>
-
-      
