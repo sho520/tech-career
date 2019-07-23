@@ -8,7 +8,7 @@
       </div>
       <div class = "ca__job__main__keepca__title">
         <%# <%=form_for(@job) do |f|%>
-        <%# <% end %> 
+        <%# <% end %>
       </div>
       <!-- テーブルのカラム名 -->
       <div class = "ca__job__main__keepca__detail">
@@ -51,11 +51,11 @@
               </td>
             </tr>
           <% end %>
-          
+
         </table>
       </div>
       <div class = "ca__job__main__keepca__new">
-        <a href = "#">企業新規登録</a>
+        <%= link_to "企業新規登録",new_job_path %>
       </div>
     </section>
   </div>
