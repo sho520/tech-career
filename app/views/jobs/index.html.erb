@@ -46,7 +46,10 @@
           <% end %>
         </div>
       </div>
-      <%# <%= render partial: "chats/chat" , locals: item: @chat%> 
+
+
+      <%= render partial: "chats/chat" , locals: { chats: @chats } %>
+
     </div>
   </div>
 

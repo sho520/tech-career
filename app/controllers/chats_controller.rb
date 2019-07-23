@@ -6,8 +6,11 @@ class ChatsController < ApplicationController
 
 
   def create
-    @Chat = Chat.new(message_params)
-    @Chat.save
+    @chat = Chat.new(message_params)
+    @chat.user = current_student
+    # binding.pry
+    @chat.save
+    redirect_to controller: 'jobs', action: 'index'
   end
 
 
@@ -15,7 +18,7 @@ class ChatsController < ApplicationController
   private
 
   def message_params
-    params.require(:chat).permit(:comment, :student_id, :advisor_id)
+    params.require(:chat).permit(:comment,:student_id, :advisor_id)
     # .merge(user_id: current_user.id)
   end
 
