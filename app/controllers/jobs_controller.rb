@@ -2,6 +2,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all
+    @chats = Chat.new
 
   end
 
@@ -10,10 +11,6 @@ class JobsController < ApplicationController
   end
 
   def create
-
-    @Chat = Chat.new(message_params)
-    @Chat.save
-
 
     @job = Job.new(job_params)
     if @job.save
@@ -42,9 +39,5 @@ class JobsController < ApplicationController
     params.require(:job).permit(:name, :industry_id, :capital, :sales)
   end
 
-  def message_params
-    params.require(:chat).permit(:comment, :student_id, :advisor_id)
-    # .merge(user_id: current_user.id)
-  end
 
 end
