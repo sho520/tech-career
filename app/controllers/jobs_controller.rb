@@ -14,8 +14,6 @@ class JobsController < ApplicationController
   end
 
   def create
-
-
     @job = Job.new(job_params)
     if @job.save
       flash[:success] = "求人登録が完了しました"
@@ -134,7 +132,11 @@ class JobsController < ApplicationController
                                 :fixed_overtime_pay,
                                 :add_info_fixed_overtime_pay,
                                 :remark,
-                                :job_state_id,)
+                                :job_state_id,
+                                 { various_allowance_ids: [] },
+                                 { various_insurance_ids: [] },
+                                 { holiday_vacation_ids: [] },
+                               )
   end
 
 
