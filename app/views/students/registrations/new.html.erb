@@ -25,7 +25,7 @@
             <label for="file_photo" class="rounded-circle from-wrapper__inner__main__formarea__image">
               <div class="from-wrapper__inner__main__formarea__image__title">画像をアップロード</div>
               <i class="fa fa-camera fa-3x"></i>
-              <%= f.file_field :image, id: "file_photo" %>
+              <%= f.file_field :image_url, id: "file_photo" %>
             </label>
             <!-- ここから画像プレビュー -->
             <div class="from-wrapper__inner__main__formarea__preview" id="userImgPreview">
@@ -48,18 +48,14 @@
               <%= f.text_field :address, autofocus: true, autocomplete: "email", placeholder: "東京都", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
 
-            <div class="from-wrapper__inner__main__formarea__birthday">
+            <div class="from-wrapper__inner__main__formarea__field">
               <%= f.label :生年月日 %><br/>
-              <div class="from-wrapper__inner__main__formarea__birthday__field">
-                <%= f.select :birth_year, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "--", class: "from-wrapper__inner__main__formarea__birthday__field__select" %>
+              <div class="from-wrapper__inner__main__formarea__field__birthday">
+                <%= f.text_field :birth_year, autofocus: true, autocomplete: "birth_year", placeholder: "1980",class: "from-wrapper__inner__main__formarea__field__birthday__form" %>
                 <span>年</span>
-              </div>
-              <div class="from-wrapper__inner__main__formarea__birthday__field">
-                <%= f.select :birth_month, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "--", class: "from-wrapper__inner__main__formarea__birthday__field__select" %>
+                <%= f.text_field :birth_month, autofocus: true, autocomplete: "birth_month", placeholder: "05",class: "from-wrapper__inner__main__formarea__field__birthday__form" %>
                 <span>月</span>
-              </div>
-              <div class="from-wrapper__inner__main__formarea__birthday__field">
-                <%= f.select :birth_day, [["Railsの基礎", "rails_base"], ["Rubyの基礎", "ruby_base"]],  :prompt => "--", class: "from-wrapper__inner__main__formarea__birthday__field__select" %>
+                <%= f.text_field :birth_day, autofocus: true, autocomplete: "birth_day", placeholder: "30",class: "from-wrapper__inner__main__formarea__field__birthday__form" %>
                 <span>日</span>
               </div>
             </div>
@@ -91,6 +87,8 @@
               <%= f.label :password_confirmation %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードをもう一度入力してください", class: "from-wrapper__inner__main__formarea__field__input" %>
             </div>
+
+            <%= f.hidden_field :advisor_id, value:1 %>
 
             <div class="from-wrapper__inner__main__formarea__submit">
               <%= f.button "新規登録する",class: "from-wrapper__inner__main__formarea__submit__btn" %>

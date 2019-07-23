@@ -94,10 +94,15 @@
             height: 40px;
             width: 450px;
           }
+          &__birthday {
+            margin-top: 20px;
+            &__form {
+              height: 40px;
+              width: 80px;
+            }
+          }
         }
-        &__birthday {
-          margin-top: 20px;
-        }
+
         &__submit {
           margin-top: 40px;
           height: 80px;
