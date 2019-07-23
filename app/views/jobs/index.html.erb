@@ -18,10 +18,17 @@
                   <div class = "top__contentbox__left__maincontent__jobbox__upbox__left">
                     <h3><%= link_to job.name, job_path(job.id) %></h3>
                   </div>
+                  <div class = "top__contentbox__left__maincontent__jobbox__upbox__photo">
+                    <% @images.where(job_id: job.id).each do |image|%>
+                      <div><%= image_tag image.url, size: '250x150', class: "top__contentbox__left__maincontent__jobbox__upbox__photo__1"%></div>
+                    <% end %>
+                  </div>
                   <div class="top__contentbox__left__maincontent__jobbox__upbox__right">
-                    <div class="top__contentbox__left__maincontent__jobbox__upbox__right__3">
-                    <p><%= link_to "詳細をみる", job_path(job.id) %></p>
-                    </div>
+                    <%# <% if student_signed_in? || advisor_signed_in?%>
+                      <%# <div class="top__contentbox__left__maincontent__jobbox__upbox__right__3"> %>
+                      <%# <p><%= link_to "詳細をみる", job_path(job.id)</p> %> 
+                      <%# </div> %>
+                    <%# <% end %> 
                   </div>
                 </div>
                 <table class ="top__contentbox__left__maincontent__jobbox__downbox">
@@ -38,6 +45,13 @@
                     <th class ="top__contentbox__left__maincontent__jobbox__downbox__left">勤務地</th><td class ="top__contentbox__left__maincontent__jobbox__downbox__right">　<%= job.working_place_1%> <%= job.working_place_2%> <%= job.working_place_3%> <%= job.working_place_4%></td>
                   </tr>
                 </table>
+                <div class = "top__contentbox__left__maincontent__jobbox__detail">
+                  <% if student_signed_in? || advisor_signed_in?%>
+                    <%= link_to "詳細をみる", job_path(id: job.id) %>
+                  <%else%>
+                    <%= link_to "ログインして詳細をみる", new_student_session_path %>
+                  <% end %>
+                </div>
               </div>
             <%# <% end %> 
           <% end %>

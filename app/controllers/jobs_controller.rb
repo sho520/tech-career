@@ -1,9 +1,10 @@
 class JobsController < ApplicationController
-  before_action :authenticate_student!, only: [:show]
+
 
   def index
     @jobs = Job.all
     @chats = Chat.new
+    @images = JobImage.all
 
 
   end
