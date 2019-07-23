@@ -15,11 +15,18 @@ Rails.application.routes.draw do
   }
   root to: 'jobs#index'    # TOPページ
   resources :jobs do
-    resources :students, only: [:show]  #生徒idの企業詳細ページ
-    # resources :advisors, only: [:show]  #CAidの企業詳細ページ
+    resources :students, only: [:show]  do #生徒idの企業詳細ページ
+      # get 'keep', to: 'jobs#keep', on: :collection 
+      # get 'apply', to: 'jobs#apply', on: :collection
+    end
     get 'all', to: 'jobs#all', on: :collection   #job一覧ページ
+    get 'keep', to: 'jobs#keep', on: :member     #jobの選考状況を検討中へ変更(生徒のmyページにて)
+    get 'apply', to: 'jobs#apply', on: :member   #jobの選考状況を応募へ変更(生徒のmyページにて)
+    get 'change', to: 'jobs#change', on: :member #jobの選考状況を変更(求人詳細にて)
   end
-  resources :students, only: [:show]
+  resources :students, only: [:show,:edit,:update,:destroy] do
+    get 'ca', to: 'students#ca', on: :member     #CAが未登録の場合、自分がCAになる
+  end
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
   resources :chats , only: [:index, :create]

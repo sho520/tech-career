@@ -15,6 +15,14 @@
   line-height: 40px;
   opacity: 0.9;
 }
+.success {
+  background-color: #3CB371;
+  opacity: 0.9;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+}
 .header-title {
   height: 20px;
   width: 100vw;
@@ -33,11 +41,13 @@
   background-color: #fbfbfb;
   &__logo {
     float: left;
+    width:210px;
     &__link {
       width: 160px;
       margin-top: 30px;
       margin-left: 20px;
       margin-right: 30px;
+      
     }
   }
   &__content{
@@ -166,15 +176,17 @@
           font-size: 14px;
           font-weight: bold;
           margin-right: 10px;
+          text-decoration: none;
+          &:hover {
+            color: #C34035;
+            text-decoration: underline;
+          }
         }
         &__image {
           position:  absolute;
           right: 350px;
           top: 16px;
           border-radius: 50px;
-          &:hover {
-            border-radius: 0px;
-          }
         }
         &__mypage {
           font-size: 14px;

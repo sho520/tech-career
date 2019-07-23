@@ -1,0 +1,92 @@
+<div class="student-edit">
+  <!-- 外枠 -->
+  <div class="student-edit__inner">
+    <!-- 内枠 -->
+    <div class="student-edit__inner__wrapper">
+      <div class="student-edit__inner__wrapper__header">
+        <!-- ヘッダー -->
+        <h1 class="student-edit__inner__wrapper__header__name"><i class="fa fa-user-circle"></i><span><%= @student.name %></span>様の登録情報</h1>
+      </div>
+      <div class="student-edit__inner__wrapper__side">
+        <!-- サイドバー -->
+        <% if current_student.image.present? %>
+          <%= image_tag current_student.image.url, width: '180', class: "student-edit__inner__wrapper__side__img" %>
+        <% else %>
+          <%= image_tag 'mypage.png', width: '180', class: "student-edit__inner__wrapper__side__img" %>
+        <% end %>
+        <div class="student-edit__inner__wrapper__side__content">
+          <h2 class="student-edit__inner__wrapper__side__content__title">会員メニュー</h2>
+        </div>
+        <div class="student-edit__inner__wrapper__side__menu">
+          <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "student-edit__inner__wrapper__side__menu__btn" %>
+        </div>
+        <div class="student-edit__inner__wrapper__side__menu">
+          <%= link_to "退会する", student_path(current_student), method: :delete, class: "student-edit__inner__wrapper__side__menu__btn" %>
+        </div>
+        <div class="student-edit__inner__wrapper__side__menu">
+          <%= link_to "戻る", root_path, class: "student-edit__inner__wrapper__side__menu__btn" %>
+        </div>
+      </div>
+      <div class="student-edit__inner__wrapper__main">
+          <!-- メインコンテンツ -->
+          <div class="student-edit__inner__wrapper__main__inner">
+            <h3 class="student-edit__inner__wrapper__main__inner__title">基本情報の変更</h3>
+            <div class="student-edit__inner__wrapper__main__inner__form">
+              <%= form_for(current_student) do |f| %>
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :name, '名前', class: "student-edit__inner__wrapper__main__inner__form__field__label" %>
+                <%= f.text_field :name, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :email, 'メールアドレス' %>
+                <%= f.text_field :email, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :address, '住所' %>
+                <%= f.text_field :address, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :birth_year, '生年月日' %>
+                <%= f.text_field :birth_year, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :age, '年齢' %>
+                <%= f.text_field :age, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :period, '受講期' %>
+                <span class="student-edit__inner__wrapper__main__inner__form__field__input"><%= @student.period %> 期</span>
+              </div>
+
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :team, '所属チーム' %>
+                <%= f.text_field :team, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :advisor_id, '担当のCA', class: "student-edit__inner__wrapper__main__inner__form__field__ca-label" %><br>
+              <% @advisors.each do |advisor| %>
+                <label class="student-edit__inner__wrapper__main__inner__form__field__ca-index"><%= f.radio_button :advisor_id, advisor.id %> <%= advisor.name %></label>
+              <% end %>
+              </div>
+
+              <div class="student-edit__inner__wrapper__main__inner__form__field">
+                <%= f.label :advisor_id, '画像をアップロード' %>
+                <%= f.file_field :image, class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+              </div>
+
+              <%= f.submit "情報を更新する", class: 'student-edit__inner__wrapper__main__inner__form__submit' %>
+              <% end %>
+            </div>
+          </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>

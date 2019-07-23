@@ -1,314 +1,206 @@
 <main class = "st__my">
+  <!-- 生徒の基本情報 -->
   <header class = "st__my__header">
-    <% @students.each do |student| %>
-    雨笠 賞 / 52期 / 担当CA：<%= student.advisors.name%>
-    <% end %>
+    <%=@student.name%> / <%=@student.period%>期 / 担当CA：<%=@student.advisor.name%>
   </header>
 
   <div class = "st__my__main">
     <section class = "st__my__main__applying">
+      <!-- 募集中・選考中などの企業一覧 -->
       <div class = "st__my__main__applying__title">
-        ユーザー様の応募企業一覧
+        <%=@student.name%>様の応募済企業一覧
       </div>
+
+      <!-- テーブルのカラム名 -->
+      <table class = "st__my__main__applying__table">
+        <tr class = "st__my__main__applying__table__tr">
+          <th class = "st__my__main__applying__table__tr__th__status">
+            ステータス
+          </th>
+          <th class = "st__my__main__applying__table__tr__th__name">
+            応募企業名
+          </th>
+          <th class = "st__my__main__applying__table__tr__th__position">
+            ポジション
+          </th>
+          <th class = "st__my__main__applying__table__tr__th__salary">
+            年収
+          </th>
+          <th class = "st__my__main__applying__table__tr__th__location">
+            勤務地
+          </th>
+        </tr>
+      </table>
+
+      <!-- 求人の詳細情報や選考状況 -->
       <div class = "st__my__main__applying__detail">
         <table class = "st__my__main__applying__detail__table">
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <th class = "st__my__main__applying__detail__table__tr__th__status">
-              ステータス
-            </th>
-            <th class = "st__my__main__applying__detail__table__tr__th__name">
-              応募企業名
-            </th>
-            <th class = "st__my__main__applying__detail__table__tr__th__position">
-              ポジション
-            </th>
-            <th class = "st__my__main__applying__detail__table__tr__th__salary">
-              年収
-            </th>
-            <th class = "st__my__main__applying__detail__table__tr__th__location">
-              勤務地
-            </th>
-          </tr>
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <td class = "st__my__main__applying__detail__table__tr__td__status">
-              <span>書類選考中</span>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__name">
-              <a href = "#">株式会社Div1</a>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__position">
-              フロントエンド1として主にカリキュラムのUX改善
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__salary">
-              100万
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__location">
-              東京
-            </td>
-          </tr>
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <td class = "st__my__main__applying__detail__table__tr__td__status">
-              <span>面接選考中</span>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__name">
-              <a href = "#">株式会社Div2</a>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__position">
-              フロントエンド2
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__salary">
-              200万
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__location">
-              大阪
-            </td>
-          </tr>
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <td class = "st__my__main__applying__detail__table__tr__td__status">
-              <span>内定済</span>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__name">
-              <a href = "#">株式会社Div3</a>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__position">
-              フロントエンド3
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__salary">
-              300万
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__location">
-              仙台
-            </td>
-          </tr>
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <td class = "st__my__main__applying__detail__table__tr__td__status">
-              <span>辞退</span>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__name">
-              <a href = "#">株式会社Div4</a>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__position">
-              フロントエンド4
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__salary">
-              400万
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__location">
-              福岡
-            </td>
-          </tr>
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <td class = "st__my__main__applying__detail__table__tr__td__status">
-              <span>書類選考中</span>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__name">
-              <a href = "#">株式会社Div5</a>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__position">
-              フロントエンド5
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__salary">
-              500万
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__location">
-              北海道
-            </td>
-          </tr>
-          <tr class = "st__my__main__applying__detail__table__tr">
-            <td class = "st__my__main__applying__detail__table__tr__td__status">
-              <span>書類選考中</span>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__name">
-              <a href = "#">株式会社Div6</a>
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__position">
-              フロントエンド6
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__salary">
-              600万
-            </td>
-            <td class = "st__my__main__applying__detail__table__tr__td__location">
-              沖縄
-            </td>
-          </tr>
+          <% @job_state.each do |job| %>
+            <%if job.student_job_state.id >= 3%>
+              <tr class = "st__my__main__applying__detail__table__tr">
+                <td class = "st__my__main__applying__detail__table__tr__td__status">
+                  <%if job.student_job_state.id == 5%>
+                    <span class = passed><%= job.student_job_state.name %> </span>
+                  <% elsif job.student_job_state.id >= 6%>
+                    <span class = failed><%= job.student_job_state.name %> </span>
+                  <% else %>
+                    <span class = process><%= job.student_job_state.name %> </span>
+                  <% end %>
+                </td>
+                <td class = "st__my__main__applying__detail__table__tr__td__name">
+                  <%= link_to  job.job.name, "/jobs/#{job.job.id}"  %>
+                </td>
+                <td class = "st__my__main__applying__detail__table__tr__td__position">
+                  <%= job.job.position %>
+                </td>
+                <td class = "st__my__main__applying__detail__table__tr__td__salary">
+                  <% if job.job.min_annual_income == job.job.max_annual_income%>
+                    <%= job.job.min_annual_income %>万
+                  <% else %>
+                    <%= job.job.min_annual_income %>万 〜 <%= job.job.max_annual_income %>万
+                  <% end %>
+                </td>
+                <td class = "st__my__main__applying__detail__table__tr__td__location">
+                  <%= job.job.location.prefecture %>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
         </table>
       </div>
     </section>
+
+    <!-- 検討中の企業一覧 -->
     <section class = "st__my__main__keepca">
       <div class = "st__my__main__keepca__title">
-        キープ&CAからのオススメ企業
+        検討中の企業一覧
       </div>
+
+      <!-- テーブルのカラム名 -->
+      <table class = "st__my__main__keepca__table">
+        <tr class = "st__my__main__keepca__table__tr">
+          <th class = "st__my__main__keepca__table__tr__th__name">
+            企業名
+          </th>
+          <th class = "st__my__main__keepca__table__tr__th__position">
+            ポジション
+          </th>
+          <th class = "st__my__main__keepca__table__tr__th__salary">
+            年収
+          </th>
+          <th class = "st__my__main__keepca__table__tr__th__location">
+            勤務地
+          </th>
+          <th class = "st__my__main__keepca__table__tr__th__action">
+            アクション
+          </th>
+        </tr>
+      </table>
+
+      <!-- 求人の詳細情報やアクション選択 -->
       <div class = "st__my__main__keepca__detail">
         <table class = "st__my__main__keepca__detail__table">
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <th class = "st__my__main__keepca__detail__table__tr__th__name">
+          <% @job_state.each do |job| %>
+            <% if job.student_job_state.id == 2%>
+              <tr class = "st__my__main__keepca__detail__table__tr">
+                <td class = "st__my__main__keepca__detail__table__tr__td__name">
+                  <%= link_to  job.job.name, "/jobs/#{job.job.id}"  %>
+                </td>
+                <td class = "st__my__main__keepca__detail__table__tr__td__position">
+                  <%= job.job.position %>
+                </td>
+                <td class = "st__my__main__keepca__detail__table__tr__td__salary">
+                  <% if job.job.min_annual_income == job.job.max_annual_income%>
+                    <%= job.job.min_annual_income %>万
+                  <% else %>
+                    <%= job.job.min_annual_income %>万 〜 <%= job.job.max_annual_income %>万
+                  <% end %>
+                </td>
+                <td class = "st__my__main__keepca__detail__table__tr__td__location">
+                  <%= job.job.location.prefecture %>
+                </td>
+                <td class = "st__my__main__keepca__detail__table__tr__td__action">
+                  <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
+                    <%= link_to "応募", apply_job_path(id: job.job.id) %>
+                  </div>
+                  <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
+                    <%= link_to  "詳細", "/jobs/#{job.job.id}"  %>
+                  </div>
+                  <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
+                    <%= link_to "削除", keep_job_path(id: job.job.id) %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </section>
+
+    <!-- 未応募の企業一覧（CAのみ閲覧可能） -->
+    <% if advisor_signed_in? %>
+      <section class = "st__my__main__keepca">
+        <div class = "st__my__main__keepca__title">
+          その他企業
+        </div>
+
+        <!-- テーブルのカラム名 -->
+        <table class = "st__my__main__keepca__table">
+          <tr class = "st__my__main__keepca__table__tr">
+            <th class = "st__my__main__keepca__table__tr__th__name">
               企業名
             </th>
-            <th class = "st__my__main__keepca__detail__table__tr__th__position">
+            <th class = "st__my__main__keepca__table__tr__th__position">
               ポジション
             </th>
-            <th class = "st__my__main__keepca__detail__table__tr__th__salary">
+            <th class = "st__my__main__keepca__table__tr__th__salary">
               年収
             </th>
-            <th class = "st__my__main__keepca__detail__table__tr__th__location">
+            <th class = "st__my__main__keepca__table__tr__th__location">
               勤務地
             </th>
-            <th class = "st__my__main__keepca__detail__table__tr__th__action">
+            <th class = "st__my__main__keepca__table__tr__th__action">
               アクション
             </th>
           </tr>
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <td class = "st__my__main__keepca__detail__table__tr__td__name">
-              <a href = "#">株式会社Div1</a>
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__position">
-              サーバーサイド1
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__salary">
-              1000万
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__location">
-              ラスベガス
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__action">
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                応募
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
-                詳細
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                削除
-              </div>
-            </td>
-          </tr>
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <td class = "st__my__main__keepca__detail__table__tr__td__name">
-              <a href = "#">株式会社Div2</a>
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__position">
-              サーバーサイド2
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__salary">
-              2000万
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__location">
-              ロサンゼルス
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__action">
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                応募
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
-                詳細
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                削除
-              </div>
-            </td>
-          </tr>
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <td class = "st__my__main__keepca__detail__table__tr__td__name">
-              <a href = "#">株式会社Div3</a>
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__position">
-              サーバーサイド3
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__salary">
-              3000万
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__location">
-              コペンハーゲン
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__action">
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                応募
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
-                詳細
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                削除
-              </div>
-            </td>
-          </tr>
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <td class = "st__my__main__keepca__detail__table__tr__td__name">
-              <a href = "#">株式会社Div4</a>
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__position">
-              サーバーサイド4
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__salary">
-              4000万
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__location">
-              ワシントンD.C.
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__action">
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                応募
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
-                詳細
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                削除
-              </div>
-            </td>
-          </tr>
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <td class = "st__my__main__keepca__detail__table__tr__td__name">
-              <a href = "#">株式会社Div5</a>
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__position">
-              サーバーサイド5
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__salary">
-              5000万
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__location">
-              シリコンバレー
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__action">
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                応募
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
-                詳細
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                削除
-              </div>
-            </td>
-          </tr>
-          <tr class = "st__my__main__keepca__detail__table__tr">
-            <td class = "st__my__main__keepca__detail__table__tr__td__name">
-              <a href = "#">株式会社Div6</a>
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__position">
-              サーバーサイド6
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__salary">
-              6000万
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__location">
-              南極
-            </td>
-            <td class = "st__my__main__keepca__detail__table__tr__td__action">
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__apply">
-                応募
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__detail">
-                詳細
-              </div>
-              <div class = "st__my__main__keepca__detail__table__tr__td__action__remove">
-                削除
-              </div>
-            </td>
-          </tr>
         </table>
-      </div>
-    </section>
+
+        <!-- 求人の詳細情報やアクション選択 -->
+        <div class = "st__my__main__keepca__detail">
+          <table class = "st__my__main__keepca__detail__table">
+            <% @job_state.each do |job| %>
+              <% if job.student_job_state.id == 2%>
+                <tr class = "st__my__main__keepca__detail__table__tr">
+                  <td class = "st__my__main__keepca__detail__table__tr__td__name">
+                    <%= link_to  job.job.name, "/jobs/#{job.job.id}"  %>
+                  </td>
+                  <td class = "st__my__main__keepca__detail__table__tr__td__position">
+                    <%= job.job.position %>
+                  </td>
+                  <td class = "st__my__main__keepca__detail__table__tr__td__salary">
+                    <% if job.job.min_annual_income == job.job.max_annual_income%>
+                      <%= job.job.min_annual_income %>万
+                    <% else %>
+                      <%= job.job.min_annual_income %>万 〜 <%= job.job.max_annual_income %>万
+                    <% end %>
+                  </td>
+                  <td class = "st__my__main__keepca__detail__table__tr__td__location">
+                    <%= job.job.location.prefecture %>
+                  </td>
+                  <td class = "st__my__main__keepca__detail__table__tr__td__action">
+                    <div class = "st__my__main__keepca__detail__table__tr__td__action__recommend">
+                      <%= link_to "勧める", apply_job_path(id: job.job.id) %>
+                    </div>
+                    <div class = "st__my__main__keepca__detail__table__tr__td__action__recommended">
+                      お勧め済
+                    </div>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </table>
+        </div>
+      </section>
+    <% end %>
   </div>
 </main>

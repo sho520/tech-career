@@ -1,6 +1,7 @@
 .st__my{
   background-color:#f1efef;
   width:100%;
+  min-height:88vh;
   .st__my__header{
     width: 100%;
     background-color: #ffffff;
@@ -14,64 +15,78 @@
         font-weight: bold;
         padding-bottom: 10px;
       }
+      .st__my__main__applying__table{
+        width:100%;
+        .st__my__main__applying__table__tr{
+          .st__my__main__applying__table__tr__th__status{
+            width: 15%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+            
+          }
+          .st__my__main__applying__table__tr__th__name{
+            width: 20%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__applying__table__tr__th__position{
+            width: 35%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__applying__table__tr__th__salary{
+            width: 15%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__applying__table__tr__th__location{
+            width: 15%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+        }
+      }
       .st__my__main__applying__detail{
-        max-height: 232px;
+        max-height: 475px;
         overflow: scroll;
         .st__my__main__applying__detail__table{
           width:100%;
           .st__my__main__applying__detail__table__tr{
-            .st__my__main__applying__detail__table__tr__th__status{
-              width: 15%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-              
-            }
-            .st__my__main__applying__detail__table__tr__th__name{
-              width: 20%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__applying__detail__table__tr__th__position{
-              width: 35%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__applying__detail__table__tr__th__salary{
-              width: 15%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__applying__detail__table__tr__th__location{
-              width: 15%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-          //.st__my__main__applying__table__tr  ignore
             .st__my__main__applying__detail__table__tr__td__status{
               background-color: #ffffff;
               height: 40px;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
-              span{
+              width: 15%;
+              .passed{
+                background-color: rgb(238, 149, 48);
+                padding: 3px;
+                color: #ffffff;
+              }
+              .process{
                 background-color: #2490D0;
                 padding: 3px;
                 color: #ffffff;
+              }
+              .failed{
+                color: #9a9a9a;
               }
             }
             .st__my__main__applying__detail__table__tr__td__name{
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 20%;
               a{
                 text-decoration: none;
                 color:#2490D0;
@@ -81,16 +96,19 @@
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 35%;
             }
             .st__my__main__applying__detail__table__tr__td__salary{
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 15%;
             }
             .st__my__main__applying__detail__table__tr__td__location{
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 15%;
             }
           }
         }
@@ -108,53 +126,58 @@
         font-weight: bold;
         padding-bottom: 10px;
       }
+      .st__my__main__keepca__table{
+        width:100%;
+        .st__my__main__keepca__table__tr{
+          .st__my__main__keepca__table__tr__th__name{
+            width: 20%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__keepca__table__tr__th__position{
+            width: 35%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__keepca__table__tr__th__salary{
+            width: 15%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__keepca__table__tr__th__location{
+            width: 15%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+          .st__my__main__keepca__table__tr__th__action{
+            width: 15%;
+            background-color: #C34035;
+            color:#ffffff;
+            text-align: center;
+            border: solid 1px #9a9a9a;
+          }
+        }
+      }
       .st__my__main__keepca__detail{
-        max-height: 232px;
+        max-height: 250px;
         overflow: scroll;
         .st__my__main__keepca__detail__table{
           width:100%;
           .st__my__main__keepca__detail__table__tr{
-            .st__my__main__keepca__detail__table__tr__th__name{
-              width: 20%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__keepca__detail__table__tr__th__position{
-              width: 35%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__keepca__detail__table__tr__th__salary{
-              width: 15%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__keepca__detail__table__tr__th__location{
-              width: 15%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .st__my__main__keepca__detail__table__tr__th__action{
-              width: 15%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            //.st__my__main__keepca__table__tr
             .st__my__main__keepca__detail__table__tr__td__name{
               background-color: #ffffff;
               padding-left: 5px;
               height: 40px;
               border: solid 1px #9a9a9a;
+              width: 20%;
               a{
                 text-decoration: none;
                 color:#2490D0;
@@ -164,21 +187,25 @@
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 35%;
             }
             .st__my__main__keepca__detail__table__tr__td__salary{
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 15%;
             }
             .st__my__main__keepca__detail__table__tr__td__location{
               background-color: #ffffff;
               padding-left: 5px;
               border: solid 1px #9a9a9a;
+              width: 15%;
             }
             .st__my__main__keepca__detail__table__tr__td__action{
               background-color: #ffffff;
               padding-left: 20px;
               border: solid 1px #9a9a9a;
+              width: 15%;
               .st__my__main__keepca__detail__table__tr__td__action__apply{
                 float:left;
                 margin-right: 26px;
@@ -186,6 +213,13 @@
                 padding: 2px;
                 border-radius: 5px;
                 cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
               }
               .st__my__main__keepca__detail__table__tr__td__action__detail{
                 float:left;
@@ -194,6 +228,13 @@
                 padding: 2px;
                 border-radius: 5px;
                 cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
               }
               .st__my__main__keepca__detail__table__tr__td__action__remove{
                 float:left;
@@ -201,6 +242,27 @@
                 padding: 2px;
                 border-radius: 5px;
                 cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
+              }
+              .st__my__main__keepca__detail__table__tr__td__action__recommend{
+                float:left;
+                background-color: rgb(240, 238, 125);
+                padding: 2px;
+                border-radius: 5px;
+                cursor: pointer;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
               }
             }
           }

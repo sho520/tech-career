@@ -110,7 +110,7 @@ Job.create(
   # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
   # various_allowance: "通勤費全額支給",
   # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-  yearly_holiday: "3日",
+  yearly_holiday: "3",
   work_transfer: "有",
   working_place_1: "ロサンゼルス",
   working_place_2: "ラスベガス",
@@ -171,7 +171,7 @@ Job.create(
   # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
   # various_allowance: "通勤費全額支給",
   # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-  yearly_holiday: "3日",
+  yearly_holiday: "3",
   work_transfer: "有",
   working_place_1: "ロサンゼルス",
   working_place_2: "ラスベガス",
@@ -232,7 +232,7 @@ Job.create(
   # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
   # various_allowance: "通勤費全額支給",
   # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-  yearly_holiday: "3日",
+  yearly_holiday: "3",
   work_transfer: "有",
   working_place_1: "ロサンゼルス",
   working_place_2: "ラスベガス",
@@ -293,7 +293,7 @@ Job.create(
   # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
   # various_allowance: "通勤費全額支給",
   # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-  yearly_holiday: "120日",
+  yearly_holiday: "120",
   work_transfer: "有",
   working_place_1: "名古屋",
   working_place_2: "オーストラリア",
@@ -354,7 +354,7 @@ Job.create(
   # various_insurance: "各種社会保険加入 (健康保険、介護保険、厚生年金、雇用保険、労災保険等)",
   # various_allowance: "通勤費全額支給",
   # holiday_vacation: "完全週休2日制（土・日）、年末年始休暇、慶弔休暇、有給休暇、祝日、介護休暇、その他休暇、リフレッシュ休暇、出産・育児休暇",
-  yearly_holiday: "125日",
+  yearly_holiday: "125",
   work_transfer: "無",
   working_place_1: "神戸",
   working_place_2: "オーストリア",
@@ -865,3 +865,44 @@ end
     various_insurance_id:n,
   )
 end
+
+Chat.create(
+  comment:"初めまして",
+  student_id:1,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"shoです",
+  student_id:1,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"shoさんこんにちは、半谷です",
+  student_id:1,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"よろしくお願い致します。",
+  student_id:1,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"こんにちは",
+  student_id:3,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"shimpeiです",
+  student_id:3,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"shimpeiさんこんにちは、半谷です",
+  student_id:3,
+  advisor_id:2,
+)
+Chat.create(
+  comment:"さようなら。",
+  student_id:3,
+  advisor_id:2,
+)

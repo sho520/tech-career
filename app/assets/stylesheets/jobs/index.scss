@@ -7,7 +7,6 @@
       position: relative;
       width: auto;
       height: auto;
-  
       &__left{
         width: 100%;
         height: 100vh;
@@ -15,41 +14,43 @@
         float: left;
         // position: fixed;
     // padding: 40px;
-  
         &__search{
           height: 50px;
           // background-color: green;
           margin: 40px;
           // box-sizing: border-box;
           border: none;
-            &__box{
-              height: 50px;
-              width:90%;
-              border: 1px solid #999;
-              padding: 3px 5px;
-              border-radius: 20px;
-              overflow: hidden;
-            }
-            &__button{
-              cursor: pointer;
-              font-family: FontAwesome;
-              font-size: 1.8em;
-              border: none;
-              background: none;
-              color: rgb(213, 38, 31);
-              outline : none;
-              display: inline-block;
-              vertical-align: middle;
-            }
+          &__box{
+            height: 50px;
+            width:90%;
+            border: 1px solid #999;
+            padding: 3px 5px;
+            border-radius: 20px;
+            overflow: hidden;
           }
-  
+          &__button{
+            cursor: pointer;
+            font-family: FontAwesome;
+            font-size: 1.8em;
+            border: none;
+            background: none;
+            color: rgb(213, 38, 31);
+            outline : none;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
         &__maincontent{
           height: 80%;
           // background-color: blue;
-          margin: 40px;
+          margin: 0 40px 40px 40px;
           overflow: auto;
           overflow-y:scroll;
+          width: 93%;
+          float:left;
+          box-sizing: border-box;
           &__jobbox{
+            box-sizing: border-box;
             height: 200px;
             // background-color: gray;
             padding: 0.5em 1em;
@@ -58,37 +59,57 @@
             background: white;
             border-top: solid 5px  rgb(213, 38, 31);
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-  
             &__upbox{
-              height: 50px;
+              box-sizing: border-box;
+              height: 30px;
               // background-color: yellow;
               margin-bottom: 10px;
               &__left{
                 float: left;
-                width: 50%;
-                height: 50px;
+                // width: 50%;
+                font-size: 1.3rem;
+                letter-spacing: 0.1em;
                 // background-color: red;
+                a{
+                  text-decoration: none;
+                  color:#2490D0;
+                }
               }
-  
               &__right{
                 float: right;
-                width: 50%;
-                height: 50px;
+                // width: 50%;
                 // background-color: green;
                 &__1{
-                  width: 100px;
-                  height: 50px;
+                  // width: 100px;
                   display: inline-block;
-                }
-                &__2{
-                  width: 100px;
-                  height: 50px;
-                  display: inline-block;
+                  background-color: rgb(252, 252, 182);
+                  padding: 3px;
+                  margin-right: 15px;
+                  border-radius: 5px;
+                  border: solid 1px #bbb;
+                  a{
+                    text-decoration: none;
+                    color: black;
+                  }
+                  a:hover{
+                    color: red;
+                  }
                 }
                 &__3{
-                  width: 100px;
-                  height: 50px;
+                  // width: 100px;
                   display: inline-block;
+                  background-color: rgb(165, 224, 252);
+                  padding: 3px;
+                  margin-right: 15px;
+                  border-radius: 5px;
+                  border: solid 1px #bbb;
+                  a{
+                    text-decoration: none;
+                    color: black;
+                  }
+                  a:hover{
+                    color: red;
+                  }
                 }
               }
             }
@@ -107,7 +128,7 @@
                 height: 20px;
                 padding:2px;
                 border-bottom:1px solid #666;
-                background:#EFEFEF;
+                background:#f3e8e8;
                 border:1px solid #666;
               }
               &__right{
@@ -119,9 +140,18 @@
                 border-left:1px solid #666;
                 border:1px solid #666;
               }
-
             }
           }
+        }
+        &__sub{
+          width:35%;
+          margin-top: 32px;
+          background-color: #666;
+          float:right;
+          font-size: 1.3rem;
+          letter-spacing: 0.1em;
+
+          
         }
       }
 

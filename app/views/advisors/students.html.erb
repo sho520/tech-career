@@ -2,11 +2,14 @@
 
   <div class = "ca__my__main">
     <section class = "ca__my__main__applying">
+      <!-- タイトル -->
       <div class = "ca__my__main__applying__title">
         生徒一覧
       </div>
       <div class = "ca__my__main__applying__detail">
+        <!-- テーブル -->
         <table class = "ca__my__main__applying__detail__table">
+          <!-- テーブルのカラム名 -->
           <tr class = "ca__my__main__applying__detail__table__tr">
             <th class = "ca__my__main__applying__detail__table__tr__th__name">
               名前
@@ -18,28 +21,43 @@
               担当CA
             </th>
             <th class = "ca__my__main__applying__detail__table__tr__th__applying">
-              応募企業数
+              選考状況（会社数）
             </th>
             <th class = "ca__my__main__applying__detail__table__tr__th__other">
               備考
             </th>
           </tr>
+          <!-- テーブルのレコード（全生徒についてeachで繰り返し表示） -->
           <% @students.each do |student| %>
             <tr class = "ca__my__main__applying__detail__table__tr">
               <td class = "ca__my__main__applying__detail__table__tr__td__name">
-                <%= link_to student.name, student_path(student.id)%>
+              <% if student.image.present? %>
+                <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag student.image.url, size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
+              <% else %>
+                <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag 'mypage.png', size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
+              <% end %>
+                <div class = "ca__my__main__applying__detail__table__tr__td__name__text">
+                  <%= link_to student.name, student_path(student.id)%>
+                </div>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__term">
                 <%= student.period %>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__ca">
-                <%= student.advisor.name %>
+                <span><%= student.advisor.name %></span>
+                <% if student.advisor.id == 1%>
+                  <span class = "ca__my__main__applying__detail__table__tr__td__ca__pic"><%= link_to "担当になる", ca_student_path(id: student.id) %></span>
+                <% end %>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__applying">
-                <%= student.student_jobs.count%>社
+                CAおすすめ：<%= student.student_jobs.where(student_job_state_id: 1).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 1).count%> → 
+                検討中：<%= student.student_jobs.where(student_job_state_id: 2).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 2).count%> → 
+                応募中：<%= student.student_jobs.where(student_job_state_id: 3).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 3).count%> → 
+                選考中：<%= student.student_jobs.where(student_job_state_id: 4).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 4).count%> → 
+                内定済：<%= student.student_jobs.where(student_job_state_id: 5).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 5).count%>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__other">
-                
+                <%= student.student_jobs.count%>社
               </td>
             </tr>
           <% end %>
@@ -48,3 +66,4 @@
     </section>
   </div>
 </main>
+

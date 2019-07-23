@@ -12,4 +12,5 @@
 @import "students/show";
 @import "layouts/application";
 @import "advisors/students";
-@import "jobs/all"
+@import "jobs/all";
+@import "students/edit";
