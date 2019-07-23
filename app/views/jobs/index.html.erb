@@ -47,9 +47,13 @@
                 </table>
                 <div class = "top__contentbox__left__maincontent__jobbox__detail">
                   <% if student_signed_in? || advisor_signed_in?%>
-                    <%= link_to "詳細をみる", job_path(id: job.id) %>
+                    <%= link_to job_path(id: job.id) do%>
+                      <i class="fa fa-info-circle"><span class = "top__contentbox__left__maincontent__jobbox__detail__text">詳細をみる</span></i>
+                    <% end %>
                   <%else%>
-                    <%= link_to "ログインして詳細をみる", new_student_session_path %>
+                    <%= link_to new_student_session_path do %>
+                      <i class="fa fa-info-circle"><span class = "top__contentbox__left__maincontent__jobbox__detail__text">ログインして詳細をみる</span></i>
+                    <% end %>
                   <% end %>
                 </div>
               </div>
