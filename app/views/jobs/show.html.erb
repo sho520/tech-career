@@ -563,7 +563,7 @@
             URL
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= link_to @job.url%>
+            <%= link_to @job.url, @job.url, target: :_blank %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -626,7 +626,7 @@
           <div class = "job__main__student__contents__content__name">
             名前：
             <div class = "job__main__student__contents__content__name__value">
-              <%= current_student.name %>
+              <%= link_to current_student.name, student_path(id: current_student.id) %>
             </div>
           </div>
           <div class = "job__main__student__contents__content__term">
@@ -679,7 +679,7 @@
             <div class = "job__main__student__contents__content__name">
               名前：
               <div class = "job__main__student__contents__content__name__value">
-                <%= job.student.name%>
+                <%= link_to job.student.name, student_path(id: job.student.id)%>
               </div>
             </div>
             <div class = "job__main__student__contents__content__term">
