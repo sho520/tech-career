@@ -18,13 +18,16 @@
           <h2 class="student-edit__inner__wrapper__side__content__title">会員メニュー</h2>
         </div>
         <div class="student-edit__inner__wrapper__side__menu">
+          <%= link_to "マイページ", student_path(current_student), class: "student-edit__inner__wrapper__side__menu__btn" %>
+        </div>
+        <div class="student-edit__inner__wrapper__side__menu">
           <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "student-edit__inner__wrapper__side__menu__btn" %>
         </div>
         <div class="student-edit__inner__wrapper__side__menu">
-          <%= link_to "退会する", student_path(current_student), method: :delete, class: "student-edit__inner__wrapper__side__menu__btn" %>
+          <%= link_to "戻る", root_path, class: "student-edit__inner__wrapper__side__menu__btn" %>
         </div>
         <div class="student-edit__inner__wrapper__side__menu">
-          <%= link_to "戻る", root_path, class: "student-edit__inner__wrapper__side__menu__btn" %>
+          <%= link_to "退会する", student_path(current_student), method: :delete, class: "student-edit__inner__wrapper__side__menu__delete" %>
         </div>
       </div>
       <div class="student-edit__inner__wrapper__main">

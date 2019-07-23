@@ -13,6 +13,7 @@
         &__name {
           font-size: 23px;
           line-height: 80px;
+          margin-left: 20px;
             .fa-user-circle {
               margin-right: 10px;
             }
@@ -46,6 +47,18 @@
                 color: #fff;
                 background-color: #C34035;
 	          }
+            }
+            &__delete {
+              display: block;
+              color: #333;
+              text-decoration: none;
+              height: 40px;
+              line-height: 40px;
+              text-align: center;
+              &:hover {
+                  color: #fff;
+                  background-color: #2d2d2d;
+  	          }
           }
         }
       }

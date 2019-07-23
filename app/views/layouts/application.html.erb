@@ -10,111 +10,131 @@
   </head>
 
   <body>
+
     <div class="header-title">
       <p>「人生にサプライズを」divは人生を変える機会をつくる会社です。</p>
     </div>
-    <% if student_signed_in? %>
-      <div class="main-header">
-        <div class="main-header__logo">
-          <%= link_to root_path do %>
-            <%= image_tag 'logo.png', class: "main-header__logo__link" %>
-          <% end %>
-        </div>
 
-        <div class="main-header__content">
-          <div class="main-header__content__left">
-            <%= link_to root_path, class: "main-header__content__left__home" do %>
-              <i class="fa fa-home"><span class="main-header__content__left__home__text">HOME</span></i>
-            <% end %>
-            <%= link_to student_path(id: current_student), class: "main-header__content__left__home" do %>
-              <i class="fa fa-home"><span class="main-header__content__left__home__text">応募中</span></i>
-            <% end %>
-            <div class="main-header__content__left__students" , id="chatbutton">
-            <i class="fa fa-comments"><span class="main-header__content__left__students__link"> チャット</span></i>
-            </div>
+    <% if student_signed_in? %>
+    <div class="header">
+      <div class="header__wrapper">
+        <div class="header__wrapper__inner">
+          <div class="header__wrapper__inner__left">
+            <h1 class="header__wrapper__inner__left__logo">
+              <%= link_to root_path do %>
+                <%= image_tag 'header.png', class: "main-header__logo__link" %>
+              <% end %>
+            </h1>
           </div>
-          <div class="main-header__content__right">
-            <ul class="main-header__content__right__bloak">
-              <li class="main-header__content__right__bloak__login current_student-name">
-                <%= link_to edit_student_path(current_student), class: "main-header__content__right__bloak__login current_student-name" do %>
-                  <%= current_student.name %>
+          <div class="header__wrapper__inner__right">
+            <ul class="header__wrapper__inner__right__list">
+              <li class="header__wrapper__inner__right__list__img">
+                <% if current_student.image.present? %>
+                  <%= image_tag current_student.image.url, size: '48x48', class: "header__wrapper__inner__right__list__img__pic" %>
+                <% else %>
+                  <%= image_tag 'mypage.png', size: '48x48', class: "header__wrapper__inner__right__list__img__pic" %>
                 <% end %>
               </li>
-
-              <% if current_student.image.present? %>
-              <li class="main-header__content__right__bloak__login"><%= image_tag current_student.image.url, size: '48x48', class: "main-header__content__right__bloak__image" %></li>
-              <% else %>
-              <li class="main-header__content__right__bloak__login"><%= image_tag 'mypage.png', size: '48x48', class: "main-header__content__right__bloak__image" %></li>
-              <% end %>
-
-              <li class="main-header__content__right__bloak__login"><%= link_to "マイページ", student_path(id: current_student), class: "main-header__content__right__bloak__mypage" %></li>
-              <li class="main-header__content__right__bloak__login"><%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "main-header__content__right__bloak__logout" %></li>
+              <li class="header__wrapper__inner__right__list__name">
+                <%= link_to edit_student_path(current_student), class: "header__wrapper__inner__right__list__name__link" do %>
+                  <%= current_student.name %><span> 様 </span>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__icon">
+                <%= link_to student_path(id: current_student), class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-book fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__student">
+                <%= link_to root_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-comments fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to destroy_student_session_path, method: :delete, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-bars fa-2x"></i>
+                <% end %>
+              </li>
             </ul>
           </div>
         </div>
       </div>
+    </div>
     <% elsif advisor_signed_in? %>
-    <div class="main-header">
-      <div class="main-header__logo">
-        <%= link_to root_path do %>
-          <%= image_tag 'logo.png', class: "main-header__logo__link" %>
-        <% end %>
-      </div>
-
-      <div class="main-header__content">
-        <div class="main-header__content__left">
-          <%= link_to root_path, class: "main-header__content__left__home" do %>
-            <i class="fa fa-home"><span class="main-header__content__left__home__link"> HOME</span></i>
-          <% end %>
-          <%= link_to new_job_path, class: "main-header__content__left__job" do %>
-            <i class="fa fa-book"><span class="main-header__content__left__job__link"> 求人登録</span></i>
-          <% end %>
-          <%= link_to all_jobs_path, class: "main-header__content__left__job" do %>
-            <i class="fa fa-search"><span class="main-header__content__left__job__link"> 求人一覧</span></i>
-          <% end %>
-          <%= link_to students_advisors_path, class: "main-header__content__left__students" do %>
-            <i class="fa fa-users"><span class="main-header__content__left__students__link"> 生徒一覧</span></i>
-          <% end %>
-          <%= link_to root_path, class: "main-header__content__left__students" do %>
-            <i class="fa fa-comments"><span class="main-header__content__left__students__link"> チャット</span></i>
-          <% end %>
-        </div>
-        <div class="main-header__content__right">
-          <ul class="main-header__content__right__bloak">
-            <li class="main-header__content__right__bloak__login current_student-name">CA.<%= current_advisor.id %></li>
-            <li class="main-header__content__right__bloak__login current_student-name"><%= current_advisor.name %></li>
-            <li class="main-header__content__right__bloak__login"><%= link_to "ログアウト", destroy_advisor_session_path, method: :delete, class: "main-header__content__right__bloak__logout" %></li>
-          </ul>
+    <div class="header">
+      <div class="header__wrapper">
+        <div class="header__wrapper__inner">
+          <div class="header__wrapper__inner__left">
+            <h1 class="header__wrapper__inner__left__logo">
+              <%= link_to root_path do %>
+                <%= image_tag 'header.png', class: "main-header__logo__link" %>
+              <% end %>
+            </h1>
+          </div>
+          <div class="header__wrapper__inner__right">
+            <ul class="header__wrapper__inner__right__list">
+              <li class="header__wrapper__inner__right__list__img">
+                <!-- 画像 -->
+              </li>
+              <li class="header__wrapper__inner__right__list__name">
+                <h1 class="header__wrapper__inner__right__list__name__link"><span>CA:</span><%= current_advisor.id %><span> <%= current_advisor.name %> </span></h1>
+              </li>
+              <li class="header__wrapper__inner__right__list__icon">
+                <%= link_to new_job_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-edit fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__student">
+                <%= link_to all_jobs_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-building fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to students_advisors_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-user fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to destroy_advisor_session_path, method: :delete, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-bars fa-2x"></i>
+                <% end %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <% else %>
-    <div class="main-header">
-
-      <div class="main-header__logo">
-        <%= link_to root_path do %>
-          <%= image_tag 'logo.png', class: "main-header__logo__link" %>
-        <% end %>
-      </div>
-
-      <div class="main-header__content">
-        <div class="main-header__content__left">
-          <ul class="main-header__content__left__bloak">
-            <%= link_to "CA新規登録", new_advisor_registration_path, class: "main-header__content__left__bloak__link-ca" %>
-            <%= link_to "CAログイン", new_advisor_session_path, class: "main-header__content__left__bloak__link-ca" %>
-          </ul>
+    <div class="header">
+      <div class="header__wrapper">
+        <div class="header__wrapper__inner">
+          <div class="header__wrapper__inner__left">
+            <h1 class="header__wrapper__inner__left__logo">
+              <%= link_to root_path do %>
+                <%= image_tag 'header.png', class: "main-header__logo__link" %>
+              <% end %>
+            </h1>
+          </div>
+          <div class="header__wrapper__inner__right">
+            <ul class="header__wrapper__inner__right__list">
+              <li class="header__wrapper__inner__right__list__name">
+                <%= link_to "CA新規登録", new_advisor_registration_path, class: "header__wrapper__inner__right__list__name__link-ca" %>
+              </li>
+              <li class="header__wrapper__inner__right__list__name">
+                <%= link_to "CAログイン", new_advisor_session_path, class: "header__wrapper__inner__right__list__name__link-ca" %>
+              </li>
+              <li class="header__wrapper__inner__right__list__name">
+                <%= link_to "生徒新規登録", new_student_registration_path, class: "header__wrapper__inner__right__list__name__link" %>
+              </li>
+              <li class="header__wrapper__inner__right__list__name">
+                <%= link_to "生徒ログイン", new_student_session_path, class: "header__wrapper__inner__right__list__name__link" %>
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <div class="main-header__content__right">
-          <ul class="main-header__content__right__bloak">
-            <%= link_to "生徒新規登録", new_student_registration_path, class: "main-header__content__right__bloak__link-st" %>
-            <%= link_to "生徒ログイン", new_student_session_path, class: "main-header__content__right__bloak__link-st" %>
-          </ul>
-        </div>
       </div>
-
-      <% end %>
     </div>
+    <% end %>
 
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
