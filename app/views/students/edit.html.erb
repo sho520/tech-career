@@ -18,6 +18,9 @@
           <h2 class="student-edit__inner__wrapper__side__content__title">会員メニュー</h2>
         </div>
         <div class="student-edit__inner__wrapper__side__menu">
+          <%= link_to "マイページ", student_path(id: current_student), class: "student-edit__inner__wrapper__side__menu__btn" %>
+        </div>
+        <div class="student-edit__inner__wrapper__side__menu">
           <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "student-edit__inner__wrapper__side__menu__btn" %>
         </div>
         <div class="student-edit__inner__wrapper__side__menu">
@@ -48,7 +51,12 @@
 
               <div class="student-edit__inner__wrapper__main__inner__form__field">
                 <%= f.label :birth_year, '生年月日' %>
-                <%= f.text_field :birth_year, placeholder: "入力は必須です", class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+                <%= f.text_field :birth_year, placeholder: "必須", class: "student-edit__inner__wrapper__main__inner__form__field__birth1" %>
+                <span>年</span>
+                <%= f.text_field :birth_month, placeholder: "必須", class: "student-edit__inner__wrapper__main__inner__form__field__birth" %>
+                <span>月</span>
+                <%= f.text_field :birth_day, placeholder: "必須", class: "student-edit__inner__wrapper__main__inner__form__field__birth" %>
+                <span>日</span>
               </div>
 
               <div class="student-edit__inner__wrapper__main__inner__form__field">
@@ -74,11 +82,11 @@
               </div>
 
               <div class="student-edit__inner__wrapper__main__inner__form__field">
-                <%= f.label :advisor_id, '画像をアップロード' %>
+                <%= f.label :image_url, '画像をアップロード' %>
                 <%= f.file_field :image_url, class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
               </div>
 
-              <%= f.submit "情報を更新する", class: 'student-edit__inner__wrapper__main__inner__form__submit' %>
+              <%= f.button "情報を更新する", class: 'student-edit__inner__wrapper__main__inner__form__submit' %>
               <% end %>
             </div>
           </div>
