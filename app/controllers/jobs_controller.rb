@@ -40,6 +40,7 @@ class JobsController < ApplicationController
       @state = @job.student_jobs.find_by(student_id: current_student.id)   #対象の求人@jobの求人について、全生徒の選考状況が格納されている中間テーブルstudent_jobsテーブルの中で、生徒idが自分のものだけの1件を取得
     end
     @images = JobImage.all
+    @students = Student.all()
   end
 
 

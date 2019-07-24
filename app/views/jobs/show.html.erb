@@ -1,746 +1,746 @@
 <main class = "job">
-<div class = "job__main">
-  <div class = "job__main__detail">
-    <!-- タイトル -->
-    <div class = "job__main__detail__title">
-      <%= @job.name%> / <%= @job.position %> 
-      <% if @job.job_state_id == 2%>
-        <span>※募集終了</span>
-      <% end %>
-    </div>
-    <!-- jsで各項目へ移動可能 -->
-    <div class = "job__main__detail__1">
-      ▼募集要項
-    </div>
-    <script>
-      $(".job__main__detail__1").click(function(){
-        var position = $("#job_description").offset().top;
-          $("html,body").animate({
-              scrollTop : position
-          }, {
-              queue : false
-          });
-      });
-    </script>
-    <div class = "job__main__detail__2">
-      ▼採用条件
-    </div>
-    <script>
-      $(".job__main__detail__2").click(function(){
-        var position = $("#requirement").offset().top;
-          $("html,body").animate({
-              scrollTop : position
-          }, {
-              queue : false
-          });
-      });
-    </script>
-    <div class = "job__main__detail__3">
-      ▼待遇
-    </div>
-    <script>
-      $(".job__main__detail__3").click(function(){
-        var position = $("#treatment").offset().top;
-          $("html,body").animate({
-              scrollTop : position
-          }, {
-              queue : false
-          });
-      });
-    </script>
-    <div class = "job__main__detail__4">
-      ▼会社概要
-    </div>
-    <script>
-      $(".job__main__detail__4").click(function(){
-        var position = $("#company").offset().top;
-          $("html,body").animate({
-              scrollTop : position
-          }, {
-              queue : false
-          });
-      });
-    </script>
-    <div class = "job__main__detail__5">
-      ▼その他
-    </div>
-    <script>
-      $(".job__main__detail__5").click(function(){
-        var position = $("#other").offset().top;
-          $("html,body").animate({
-              scrollTop : position
-          }, {
-              queue : false
-          });
-      });
-    </script>
-    <% if advisor_signed_in?%>
-      <div class = "job__main__detail__state">
-        <% if @job.job_state_id == 1%>
-          <span class = "job__main__detail__state__change"><%= link_to "募集終了にする", state_job_path(id: @job.id)%></span>
-        <% else %>
-          <span class = "job__main__detail__state__change"><%= link_to "募集再開する", state_job_path(id: @job.id)%></span>
+  <div class = "job__main">
+    <div class = "job__main__detail">
+      <!-- タイトル -->
+      <div class = "job__main__detail__title">
+        <%= @job.name%> / <%= @job.position %> 
+        <% if @job.job_state_id == 2%>
+          <span>※募集終了</span>
         <% end %>
       </div>
-    <% end %>
-    <!-- 生徒でログイン時、もし未応募なら応募できる -->
-    <% if student_signed_in?%>
-      <% if @state.student_job_state.id <= 2 && @job.job_state_id == 1%>
-        <div class = "job__main__detail__apply">
-          <%= link_to "応募する", apply_job_path(id: @state.job_id) %>
+      <!-- jsで各項目へ移動可能 -->
+      <div class = "job__main__detail__1">
+        ▼募集要項
+      </div>
+      <script>
+        $(".job__main__detail__1").click(function(){
+          var position = $("#job_description").offset().top;
+            $("html,body").animate({
+                scrollTop : position
+            }, {
+                queue : false
+            });
+        });
+      </script>
+      <div class = "job__main__detail__2">
+        ▼採用条件
+      </div>
+      <script>
+        $(".job__main__detail__2").click(function(){
+          var position = $("#requirement").offset().top;
+            $("html,body").animate({
+                scrollTop : position
+            }, {
+                queue : false
+            });
+        });
+      </script>
+      <div class = "job__main__detail__3">
+        ▼待遇
+      </div>
+      <script>
+        $(".job__main__detail__3").click(function(){
+          var position = $("#treatment").offset().top;
+            $("html,body").animate({
+                scrollTop : position
+            }, {
+                queue : false
+            });
+        });
+      </script>
+      <div class = "job__main__detail__4">
+        ▼会社概要
+      </div>
+      <script>
+        $(".job__main__detail__4").click(function(){
+          var position = $("#company").offset().top;
+            $("html,body").animate({
+                scrollTop : position
+            }, {
+                queue : false
+            });
+        });
+      </script>
+      <div class = "job__main__detail__5">
+        ▼その他
+      </div>
+      <script>
+        $(".job__main__detail__5").click(function(){
+          var position = $("#other").offset().top;
+            $("html,body").animate({
+                scrollTop : position
+            }, {
+                queue : false
+            });
+        });
+      </script>
+      <% if advisor_signed_in?%>
+        <div class = "job__main__detail__state">
+          <% if @job.job_state_id == 1%>
+            <span class = "job__main__detail__state__change"><%= link_to "募集終了にする", state_job_path(id: @job.id)%></span>
+          <% else %>
+            <span class = "job__main__detail__state__change"><%= link_to "募集再開する", state_job_path(id: @job.id)%></span>
+          <% end %>
         </div>
       <% end %>
-    <% end %>
-    <!-- 募集要項 -->
-    <div class = "job__main__detail__content" id = "job_description">
-      <table class = "job__main__detail__content__table">
-        <tr class = "job__main__detail__content__table__tr">
-          <th class = "job__main__detail__content__table__tr__th__top">
-            募集要項
-          </th>
-          <th class = "job__main__detail__content__table__tr__th__blank">
-          </th>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            ポジション
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.position %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            雇用形態
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.employee_type.name %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            職務内容
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.job_description) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            使用言語
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% @languages.each do |language| %>
-              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= language.language %> </span>
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            必要業務経験
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.required_work_experience) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            就業時間
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.working_hours %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            就業時間補足
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.add_info_working_time) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            休憩時間
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.break_time %>分
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            残業の有無
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.about_overtime %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            採用時期
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.recruitment_period %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            採用人数
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.number_of_recruitment_people %>名
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            雇用期間
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.employment_period %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            給与形態
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.salary_type %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            基本給
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% if @job.basic_salary.present? %>
-              <%= @job.basic_salary.to_s(:delimited) %>万円
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            昇給の有無
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.promotion %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            賞与
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            年<%= @job.bonus %>回
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            年収
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%if @job.min_annual_income == @job.max_annual_income %>
-              <%= @job.min_annual_income %>万円
-            <% else %>
-              <%= @job.min_annual_income %>万円 〜 <%= @job.max_annual_income %>万円
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            年収補足
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.add_info_income) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            モデル年収
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.example_annual_income) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            試用期間
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.trial_period %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            試用期間補足
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.add_info_trial_period) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            裁量労働制
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.discretionary_labor_system %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            固定残業代
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.fixed_overtime_pay %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            固定残業代補足
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.add_info_fixed_overtime_pay) %>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- 採用条件 -->
-    <div class = "job__main__detail__content" id = "requirement">
-      <table class = "job__main__detail__content__table">
-        <tr class = "job__main__detail__content__table__tr">
-          <th class = "job__main__detail__content__table__tr__th__top">
-            採用条件
-          </th>
-          <th class = "job__main__detail__content__table__tr__th__blank">
-          </th>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            年齢
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% if @job.min_age == "" && @job.max_age == "" %>
-              不問
-            <% elsif @job.min_age == "" %>
-              〜 <%= @job.max_age %>歳
-            <% elsif @job.max_age == "" %>
-              <%= @job.min_age %>歳 〜
-            <% else %>
-              <%= @job.min_age %>歳 〜 <%= @job.max_age %>歳
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            年齢制限理由
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.reason_for_age_restriction) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            面接回数
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.number_of_interviews %>回
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            学歴
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.educational_background %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            必要資格
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.required_qualification %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            求める人物像
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.ideal_candidate %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            試験内容
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.contents_of_test %>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- 待遇 -->
-    <div class = "job__main__detail__content" id = "treatment">
-      <table class = "job__main__detail__content__table">
-        <tr class = "job__main__detail__content__table__tr">
-          <th class = "job__main__detail__content__table__tr__th__top">
-            待遇
-          </th>
-          <th class = "job__main__detail__content__table__tr__th__blank">
-          </th>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            通勤手当
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.commute_allowance %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            残業手当
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.overtime_pay %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            その他手当
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.other_allowance %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            各種保険
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% @insurances.each do |insurance| %>
-              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= insurance.name %> </span>
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            諸手当
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% @allowances.each do |allowance| %>
-              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= allowance.name %> </span>
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            休日休暇
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% @holiday_vacations.each do |holiday_vacation| %>
-              <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= holiday_vacation.name %> </span>
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            年間休日
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.yearly_holiday %>日
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            転勤の有無
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.work_transfer %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            勤務地1
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.working_place_1 %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            勤務地2
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.working_place_2 %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            勤務地3
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-          <%= @job.working_place_3 %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            勤務地4
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-          <%= @job.working_place_4 %>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- 会社概要 -->
-    <div class = "job__main__detail__content" id = "company">
-      <table class = "job__main__detail__content__table">
-        <tr class = "job__main__detail__content__table__tr">
-          <th class = "job__main__detail__content__table__tr__th__top">
-            会社概要
-          </th>
-          <th class = "job__main__detail__content__table__tr__th__blank">
-          </th>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            企業名
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.name %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            業種
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.industry.name %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            資本金
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% if @job.capital.present? %>
-              <%= @job.capital.to_s(:delimited) %>千円
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            売上高
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <% if @job.sales.present? %>
-              <%= @job.sales.to_s(:delimited) %>千円
-            <% end %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            従業員
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.number_of_employee.number %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            設立年月
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.establish_date %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            市場情報
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.market_information %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            資本系
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.market_system %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            URL
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= link_to @job.url, @job.url, target: :_blank %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            所在地
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.location.prefecture %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            事業内容
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.business) %>
-          </td>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            会社特徴
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.company_feature) %>
-          </td>
-        </tr>
-      </table>
-    </div>
-
-    <!-- その他 -->
-    <div class = "job__main__detail__content" id = "other">
-      <table class = "job__main__detail__content__table">
-        <tr class = "job__main__detail__content__table__tr">
-          <th class = "job__main__detail__content__table__tr__th__top">
-            その他
-          </th>
-          <th class = "job__main__detail__content__table__tr__th__blank">
-          </th>
-        </tr>
-        <tr class = "job__main__detail__content__table__tr">
-          <td class = "job__main__detail__content__table__tr__td__title">
-            備考
-          </td>
-          <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= simple_format(@job.remark) %>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- 生徒でログイン時、自分の選考状況が表示 -->
-  <% if student_signed_in? %>
-    <section class = "job__main__student">
-      <div class = "job__main__student__title">
-        選考状況
-      </div>
-      <div class = "job__main__student__contents">
-        <div class = "job__main__student__contents__content">
-          <div class = "job__main__student__contents__content__name">
-            名前：
-            <div class = "job__main__student__contents__content__name__value">
-              <%= link_to current_student.name, student_path(id: current_student.id) %>
-            </div>
+      <!-- 生徒でログイン時、もし未応募なら応募できる -->
+      <% if student_signed_in?%>
+        <% if @state.student_job_state.id <= 2 && @job.job_state_id == 1%>
+          <div class = "job__main__detail__apply">
+            <%= link_to "応募する", apply_job_path(id: @state.job_id) %>
           </div>
-          <div class = "job__main__student__contents__content__term">
-            期：
-            <div class = "job__main__student__contents__content__term__value">
-              <%= current_student.period %>
-            </div>
-          </div>
-          <div class = "job__main__student__contents__content__ca">
-            CA：
-            <div class = "job__main__student__contents__content__ca__value">
-              <%= current_student.advisor.name %>
-            </div>
-          </div>
-          <div class = "job__main__student__contents__content__state">
-            状況：
-            <div class = "job__main__student__contents__content__state__value">
-              <% if @state.student_job_state.id >= 6%>
-                <span class = "job__main__student__contents__content__state__value__failed" ><%= @state.student_job_state.name%></span>
-              <% elsif @state.student_job_state.id == 5 %>
-                <span class = "job__main__student__contents__content__state__value__passed" ><%= @state.student_job_state.name%></span>
-              <% elsif @state.student_job_state.id >= 3%>
-                <span class = "job__main__student__contents__content__state__value__process" ><%= @state.student_job_state.name%></span>
-              <% else%>
-                <span class = "job__main__student__contents__content__state__value" ><%= @state.student_job_state.name%></span>
+        <% end %>
+      <% end %>
+      <!-- 募集要項 -->
+      <div class = "job__main__detail__content" id = "job_description">
+        <table class = "job__main__detail__content__table">
+          <tr class = "job__main__detail__content__table__tr">
+            <th class = "job__main__detail__content__table__tr__th__top">
+              募集要項
+            </th>
+            <th class = "job__main__detail__content__table__tr__th__blank">
+            </th>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              ポジション
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.position %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              雇用形態
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.employee_type.name %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              職務内容
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.job_description) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              使用言語
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% @languages.each do |language| %>
+                <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= language.language %> </span>
               <% end %>
-            </div>
-          </div>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              必要業務経験
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.required_work_experience) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              就業時間
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.working_hours %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              就業時間補足
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.add_info_working_time) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              休憩時間
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.break_time %>分
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              残業の有無
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.about_overtime %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              採用時期
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.recruitment_period %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              採用人数
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.number_of_recruitment_people %>名
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              雇用期間
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.employment_period %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              給与形態
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.salary_type %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              基本給
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% if @job.basic_salary.present? %>
+                <%= @job.basic_salary.to_s(:delimited) %>万円
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              昇給の有無
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.promotion %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              賞与
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              年<%= @job.bonus %>回
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              年収
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%if @job.min_annual_income == @job.max_annual_income %>
+                <%= @job.min_annual_income %>万円
+              <% else %>
+                <%= @job.min_annual_income %>万円 〜 <%= @job.max_annual_income %>万円
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              年収補足
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.add_info_income) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              モデル年収
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.example_annual_income) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              試用期間
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.trial_period %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              試用期間補足
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.add_info_trial_period) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              裁量労働制
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.discretionary_labor_system %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              固定残業代
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.fixed_overtime_pay %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              固定残業代補足
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.add_info_fixed_overtime_pay) %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 採用条件 -->
+      <div class = "job__main__detail__content" id = "requirement">
+        <table class = "job__main__detail__content__table">
+          <tr class = "job__main__detail__content__table__tr">
+            <th class = "job__main__detail__content__table__tr__th__top">
+              採用条件
+            </th>
+            <th class = "job__main__detail__content__table__tr__th__blank">
+            </th>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              年齢
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% if @job.min_age == "" && @job.max_age == "" %>
+                不問
+              <% elsif @job.min_age == "" %>
+                〜 <%= @job.max_age %>歳
+              <% elsif @job.max_age == "" %>
+                <%= @job.min_age %>歳 〜
+              <% else %>
+                <%= @job.min_age %>歳 〜 <%= @job.max_age %>歳
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              年齢制限理由
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.reason_for_age_restriction) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              面接回数
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.number_of_interviews %>回
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              学歴
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.educational_background %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              必要資格
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.required_qualification %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              求める人物像
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.ideal_candidate %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              試験内容
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.contents_of_test %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 待遇 -->
+      <div class = "job__main__detail__content" id = "treatment">
+        <table class = "job__main__detail__content__table">
+          <tr class = "job__main__detail__content__table__tr">
+            <th class = "job__main__detail__content__table__tr__th__top">
+              待遇
+            </th>
+            <th class = "job__main__detail__content__table__tr__th__blank">
+            </th>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              通勤手当
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.commute_allowance %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              残業手当
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.overtime_pay %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              その他手当
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.other_allowance %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              各種保険
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% @insurances.each do |insurance| %>
+                <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= insurance.name %> </span>
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              諸手当
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% @allowances.each do |allowance| %>
+                <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= allowance.name %> </span>
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              休日休暇
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% @holiday_vacations.each do |holiday_vacation| %>
+                <span class = "job__main__detail__content__table__tr__td__detail__name"> <%= holiday_vacation.name %> </span>
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              年間休日
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.yearly_holiday %>日
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              転勤の有無
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.work_transfer %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              勤務地1
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.working_place_1 %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              勤務地2
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.working_place_2 %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              勤務地3
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+            <%= @job.working_place_3 %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              勤務地4
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+            <%= @job.working_place_4 %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- 会社概要 -->
+      <div class = "job__main__detail__content" id = "company">
+        <table class = "job__main__detail__content__table">
+          <tr class = "job__main__detail__content__table__tr">
+            <th class = "job__main__detail__content__table__tr__th__top">
+              会社概要
+            </th>
+            <th class = "job__main__detail__content__table__tr__th__blank">
+            </th>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              企業名
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.name %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              業種
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.industry.name %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              資本金
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% if @job.capital.present? %>
+                <%= @job.capital.to_s(:delimited) %>千円
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              売上高
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <% if @job.sales.present? %>
+                <%= @job.sales.to_s(:delimited) %>千円
+              <% end %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              従業員
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.number_of_employee.number %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              設立年月
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.establish_date %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              市場情報
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.market_information %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              資本系
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.market_system %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              URL
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= link_to @job.url, @job.url, target: :_blank %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              所在地
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= @job.location.prefecture %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              事業内容
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.business) %>
+            </td>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              会社特徴
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.company_feature) %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- その他 -->
+      <div class = "job__main__detail__content" id = "other">
+        <table class = "job__main__detail__content__table">
+          <tr class = "job__main__detail__content__table__tr">
+            <th class = "job__main__detail__content__table__tr__th__top">
+              その他
+            </th>
+            <th class = "job__main__detail__content__table__tr__th__blank">
+            </th>
+          </tr>
+          <tr class = "job__main__detail__content__table__tr">
+            <td class = "job__main__detail__content__table__tr__td__title">
+              備考
+            </td>
+            <td class = "job__main__detail__content__table__tr__td__detail">
+              <%= simple_format(@job.remark) %>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- 生徒でログイン時、自分の選考状況が表示 -->
+    <% if student_signed_in? %>
+      <section class = "job__main__student">
+        <div class = "job__main__student__title">
+          選考状況
         </div>
-      </div>
-      <div class = "job__main__student__title">
-        企業画像
-      </div>
-      <div class = "job__main__student__pics">
-        <% @images.where(job_id: @job.id).each do |image|%>
-          <div><%= image_tag image.url, class: "job__main__student__pics__pic"%></div>
-        <% end %>
-      </div>
-    </section>
-    
-  <!-- CAでログイン時、全生徒の選考状況が表示 -->
-  <% elsif advisor_signed_in? %>
-    <section class = "job__main__student">
-      <div class = "job__main__student__title">
-        選考状況
-      </div>
-      <div class = "job__main__student__contents">
-        <% @job_state.each do |job|%>
+        <div class = "job__main__student__contents">
           <div class = "job__main__student__contents__content">
             <div class = "job__main__student__contents__content__name">
               名前：
               <div class = "job__main__student__contents__content__name__value">
-                <%= link_to job.student.name, student_path(id: job.student.id)%>
+                <%= link_to current_student.name, student_path(id: current_student.id) %>
               </div>
             </div>
             <div class = "job__main__student__contents__content__term">
               期：
               <div class = "job__main__student__contents__content__term__value">
-                <%= job.student.period%>
+                <%= current_student.period %>
               </div>
             </div>
             <div class = "job__main__student__contents__content__ca">
               CA：
               <div class = "job__main__student__contents__content__ca__value">
-                <%= job.student.advisor.name%>
+                <%= current_student.advisor.name %>
               </div>
             </div>
             <div class = "job__main__student__contents__content__state">
               状況：
               <div class = "job__main__student__contents__content__state__value">
-                <% if job.student_job_state.id >= 6%>
-                  <span class = "job__main__student__contents__content__state__value__failed" ><%= job.student_job_state.name%></span>
-                <% elsif job.student_job_state.id == 5 %>
-                  <span class = "job__main__student__contents__content__state__value__passed" ><%= job.student_job_state.name%></span>
-                <% elsif job.student_job_state.id >= 3%>
-                  <span class = "job__main__student__contents__content__state__value__process" ><%= job.student_job_state.name%></span>
+                <% if @state.student_job_state.id >= 6%>
+                  <span class = "job__main__student__contents__content__state__value__failed" ><%= @state.student_job_state.name%></span>
+                <% elsif @state.student_job_state.id == 5 %>
+                  <span class = "job__main__student__contents__content__state__value__passed" ><%= @state.student_job_state.name%></span>
+                <% elsif @state.student_job_state.id >= 3%>
+                  <span class = "job__main__student__contents__content__state__value__process" ><%= @state.student_job_state.name%></span>
                 <% else%>
-                  <span class = "job__main__student__contents__content__state__value" ><%= job.student_job_state.name%></span>
+                  <span class = "job__main__student__contents__content__state__value" ><%= @state.student_job_state.name%></span>
                 <% end %>
               </div>
             </div>
-            <hr class = "job__main__student__contents__content__hr">
-            <div class = "job__main__student__contents__content__change">
-              変更：
-            </div>
-            <div class = "job__main__student__contents__content__change__detail">
-              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "応募中", change_job_path(id: job.job.id, student_job_state_id:3, student_id: job.student.id) %></span>
-              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "選考中", change_job_path(id: job.job.id, student_job_state_id:4, student_id: job.student.id) %></span>
-              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "内定", change_job_path(id: job.job.id, student_job_state_id:5, student_id: job.student.id) %></span>
-              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "選考落ち", change_job_path(id: job.job.id, student_job_state_id:6, student_id: job.student.id) %></span>
-              <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "辞退", change_job_path(id: job.job.id, student_job_state_id:7, student_id: job.student.id) %></span>
-            </div>
           </div>
-        <% end %>
-      </div>
-    </section>
-  <% end %>
-</div>
+        </div>
+        <div class = "job__main__student__title">
+          企業画像
+        </div>
+        <div class = "job__main__student__pics">
+          <% @images.where(job_id: @job.id).each do |image|%>
+            <div><%= image_tag image.url, class: "job__main__student__pics__pic"%></div>
+          <% end %>
+        </div>
+      </section>
+      
+    <!-- CAでログイン時、全生徒の選考状況が表示 -->
+    <% elsif advisor_signed_in? %>
+      <section class = "job__main__student">
+        <div class = "job__main__student__title">
+          選考状況
+        </div>
+        <div class = "job__main__student__contents">
+          <% @job_state.each do |job|%>
+            <div class = "job__main__student__contents__content">
+              <div class = "job__main__student__contents__content__name">
+                名前：
+                <div class = "job__main__student__contents__content__name__value">
+                  <%= link_to job.student.name, student_path(id: job.student.id)%>
+                </div>
+              </div>
+              <div class = "job__main__student__contents__content__term">
+                期：
+                <div class = "job__main__student__contents__content__term__value">
+                  <%= job.student.period%>
+                </div>
+              </div>
+              <div class = "job__main__student__contents__content__ca">
+                CA：
+                <div class = "job__main__student__contents__content__ca__value">
+                  <%= job.student.advisor.name%>
+                </div>
+              </div>
+              <div class = "job__main__student__contents__content__state">
+                状況：
+                <div class = "job__main__student__contents__content__state__value">
+                  <% if job.student_job_state.id >= 6%>
+                    <span class = "job__main__student__contents__content__state__value__failed" ><%= job.student_job_state.name%></span>
+                  <% elsif job.student_job_state.id == 5 %>
+                    <span class = "job__main__student__contents__content__state__value__passed" ><%= job.student_job_state.name%></span>
+                  <% elsif job.student_job_state.id >= 3%>
+                    <span class = "job__main__student__contents__content__state__value__process" ><%= job.student_job_state.name%></span>
+                  <% else%>
+                    <span class = "job__main__student__contents__content__state__value" ><%= job.student_job_state.name%></span>
+                  <% end %>
+                </div>
+              </div>
+              <hr class = "job__main__student__contents__content__hr">
+              <div class = "job__main__student__contents__content__change">
+                変更：
+              </div>
+              <div class = "job__main__student__contents__content__change__detail">
+                <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "応募中", change_job_path(id: job.job.id, student_job_state_id:3, student_id: job.student.id) %></span>
+                <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "選考中", change_job_path(id: job.job.id, student_job_state_id:4, student_id: job.student.id) %></span>
+                <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "内定", change_job_path(id: job.job.id, student_job_state_id:5, student_id: job.student.id) %></span>
+                <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "選考落ち", change_job_path(id: job.job.id, student_job_state_id:6, student_id: job.student.id) %></span>
+                <span class = "job__main__student__contents__content__change__detail__click"><%= link_to "辞退", change_job_path(id: job.job.id, student_job_state_id:7, student_id: job.student.id) %></span>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </section>
+    <% end %>
+  </div>
 </main>
 
 
