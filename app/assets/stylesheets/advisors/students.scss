@@ -39,14 +39,7 @@
               border: solid 1px #9a9a9a;
             }
             .ca__my__main__applying__detail__table__tr__th__applying{
-              width: 50%;
-              background-color: #C34035;
-              color:#ffffff;
-              text-align: center;
-              border: solid 1px #9a9a9a;
-            }
-            .ca__my__main__applying__detail__table__tr__th__other{
-              width: 10%;
+              width: 60%;
               background-color: #C34035;
               color:#ffffff;
               text-align: center;
@@ -81,13 +74,13 @@
             }
             .ca__my__main__applying__detail__table__tr__td__term{
               background-color: #ffffff;
-              padding-left: 5px;
+              padding-left: 10px;
               border: solid 1px #9a9a9a;
               box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
             }
             .ca__my__main__applying__detail__table__tr__td__ca{
               background-color: #ffffff;
-              padding-left: 5px;
+              padding-left: 10px;
               border: solid 1px #9a9a9a;
               box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
               a{
@@ -106,10 +99,22 @@
             }
             .ca__my__main__applying__detail__table__tr__td__applying{
               background-color: #ffffff;
-              padding-left: 5px;
+              padding-left: 10px;
               border: solid 1px #9a9a9a;
               letter-spacing: 0.1em;
               box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+              .ca__my__main__applying__detail__table__tr__td__applying__process{
+                width: 20%;
+                float: left;
+                .fa-caret-right{
+                  color: #C34035;
+                  padding-right: 2px;
+                }
+                span{
+                  font-weight: bold;
+                  color: blue;
+                }
+              }
             }
             .ca__my__main__applying__detail__table__tr__td__other{
               background-color: #ffffff;

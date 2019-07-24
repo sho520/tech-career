@@ -27,7 +27,7 @@
               勤務地
             </th>
             <th class = "ca__job__main__keepca__detail__table__tr__th__status">
-              確認
+              採用予定人数
             </th>
           </tr>
 
@@ -41,13 +41,19 @@
                 <%= job.position %>
               </td>
               <td class = "ca__job__main__keepca__detail__table__tr__td__salary">
-                <%= job.min_annual_income.to_s(:delimited) %>万円 〜 <%= job.max_annual_income.to_s(:delimited) %>万円
+                <% if job.min_annual_income == job.max_annual_income%>
+                  <%= job.min_annual_income.to_s(:delimited) %>万円
+                <% else %>
+                  <%= job.min_annual_income.to_s(:delimited) %>万円 〜 <%= job.max_annual_income.to_s(:delimited) %>万円
+                <% end %>
               </td>
               <td class = "ca__job__main__keepca__detail__table__tr__td__location">
                 <%= job.working_place_1 %>
               </td>
               <td class = "ca__job__main__keepca__detail__table__tr__td__status">
-                確認
+                <%if job.number_of_recruitment_people.present?%>
+                  <%= job.number_of_recruitment_people %>名
+                <% end %>
               </td>
             </tr>
           <% end %>

@@ -23,9 +23,6 @@
             <th class = "ca__my__main__applying__detail__table__tr__th__applying">
               選考状況（会社数）
             </th>
-            <th class = "ca__my__main__applying__detail__table__tr__th__other">
-              備考
-            </th>
           </tr>
           <!-- テーブルのレコード（全生徒についてeachで繰り返し表示） -->
           <% @students.each do |student| %>
@@ -50,14 +47,21 @@
                 <% end %>
               </td>
               <td class = "ca__my__main__applying__detail__table__tr__td__applying">
-                <i class="fa fa-caret-right"></i>CAおすすめ:<%= student.student_jobs.where(student_job_state_id: 1).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 1).count%>社
-                <i class="fa fa-caret-right"></i>検討中:<%= student.student_jobs.where(student_job_state_id: 2).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 2).count%>社
-                <i class="fa fa-caret-right"></i>応募中:<%= student.student_jobs.where(student_job_state_id: 3).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 3).count%>社
-                <i class="fa fa-caret-right"></i>選考中:<%= student.student_jobs.where(student_job_state_id: 4).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 4).count%>社
-                <i class="fa fa-caret-right"></i>内定済:<%= student.student_jobs.where(student_job_state_id: 5).count == 0 ? "- " : student.student_jobs.where(student_job_state_id: 5).count%>社
-              </td>
-              <td class = "ca__my__main__applying__detail__table__tr__td__other">
-                <%= student.student_jobs.count%>社
+                <div class = "ca__my__main__applying__detail__table__tr__td__applying__process">
+                  <i class="fa fa-caret-right"></i>CA推薦　<span><%= student.student_jobs.where(student_job_state_id: 1).count == 0 ? "　" : student.student_jobs.where(student_job_state_id: 1).count%></span>
+                </div>
+                <div class = "ca__my__main__applying__detail__table__tr__td__applying__process">
+                  <i class="fa fa-caret-right"></i>検討中　<span><%= student.student_jobs.where(student_job_state_id: 2).count == 0 ? "　" : student.student_jobs.where(student_job_state_id: 2).count%></span>
+                </div>
+                <div class = "ca__my__main__applying__detail__table__tr__td__applying__process">
+                  <i class="fa fa-caret-right"></i>応募中　<span><%= student.student_jobs.where(student_job_state_id: 3).count == 0 ? "　" : student.student_jobs.where(student_job_state_id: 3).count%></span>
+                </div>
+                <div class = "ca__my__main__applying__detail__table__tr__td__applying__process">
+                  <i class="fa fa-caret-right"></i>選考中　<span><%= student.student_jobs.where(student_job_state_id: 4).count == 0 ? "　" : student.student_jobs.where(student_job_state_id: 4).count%></span>
+                </div>
+                <div class = "ca__my__main__applying__detail__table__tr__td__applying__process">
+                  <i class="fa fa-caret-right"></i>内定済　<span><%= student.student_jobs.where(student_job_state_id: 5).count == 0 ? "　" : student.student_jobs.where(student_job_state_id: 5).count%></span>
+                </div>
               </td>
             </tr>
           <% end %>

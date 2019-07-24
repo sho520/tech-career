@@ -2,7 +2,7 @@
   <div class = "job__main__detail">
     <!-- タイトル -->
     <div class = "job__main__detail__title">
-      <%= @job.name%> / <%= @job.position %>
+      <%= @job.name%> / <%= @job.position %> 募集終了にするを加える
       <% if @job.job_state_id == 2%>
         <span>※募集終了</span>
       <% end %>
@@ -202,7 +202,9 @@
             基本給
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.basic_salary.to_s(:delimited) %>万円
+            <% if @job.basic_salary.present? %>
+              <%= @job.basic_salary.to_s(:delimited) %>万円
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -515,7 +517,9 @@
             資本金
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.capital.to_s(:delimited) %>千円
+            <% if @job.capital.present? %>
+              <%= @job.capital.to_s(:delimited) %>千円
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
@@ -523,7 +527,9 @@
             売上高
           </td>
           <td class = "job__main__detail__content__table__tr__td__detail">
-            <%= @job.sales.to_s(:delimited) %>千円
+            <% if @job.sales.present? %>
+              <%= @job.sales.to_s(:delimited) %>千円
+            <% end %>
           </td>
         </tr>
         <tr class = "job__main__detail__content__table__tr">
