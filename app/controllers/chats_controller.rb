@@ -1,5 +1,11 @@
 class ChatsController < ApplicationController
 
+  def index
+    @jobs = Job.all
+    @newjobs = Job.all.order(id: "DESC")
+    @chats = Chat.new
+    @images = JobImage.all
+  end
 
   def new
     @chat = Chat.new
@@ -19,7 +25,7 @@ class ChatsController < ApplicationController
   private
 
   def message_params
-    params.require(:chat).permit(:comment,:student_id, :advisor_id)
+    params.require(:chat).permit(:comment,:student_id, :advisor_id,:commentspeaker)
     # .merge(user_id: current_user.id)
   end
 
