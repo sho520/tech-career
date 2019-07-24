@@ -241,6 +241,14 @@
                   color:red;
                 }
               }
+              .st__my__main__keepca__detail__table__tr__td__action__apply__ng{
+                float:left;
+                margin-right: 26px;
+                background-color: rgb(158, 158, 156);
+                padding: 2px;
+                border-radius: 5px;
+                cursor: pointer;
+              }
               .st__my__main__keepca__detail__table__tr__td__action__detail{
                 float:left;
                 margin-right: 26px;
@@ -269,6 +277,11 @@
                 a:hover{
                   color:red;
                 }
+              }
+              .st__my__main__keepca__detail__table__tr__td__action__ca{
+                background-color: gray;
+                padding: 3px;
+                border-radius: 5px;
               }
               .st__my__main__keepca__detail__table__tr__td__action__recommend{
                 float:left;
