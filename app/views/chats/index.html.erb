@@ -63,6 +63,7 @@
         <h3 class="jobIndex__inner__right__sideContent__title">新着求人</h3>
         <% @newjobs.each do |job| %>
         <div class="jobIndex__inner__right__sideContent__box">
+          <% if student_signed_in? || advisor_signed_in?%>
           <%= link_to root_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
             <div class="jobIndex__inner__right__sideContent__box__link__left">
               <%= image_tag @images.find_by(id: job.id).url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
@@ -71,6 +72,17 @@
               <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
               <p class="jobIndex__inner__right__sideContent__box__link__right__text"><%= job.job_description %></p>
             </div>
+          <% end %>
+          <%else%>
+          <%= link_to new_student_session_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
+            <div class="jobIndex__inner__right__sideContent__box__link__left">
+              <%= image_tag @images.find_by(id: job.id).url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+            </div>
+            <div class="jobIndex__inner__right__sideContent__box__link__right">
+              <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
+              <p class="jobIndex__inner__right__sideContent__box__link__right__text"><%= job.job_description %></p>
+            </div>
+          <% end %>
           <% end %>
         </div>
         <% end %>

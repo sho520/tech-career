@@ -463,6 +463,9 @@
         &__box {
           box-shadow: 1px 1px 2px #333;
           margin: 10px 0 10px 0;
+          &:hover {
+            opacity: 0.8;
+          }
           &__link {
             display: block;
             padding: 10px 5px;
@@ -488,6 +491,7 @@
                 color: #007ebe;
                 &:hover {
                   text-decoration: underline;
+                  opacity: 0.9;
                 }
               }
               &__text {
