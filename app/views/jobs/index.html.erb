@@ -17,6 +17,15 @@
                 <div class ="top__contentbox__left__maincontent__jobbox__upbox">
                   <div class = "top__contentbox__left__maincontent__jobbox__upbox__left">
                     <h3><%= link_to job.name, job_path(job.id) %></h3>
+                    <div class = "top__contentbox__left__maincontent__jobbox__upbox__left__detail">
+                      <div class = "top__contentbox__left__maincontent__jobbox__upbox__left__detail__title">
+                        お仕事の内容
+                      </div>
+                      <i class="fa fa-caret-right" id = "job__description"></i>
+                      <div class = "top__contentbox__left__maincontent__jobbox__upbox__left__detail__description">
+                        <%=  job.job_description %>
+                      </div>
+                    </div>
                   </div>
                   <div class = "top__contentbox__left__maincontent__jobbox__upbox__photo">
                     <% @images.where(job_id: job.id).each do |image|%>
