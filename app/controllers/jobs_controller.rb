@@ -72,6 +72,17 @@ class JobsController < ApplicationController
     redirect_to job_path(id: params[:id])
   end
 
+  def state
+    @new_job_state = Job.find_by(id: params[:id])
+    if @new_job_state.job_state_id == 1
+      @new_job_state.job_state_id = 2
+    else
+      @new_job_state.job_state_id = 1
+    end
+    @new_job_state.save
+    redirect_to job_path(id: params[:id])
+  end
+
   private
 
   def job_params
