@@ -1,253 +1,261 @@
-.job__main{
+.job{
   padding: 50px 30px;
   background-color:#f1efef;
-  height: 100vh;
-  .job__main__detail{
-    float: left;
-    width:70%;
-    .job__main__detail__title{
-      font-size: 1.5rem;
-      font-weight: bold;
-      padding-bottom: 10px;
-      span{
-        color: red;
+  height: 100%;
+  justify-content:space-around;
+  .job__main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .job__main__detail{
+      // float: left;
+      display: inline-block;
+      width:70%;
+      .job__main__detail__title{
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding-bottom: 10px;
+        span{
+          color: red;
+        }
       }
-    }
-    .job__main__detail__1{
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 15px;
-      color:#2490D0;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .job__main__detail__2{
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 15px;
-      color:#2490D0;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .job__main__detail__3{
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 15px;
-      color:#2490D0;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .job__main__detail__4{
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 15px;
-      color:#2490D0;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .job__main__detail__5{
-      float: left;
-      margin-right: 15px;
-      margin-bottom: 15px;
-      color:#2490D0;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .job__main__detail__state{
-      float: right;
-      font-size: 0.8rem;
-      padding: 3px;
-      background-color: yellow;
-      border: solid 1px #9a9a9a;
-      cursor: pointer;
-      .job__main__detail__state__change{
+      .job__main__detail__1{
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        color:#2490D0;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .job__main__detail__2{
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        color:#2490D0;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .job__main__detail__3{
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        color:#2490D0;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .job__main__detail__4{
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        color:#2490D0;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .job__main__detail__5{
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        color:#2490D0;
+        font-size: 0.8rem;
+        cursor: pointer;
+      }
+      .job__main__detail__state{
+        float: right;
+        font-size: 0.8rem;
+        padding: 3px;
+        background-color: yellow;
+        border: solid 1px #9a9a9a;
+        cursor: pointer;
+        .job__main__detail__state__change{
+          a{
+            text-decoration: none;
+            color: #000000;
+          }
+          a:hover{
+            color: red;
+          }
+        }
+      }
+      .job__main__detail__apply{
+        float:right;
         a{
+          background-color: yellow;
+          padding: 5px;
+          border-radius: 5px;
+          border: solid 1px #9a9a9a;
+          cursor: pointer;
           text-decoration: none;
           color: #000000;
         }
         a:hover{
-          color: red;
+          color:red;
         }
       }
-    }
-    .job__main__detail__apply{
-      float:right;
-      a{
-        background-color: yellow;
-        padding: 5px;
-        border-radius: 5px;
-        border: solid 1px #9a9a9a;
-        cursor: pointer;
-        text-decoration: none;
-        color: #000000;
-      }
-      a:hover{
-        color:red;
-      }
-    }
-    .job__main__detail__content{
-      clear: both;
-      // max-height: 725px;
-      // overflow: scroll;
-      padding-bottom: 30px;
-      .job__main__detail__content__table{
-        width:100%;
-        .job__main__detail__content__table__tr{
-          .job__main__detail__content__table__tr__th__top{
-            width: 20%;
-            background-color: #C34035;
-            color:#ffffff;
-            height: 40px;
-            padding-left: 5px;
-            border-top-left-radius: 10px;
-            font-weight: bold;
-          }
-          .job__main__detail__content__table__tr__th__blank{
-            width: 80%;
-            background-color: #C34035;
-            border-top-right-radius: 10px;
-            font-weight: bold;
-          }
-          //.ca__my__main__keepca__table__tr
-          .job__main__detail__content__table__tr__td__title{
-            background-color: #f3e8e8;
-            padding-left: 5px;
-            height: 30px;
-            border: solid 1px #9a9a9a;
-          }
-          .job__main__detail__content__table__tr__td__detail{
-            background-color: #ffffff;
-            padding-left: 5px;
-            border: solid 1px #9a9a9a;
-            a{
-              color: blue;
-              text-decoration: none;
-            }
-            .job__main__detail__content__table__tr__td__detail__name{
-              float:left;
-              padding-right: 15px;
-            }
-          }
-        }
-      }
-    }
-    .job__main__detail__new{
-      clear: both;
-      float: right;
-      padding-top: 10px;
-    }
-  }
-  .job__main__student{
-    float:right;
-    width: 30%;
-    padding-left: 15px;
-    box-sizing: border-box;
-    padding-bottom: 10px;
-    .job__main__student__title{
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    .job__main__student__contents{
-      padding-top: 23px;
-      margin-bottom: 50px;
-      .job__main__student__contents__content{
+      .job__main__detail__content{
         clear: both;
-        margin-top: 20px;
-        background-color: #ffffff;
-        border: solid 2px #C34035;
-        border-radius: 10px;
-        min-height: 95px;
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
-        .job__main__student__contents__content__name{
-          padding-left: 10px;
-          padding-top: 10px;
-          float: left;
-          .job__main__student__contents__content__name__value{
-            float:right;
-            font-weight: bold;
-            a{
-              text-decoration: none;
-              color: #2490D0;
+        // max-height: 725px;
+        // overflow: scroll;
+        padding-bottom: 30px;
+        .job__main__detail__content__table{
+          width:100%;
+          .job__main__detail__content__table__tr{
+            .job__main__detail__content__table__tr__th__top{
+              width: 20%;
+              background-color: #C34035;
+              color:#ffffff;
+              height: 40px;
+              padding-left: 5px;
+              border-top-left-radius: 10px;
+              font-weight: bold;
             }
-          }
-        }
-        .job__main__student__contents__content__term{
-          clear: both;
-          float:left;
-          padding-left: 26px;
-          padding-right: 100px;
-          .job__main__student__contents__content__term__value{
-            float:right;
-            font-weight: bold;
-          }
-        }
-        .job__main__student__contents__content__ca{
-          padding-left: 10px;
-          float:left;
-          .job__main__student__contents__content__ca__value{
-            float:right;
-            font-weight: bold;
-          }
-        }
-        .job__main__student__contents__content__state{
-          padding-left: 10px;
-          clear: both;
-          float:left;
-          .job__main__student__contents__content__state__value{
-            float:right;
-            font-weight: bold;
-            margin-bottom: 5px;
-            .job__main__student__contents__content__state__value__failed{
-              color: #9a9a9a;
-              padding: 3px;
+            .job__main__detail__content__table__tr__th__blank{
+              width: 80%;
+              background-color: #C34035;
+              border-top-right-radius: 10px;
+              font-weight: bold;
             }
-            .job__main__student__contents__content__state__value__passed{
-              background-color: rgb(238, 149, 48);
-              padding: 3px;
-              color: #ffffff;
-              font-weight: normal;
+            //.ca__my__main__keepca__table__tr
+            .job__main__detail__content__table__tr__td__title{
+              background-color: #f3e8e8;
+              padding-left: 5px;
+              height: 30px;
+              border: solid 1px #9a9a9a;
             }
-            .job__main__student__contents__content__state__value__process{
-              background-color: #2490D0;
-              padding: 3px;
-              color: #ffffff;
-              font-weight: normal;
-            }
-          }
-        }
-        .job__main__student__contents__content__hr{
-          clear: both
-        }
-        .job__main__student__contents__content__change{
-          height: 50px;
-          float:left;
-          padding-left: 10px;
-        }
-        .job__main__student__contents__content__change__detail{
-          padding-bottom:10px;
-          .job__main__student__contents__content__change__detail__click{
-            background-color: rgb(240, 238, 125);
-            padding: 3px;
-            margin-right: 10px;
-            a{
-              text-decoration:none;
-              color:#000000;
-            }
-            a:hover{
-              color:red;
+            .job__main__detail__content__table__tr__td__detail{
+              background-color: #ffffff;
+              padding-left: 5px;
+              border: solid 1px #9a9a9a;
+              a{
+                color: blue;
+                text-decoration: none;
+              }
+              .job__main__detail__content__table__tr__td__detail__name{
+                float:left;
+                padding-right: 15px;
+              }
             }
           }
         }
       }
+      .job__main__detail__new{
+        clear: both;
+        float: right;
+        padding-top: 10px;
+      }
     }
-    .job__main__student__pics{
-      margin-top: 10px;
-      .job__main__student__pics__pic{
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        filter: opacity(85%);
-        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    .job__main__student{
+      // float:right;
+      display: inline-block;
+      width: 30%;
+      padding-left: 15px;
+      box-sizing: border-box;
+      padding-bottom: 10px;
+      .job__main__student__title{
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .job__main__student__contents{
+        padding-top: 23px;
+        margin-bottom: 50px;
+        .job__main__student__contents__content{
+          clear: both;
+          margin-top: 20px;
+          background-color: #ffffff;
+          border: solid 2px #C34035;
+          border-radius: 10px;
+          min-height: 95px;
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+          .job__main__student__contents__content__name{
+            padding-left: 10px;
+            padding-top: 10px;
+            float: left;
+            .job__main__student__contents__content__name__value{
+              float:right;
+              font-weight: bold;
+              a{
+                text-decoration: none;
+                color: #2490D0;
+              }
+            }
+          }
+          .job__main__student__contents__content__term{
+            clear: both;
+            float:left;
+            padding-left: 26px;
+            padding-right: 100px;
+            .job__main__student__contents__content__term__value{
+              float:right;
+              font-weight: bold;
+            }
+          }
+          .job__main__student__contents__content__ca{
+            padding-left: 10px;
+            float:left;
+            .job__main__student__contents__content__ca__value{
+              float:right;
+              font-weight: bold;
+            }
+          }
+          .job__main__student__contents__content__state{
+            padding-left: 10px;
+            clear: both;
+            float:left;
+            .job__main__student__contents__content__state__value{
+              float:right;
+              font-weight: bold;
+              margin-bottom: 5px;
+              .job__main__student__contents__content__state__value__failed{
+                color: #9a9a9a;
+                padding: 3px;
+              }
+              .job__main__student__contents__content__state__value__passed{
+                background-color: rgb(238, 149, 48);
+                padding: 3px;
+                color: #ffffff;
+                font-weight: normal;
+              }
+              .job__main__student__contents__content__state__value__process{
+                background-color: #2490D0;
+                padding: 3px;
+                color: #ffffff;
+                font-weight: normal;
+              }
+            }
+          }
+          .job__main__student__contents__content__hr{
+            clear: both
+          }
+          .job__main__student__contents__content__change{
+            height: 50px;
+            float:left;
+            padding-left: 10px;
+          }
+          .job__main__student__contents__content__change__detail{
+            padding-bottom:10px;
+            .job__main__student__contents__content__change__detail__click{
+              background-color: rgb(240, 238, 125);
+              padding: 3px;
+              margin-right: 10px;
+              a{
+                text-decoration:none;
+                color:#000000;
+              }
+              a:hover{
+                color:red;
+              }
+            }
+          }
+        }
+      }
+      .job__main__student__pics{
+        margin-top: 10px;
+        .job__main__student__pics__pic{
+          width: 100%;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          filter: opacity(85%);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+        }
       }
     }
   }
