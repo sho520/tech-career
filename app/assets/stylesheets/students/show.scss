@@ -298,6 +298,22 @@
                   color:red;
                 }
               }
+              .st__my__main__keepca__detail__table__tr__td__action__recommendca{
+                float:left;
+                background-color: rgb(240, 238, 125);
+                padding: 2px;
+                padding-left: 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                letter-spacing: 1.3em;
+                a{
+                  text-decoration: none;
+                  color: #000000;
+                }
+                a:hover{
+                  color:red;
+                }
+              }
             }
           }
         }

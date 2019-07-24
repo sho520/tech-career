@@ -43,15 +43,11 @@ class JobsController < ApplicationController
   end
 
 
-  def keep                                                                                      #jobsコントローラーのkeepアクションは、キープ中となっている選考状況を元に戻す操作を行っている
-    if student_signed_in?                                                                       #生徒でログインしている時に、自分の選考状況を操作可能
-      @new_state = StudentJob.find_by(student_id: current_student.id, job_id: params[:id])      #student_jobテーブルの内、student_idがログイン中のユーザーidで、かつjob_idは現在指定したjob_idをいれt、1つのレコードを取得
-      @new_state.student_job_state_id = 1                                                       #キープ中のidが2で、その1つ前、つまりid = 1を代入している
-      @new_state.save                                                                           #student_job_state_idが1に変更されたものを保存している
-      redirect_to student_path(id: current_student.id)                                          #元のページに戻る
-    else                                                                                        #仮にCAでログインしている場合、勝手に生徒の選考状況を変更するわけに行かないので、トップページに戻る
-      redirect_to root_path
-    end
+  def keep                                                                                      #jobsコントローラーのkeepアクションは、キープ中となっている選考状況を元に戻す操作を行っている                                                                     #生徒でログインしている時に、自分の選考状況を操作可能
+    @new_state = StudentJob.find_by(student_id: current_student.id, job_id: params[:id])      #student_jobテーブルの内、student_idがログイン中のユーザーidで、かつjob_idは現在指定したjob_idをいれt、1つのレコードを取得
+    @new_state.student_job_state_id = 1                                                       #キープ中のidが2で、その1つ前、つまりid = 1を代入している
+    @new_state.save                                                                           #student_job_state_idが1に変更されたものを保存している
+    redirect_to student_path(id: current_student.id)                                          #元のページに戻る
   end
 
   def apply                                                                                     #jobsコントローラーのkeepアクションは、キープ中となっている選考状況を応募に進める操作を行っている
