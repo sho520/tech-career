@@ -22,7 +22,7 @@
             <div class="jobIndex__inner__left__wrapper__content__jobContents__up">
               <section class="jobIndex__inner__left__wrapper__content__jobContents__up__text">
                 <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__typename"><%= job.employee_type.name %></span>
-                <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__time"><%= job.updated_at %></span>
+                <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__time"><%= job.updated_at.strftime("%Y-%m-%d") %></span>
               </section>
               <h1 class="jobIndex__inner__left__wrapper__content__jobContents__up__title"><%= job.position %><span>募集!</span></h1>
               <section class="jobIndex__inner__left__wrapper__content__jobContents__up__cdt">
