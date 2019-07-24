@@ -19,7 +19,7 @@ class ChatsController < ApplicationController
   private
 
   def message_params
-    params.require(:chat).permit(:comment,:student_id, :advisor_id)
+    params.require(:chat).permit(:comment,:student_id, :advisor_id,:commentspeaker)
     # .merge(user_id: current_user.id)
   end
 
