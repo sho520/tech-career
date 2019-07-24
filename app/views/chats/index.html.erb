@@ -8,13 +8,13 @@
           <% if student_signed_in? || advisor_signed_in?%>
           <%= link_to job_path(id: job.id), class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
             <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
-              <%= image_tag @images.find_by(job_id: 2).url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <%= image_tag @images.find_by(id: job.id).url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
             </div>
           <% end %>
           <%else%>
           <%= link_to new_student_session_path, class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
             <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
-              <%= image_tag 'photo4.png',width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <%= image_tag @images.find_by(id: job.id).url,width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
             </div>
           <% end %>
           <% end %>
@@ -59,7 +59,7 @@
         <div class="jobIndex__inner__right__sideContent__box">
           <%= link_to root_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
             <div class="jobIndex__inner__right__sideContent__box__link__left">
-              <%= image_tag 'div.png',width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+              <%= image_tag @images.find_by(id: job.id).url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
             </div>
             <div class="jobIndex__inner__right__sideContent__box__link__right">
               <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
