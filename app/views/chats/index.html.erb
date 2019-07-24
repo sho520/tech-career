@@ -6,9 +6,9 @@
         <% @jobs.each do |job| %>
         <div class="jobIndex__inner__left__wrapper__content">
           <% if student_signed_in? || advisor_signed_in?%>
-          <%= link_to link_to job_path(id: job.id), class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
+          <%= link_to job_path(id: job.id), class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
             <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
-              <%= image_tag 'photo4.png',width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <%= image_tag @images.find_by(job_id: 2).url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
             </div>
           <% end %>
           <%else%>
