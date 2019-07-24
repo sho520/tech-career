@@ -2,7 +2,7 @@
   <div class = "job__main__detail">
     <!-- タイトル -->
     <div class = "job__main__detail__title">
-      <%= @job.name%> / <%= @job.position %> 募集終了にするを加える
+      <%= @job.name%> / <%= @job.position %> 
       <% if @job.job_state_id == 2%>
         <span>※募集終了</span>
       <% end %>
@@ -73,6 +73,15 @@
           });
       });
     </script>
+    <% if advisor_signed_in?%>
+      <div class = "job__main__detail__state">
+        <% if @job.job_state_id == 1%>
+          <span class = "job__main__detail__state__change"><%= link_to "募集終了にする", state_job_path(id: @job.id)%></span>
+        <% else %>
+          <span class = "job__main__detail__state__change"><%= link_to "募集再開する", state_job_path(id: @job.id)%></span>
+        <% end %>
+      </div>
+    <% end %>
     <!-- 生徒でログイン時、もし未応募なら応募できる -->
     <% if student_signed_in?%>
       <% if @state.student_job_state.id <= 2 && @job.job_state_id == 1%>

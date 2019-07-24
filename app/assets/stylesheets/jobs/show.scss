@@ -53,6 +53,23 @@
       font-size: 0.8rem;
       cursor: pointer;
     }
+    .job__main__detail__state{
+      float: right;
+      font-size: 0.8rem;
+      padding: 3px;
+      background-color: yellow;
+      border: solid 1px #9a9a9a;
+      cursor: pointer;
+      .job__main__detail__state__change{
+        a{
+          text-decoration: none;
+          color: #000000;
+        }
+        a:hover{
+          color: red;
+        }
+      }
+    }
     .job__main__detail__apply{
       float:right;
       a{
