@@ -8,5 +8,6 @@ class Student < ApplicationRecord
   has_many :student_jobs
   has_many :jobs, through: :student_jobs
   belongs_to :advisor, optional: true
-  has_many :chats
+  belongs_to :group
+
 end
