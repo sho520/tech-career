@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_25_074056) do
+ActiveRecord::Schema.define(version: 2019_07_25_085942) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 2019_07_25_074056) do
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "group_id", null: false
     t.text "comment", null: false
-    t.integer "position_id", null: false
+    t.integer "position_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_messages_on_group_id"

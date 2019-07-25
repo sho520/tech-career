@@ -1,7 +1,6 @@
 class Group < ApplicationRecord
 
-  has_many :advisors
-  has_many :students
+  belongs_to :advisors
   has_many :messages
 
 end
