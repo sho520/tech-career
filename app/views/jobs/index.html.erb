@@ -1,79 +1,80 @@
-
-<body>
-
-  <div class = "top">
-    <div class="top__contentbox">
-      <div class = "top__contentbox__left">
-
-        <form method="get" action="#" class="top__contentbox__left__search">
-          <input class="top__contentbox__left__search__box" type="text" size="25" placeholder="　キーワード検索">
-          <input class="top__contentbox__left__search__button" type="submit" value="&#xf002">
-        </form>
-
-        <div class = "top__contentbox__left__maincontent">
-          <% @jobs.each do |job| %>
-            <%# <% if job.student_job_state.id == 1%> 
-              <div class = "top__contentbox__left__maincontent__jobbox">
-                <div class ="top__contentbox__left__maincontent__jobbox__upbox">
-                  <div class = "top__contentbox__left__maincontent__jobbox__upbox__left">
-                    <h3><%= link_to job.name, job_path(job.id) %></h3>
-                    <div class = "top__contentbox__left__maincontent__jobbox__upbox__left__detail">
-                      <div class = "top__contentbox__left__maincontent__jobbox__upbox__left__detail__title">
-                        お仕事の内容
-                      </div>
-                      <i class="fa fa-caret-right" id = "job__description"></i>
-                      <div class = "top__contentbox__left__maincontent__jobbox__upbox__left__detail__description">
-                        <%=  job.job_description %>
-                      </div>
-                    </div>
-                  </div>
-                  <div class = "top__contentbox__left__maincontent__jobbox__upbox__photo">
-                    <% @images.where(job_id: job.id).each do |image|%>
-                      <div><%= image_tag image.url, size: '250x150', class: "top__contentbox__left__maincontent__jobbox__upbox__photo__1"%></div>
-                    <% end %>
-                  </div>
-                  <div class="top__contentbox__left__maincontent__jobbox__upbox__right">
-                  </div>
-                </div>
-                <table class ="top__contentbox__left__maincontent__jobbox__downbox">
-                  <tr>
-                    <th class ="top__contentbox__left__maincontent__jobbox__downbox__left">業種</th><td class ="top__contentbox__left__maincontent__jobbox__downbox__right"><%= job.industry.name%></td>
-                  </tr>
-                  <tr>
-                    <th class ="top__contentbox__left__maincontent__jobbox__downbox__left">雇用形態</th><td class ="top__contentbox__left__maincontent__jobbox__downbox__right"><%= job.employee_type.name%></td>
-                  </tr>
-                  <tr>
-                    <th class ="top__contentbox__left__maincontent__jobbox__downbox__left">給与</th><td class ="top__contentbox__left__maincontent__jobbox__downbox__right">年収<%= job.min_annual_income%>万円〜<%= job.max_annual_income%>万円  基本給<%= job.basic_salary%>万円/月</td>
-                  </tr>
-                  <tr>
-                    <th class ="top__contentbox__left__maincontent__jobbox__downbox__left">勤務地</th><td class ="top__contentbox__left__maincontent__jobbox__downbox__right">　<%= job.working_place_1%> <%= job.working_place_2%> <%= job.working_place_3%> <%= job.working_place_4%></td>
-                  </tr>
-                </table>
-                <div class = "top__contentbox__left__maincontent__jobbox__detail">
-                  <% if student_signed_in? || advisor_signed_in?%>
-                    <%= link_to job_path(id: job.id) do%>
-                      <i class="fa fa-info-circle"><span class = "top__contentbox__left__maincontent__jobbox__detail__text">詳細をみる</span></i>
-                    <% end %>
-                  <%else%>
-                    <%= link_to new_student_session_path do %>
-                      <i class="fa fa-info-circle"><span class = "top__contentbox__left__maincontent__jobbox__detail__text">ログインして詳細をみる</span></i>
-                    <% end %>
+<div class="jobIndex">
+  <div class="jobIndex__inner">
+    <div class="jobIndex__inner__left">
+      <div class="jobIndex__inner__left__wrapper">
+        <% if student_signed_in? %>
+        <div class="jobIndex__inner__left__wrapper__header">新規登録が完了したらアカウント情報編集で担当のキャリアアドバイザーを選択しましょう！</div>
+        <% elsif advisor_signed_in? %>
+        <div class="jobIndex__inner__left__wrapper__header">登録求人一覧</div>
+        <% else %>
+        <div class="jobIndex__inner__left__wrapper__header">興味がある求人があればログインしてキャリアアドバイザーに<span>「チャット」</span>で相談してみましょう！</div>
+        <% end %>
+        <% @jobs.each do |job| %>
+        <div class="jobIndex__inner__left__wrapper__content">
+          <% if student_signed_in? || advisor_signed_in?%>
+          <%= link_to job_path(id: job.id), class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
+            <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
+              <%= image_tag @images.find_by(id: job.id).url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+            </div>
+          <% end %>
+          <%else%>
+          <%= link_to new_student_session_path, class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
+            <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
+              <%= image_tag @images.find_by(id: job.id).url,width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+            </div>
+          <% end %>
+          <% end %>
+          <div class="jobIndex__inner__left__wrapper__content__jobContents">
+            <div class="jobIndex__inner__left__wrapper__content__jobContents__up">
+              <section class="jobIndex__inner__left__wrapper__content__jobContents__up__text">
+                <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__typename"><%= job.employee_type.name %></span>
+                <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__time"><%= job.updated_at.strftime("%Y-%m-%d") %></span>
+              </section>
+              <h1 class="jobIndex__inner__left__wrapper__content__jobContents__up__title"><%= job.position %><span>募集!</span></h1>
+              <section class="jobIndex__inner__left__wrapper__content__jobContents__up__cdt">
+                <span><i class="fa fa-dollar"></i> 年収<%= job.min_annual_income %>万円〜<%= job.max_annual_income %>万円</span>
+                <span> <i class="fa fa-map-pin"></i> <%= job.working_place_1 %></span>
+              </section>
+            </div>
+            <div class="jobIndex__inner__left__wrapper__content__jobContents__under">
+              <h2 class="jobIndex__inner__left__wrapper__content__jobContents__under__name"><%= job.name %></h2>
+              <section class="jobIndex__inner__left__wrapper__content__jobContents__under__info">ここになにか情報を入れれます</section>
+              <div class="jobIndex__inner__left__wrapper__content__jobContents__under__link">
+                <% if student_signed_in? || advisor_signed_in?%>
+                  <%= link_to job_path(id: job.id),class: "jobIndex__inner__left__wrapper__content__jobContents__under__link__btn" do%>
+                    <i class="fa fa-info-circle"> <span class = "j">詳細をみる</span></i>
                   <% end %>
-                </div>
+                <%else%>
+                  <%= link_to new_student_session_path,class: "jobIndex__inner__left__wrapper__content__jobContents__under__link__btn" do %>
+                    <i class="fa fa-info-circle"> <span class = "j">ログインして詳細をみる</span></i>
+                  <% end %>
+                <% end %>
               </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="jobIndex__inner__right">
+<!-- 新着コンテンツ -->
+      <div class="jobIndex__inner__right__sideContent">
+        <h3 class="jobIndex__inner__right__sideContent__title">新着求人</h3>
+        <% @newjobs.each do |job| %>
+        <div class="jobIndex__inner__right__sideContent__box">
+          <%= link_to root_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
+            <div class="jobIndex__inner__right__sideContent__box__link__left">
+              <%= image_tag @images.find_by(id: job.id).url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+            </div>
+            <div class="jobIndex__inner__right__sideContent__box__link__right">
+              <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
+              <p class="jobIndex__inner__right__sideContent__box__link__right__text"><%= job.job_description %></p>
+            </div>
           <% end %>
         </div>
+        <% end %>
       </div>
-
-      <% if student_signed_in? %>
-        <%= render partial: "chats/chat" , locals: { chats: @chat } %>
-      <% end %>
-      <% if advisor_signed_in? %>
-        <%= render partial: "chats/chat" , locals: { chats: @chat } %>
-      <% end %>
-
-
     </div>
   </div>
-
-</body>
+</div>

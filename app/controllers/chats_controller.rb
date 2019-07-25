@@ -1,10 +1,10 @@
 class ChatsController < ApplicationController
 
   def index
-    @jobs = Job.all()
-    @newjobs = Job.all.order(id: "DESC")
+    @jobs = Job.all
     @chats = Chat.new
-    @images = JobImage.all()
+    @chat = Chat.all
+    @images = JobImage.all
   end
 
   def new

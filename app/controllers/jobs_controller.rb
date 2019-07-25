@@ -1,14 +1,13 @@
 class JobsController < ApplicationController
 
-
   def index
-    @jobs = Job.all
+    @jobs = Job.all()
+    @newjobs = Job.all.order(id: "DESC")
     @chats = Chat.new
-    @chat = Chat.all
-    @images = JobImage.all
-
-
+    @images = JobImage.all()
   end
+
+
 
   def new
     @job = Job.new
