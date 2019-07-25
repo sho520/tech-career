@@ -1,10 +1,7 @@
 class ChatsController < ApplicationController
 
   def index
-    @jobs = Job.all
-    @chats = Chat.new
-    @chat = Chat.all
-    @images = JobImage.all
+    
   end
 
   def new
