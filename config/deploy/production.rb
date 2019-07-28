@@ -8,9 +8,9 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '52.193.121.88', user: 'ec2-user', roles: %w{app db web}
 
-config.assets.compile = true
-config.assets.css_compressor = :sass
-config.assets.enabled = true
+# config.assets.compile = true
+# config.assets.css_compressor = :sass
+# config.assets.enabled = true
 
 
 # role-based syntax
