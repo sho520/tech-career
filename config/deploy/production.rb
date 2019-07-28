@@ -8,6 +8,12 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '52.193.121.88', user: 'ec2-user', roles: %w{app db web}
 
+set :ssh_options, {
+  port: 3000,　#XXXにポート番号
+  keys: [File.expand_path('~/.ssh/techjob.pem')],　#'~/.ssh/id_rsa'部分をローカル環境の鍵のパスに
+  forward_agent: true,
+  auth_methods: %w(publickey)
+}
 # config.assets.compile = true
 # config.assets.css_compressor = :sass
 # config.assets.enabled = true
