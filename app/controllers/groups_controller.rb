@@ -5,9 +5,15 @@ class GroupsController < ApplicationController
     @students = Student.all
     @group = Group.new
     @groups = Group.all
+    @message = Message.new
   end
 
-
+  def show
+    @students = Student.all
+    @group = Group.find(params[:id])
+    @groups = Group.all
+    @message = Message.new
+  end
 
   def new
     @group = Group.new
