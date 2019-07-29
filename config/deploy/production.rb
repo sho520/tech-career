@@ -6,14 +6,9 @@
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
-server '52.193.121.88', user: 'ec2-user', roles: %w{app db web}
 
-set :ssh_options, {
-  port: 3000,　#XXXにポート番号
-  keys: [File.expand_path('~/.ssh/techjob.pem')],　#'~/.ssh/id_rsa'部分をローカル環境の鍵のパスに
-  forward_agent: true,
-  auth_methods: %w(publickey)
-}
+
+
 # config.assets.compile = true
 # config.assets.css_compressor = :sass
 # config.assets.enabled = true
@@ -59,9 +54,10 @@ set :ssh_options, {
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-# server "example.com",
-#   user: "user_name",
-#   roles: %w{web app},
+# server '52.193.121.88', user: 'ec2-user', roles: %w{app db web}
+server '52.193.121.88',
+user: 'ec2-user',
+roles: %w{app db web},
 #   ssh_options: {
 #     user: "user_name", # overrides user setting above
 #     keys: %w(/home/user_name/.ssh/id_rsa),
