@@ -1,0 +1,56 @@
+<div class="top">
+  <div class="top__chatbox">
+    <div class="top__chatbox__groups">　
+      <div class="top__chatbox__groups__title">
+        <h3 class="top__chatbox__groups__title__left"><span>メッセージ</span></h3>
+        <div class="top__chatbox__groups__title__right"></div>
+      </div>
+      <div class="top__chatbox__groups__group">
+        <% @groups.each do |group| %>
+          <div class="top__chatbox__groups__group__box">
+          <%= link_to root_path,class: "aaa" do %>
+            <div class="top__chatbox__groups__group__box__image"></div>
+            <div class="top__chatbox__groups__group__box__main">
+              <div class="top__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
+              <div class="top__chatbox__groups__group__box__main__log">ラストメッセージ</div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="top__chatbox__messagebox">
+      <div class="top__chatbox__messagebox__title">
+        <div class="top__chatbox__messagebox__titte__left"><span>ユーザー名</span></div>
+        <div class="top__chatbox__messagebox__titte__right"></div>
+      </div>
+      <div class="top__chatbox__messagebox__mainbox">
+        <div class="top__chatbox__messagebox__mainbox__message">
+          <div class="top__chatbox__messagebox__mainbox__comment">
+          aaaaaaaaaaaaaaaaaaaaaa
+          </div>
+        </div>
+        <div class="top__chatbox__messagebox__mainbox__submit">
+        <div class="top__chatbox__messagebox__mainbox__submit__box">
+          <div class="top__chatbox__messagebox__mainbox__submit__box__leftbox"></div>
+          <div class="top__chatbox__messagebox__mainbox__submit__box__centercommentbox"></div>
+          <div class="top__chatbox__messagebox__mainbox__submit__box__rightsubmitbox"></div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="top__chatbox__creategroup">
+      <div class="top__chatbox__creategroup__member">
+        <%= form_for @group , url: groups_path do |f| %>
+          <%= f.collection_select(:student_id, @students, :id,:name,) %>
+          <%= f.submit class: "top__chatbox__creategroup__member__form" %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+

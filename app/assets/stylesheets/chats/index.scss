@@ -1,68 +1,231 @@
 .top{
   height: 100vh;
-  width: 100vw;
+ 
   position: relative;
-  &__state{
-    height: 5%;
-    width: 100%;
-    top:0px;
-    background-color: gray;
-    position:absolute;
-    display: flex;
-    &__left{
-      height: 100%;
-      width: 20%;
-      background-color: rgb(42, 93, 160);
-      border-right:2px solid black;
-      
-    }
-    &__right{
-      height: 100%;
-      width: 80%;
-      background-color: rgb(122, 25, 25);
-    }
-  }
+ 
   &__chatbox{
-    height: 95%;
+    height: 100%;
     width: 100%;
-    bottom:0px;
+    margin: auto;
     background-color: black;
-    display: flex;
     position:absolute;
+    display: flex;
 
     &__groups{
       height: 100%;
-      width: 20%;
+      // width: 20%;
       background-color: white;
-      position: relative;
+      border:1px solid black ;
+      display: flex;
+      flex-direction: column;
+      // float: left;
+      &__title{
+        height: 50px;
+        width: 368px;
+        border-bottom:1px solid gray ;
+       
+        &__left{}
+        &__right{}
+      }
       &__group{
-        height: 150px;
-        width: 100%;
-        top:0px;
-        position:absolute;
-        background-color: greenyellow;
-        &__image{}
-        &__log{}
+        height: 95%;
+        width: 368px;
+        // border:1px solid black ;
+
+        // overflow:scroll;
+        &__box{
+          height:50px;
+          padding:20px 10px;
+          // border-top:1px solid gray ;
+          border-bottom:1px solid gray ;
+          margin-top:1px;
+          &__image{
+            width: 40px;
+            hight:40px;
+            float: left;
+            border:1px solid black ;
+          }
+          &__main{
+            float: left;
+            &__name{}
+            &__log{}
+          }
+        }
       }
     }
     &__messagebox{
       height: 100%;
-      width: 80%;
-      background-color: aqua;
-      &__message{
-        height: 90%;
+      width: 60%;
+      background-color: white;
+      // border:1px solid black;
+      display: flex;
+      flex-direction: column;
+      &__title{
+        height: 50px;
         width: 100%;
-        background-color: salmon;
+        border:1px solid black;
         &__left{}
         &__right{}
       }
-      &__from{
-        height: 10%;
+      &__mainbox{
+        height: 90%;
         width: 100%;
-        background-color: forestgreen;
-        &__comment{}
-        &__submit{}
+        
+        background-color: aquamarine;
+        &__message{
+          height: 200px;
+          width: 100%;
+          background-color: burlywood;
+          border:1px solid black;
+          &__comment{}
+        }
+        &__submit{
+          bottom: 0px;
+          height: 20px;
+          &__box{
+            &__leftbox{}
+            &__centercommentbox{}
+            &__rightsubmitbox{}
+          }
+        }
+      }
+    }
+    &__creategroup{
+      height: 100%;
+      width: 20%;
+      background-color: white;
+      border:1px solid black ;
+
+
+      &__member{
+        height: 50%;
+        width: 100%;
+        background-color: rgb(187, 118, 118);
+        &__line{
+          height: 5px;
+          width: 100%;
+        }
+      }
+      &__form{
+        height: 50%;
+        width: 100%;
+        background-color: rgb(72, 70, 165);
       }
     }
   }
 }
+
+
+// .box29 .box-title {
+//   font-size: 1.2em;
+  
+//   padding: 4px;
+//   text-align: center;
+//   color: #FFF;
+//   font-weight: bold;
+//   letter-spacing: 0.05em;
+// }
+//  p {
+//   padding: 15px 20px;
+//   margin: 0;
+// }
+
+  // &__chatbox{
+  //   height: 95%;
+  //   width: 100%;
+  //   bottom:0px;
+  //   background-color: black;
+  //   display: flex;
+  //   position:absolute;
+
+    // &__groups{
+    //   height: 100%;
+    //   width: 30%;
+    //   background-color: #ffffff;
+    //   position: relative;
+    //   border-top:1px solid black ;
+    //   border-bottom:1px solid black ;
+    //   border-left:1px solid black ;
+  //     &__group{
+
+  //       &__mainbox{
+  //         width: 100%;
+  //         height: 50px;
+  //         padding: 20px 0px 20px 0px;
+  //         margin-top: 10px;
+  //         background-color: rgb(255, 255, 255);
+  //         border:1px solid black ;
+  //         display: flex;
+
+          
+  //         &__image{
+  //           width: 20%;
+  //           height: 50px;
+  //         }
+  //         &__name{
+  //           font-size: 1.2em;
+  //           background: rgb(255, 255, 255);
+  //           padding: 4px;
+  //           text-align: center;
+  //           color: rgb(0, 0, 0);
+  //           font-weight: bold;
+  //           letter-spacing: 0.05em;
+  //           width: 30%;
+  //           }
+  //         &__log{
+  //           height: 50px;
+  //           width: 50%;
+  //         }
+  //       }
+  //     }
+  //   }
+    // &__messagebox{
+    //   height: 100%;
+    //   width: 60%;
+    //   background-color: white;
+  //     &__message{
+  //       height: 90%;
+  //       width: 100%;
+  //       background-color: white;
+  //       border:1px solid black;
+  //       &__left{}
+  //       &__right{}
+  //     }
+  //     &__from{
+  //       height: 10%;
+  //       width: 100%;
+  //       border:1px solid black;
+  //       background-color: white;
+  //       &__comment{}
+  //       &__submit{}
+  //     }
+  //   }
+   // &__state{
+  //   height: 5%;
+  //   width: 100%;
+  //   top:0px;
+  //   background-color: gray;
+  //   position:absolute;
+  //   display: flex;
+  //   &__left{
+  //     height: 100%;
+  //     width: 20%;
+  //     background-color: white;
+  //     border-top:1px solid black ;
+  //     border-bottom:1px solid black ;
+  //     border-left:1px solid black ;
+  //   }
+  //   &__right{
+  //     height: 100%;
+  //     width: 80%;
+  //     background-color: white;
+  //     border-top:1px solid black ;
+  //     border-bottom:1px solid black ;
+  //     border-right:1px solid black ;
+  //     border-left:1px solid black ;
+  //   }
+  // }
+//   <%# <div class="top__state">
+//   <div class="top__state__left"></div>
+//   <div class="top__state__right"></div>
+// </div> %>

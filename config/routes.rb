@@ -32,7 +32,10 @@ Rails.application.routes.draw do
   end
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
-  resources :chats , only: [:index, :create]
+  resources :groups , only: [:index, :create, :new, :show] do
+    resources :chats , only: [:index, :create, :new]
+  end
+  
 
 
 

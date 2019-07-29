@@ -457,7 +457,7 @@ Student.create(
   age:27,
   period:52,
   team:"e",
-  image_url: open("#{Rails.root}/db/dummy_images/person1.png"),
+  # image_url: open("#{Rails.root}/db/dummy_images/person1.png"),
   advisor_id:2,
 )
 Student.create(
@@ -471,7 +471,7 @@ Student.create(
   age:25,
   period:52,
   team:"e",
-  image_url: open("#{Rails.root}/db/dummy_images/person2.png"),
+  # image_url: open("#{Rails.root}/db/dummy_images/person2.png"),
   advisor_id:2,
 )
 Student.create(
@@ -485,7 +485,7 @@ Student.create(
   age:31,
   period:52,
   team:"e",
-  image_url: open("#{Rails.root}/db/dummy_images/person3.png"),
+  # image_url: open("#{Rails.root}/db/dummy_images/person3.png"),
   advisor_id:3,
 )
 Student.create(
@@ -499,7 +499,7 @@ Student.create(
   age:22,
   period:53,
   team:"a",
-  image_url: open("#{Rails.root}/db/dummy_images/person4.png"),
+  # image_url: open("#{Rails.root}/db/dummy_images/person4.png"),
   advisor_id:3,
 )
 Student.create(
@@ -513,7 +513,7 @@ Student.create(
   age:28,
   period:53,
   team:"e",
-  image_url: open("#{Rails.root}/db/dummy_images/person5.png"),
+  # image_url: open("#{Rails.root}/db/dummy_images/person5.png"),
   advisor_id:2,
 )
 Student.create(
@@ -527,7 +527,7 @@ Student.create(
   age:29,
   period:53,
   team:"a",
-  image_url: open("#{Rails.root}/db/dummy_images/person6.png"),
+  # image_url: open("#{Rails.root}/db/dummy_images/person6.png"),
   advisor_id:4,
 )
 Student.create(
@@ -541,7 +541,7 @@ Student.create(
   age:25,
   period:53,
   team:"d",
-  image_url:  open("#{Rails.root}/db/dummy_images/person7.png"),
+  # image_url:  open("#{Rails.root}/db/dummy_images/person7.png"),
   advisor_id:1,
 )
 

@@ -8,8 +8,9 @@
 
     <div class="top__chatbox__groups">　
       <div class="top__chatbox__groups__group">
+        <div class="top__chatbox__groups__group__title">名前</div>
         <div class="top__chatbox__groups__group__image"></div>
-        <div class="top__chatbox__groups__group__log"></div>
+        <div class="top__chatbox__groups__group__log">ラストメッセージ</div>
       </div>
     </div>
 
@@ -23,6 +24,21 @@
         <div class="top__chatbox__messagebox__from__submit"></div>
       </div>
     </div>
+
+    <div class="top__chatbox__creategroup">
+      <div class="top__chatbox__creategroup__member">
+        <%= form_for @group , url: groups_path do |f| %>
+            <%# <%= f.radio_button :student_id, "student.id", {:checked => true}, class: "top__chatbox__creategroup__member__line"%>
+            <%# <span><%= student.name</span>  %>
+            <% @students.each do |student| %>
+            <%= student.name %>
+            <%= f.hidden_field :student_id, value: student.id %>
+            <%= f.submit class: "top__chatbox__creategroup__member__form" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
 
