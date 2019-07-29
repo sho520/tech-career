@@ -15,4 +15,14 @@ class Job < ApplicationRecord
   has_many :various_insurance_jobs
   has_many :various_insurances, through: :various_insurance_jobs
   has_many :job_images
+
+  validates :name, presence: true
+  validates :industry_id, presence: true
+  validates :number_of_employee_id, presence: true
+  validates :location_id, presence: true
+  validates :position, presence: true
+  validates :basic_salary, presence: true
+  validates :min_annual_income, presence: true
+  validates :max_annual_income, presence: true
+
 end
