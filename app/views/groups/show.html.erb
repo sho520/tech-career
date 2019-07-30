@@ -1,130 +1,79 @@
-<div class="top">
-  <div class="top__chatbox">
-    <div class="top__chatbox__groups">　
-      <div class="top__chatbox__groups__title">
-        <h3 class="top__chatbox__groups__title__left"><span>メッセージ</span></h3>
-        <div class="top__chatbox__groups__title__right"></div>
+<div class="showtop">
+  <div class="showtop__chatbox">
+    <div class="showtop__chatbox__groups">　
+      <div class="showtop__chatbox__groups__title">
+        <h3 class="showtop__chatbox__groups__title__left"><span>メッセージ</span></h3>
+        <div class="showtop__chatbox__groups__title__right"></div>
       </div>
-      <div class="top__chatbox__groups__group">
+      <div class="showtop__chatbox__groups__group">
         <% @groups.each do |group| %>
-          <div class="top__chatbox__groups__group__box">
-          <%= link_to root_path,class: "aaa" do %>
-            <div class="top__chatbox__groups__group__box__image"></div>
-            <div class="top__chatbox__groups__group__box__main">
-              <div class="top__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
-              <div class="top__chatbox__groups__group__box__main__log">ラストメッセージ</div>
+          <div class="showtop__chatbox__groups__group__box">
+          <%= link_to group_path(group.id) do %>
+            <div class="showtop__chatbox__groups__group__box__image"></div>
+            <div class="showtop__chatbox__groups__group__box__main">
+              <div class="showtop__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
+              <div class="showtop__chatbox__groups__group__box__main__log">ラストメッセージ</div>
             </div>
           </div>
           <% end %>
         <% end %>
       </div>
     </div>
-    <div class="top__chatbox__messagebox">
-      <div class="top__chatbox__messagebox__title">
-        <div class="top__chatbox__messagebox__titte__left"><span>ユーザー名</span></div>
-        <div class="top__chatbox__messagebox__titte__right"></div>
+    <div class="showtop__chatbox__messagebox">
+      <div class="showtop__chatbox__messagebox__title">
+        <div class="showtop__chatbox__messagebox__titte__left"><span>ユーザー名</span></div>
+        <div class="showtop__chatbox__messagebox__titte__right"></div>
       </div>
-      <div class="top__chatbox__messagebox__mainbox">
-        <div class="top__chatbox__messagebox__mainbox__messagebox">
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
+      <div class="showtop__chatbox__messagebox__mainbox">
+        <div class="showtop__chatbox__messagebox__mainbox__messagebox">
+          <% @messages.each do |message| %>
+            <% if message.position_number == 1 %>
+            <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageL">
+              <img class="showtop__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
+              <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageL__comment">
+                <%= message.comment %>
+              </div>
             </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
+            <% else message.position_number == 2 %>
+            <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageR">
+              <img class="showtop__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
+              <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageR__comment">
+              <%= message.comment %>
+              </div>
             </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
+            <% end %>
+          <% end %>
         </div>
-      <div class="top__chatbox__messagebox__submit">
-        <div class="top__chatbox__messagebox__submit__box">
-          <div class="top__chatbox__messagebox__submit__box__leftbox"></div>
+      </div>
+      <% if advisor_signed_in? %>
+      <div class="showtop__chatbox__messagebox__submit">
+        <div class="showtop__chatbox__messagebox__submit__box">
+          <div class="showtop__chatbox__messagebox__submit__box__leftbox"></div>
           <%= form_for [@group,@message] do |f| %> 
-            <%= f.text_field :comment, class: "top__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
+            <%= f.text_field :comment, class: "showtop__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
             <%# <%= f.hidden_field :student_id, value: current_advisor.id %> 
             <%# <%= f.hidden_field :advisor_id, value: current_advisor.students.id %> 
-            <%= f.hidden_field :position_number, value: 2 %>
-            <%= f.submit  %>
+            <%= f.hidden_field :position_number, value: 1 %>
+            <%= f.button type: 'submit' ,class: "showtop__chatbox__messagebox__submit__box__rightsubmitbox" %>
           <% end%>
         </div>
       </div>
+      <% end %>
+
+      <% if student_signed_in? %>
+      <div class="showtop__chatbox__messagebox__submit">
+        <div class="showtop__chatbox__messagebox__submit__box">
+          <div class="showtop__chatbox__messagebox__submit__box__leftbox"></div>
+          <%= form_for [@group,@message] do |f| %> 
+            <%= f.text_field :comment, class: "showtop__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
+            <%# <%= f.hidden_field :student_id, value: current_advisor.id %> 
+            <%# <%= f.hidden_field :advisor_id, value: current_advisor.students.id %> 
+            <%= f.hidden_field :position_number, value: 2 %>
+            <%= f.button type: 'submit' ,class: "showtop__chatbox__messagebox__submit__box__rightsubmitbox" %>
+          <% end%>
+        </div>
+      </div>
+      <% end %>
     </div>
     </div>
 

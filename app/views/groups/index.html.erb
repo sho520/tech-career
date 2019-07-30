@@ -1,5 +1,13 @@
 <div class="top">
   <div class="top__chatbox">
+    <div class="top__chatbox__creategroup">
+      <div class="top__chatbox__creategroup__member">
+        <%= form_for (@group)  do |f| %>
+          <%= f.collection_select(:student_id, @students, :id,:name,) %>
+          <%= f.submit class: "top__chatbox__creategroup__member__form" %>
+        <% end %>
+      </div>
+    </div>
     <div class="top__chatbox__groups">　
       <div class="top__chatbox__groups__title">
         <h3 class="top__chatbox__groups__title__left"><span>メッセージ</span></h3>
@@ -20,117 +28,21 @@
       </div>
     </div>
     <div class="top__chatbox__messagebox">
-      <div class="top__chatbox__messagebox__title">
-        <div class="top__chatbox__messagebox__titte__left"><span>ユーザー名</span></div>
-        <div class="top__chatbox__messagebox__titte__right"></div>
-      </div>
-      <div class="top__chatbox__messagebox__mainbox">
-        <div class="top__chatbox__messagebox__mainbox__messagebox">
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
+      <div class="top__chatbox__messagebox__nocontenntbox">
+          <div class="top__chatbox__messagebox__nocontenntbox__message">
+            <h4 class="top__chatbox__messagebox__nocontenntbox__message__title">選択したメッセージはありません</h4>
+            <p class ="top__chatbox__messagebox__nocontenntbox__message__text">既存のメッセージを選択するか、新しいメッセージを作成してください。</p>
           </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageL">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageL__comment">
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            こんにちは
-            </div>
-          </div>
-          <div class="top__chatbox__messagebox__mainbox__messagebox__messageR">
-            <img class="top__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
-            <div class="top__chatbox__messagebox__mainbox__messagebox__messageR__comment">
-            こんばんは
-            </div>
-          </div>
-        </div>
-      <div class="top__chatbox__messagebox__submit">
-        <div class="top__chatbox__messagebox__submit__box">
-          <div class="top__chatbox__messagebox__submit__box__leftbox"></div>
-          <div class="top__chatbox__messagebox__submit__box__centercommentbox"></div>
-          <div class="top__chatbox__messagebox__submit__box__rightsubmitbox"></div>
-        </div>
       </div>
     </div>
-    </div>
-    <div class="top__chatbox__creategroup">
+    <%# <div class="top__chatbox__creategroup">
       <div class="top__chatbox__creategroup__member">
         <%= form_for (@group)  do |f| %>
-          <%= f.collection_select(:student_id, @students, :id,:name,) %>
-          <%= f.submit class: "top__chatbox__creategroup__member__form" %>
-        <% end %>
-      </div>
-    </div>
-
+          <%# <%= f.collection_select(:student_id, @students, :id,:name,) %> 
+          <%# <%= f.submit class: "top__chatbox__creategroup__member__form" %> 
+        <%# <% end %> 
+      <%# </div> %>
+    <%# </div>  %>
   </div>
 </div>
 

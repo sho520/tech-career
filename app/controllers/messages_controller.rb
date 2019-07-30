@@ -3,8 +3,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     # @chat.user = current_student
-    binding.pry
+    # binding.pry
     @message.save
+    # redirect_to controller: 'messages', action: 'show(group.id)'
   end
 
 

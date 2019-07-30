@@ -13,6 +13,12 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @groups = Group.all
     @message = Message.new
+    # @messages = Message.where(params[:group_id])
+    @messages = Message.where(group_id: params[:id])
+
+
+
+    # binding.pry
   end
 
   def new

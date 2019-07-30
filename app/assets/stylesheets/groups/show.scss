@@ -1,5 +1,5 @@
-.top{
-  height: 100vh;
+.showtop{
+  height: calc(100vh-100px);
   position: relative;
   &__chatbox{
     height: 100%;
@@ -10,7 +10,7 @@
     display: flex;
 
     &__groups{
-      height: 100vh;
+      height: 85vh;
       // width: 20%;
       background-color: white;
       border:1px solid black ;
@@ -27,7 +27,7 @@
       }
       &__group{
         overflow: scroll;
-        height: 95vh;
+        height: 90%;
         width: 368px;
         // border:1px solid black ;
 
@@ -54,12 +54,13 @@
           }
         }
         &__box:hover{
-          background-color: rgb(148, 148, 148)}
+          background-color:#fa8b8b;
+        }
       }
     }
     &__messagebox{
-      height: 100vh;
-      width: 60%;
+      height: 100%;
+      width: 80%;
       background-color: white;
       display: flex;
       flex-direction: column;
@@ -74,7 +75,7 @@
       &__mainbox{
           // height: 50%;
         &__messagebox{
-          height: 85vh;
+          height: 70vh;
           overflow: scroll;
           &__messageL{
             height: 100px;
@@ -141,6 +142,7 @@
             border:1px solid black;
             margin: 3px;
             float: left;
+            border-radius: 100px;
           }
           &__rightsubmitbox{
             height: 40px;
@@ -152,141 +154,5 @@
         }
       }
     }
-    &__creategroup{
-      height: 100vh;
-      width: 20%;
-      background-color: white;
-      border:1px solid black ;
-      display: inline-block;   
-      &__member{
-        height: 50%;
-        width: 100%;
-        background-color: rgb(187, 118, 118);
-        &__line{
-          height: 5px;
-          width: 100%;
-        }
-      }
-      &__form{
-        height: 50%;
-        width: 100%;
-        background-color: rgb(72, 70, 165);
-      }
-    }
   }
 }
-
-
-// .box29 .box-title {
-//   font-size: 1.2em;
-  
-//   padding: 4px;
-//   text-align: center;
-//   color: #FFF;
-//   font-weight: bold;
-//   letter-spacing: 0.05em;
-// }
-//  p {
-//   padding: 15px 20px;
-//   margin: 0;
-// }
-
-  // &__chatbox{
-  //   height: 95%;
-  //   width: 100%;
-  //   bottom:0px;
-  //   background-color: black;
-  //   display: flex;
-  //   position:absolute;
-
-    // &__groups{
-    //   height: 100%;
-    //   width: 30%;
-    //   background-color: #ffffff;
-    //   position: relative;
-    //   border-top:1px solid black ;
-    //   border-bottom:1px solid black ;
-    //   border-left:1px solid black ;
-  //     &__group{
-
-  //       &__mainbox{
-  //         width: 100%;
-  //         height: 50px;
-  //         padding: 20px 0px 20px 0px;
-  //         margin-top: 10px;
-  //         background-color: rgb(255, 255, 255);
-  //         border:1px solid black ;
-  //         display: flex;
-
-          
-  //         &__image{
-  //           width: 20%;
-  //           height: 50px;
-  //         }
-  //         &__name{
-  //           font-size: 1.2em;
-  //           background: rgb(255, 255, 255);
-  //           padding: 4px;
-  //           text-align: center;
-  //           color: rgb(0, 0, 0);
-  //           font-weight: bold;
-  //           letter-spacing: 0.05em;
-  //           width: 30%;
-  //           }
-  //         &__log{
-  //           height: 50px;
-  //           width: 50%;
-  //         }
-  //       }
-  //     }
-  //   }
-    // &__messagebox{
-    //   height: 100%;
-    //   width: 60%;
-    //   background-color: white;
-  //     &__message{
-  //       height: 90%;
-  //       width: 100%;
-  //       background-color: white;
-  //       border:1px solid black;
-  //       &__left{}
-  //       &__right{}
-  //     }
-  //     &__from{
-  //       height: 10%;
-  //       width: 100%;
-  //       border:1px solid black;
-  //       background-color: white;
-  //       &__comment{}
-  //       &__submit{}
-  //     }
-  //   }
-   // &__state{
-  //   height: 5%;
-  //   width: 100%;
-  //   top:0px;
-  //   background-color: gray;
-  //   position:absolute;
-  //   display: flex;
-  //   &__left{
-  //     height: 100%;
-  //     width: 20%;
-  //     background-color: white;
-  //     border-top:1px solid black ;
-  //     border-bottom:1px solid black ;
-  //     border-left:1px solid black ;
-  //   }
-  //   &__right{
-  //     height: 100%;
-  //     width: 80%;
-  //     background-color: white;
-  //     border-top:1px solid black ;
-  //     border-bottom:1px solid black ;
-  //     border-right:1px solid black ;
-  //     border-left:1px solid black ;
-  //   }
-  // }
-//   <%# <div class="top__state">
-//   <div class="top__state__left"></div>
-//   <div class="top__state__right"></div>
-// </div> %>
