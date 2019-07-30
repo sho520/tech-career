@@ -79,3 +79,4 @@ gem 'ransack'
 gem "font-awesome-rails"
 gem 'pry-rails'
 gem 'rails-i18n', '~> 5.1'
+gem 'fog-aws'
