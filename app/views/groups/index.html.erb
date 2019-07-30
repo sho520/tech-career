@@ -1,13 +1,13 @@
 <div class="top">
   <div class="top__chatbox">
-    <div class="top__chatbox__creategroup">
-      <div class="top__chatbox__creategroup__member">
-        <%= form_for (@group)  do |f| %>
-          <%= f.collection_select(:student_id, @students, :id,:name,) %>
-          <%= f.submit class: "top__chatbox__creategroup__member__form" %>
-        <% end %>
-      </div>
-    </div>
+    <%# <div class="top__chatbox__creategroup"> %>
+      <%# <div class="top__chatbox__creategroup__member"> %>
+        <%# <%= form_for (@group)  do |f| %> 
+          <%# <%= f.collection_select(:student_id, @students, :id,:name,) %> 
+          <%# <%= f.submit class: "top__chatbox__creategroup__member__form" %> 
+        <%# <% end %> 
+      <%# </div> %>
+    <%# </div> %>
     <div class="top__chatbox__groups">　
       <div class="top__chatbox__groups__title">
         <h3 class="top__chatbox__groups__title__left"><span>メッセージ</span></h3>
@@ -17,7 +17,11 @@
         <% @groups.each do |group| %>
           <div class="top__chatbox__groups__group__box">
           <%= link_to group_path(group.id) do %>
-            <div class="top__chatbox__groups__group__box__image"></div>
+            <% if group.student.image_url.present? %>
+              <%= image_tag group.student.image_url.url, class: "showtop__chatbox__groups__group__box__image" %>
+            <% else %>
+              <%= image_tag 'mypage.png', size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
+            <% end %>
             <div class="top__chatbox__groups__group__box__main">
               <div class="top__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
               <div class="top__chatbox__groups__group__box__main__log">ラストメッセージ</div>

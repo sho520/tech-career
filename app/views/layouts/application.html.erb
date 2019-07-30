@@ -95,6 +95,16 @@
                 <% end %>
               </li>
               <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to new_group_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-file fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to groups_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-comment fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
                 <%= link_to destroy_advisor_session_path, method: :delete, class: "header__wrapper__inner__right__list__icon__link" do %>
                   <i class="fa fa-bars fa-2x"></i>
                 <% end %>

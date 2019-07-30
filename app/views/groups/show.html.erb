@@ -9,7 +9,11 @@
         <% @groups.each do |group| %>
           <div class="showtop__chatbox__groups__group__box">
           <%= link_to group_path(group.id) do %>
-            <div class="showtop__chatbox__groups__group__box__image"></div>
+            <% if group.student.image_url.present? %>
+              <%= image_tag group.student.image_url.url, class: "showtop__chatbox__groups__group__box__image" %>
+            <% else %>
+              <%= image_tag 'mypage.png', size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
+            <% end %>
             <div class="showtop__chatbox__groups__group__box__main">
               <div class="showtop__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
               <div class="showtop__chatbox__groups__group__box__main__log">ラストメッセージ</div>
@@ -21,7 +25,9 @@
     </div>
     <div class="showtop__chatbox__messagebox">
       <div class="showtop__chatbox__messagebox__title">
-        <div class="showtop__chatbox__messagebox__titte__left"><span>ユーザー名</span></div>
+        <% @groups.each do |group| %>
+        <div class="showtop__chatbox__messagebox__titte__left"><span></span></div>
+        <% end %>
         <div class="showtop__chatbox__messagebox__titte__right"></div>
       </div>
       <div class="showtop__chatbox__messagebox__mainbox">
@@ -51,8 +57,6 @@
           <div class="showtop__chatbox__messagebox__submit__box__leftbox"></div>
           <%= form_for [@group,@message] do |f| %> 
             <%= f.text_field :comment, class: "showtop__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
-            <%# <%= f.hidden_field :student_id, value: current_advisor.id %> 
-            <%# <%= f.hidden_field :advisor_id, value: current_advisor.students.id %> 
             <%= f.hidden_field :position_number, value: 1 %>
             <%= f.button type: 'submit' ,class: "showtop__chatbox__messagebox__submit__box__rightsubmitbox" %>
           <% end%>
@@ -66,8 +70,6 @@
           <div class="showtop__chatbox__messagebox__submit__box__leftbox"></div>
           <%= form_for [@group,@message] do |f| %> 
             <%= f.text_field :comment, class: "showtop__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
-            <%# <%= f.hidden_field :student_id, value: current_advisor.id %> 
-            <%# <%= f.hidden_field :advisor_id, value: current_advisor.students.id %> 
             <%= f.hidden_field :position_number, value: 2 %>
             <%= f.button type: 'submit' ,class: "showtop__chatbox__messagebox__submit__box__rightsubmitbox" %>
           <% end%>

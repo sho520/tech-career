@@ -1,0 +1,16 @@
+<div class="top">
+  <div class="top__chatbox">
+    <div class="top__chatbox__creategroup">
+      <div class="top__chatbox__creategroup__member">
+        <%= form_for (@group)  do |f| %>
+          <%= f.collection_select(:student_id, @students, :id,:name,) %>
+          <%= f.submit class: "top__chatbox__creategroup__member__form" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

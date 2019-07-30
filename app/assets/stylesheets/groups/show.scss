@@ -49,12 +49,14 @@
           &__main{
             float: left;
             margin-left: 20px;
-            &__name{}
-            &__log{}
+            &__name{
+            }
+            &__log{
+            }
           }
         }
         &__box:hover{
-          background-color:#fa8b8b;
+          background-color:#781f18;
         }
       }
     }

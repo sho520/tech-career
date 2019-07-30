@@ -10,19 +10,22 @@ class GroupsController < ApplicationController
 
   def show
     @students = Student.all
+    @student = Student.find(params[:id]) 
+
     @group = Group.find(params[:id])
+    @studentname = Group.where(student_id: @student.id)
     @groups = Group.all
     @message = Message.new
     # @messages = Message.where(params[:group_id])
     @messages = Message.where(group_id: params[:id])
 
-
-
-    # binding.pry
   end
 
   def new
+    @students = Student.all
     @group = Group.new
+    @groups = Group.all
+    @message = Message.new
   end
 
   def create
