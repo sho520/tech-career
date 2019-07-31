@@ -72,7 +72,11 @@
         width: 100%;
         border:1px solid black;
         text-align: center;
-        background-color: #ddd;
+        background-color: #edeff1;
+        font-size: 20px;
+        color: rgb(65, 65, 65);
+        font-weight:bold;
+        
         &__left{}
         &__right{}
       }
@@ -188,8 +192,14 @@
         width: 100%;
         border:1px solid black;
         text-align: center;
-        background-color: #ddd;
-        &__left{}
+        background-color: #edeff1;
+        font-size: 20px;
+        color: rgb(65, 65, 65);
+        font-weight:bold;
+        
+        &__left{
+          
+        }
         // &__right{}
       }
       &__mainbox{
@@ -258,7 +268,7 @@
           }
           &__centercommentbox{
             height: 40px;
-            width: 1000px;
+            width: 950px;
             border:1px solid black;
             margin: 3px 3px 3px 25px ;
             float: left;

@@ -1,16 +1,38 @@
 <div class="newtop">
-  <div class="newtop__box">
-    <div class="newtop__box__tittle">
-      <h1 class="newtop__box__tittle__text">新規チャットグループ作成</h1>
-    </div>
-
-    <div class="newtop__box__creategroup">
-      <h1 class="newtop__box__creategroup__text">ユーザーを選択 :</h1>
-      <div class="newtop__box__creategroup__member">
-        <%= form_for (@group)  do |f| %>
-          <%= f.collection_select :student_id, @students, :id,:name, {class: "newtop__box__creategroup__member__box"} %>
-          <%= f.submit class: "newtop__box__creategroup__member__form" %>
+  <div class="newtop__page">
+    <div class="top__chatbox__groups">　
+      <div class="top__chatbox__groups__title">
+        <h3 class="top__chatbox__groups__title__left"><span>チャットグループ</span></h3>
+        <div class="top__chatbox__groups__title__right"></div>
+      </div>
+      <div class="top__chatbox__groups__group">
+        <% @groups.each do |group| %>
+          <div class="top__chatbox__groups__group__box">
+          <%= link_to group_path(group.id) do %>
+            <% if group.student.image_url.present? %>
+              <%= image_tag group.student.image_url.url, size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
+            <% else %>
+              <%= image_tag 'mypage.png', size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
+            <% end %>
+            <div class="top__chatbox__groups__group__box__main">
+              <div class="top__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
+              <div class="top__chatbox__groups__group__box__main__log">ラストメッセージ</div>
+            </div>
+          </div>
+          <% end %>
         <% end %>
+      </div>
+    </div>
+    <div class="newtop__page__box">
+      <h1 class="newtop__page__box__tittle">新規チャットグループ作成</h1>
+      <div class="newtop__page__box__creategroup">
+        <h1 class="newtop__page__box__creategroup__text">ユーザーを選択 :</h1>
+        <div class="newtop__page__box__creategroup__member">
+          <%= form_for (@group)  do |f| %>
+            <%= f.collection_select :student_id, @students, :id,:name, {class: "newtop__page__box__creategroup__member__box"} %>
+            <%= f.submit class: "newtop__page__box__creategroup__member__form" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
