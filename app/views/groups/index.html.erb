@@ -18,7 +18,7 @@
           <div class="top__chatbox__groups__group__box">
           <%= link_to group_path(group.id) do %>
             <% if group.student.image_url.present? %>
-              <%= image_tag group.student.image_url.url, class: "showtop__chatbox__groups__group__box__image" %>
+              <%= image_tag group.student.image_url.url, size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
             <% else %>
               <%= image_tag 'mypage.png', size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
             <% end %>
