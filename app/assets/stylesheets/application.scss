@@ -1,16 +1,20 @@
-@import 'font-awesome';
-@import "./reset";
-@import "./password";
-@import "jobs/show";
-@import "jobs/index";
-@import "jobs/new";
-@import "students/registrationsnew";
-@import "students/sessionsnew";
-@import "advisors/registrationsnew";
-@import "advisors/sessionsnew";
-@import "advisors/show";
-@import "students/show";
-@import "layouts/application";
-@import "advisors/students";
-@import "jobs/all";
-@import "students/edit";
+// @import 'font-awesome';
+// @import "./reset";
+// @import "./password";
+// @import "jobs/show";
+// @import "jobs/index";
+// @import "jobs/new";
+// @import "students/registrationsnew";
+// @import "students/sessionsnew";
+// @import "advisors/registrationsnew";
+// @import "advisors/sessionsnew";
+// @import "advisors/show";
+// @import "students/show";
+// @import "layouts/application";
+// @import "advisors/students";
+// @import "jobs/all";
+// @import "students/edit";
+/*
+ *= require_tree .
+ *= require_self
+ */
