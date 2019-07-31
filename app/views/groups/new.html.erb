@@ -1,10 +1,15 @@
-<div class="top">
-  <div class="top__chatbox">
-    <div class="top__chatbox__creategroup">
-      <div class="top__chatbox__creategroup__member">
+<div class="newtop">
+  <div class="newtop__box">
+    <div class="newtop__box__tittle">
+      <h1 class="newtop__box__tittle__text">新規チャットグループ作成</h1>
+    </div>
+
+    <div class="newtop__box__creategroup">
+      <h1 class="newtop__box__creategroup__text">ユーザーを選択 :</h1>
+      <div class="newtop__box__creategroup__member">
         <%= form_for (@group)  do |f| %>
-          <%= f.collection_select(:student_id, @students, :id,:name,) %>
-          <%= f.submit class: "top__chatbox__creategroup__member__form" %>
+          <%= f.collection_select :student_id, @students, :id,:name, {class: "newtop__box__creategroup__member__box"} %>
+          <%= f.submit class: "newtop__box__creategroup__member__form" %>
         <% end %>
       </div>
     </div>

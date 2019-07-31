@@ -1,0 +1,38 @@
+.newtop{
+  height: calc(100vh-100px);
+  position: relative;
+  &__box{
+    margin: auto;
+    margin-top: 10%;
+    height: 250px;
+    width: 1000px;
+    border:1px solid black ;
+    &__tittle{
+      &__text{
+        text-align: center;
+      font-weight:700;
+      font-size:25px;
+      }
+    }
+    &__creategroup{
+      display: flex;
+      &__text{
+        margin-top: 50px;
+        margin-left: 20px;
+        font-weight:700;
+      }
+      &__member{
+        margin-top: 50px;
+        margin-left: 20px;
+        &__box{
+          height: 25px;
+          width: 100px;
+
+        }
+        &__form{
+
+        }
+      }
+    }
+  }
+}

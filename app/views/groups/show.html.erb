@@ -1,8 +1,10 @@
+<% if advisor_signed_in? %>
+
 <div class="showtop">
   <div class="showtop__chatbox">
     <div class="showtop__chatbox__groups">　
       <div class="showtop__chatbox__groups__title">
-        <h3 class="showtop__chatbox__groups__title__left"><span>メッセージ</span></h3>
+        <h3 class="showtop__chatbox__groups__title__left"><span>グループ CA</span></h3>
         <div class="showtop__chatbox__groups__title__right"></div>
       </div>
       <div class="showtop__chatbox__groups__group">
@@ -51,7 +53,6 @@
           <% end %>
         </div>
       </div>
-      <% if advisor_signed_in? %>
       <div class="showtop__chatbox__messagebox__submit">
         <div class="showtop__chatbox__messagebox__submit__box">
           <div class="showtop__chatbox__messagebox__submit__box__leftbox"></div>
@@ -60,11 +61,71 @@
             <%= f.hidden_field :position_number, value: 1 %>
             <%= f.button type: 'submit' ,class: "showtop__chatbox__messagebox__submit__box__rightsubmitbox" %>
           <% end%>
+          </div>
         </div>
       </div>
-      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+<% end %>
 
-      <% if student_signed_in? %>
+
+
+<% if student_signed_in? %>
+<div class="showtop">
+  <div class="showtop__chatbox">
+    <div class="showtop__chatbox__groups">　
+      <div class="showtop__chatbox__groups__title">
+        <h3 class="showtop__chatbox__groups__title__left"><span>グループ 生徒</span></h3>
+        <div class="showtop__chatbox__groups__title__right"></div>
+      </div>
+      <div class="showtop__chatbox__groups__group">
+        <% @groups.each do |group| %>
+          <div class="showtop__chatbox__groups__group__box">
+          <%= link_to group_path(group.id) do %>
+            <% if group.student.image_url.present? %>
+              <%= image_tag group.student.image_url.url, class: "showtop__chatbox__groups__group__box__image" %>
+            <% else %>
+              <%= image_tag 'mypage.png', size: '48x48', class: "showtop__chatbox__groups__group__box__image" %>
+            <% end %>
+            <div class="showtop__chatbox__groups__group__box__main">
+              <div class="showtop__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
+              <div class="showtop__chatbox__groups__group__box__main__log">ラストメッセージ</div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="showtop__chatbox__messagebox">
+      <div class="showtop__chatbox__messagebox__title">
+        <% @groups.each do |group| %>
+        <div class="showtop__chatbox__messagebox__titte__left"><span></span></div>
+        <% end %>
+        <div class="showtop__chatbox__messagebox__titte__right"></div>
+      </div>
+      <div class="showtop__chatbox__messagebox__mainbox">
+        <div class="showtop__chatbox__messagebox__mainbox__messagebox">
+          <% @messages.each do |message| %>
+            <% if message.position_number == 1 %>
+            <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageL">
+              <img class="showtop__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
+              <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageL__comment">
+                <%= message.comment %>
+              </div>
+            </div>
+            <% else message.position_number == 2 %>
+            <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageR">
+              <img class="showtop__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
+              <div class="showtop__chatbox__messagebox__mainbox__messagebox__messageR__comment">
+              <%= message.comment %>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
       <div class="showtop__chatbox__messagebox__submit">
         <div class="showtop__chatbox__messagebox__submit__box">
           <div class="showtop__chatbox__messagebox__submit__box__leftbox"></div>
@@ -73,11 +134,11 @@
             <%= f.hidden_field :position_number, value: 2 %>
             <%= f.button type: 'submit' ,class: "showtop__chatbox__messagebox__submit__box__rightsubmitbox" %>
           <% end%>
+          </div>
         </div>
       </div>
-      <% end %>
     </div>
     </div>
-
   </div>
 </div>
+<% end%>

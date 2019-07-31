@@ -16,3 +16,4 @@
 @import "students/edit";
 @import "groups/index";
 @import "groups/show";
+@import "groups/new";
