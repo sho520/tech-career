@@ -3,7 +3,7 @@
     <div class = "job__main__detail">
       <!-- タイトル -->
       <div class = "job__main__detail__title">
-        <%= @job.name%> / <%= @job.position %> 
+        <%= @job.name%> / <%= @job.position %>
         <% if @job.job_state_id == 2%>
           <span>※募集終了</span>
         <% end %>
@@ -676,13 +676,14 @@
         <div class = "job__main__student__title">
           企業画像
         </div>
+        <!-- 画像 -->
         <div class = "job__main__student__pics">
           <% @images.where(job_id: @job.id).each do |image|%>
             <div><%= image_tag image.url, class: "job__main__student__pics__pic"%></div>
           <% end %>
         </div>
       </section>
-      
+
     <!-- CAでログイン時、全生徒の選考状況が表示 -->
     <% elsif advisor_signed_in? %>
       <section class = "job__main__student">
@@ -742,5 +743,3 @@
     <% end %>
   </div>
 </main>
-
-
