@@ -100,7 +100,7 @@ Job.create(
   establish_date: "2012-03-22",
   market_information: "一部上場",
   market_system: "自己資本",
-  # url: "https://di-v.co.jp/",
+  url: "https://di-v.co.jp/",
   location_id:3,
   business: "プログラミング教室",
   company_feature: "風通し良い、若い",
@@ -161,7 +161,7 @@ Job.create(
   establish_date: "2012-03-22",
   market_information: "未上場",
   market_system: "自己資本",
-  # url: "https://di-v.co.jp/",
+  url: "https://di-v.co.jp/",
   location_id:4,
   business: "プログラミング教室",
   company_feature: "風通し良い、若い",
@@ -222,7 +222,7 @@ Job.create(
   establish_date: "2012-03-22",
   market_information: "一部上場",
   market_system: "自己資本",
-  # url: "https://di-v.co.jp/",
+  url: "https://di-v.co.jp/",
   location_id:3,
   business: "プログラミング教室",
   company_feature: "風通し良い、若い",
@@ -283,7 +283,7 @@ Job.create(
   establish_date: "2014-03-22",
   market_information: "一部上場",
   market_system: "自己資本",
-  # url: "https://di-v.co.jp/",
+  url: "https://di-v.co.jp/",
   location_id:3,
   business: "プログラミング教室",
   company_feature: "風通し悪い、平均年齢高め",
@@ -344,7 +344,7 @@ Job.create(
   establish_date: "2015-03-22",
   market_information: "未上場",
   market_system: "自己資本",
-  # url: "https://di-v.co.jp/",
+  url: "https://di-v.co.jp/",
   location_id:5,
   business: "プログラミング教室",
   company_feature: "風通し悪い、平均年齢高め",
@@ -405,7 +405,7 @@ Job.create(
   establish_date: "2015-03-22",
   market_information: "未上場",
   market_system: "自己資本",
-  # url: "https://di-v.co.jp/",
+  url: "https://di-v.co.jp/",
   location_id:3,
   business: "不動産",
   company_feature: "風通しは良い、コミュニケーション良好",
@@ -1011,30 +1011,30 @@ Chat.create(
 8.upto(10) do |n|
   JobImage.create(
     job_id:1,
-    # url: "photo#{n}"
+    url: "photo#{n}.png"
   )
 end
 1.upto(3) do |n|
   JobImage.create(
     job_id:2,
-    # url: "photo#{n}"
+    url: "photo#{n}.png"
   )
 end
 6.upto(8) do |n|
   JobImage.create(
     job_id:3,
-    # url: "photo#{n}"
+    url: "photo#{n}.png"
   )
 end
 3.upto(5) do |n|
   JobImage.create(
     job_id:4,
-    # url: "photo#{n}"
+    url: "photo#{n}.png"
   )
 end
 7.upto(9) do |n|
   JobImage.create(
     job_id:5,
-    # url: "photo#{n}"
+    url: "photo#{n}.png"
   )
 end
