@@ -45,14 +45,10 @@
                   <i class="fa fa-book fa-2x"></i>
                 <% end %>
               </li>
+              <%# group_path(current_student) %>
               <li class="header__wrapper__inner__right__list__menu">
-                <%= link_to group_path(current_student), class: "header__wrapper__inner__right__list__icon__link" do %>
+                <%= link_to new_group_path, class: "header__wrapper__inner__right__list__icon__link" do %>
                   <i class="fa fa-comment fa-2x"></i>
-                <% end %>
-              </li>
-              <li class="header__wrapper__inner__right__list__student">
-                <%= link_to root_path, class: "header__wrapper__inner__right__list__icon__link" do %>
-                  <i class="fa fa-comments fa-2x"></i>
                 <% end %>
               </li>
               <li class="header__wrapper__inner__right__list__menu">

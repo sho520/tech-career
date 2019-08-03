@@ -18,7 +18,7 @@
             <% end %>
             <div class="showadvisortop__chatbox__groups__group__box__main">
               <div class="showadvisortop__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
-              <div class="showadvisortop__chatbox__groups__group__box__main__log">ラストメッセージ</div>
+              <div class="showadvisortop__chatbox__groups__group__box__main__log"></div>
             </div>
           </div>
           <% end %>
@@ -27,7 +27,7 @@
     </div>
     <div class="showadvisortop__chatbox__messagebox">
       <div class="showadvisortop__chatbox__messagebox__title">
-        <span class="showtadvisorop__chatbox__messagebox__titte__left"><%= @group.student.name %></span>
+        <div class="showadvisorop__chatbox__messagebox__titte__left"><%= @group.student.name %></div>
         <%# <div class="showadvisortop__chatbox__messagebox__titte__right"></div> %>
       </div>
       <div class="showadvisortop__chatbox__messagebox__mainbox">
@@ -76,7 +76,7 @@
     <div class="showstudenttop__chatbox__messagebox">
       <div class="showstudenttop__chatbox__messagebox__title">
         <div class="showstudenttop__chatbox__messagebox__titte__left"><span><%= @group.advisor.name %></span></div>
-        <div class="showstudenttop__chatbox__messagebox__titte__right"></div>
+        <%# <div class="showstudenttop__chatbox__messagebox__titte__right"></div> %>
       </div>
       <div class="showstudenttop__chatbox__messagebox__mainbox">
         <div class="showstudenttop__chatbox__messagebox__mainbox__messagebox">

@@ -13,12 +13,13 @@
       margin-right: auto;
       height: 300px;
       width: 70%;
-      border:1px solid black ;
+      border:1px solid #e3eaee;
       background-color: white;
       &__tittle{
         text-align: center;
           font-weight:700;
           font-size:25px;
+          margin-top: 40px;
         &__text{
           text-align: center;
           font-weight:700;
@@ -27,6 +28,7 @@
       }
       &__creategroup{
         display: flex;
+        margin-left:250px ;
         &__text{
           margin-top: 60px;
           margin-left: 20px;
@@ -36,18 +38,30 @@
           margin-top: 50px;
           margin-left: 20px;
           #group_student_id{
+            display:block;
             height: 50px;
-            width: 200px;
+            width: 300px;
+            border:1px solid #edeff1;
+            
+            
+          }
+          #group_advisor_id{
+            display:block;
+            height: 50px;
+            width: 300px;
+            border:1px solid #edeff1;
+            
           }
           &__form{
+            margin-top: 30px;
+            background-color: #C34035;
+            height: 50px;
+            width: 100px;
+            color: white;
           }
         }
       }
     }
   }
 }
-.newtop__page__box__creategroup__member__form{
-  height: 70px;
-  width: 100px;
 
-}

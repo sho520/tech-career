@@ -13,14 +13,14 @@
       height: 85vh;
       // width: 20%;
       background-color: white;
-      border:1px solid black ;
+      border:1px solid #e3eaee ;
       display: inline-block;
       // display: flex;
       flex-direction: column;
       &__title{
         height: 25px;
         width: 368px;
-        border-bottom:1px solid gray ;
+        border-bottom:1px solid #e3eaee ;
 
         &__left{}
         &__right{}
@@ -36,14 +36,14 @@
           height:50px;
           padding:20px 10px;
           // border-top:1px solid gray ;
-          border-bottom:1px solid gray ;
-          // margin-top:20px;
+          border-bottom:1px solid #e3eaee ;
+          color: black;
           &__image{
             width: 40px;
             height:40px;
             float: left;
             margin-right: 5px;
-            border:1px solid black ;
+            border:1px solid #e3eaee ;
             border-radius: 100px;
           }
           &__main{
@@ -57,6 +57,12 @@
         }
         &__box:hover{
           background-color:#781f18;
+          color: white;
+          &__image{}
+          &__main{
+            &__name:hover{color: white;}
+            &__log:hover{color: white;}
+          }
         }
       }
     }
@@ -68,63 +74,82 @@
       flex-direction: column;
       display: inline-block;
       &__title{
-        height: 50px;
+        height: 45px;
         width: 100%;
-        border:1px solid black;
+        border:1px solid #e3eaee;
         text-align: center;
         background-color: #edeff1;
-        font-size: 20px;
+        font-size: 27px;
         color: rgb(65, 65, 65);
         font-weight:bold;
         
-        &__left{}
+        &__left{
+          margin-top: auto;
+        }
         &__right{}
       }
       &__mainbox{
           // height: 50%;
         &__messagebox{
           height: 70vh;
-          overflow: scroll;
+          overflow-y: scroll;
+          display: flex;
+          flex-direction: column;
           &__messageL{
-            height: 100px;
+            height: auto;
             width: 100%;
-            // margin-top:10px;
+            margin-top:50px;
             &__image{
-              height: 40px;
-              width: 40px;
-              float: left;
-              border:1px solid black ;
-              margin: 5px;
-              border-radius: 100px;
+              // height: 40px;
+              // width: 40px;
+              // float: left;
+              // border:1px solid black ;
+              // margin: 5px;
+              // border-radius: 100px;
             }
             &__comment{
               float: left;
+              margin: 10px;
+              max-width: 700px;
               position: relative;
               background-color:#ddd;
               border-radius:5px;
               color:#222;
               padding:8px;
+              word-wrap: break-word;
+              border-radius: 100px 100px 100px 0px;
+            }
+            &__comment:hover{
+              background-color:rgb(80, 80, 80);
+              color: white;
             }
           }
           &__messageR{
-            height: 100px;
+            height: auto;
             width: 100%;
-            // margin-top:10px;
+            margin-top:50px;
             &__image{
-              height: 40px;
-              width: 40px;
-              float: right;
-              border:1px solid black ;
-              margin: 5px;
-              border-radius: 100px;
+              // height: 40px;
+              // width: 40px;
+              // float: right;
+              // border:1px solid black ;
+              // margin: 5px;
+              // border-radius: 100px;
             }
             &__comment{
               float: right;
+              margin: 10px;
+              max-width:700px;
               position: relative;
-              background-color:#ddd;
+              background-color:#C34035;
               border-radius:5px;
-              color:#222;
+              color:white;
               padding:8px;
+              word-wrap: break-word;
+              border-radius: 100px 100px 0px 100px;
+            }
+            &__comment:hover{
+              background-color:#781f18;
             }
           }
         }
@@ -132,8 +157,8 @@
       &__submit{
         bottom: 0px;
         height: 50px;
-        background-color:#C34035;
-        border:1px solid rgb(255, 255, 255);
+        background-color:white;
+        border:1px solid #e3eaee;
         margin-top:10px;
         &__box{
           height:100%;
@@ -146,16 +171,16 @@
           }
           &__centercommentbox{
             height: 40px;
-            width: 900px;
-            border:1px solid black;
-            margin: 3px 3px 3px 30px ;
+            width: 75%;
+            border:1px solid #C34035;
+            margin: 3px 3px 3px 25px ;
             float: left;
             border-radius: 100px;
           }
           &__rightsubmitbox{
             height: 40px;
-            width: 100px;
-            border:1px solid black;
+            width: 13%;
+            border:1px solid #C34035;
             margin: 5px 10px 3px 3px ;
             float: right;
             border-radius: 100px;
@@ -188,17 +213,17 @@
       flex-direction: column;
       display: inline-block;
       &__title{
-        height: 50px;
+        height: 45px;
         width: 100%;
-        border:1px solid black;
+        border:1px solid #e3eaee;
         text-align: center;
         background-color: #edeff1;
-        font-size: 20px;
+        font-size: 27px;
         color: rgb(65, 65, 65);
         font-weight:bold;
-        
+
         &__left{
-          
+          margin-top: auto;
         }
         // &__right{}
       }
@@ -206,47 +231,64 @@
           // height: 50%;
         &__messagebox{
           height: 70vh;
-          overflow: scroll;
+          overflow-y: scroll;
+          display: flex;
+          flex-direction: column;
           &__messageL{
-            height: 100px;
+            height: auto;
             width: 100%;
-            // margin-top:10px;
+            margin-top:50px;
             &__image{
-              height: 40px;
-              width: 40px;
-              float: left;
-              border:1px solid black ;
-              margin: 5px;
-              border-radius: 100px;
+              // height: 40px;
+              // width: 40px;
+              // float: left;
+              // border:1px solid black ;
+              // margin: 5px;
+              // border-radius: 100px;
             }
             &__comment{
               float: left;
+              margin: 10px 10px 10px 25px;
+              max-width: 700px;
               position: relative;
               background-color:#ddd;
               border-radius:5px;
               color:#222;
               padding:8px;
+              word-wrap: break-word;
+              border-radius: 100px 100px 100px 0px;
+            }
+            &__comment:hover{
+              background-color:rgb(80, 80, 80);
+              color: white;
             }
           }
           &__messageR{
-            height: 100px;
+            height: auto;
             width: 100%;
-            // margin-top:10px;
+            margin-top:50px;
             &__image{
-              height: 40px;
-              width: 40px;
-              float: right;
-              border:1px solid black ;
-              margin: 5px;
-              border-radius: 100px;
+              // height: 40px;
+              // width: 40px;
+              // float: right;
+              // border:1px solid black ;
+              // margin: 5px;
+              // border-radius: 100px;
             }
             &__comment{
               float: right;
+              margin: 10px 25px 10px 10px;
+              max-width:700px;
               position: relative;
-              background-color:#ddd;
+              background-color:#C34035;
               border-radius:5px;
-              color:#222;
+              color:white;
               padding:8px;
+              word-wrap: break-word;
+              border-radius: 100px 100px 0px 100px;
+            }
+            &__comment:hover{
+              background-color:#781f18;
             }
           }
         }
@@ -254,8 +296,8 @@
       &__submit{
         bottom: 0px;
         height: 50px;
-        background-color:#C34035;
-        border:1px solid rgb(255, 255, 255);
+        background-color:white;
+        border:1px solid #e3eaee;
         margin-top:10px;
         
         &__box{
@@ -268,16 +310,16 @@
           }
           &__centercommentbox{
             height: 40px;
-            width: 950px;
-            border:1px solid black;
+            width: 75%;
+            border:1px solid #C34035;
             margin: 3px 3px 3px 25px ;
             float: left;
             border-radius: 100px;
           }
           &__rightsubmitbox{
             height: 40px;
-            width: 100px;
-            border:1px solid black;
+            width: 13%;
+            border:1px solid #C34035;
             margin: 5px 10px 3px 3px ;
             float: right;
             border-radius: 100px;

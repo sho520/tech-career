@@ -13,14 +13,14 @@
       height: 85vh;
       // width: 20%;
       background-color: white;
-      border:1px solid black ;
+      border:1px solid #e3eaee ;
       display: inline-block;
       // display: flex;
       flex-direction: column;
       &__title{
         height: 25px;
         width: 368px;
-        border-bottom:1px solid gray ;
+        border-bottom:1px solid #e3eaee ;
 
         &__left{}
         &__right{}
@@ -36,14 +36,14 @@
           height:50px;
           padding:20px 10px;
           // border-top:1px solid gray ;
-          border-bottom:1px solid gray ;
-          // margin-top:20px;
+          border-bottom:1px solid #e3eaee ;
+          color: black;
           &__image{
             // width: 40px;
             // height:40px;
             float: left;
             margin-right: 5px;
-            border:1px solid black ;
+            border:1px solid #e3eaee;
             border-radius: 100px;
           }
           &__main{
@@ -54,7 +54,13 @@
           }
         }
         &__box:hover{
-          background-color:#fa8b8b;
+          background-color:#781f18;
+          color: white;
+          &__image{}
+          &__main{
+            &__name:hover{color: white;}
+            &__log:hover{color: white;}
+          }
         }
       }
     }
@@ -70,7 +76,7 @@
         width: 100%;
         margin-left:auto;
         margin-right:auto;
-        margin-top: 30%;
+        margin-top: 25%;
         // border:1px solid black ;
         flex-direction: column;
         &__message{

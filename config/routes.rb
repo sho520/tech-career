@@ -32,7 +32,8 @@ Rails.application.routes.draw do
   end
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
-  resources :groups , only: [:index, :create, :new, :show] do
+  resources :groups , only: [:index, :create, :new, :show,] do
+    post 'create_student_group', to: 'groups#create_student_group', on: :collection
     resources :messages , only: [:index, :create, :new]
   end
   

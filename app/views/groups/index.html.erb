@@ -1,47 +1,44 @@
-<div class="top">
-  <div class="top__chatbox">
-    <%# <div class="top__chatbox__creategroup"> %>
-      <%# <div class="top__chatbox__creategroup__member"> %>
-        <%# <%= form_for (@group)  do |f| %> 
-          <%# <%= f.collection_select(:student_id, @students, :id,:name,) %> 
-          <%# <%= f.submit class: "top__chatbox__creategroup__member__form" %> 
-        <%# <% end %> 
-      <%# </div> %>
-    <%# </div> %>
-    <div class="top__chatbox__groups">　
-      <div class="top__chatbox__groups__title">
-        <h3 class="top__chatbox__groups__title__left"><span>メッセージ</span></h3>
-        <div class="top__chatbox__groups__title__right"></div>
-      </div>
-      <div class="top__chatbox__groups__group">
-        <% @groups.each do |group| %>
-          <div class="top__chatbox__groups__group__box">
-          <%= link_to group_path(group.id) do %>
-            <% if group.student.image_url.present? %>
-              <%= image_tag group.student.image_url.url, size: '48x48', class: "top__chatbox__groups__group__box__image" %>
-            <% else %>
-              <%= image_tag 'mypage.png', size: '48x48', class: "top__chatbox__groups__group__box__image" %>
-            <% end %>
-            <div class="top__chatbox__groups__group__box__main">
-              <div class="top__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
-              <div class="top__chatbox__groups__group__box__main__log">ラストメッセージ</div>
+<% if advisor_signed_in? %>
+  <div class="top">
+    <div class="top__chatbox">
+      <div class="top__chatbox__groups">　
+        <div class="top__chatbox__groups__title">
+          <h3 class="top__chatbox__groups__title__left"><span>メッセージ</span></h3>
+          <div class="top__chatbox__groups__title__right"></div>
+        </div>
+        <div class="top__chatbox__groups__group">
+          <% @groups.each do |group| %>
+            <%= link_to group_path(group.id) do %>
+            <div class="top__chatbox__groups__group__box">
+              <% if group.student.image_url.present? %>
+                <%= image_tag group.student.image_url.url, size: '48x48', class: "top__chatbox__groups__group__box__image" %>
+              <% else %>
+                <%= image_tag 'mypage.png', size: '48x48', class: "top__chatbox__groups__group__box__image" %>
+              <% end %>
+              <div class="top__chatbox__groups__group__box__main">
+                <div class="top__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
+                <div class="top__chatbox__groups__group__box__main__log"><%#= group.show_last_comment %></div>
+              </div>
             </div>
-          </div>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
-    <div class="top__chatbox__messagebox">
-      <div class="top__chatbox__messagebox__nocontenntbox">
-          <div class="top__chatbox__messagebox__nocontenntbox__message">
-            <h4 class="top__chatbox__messagebox__nocontenntbox__message__title">選択したメッセージはありません</h4>
-            <p class ="top__chatbox__messagebox__nocontenntbox__message__text">既存のメッセージを選択するか、新しいメッセージを作成してください。</p>
-          </div>
+      <div class="top__chatbox__messagebox">
+        <div class="top__chatbox__messagebox__nocontenntbox">
+            <div class="top__chatbox__messagebox__nocontenntbox__message">
+              <h4 class="top__chatbox__messagebox__nocontenntbox__message__title">選択したメッセージはありません</h4>
+              <p class ="top__chatbox__messagebox__nocontenntbox__message__text">既存のメッセージを選択するか、新しいメッセージを作成してください。</p>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>
 
+<% if student_signed_in? %>
+
+<% end %>
 
 
 
