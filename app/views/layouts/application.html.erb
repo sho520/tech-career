@@ -29,8 +29,8 @@
           <div class="header__wrapper__inner__right">
             <ul class="header__wrapper__inner__right__list">
               <li class="header__wrapper__inner__right__list__img">
-                <% if current_student.image_url.present? %>
-                  <%= image_tag current_student.image_url.url, size: '48x48', class: "header__wrapper__inner__right__list__img__pic" %>
+                <% if current_student.image.present? %>
+                  <%= image_tag current_student.image.url, size: '48x48', class: "header__wrapper__inner__right__list__img__pic" %>
                 <% else %>
                   <%= image_tag 'mypage.png', size: '48x48', class: "header__wrapper__inner__right__list__img__pic" %>
                 <% end %>

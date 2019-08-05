@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-  
+
   def show                                                                     #生徒のマイページ。ログインしている生徒は自分のマイページに移動可能。CAは全生徒の各マイページに移動可能。
     # @students = Student.all
     @student = Student.find(params[:id])                                       #対象の生徒のマイページに移動
@@ -44,7 +44,7 @@ class StudentsController < ApplicationController
                                     :age,
                                     :period,
                                     :team,
-                                    :image_url,
+                                    :image,
                                     :advisor_id,)
   end
 

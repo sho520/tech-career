@@ -10,7 +10,7 @@
       <div class="student-edit__inner__wrapper__side">
         <!-- サイドバー -->
         <% if current_student.image_url.present? %>
-          <%= image_tag current_student.image_url.url, width: '180', class: "student-edit__inner__wrapper__side__img" %>
+          <%= image_tag current_student.image.url, width: '180', class: "student-edit__inner__wrapper__side__img" %>
         <% else %>
           <%= image_tag 'mypage.png', width: '180', class: "student-edit__inner__wrapper__side__img" %>
         <% end %>
@@ -82,8 +82,8 @@
               </div>
 
               <div class="student-edit__inner__wrapper__main__inner__form__field">
-                <%= f.label :image_url, '画像をアップロード' %>
-                <%= f.file_field :image_url, class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
+                <%= f.label :image, '画像をアップロード' %>
+                <%= f.file_field :image, class: "student-edit__inner__wrapper__main__inner__form__field__input" %>
               </div>
 
               <%= f.button "情報を更新する", class: 'student-edit__inner__wrapper__main__inner__form__submit' %>
