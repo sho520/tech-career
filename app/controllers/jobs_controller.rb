@@ -2,11 +2,14 @@ class JobsController < ApplicationController
 
 
   def index
-    @jobs = Job.all
+    # @jobs = Job.all
+    # @chats = Chat.new
+    # @chat = Chat.all
+    # @images = JobImage.all
+    @jobs = Job.all()
+    @newjobs = Job.all.order(id: "DESC")
     @chats = Chat.new
-    @chat = Chat.all
-    @images = JobImage.all
-
+    @images = JobImage.all()
 
   end
 
@@ -164,6 +167,7 @@ class JobsController < ApplicationController
                                 :add_info_fixed_overtime_pay,
                                 :remark,
                                 :job_state_id,
+                                :image_url,
                                  { various_allowance_ids: [] },
                                  { various_insurance_ids: [] },
                                  { holiday_vacation_ids: [] },

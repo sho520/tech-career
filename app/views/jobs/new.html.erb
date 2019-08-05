@@ -380,6 +380,11 @@
           <label><%= f.radio_button :job_state_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 募集終了 </span></label>
         </div>
 
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :image_url, '画像をアップロード',class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.file_field :image_url,class: "job-form__inner__right__job__field__image-url" %>
+        </div>
+
 
       </div>
       <p class="job-form__inner__right__submittext">上記の内容で求人を登録しますか？</p>

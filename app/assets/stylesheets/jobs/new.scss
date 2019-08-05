@@ -117,7 +117,7 @@
             margin-left: 20px;
             font-size: 13px;
             width: 470px;
-            height: 250px;
+            height: 180px;
           }
           #job_working_hours {
             margin-left: 20px;
@@ -158,6 +158,10 @@
             width: 470px;
             height: 60px;
           }
+          &__image-url {
+            margin-left: 20px;
+            margin-top: 10px;
+          }
         }
 
       }
@@ -188,5 +192,3 @@
     }
   }
 }
-
-
