@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_23_073043) do
+ActiveRecord::Schema.define(version: 2019_08_05_183949) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -135,6 +135,7 @@ ActiveRecord::Schema.define(version: 2019_07_23_073043) do
     t.integer "job_state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_url"
     t.index ["employee_type_id"], name: "index_jobs_on_employee_type_id"
     t.index ["industry_id"], name: "index_jobs_on_industry_id"
     t.index ["job_state_id"], name: "index_jobs_on_job_state_id"
