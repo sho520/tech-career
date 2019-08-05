@@ -167,7 +167,7 @@ class JobsController < ApplicationController
                                 :add_info_fixed_overtime_pay,
                                 :remark,
                                 :job_state_id,
-                                :image_url,
+                                :image,
                                  { various_allowance_ids: [] },
                                  { various_insurance_ids: [] },
                                  { holiday_vacation_ids: [] },
