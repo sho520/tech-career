@@ -150,6 +150,7 @@ Job.create(
   working_place_4: "ロンドン",
   remark: "特に無し",
   job_state_id:1,
+  image: open("#{Rails.root}/db/dummy_images/pic1.png"),
   )
 
 Job.create(
@@ -211,6 +212,7 @@ Job.create(
   working_place_4: "ロンドン",
   remark: "特に無し",
   job_state_id:1,
+  image: open("#{Rails.root}/db/dummy_images/pic2.jpg"),
 )
 
 Job.create(
@@ -272,6 +274,7 @@ Job.create(
   working_place_4: "ロンドン",
   remark: "特に無し",
   job_state_id:2,
+  image: open("#{Rails.root}/db/dummy_images/pic3.png"),
 )
 
 Job.create(
@@ -333,6 +336,7 @@ Job.create(
   working_place_4: "",
   remark: "特に無し",
   job_state_id:1,
+  image: open("#{Rails.root}/db/dummy_images/pic4.jpg"),
 )
 
 Job.create(
@@ -394,6 +398,7 @@ Job.create(
   working_place_4: "",
   remark: "特に無し",
   job_state_id:1,
+  image: open("#{Rails.root}/db/dummy_images/pic5.jpg"),
 )
 
 Job.create(
@@ -455,6 +460,7 @@ Job.create(
   working_place_4: "",
   remark: "特に無し",
   job_state_id:1,
+  image: open("#{Rails.root}/db/dummy_images/pic6.png"),
 )
 
 Advisor.create(
