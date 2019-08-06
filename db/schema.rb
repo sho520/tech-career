@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_05_212945) do
+ActiveRecord::Schema.define(version: 2019_08_06_061748) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -135,7 +135,6 @@ ActiveRecord::Schema.define(version: 2019_08_05_212945) do
     t.integer "job_state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image_url"
     t.string "image"
     t.index ["employee_type_id"], name: "index_jobs_on_employee_type_id"
     t.index ["industry_id"], name: "index_jobs_on_industry_id"
@@ -199,7 +198,6 @@ ActiveRecord::Schema.define(version: 2019_08_05_212945) do
     t.integer "age"
     t.integer "period"
     t.string "team"
-    t.string "image_url"
     t.bigint "advisor_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

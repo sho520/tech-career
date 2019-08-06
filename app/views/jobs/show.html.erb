@@ -678,9 +678,7 @@
         </div>
         <!-- 画像 -->
         <div class = "job__main__student__pics">
-          <% @images.where(job_id: @job.id).each do |image|%>
-            <div><%= image_tag image.url, class: "job__main__student__pics__pic"%></div>
-          <% end %>
+          <div><%= image_tag @job.image.url, class: "job__main__student__pics__pic"%></div>
         </div>
       </section>
 

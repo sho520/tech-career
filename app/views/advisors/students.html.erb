@@ -28,8 +28,8 @@
           <% @students.each do |student| %>
             <tr class = "ca__my__main__applying__detail__table__tr">
               <td class = "ca__my__main__applying__detail__table__tr__td__name">
-              <% if student.image_url.present? %>
-                <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag student.image_url.url, size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
+              <% if student.image.present? %>
+                <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag student.image.url, size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
               <% else %>
                 <div class="ca__my__main__applying__detail__table__tr__td__name__photo"><%= image_tag 'mypage.png', size: '40x40', class: "ca__my__main__applying__detail__table__tr__td__name__photo__image" %></div>
               <% end %>
