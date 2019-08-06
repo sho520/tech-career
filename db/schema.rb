@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_061748) do
+ActiveRecord::Schema.define(version: 2019_08_06_095347) do
 
   create_table "advisors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -42,9 +42,18 @@ ActiveRecord::Schema.define(version: 2019_08_06_061748) do
     t.string "name"
   end
 
+  create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "advisor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["advisor_id"], name: "index_groups_on_advisor_id"
+    t.index ["student_id"], name: "index_groups_on_student_id"
+  end
+
   create_table "holiday_vacation_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "holiday_vacation_id", null: false
+    t.integer "job_id", null: false
+    t.integer "holiday_vacation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["holiday_vacation_id"], name: "index_holiday_vacation_jobs_on_holiday_vacation_id"
@@ -144,8 +153,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_061748) do
   end
 
   create_table "language_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "language_id", null: false
+    t.integer "job_id", null: false
+    t.integer "language_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_language_jobs_on_job_id"
@@ -162,6 +171,15 @@ ActiveRecord::Schema.define(version: 2019_08_06_061748) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "prefecture"
+  end
+
+  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.text "comment", null: false
+    t.integer "position_number", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_messages_on_group_id"
   end
 
   create_table "number_of_employees", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -211,8 +229,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_061748) do
   end
 
   create_table "various_allowance_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "various_allowance_id", null: false
+    t.integer "job_id", null: false
+    t.integer "various_allowance_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_various_allowance_jobs_on_job_id"
@@ -226,8 +244,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_061748) do
   end
 
   create_table "various_insurance_jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "job_id", null: false
-    t.bigint "various_insurance_id", null: false
+    t.integer "job_id", null: false
+    t.integer "various_insurance_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["job_id"], name: "index_various_insurance_jobs_on_job_id"

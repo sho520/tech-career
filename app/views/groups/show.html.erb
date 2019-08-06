@@ -1,0 +1,117 @@
+<% if advisor_signed_in? %>
+
+<div class="showadvisortop">
+  <div class="showadvisortop__chatbox">
+    <div class="showadvisortop__chatbox__groups">　
+      <div class="showadvisortop__chatbox__groups__title">
+        <h3 class="showadvisortop__chatbox__groups__title__left"><span>グループ</span></h3>
+        <div class="showadvisortop__chatbox__groups__title__right"></div>
+      </div>
+      <div class="showadvisortop__chatbox__groups__group">
+        <% @groups.each do |group| %>
+          <%= link_to group_path(group.id) do %>
+          <div class="showadvisortop__chatbox__groups__group__box">
+            <% if group.student.image.present? %>
+              <%= image_tag group.student.image.url, size: '48x48', class: "showadvisortop__chatbox__groups__group__box__image" %>
+            <% else %>
+              <%= image_tag 'mypage.png', size: '48x48', class: "showadvisortop__chatbox__groups__group__box__image" %>
+            <% end %>
+            <div class="showadvisortop__chatbox__groups__group__box__main">
+              <div class="showadvisortop__chatbox__groups__group__box__main__name"><%= group.student.name %></div>
+              <div class="showadvisortop__chatbox__groups__group__box__main__log"></div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="showadvisortop__chatbox__messagebox">
+      <div class="showadvisortop__chatbox__messagebox__title">
+        <div class="showadvisorop__chatbox__messagebox__titte__left"><%= @group.student.name %></div>
+        <%# <div class="showadvisortop__chatbox__messagebox__titte__right"></div> %>
+      </div>
+      <div class="showadvisortop__chatbox__messagebox__mainbox">
+        <div class="showadvisortop__chatbox__messagebox__mainbox__messagebox">
+          <% @messages.each do |message| %>
+            <% if message.position_number == 1 %>
+            <div class="showadvisortop__chatbox__messagebox__mainbox__messagebox__messageL">
+              <img class="showadvisortop__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
+              <div class="showadvisortop__chatbox__messagebox__mainbox__messagebox__messageL__comment">
+                <%= message.comment %>
+              </div>
+            </div>
+            <% else message.position_number == 2 %>
+            <div class="showadvisortop__chatbox__messagebox__mainbox__messagebox__messageR">
+              <img class="showadvisortop__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
+              <div class="showadvisortop__chatbox__messagebox__mainbox__messagebox__messageR__comment">
+              <%= message.comment %>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="showadvisortop__chatbox__messagebox__submit">
+        <div class="showadvisortop__chatbox__messagebox__submit__box">
+          <div class="showadvisortop__chatbox__messagebox__submit__box__leftbox"></div>
+          <%= form_for [@group,@message] do |f| %> 
+            <%= f.text_field :comment, class: "showadvisortop__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
+            <%= f.hidden_field :position_number, value: 1 %>
+            <%# <%= f.button type: 'submit' ,class: "showadvisortop__chatbox__messagebox__submit__box__rightsubmitbox" %> 
+            <%= f.button "送信" ,class: "showstudenttop__chatbox__messagebox__submit__box__rightsubmitbox" %>
+          <% end%>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<% if student_signed_in? %>
+<div class="showstudenttop">
+  <div class="showstudenttop__chatbox">
+    <div class="showstudenttop__chatbox__messagebox">
+      <div class="showstudenttop__chatbox__messagebox__title">
+        <div class="showstudenttop__chatbox__messagebox__titte__left"><span><%= @group.advisor.name %></span></div>
+        <%# <div class="showstudenttop__chatbox__messagebox__titte__right"></div> %>
+      </div>
+      <div class="showstudenttop__chatbox__messagebox__mainbox">
+        <div class="showstudenttop__chatbox__messagebox__mainbox__messagebox">
+          <% @messages.each do |message| %>
+            <% if message.position_number == 1 %>
+            <div class="showstudenttop__chatbox__messagebox__mainbox__messagebox__messageL">
+              <img class="showstudenttop__chatbox__messagebox__mainbox__messagebox__messageL__image"></img>
+              <div class="showstudenttop__chatbox__messagebox__mainbox__messagebox__messageL__comment">
+                <%= message.comment %>
+              </div>
+            </div>
+            <% else message.position_number == 2 %>
+            <div class="showstudenttop__chatbox__messagebox__mainbox__messagebox__messageR">
+              <img class="showstudenttop__chatbox__messagebox__mainbox__messagebox__messageR__image"></img>
+              <div class="showstudenttop__chatbox__messagebox__mainbox__messagebox__messageR__comment">
+              <%= message.comment %>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="showstudenttop__chatbox__messagebox__submit">
+        <div class="showstudenttop__chatbox__messagebox__submit__box">
+          <div class="showstudenttop__chatbox__messagebox__submit__box__leftbox"></div>
+          <%= form_for [@group,@message] do |f| %> 
+            <%= f.text_field :comment, class: "showstudenttop__chatbox__messagebox__submit__box__centercommentbox",id:"submit__button" %>
+            <%= f.hidden_field :position_number, value: 2 %>
+            <%= f.button "送信" ,class: "showstudenttop__chatbox__messagebox__submit__box__rightsubmitbox" %>
+          <% end%>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<% end%>

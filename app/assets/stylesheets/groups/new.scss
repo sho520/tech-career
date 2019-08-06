@@ -1,0 +1,69 @@
+.newtop{
+  height: calc(100vh-100px);
+  position: relative;
+  background-color: #edeff1;
+  &__page{
+    height: 100% ;
+    width: 100%;
+    background-color: #edeff1;
+    display: flex;
+    &__box{
+      margin-top: 10%;
+      margin-left: auto;
+      margin-right: auto;
+      height: 300px;
+      width: 70%;
+      border:1px solid #e3eaee;
+      background-color: white;
+      &__tittle{
+        text-align: center;
+          font-weight:700;
+          font-size:25px;
+          margin-top: 40px;
+        &__text{
+          text-align: center;
+          font-weight:700;
+          font-size:25px;
+        }
+      }
+      &__creategroup{
+        display: flex;
+        margin-left:250px ;
+        &__text{
+          margin-top: 60px;
+          margin-left: 20px;
+          font-weight:700;
+        }
+        &__member{
+          margin-top: 50px;
+          margin-left: 20px;
+          #group_student_id{
+            display:block;
+            height: 50px;
+            width: 300px;
+            border:1px solid #edeff1;
+          }
+          #group_advisor_id{
+            display:block;
+            height: 50px;
+            width: 300px;
+            border:1px solid #edeff1;
+          }
+          &__form{
+            margin-top: 30px;
+            background-color: #C34035;
+            height: 50px;
+            width: 100px;
+            color: white;
+            font-size: 16px;
+            border-radius: 10px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

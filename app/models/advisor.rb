@@ -5,6 +5,6 @@ class Advisor < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :students
-  has_many :chats
+  has_many :groups
   
 end

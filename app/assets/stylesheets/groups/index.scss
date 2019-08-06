@@ -1,0 +1,117 @@
+.top{
+  height: calc(100vh-100px);
+  position: relative;
+  &__chatbox{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: black;
+    position:absolute;
+    display: flex;
+
+    &__groups{
+      height: 85vh;
+      // width: 20%;
+      background-color: white;
+      border:1px solid #e3eaee ;
+      display: inline-block;
+      // display: flex;
+      flex-direction: column;
+      &__title{
+        height: 25px;
+        width: 368px;
+        border-bottom:1px solid #e3eaee ;
+
+        &__left{}
+        &__right{}
+      }
+      &__group{
+        overflow: scroll;
+        height: 90%;
+        width: 368px;
+        // border:1px solid black ;
+
+        // overflow:scroll;
+        &__box{
+          height:50px;
+          padding:20px 10px;
+          // border-top:1px solid gray ;
+          border-bottom:1px solid #e3eaee ;
+          color: black;
+          &__image{
+            // width: 40px;
+            // height:40px;
+            float: left;
+            margin-right: 5px;
+            border:1px solid #e3eaee;
+            border-radius: 100px;
+          }
+          &__main{
+            float: left;
+            margin-left: 20px;
+            &__name{}
+            &__log{}
+          }
+        }
+        &__box:hover{
+          background-color:#781f18;
+          color: white;
+          &__image{}
+          &__main{
+            &__name:hover{color: white;}
+            &__log:hover{color: white;}
+          }
+        }
+      }
+    }
+    &__messagebox{
+      height: 100%;
+      width: 80%;
+      background-color: white;
+      // display: flex;
+      position: relative;
+      display: inline-block;
+      &__nocontenntbox{
+        height: 80px;
+        width: 100%;
+        margin-left:auto;
+        margin-right:auto;
+        margin-top: 25%;
+        // border:1px solid black ;
+        flex-direction: column;
+        &__message{
+          text-align:center;
+          &__title{
+            font-weight: bold;
+            font-size:20px;
+          }
+          &__text{
+            font-weight: 100;
+            color: gray;
+          }
+        }
+      }
+    }
+    &__creategroup{
+      height: 50px;
+      width: 20%;
+      background-color: white;
+      border:1px solid black ;
+      display: inline-block;
+      &__member{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(187, 118, 118);
+        &__line{
+          height: 5px;
+          width: 100%;
+        }
+      }
+      &__form{
+        height: 50%;
+        width: 100%;
+        background-color: rgb(72, 70, 165);
+      }
+    }
+  }
+}

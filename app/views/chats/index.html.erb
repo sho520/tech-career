@@ -1,92 +1,55 @@
-<div class="jobIndex">
-  <div class="jobIndex__inner">
-    <div class="jobIndex__inner__left">
-      <div class="jobIndex__inner__left__wrapper">
-        <% if student_signed_in? %>
-        <div class="jobIndex__inner__left__wrapper__header">新規登録が完了したらアカウント情報編集で担当のキャリアアドバイザーを選択しましょう！</div>
-        <% elsif advisor_signed_in? %>
-        <div class="jobIndex__inner__left__wrapper__header">登録求人一覧</div>
-        <% else %>
-        <div class="jobIndex__inner__left__wrapper__header">興味がある求人があればログインしてキャリアアドバイザーに<span>「チャット」</span>で相談してみましょう！</div>
-        <% end %>
-        <% @jobs.each do |job| %>
-        <div class="jobIndex__inner__left__wrapper__content">
-          <% if student_signed_in? || advisor_signed_in?%>
-          <%= link_to job_path(id: job.id), class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
-            <div class="jobIndex__inner__left__wrapper__content__imgLink__box">zz
-              <%= image_tag @images.find_by(id: job.id).url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
-            </div>
-          <% end %>
-          <%else%>
-          <%= link_to new_student_session_path, class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
-            <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
-              <%= image_tag @images.find_by(id: job.id).url,width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
-            </div>
-          <% end %>
-          <% end %>
-          <div class="jobIndex__inner__left__wrapper__content__jobContents">
-            <div class="jobIndex__inner__left__wrapper__content__jobContents__up">
-              <section class="jobIndex__inner__left__wrapper__content__jobContents__up__text">
-                <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__typename"><%= job.employee_type.name %></span>
-                <span class="jobIndex__inner__left__wrapper__content__jobContents__up__text__time"><%= job.updated_at.strftime("%Y-%m-%d") %></span>
-              </section>
-              <h1 class="jobIndex__inner__left__wrapper__content__jobContents__up__title"><%= job.position %><span>募集!</span></h1>
-              <section class="jobIndex__inner__left__wrapper__content__jobContents__up__cdt">
-                <span><i class="fa fa-dollar"></i> 年収<%= job.min_annual_income %>万円〜<%= job.max_annual_income %>万円</span>
-                <span> <i class="fa fa-map-pin"></i> <%= job.working_place_1 %></span>
-              </section>
-            </div>
-            <div class="jobIndex__inner__left__wrapper__content__jobContents__under">
-              <h2 class="jobIndex__inner__left__wrapper__content__jobContents__under__name"><%= job.name %></h2>
-              <section class="jobIndex__inner__left__wrapper__content__jobContents__under__info">ここになにか情報を入れれます</section>
-              <div class="jobIndex__inner__left__wrapper__content__jobContents__under__link">
-                <% if student_signed_in? || advisor_signed_in?%>
-                  <%= link_to job_path(id: job.id),class: "jobIndex__inner__left__wrapper__content__jobContents__under__link__btn" do%>
-                    <i class="fa fa-info-circle"> <span class = "j">詳細をみる</span></i>
-                  <% end %>
-                <%else%>
-                  <%= link_to new_student_session_path,class: "jobIndex__inner__left__wrapper__content__jobContents__under__link__btn" do %>
-                    <i class="fa fa-info-circle"> <span class = "j">ログインして詳細をみる</span></i>
-                  <% end %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% end %>
+<div class="top">
+  <div class="top__state">
+    <div class="top__state__left"></div>
+    <div class="top__state__right"></div>
+  </div>
 
+  <div class="top__chatbox">
+
+    <div class="top__chatbox__groups">　
+      <div class="top__chatbox__groups__group">
+        <div class="top__chatbox__groups__group__title">名前</div>
+        <div class="top__chatbox__groups__group__image"></div>
+        <div class="top__chatbox__groups__group__log">ラストメッセージ</div>
       </div>
     </div>
-    <div class="jobIndex__inner__right">
-<!-- 新着コンテンツ -->
-      <div class="jobIndex__inner__right__sideContent">
-        <h3 class="jobIndex__inner__right__sideContent__title">新着求人</h3>
-        <% @newjobs.each do |job| %>
-        <div class="jobIndex__inner__right__sideContent__box">
-          <% if student_signed_in? || advisor_signed_in?%>
-          <%= link_to root_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
-            <div class="jobIndex__inner__right__sideContent__box__link__left">
-              <%= image_tag @images.find_by(id: job.id).url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
-            </div>
-            <div class="jobIndex__inner__right__sideContent__box__link__right">
-              <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
-              <p class="jobIndex__inner__right__sideContent__box__link__right__text"><%= job.job_description %></p>
-            </div>
+
+    <div class="top__chatbox__messagebox">
+      <div class="top__chatbox__messagebox__message">
+        <div class="top__chatbox__messagebox__message__left"></div>
+        <div class="top__chatbox__messagebox__message__right"></div>
+      </div>
+      <div class="top__chatbox__messagebox__from">
+        <div class="top__chatbox__messagebox__from__comment"></div>
+        <div class="top__chatbox__messagebox__from__submit"></div>
+      </div>
+    </div>
+
+    <div class="top__chatbox__creategroup">
+      <div class="top__chatbox__creategroup__member">
+        <%= form_for @group , url: groups_path do |f| %>
+            <%# <%= f.radio_button :student_id, "student.id", {:checked => true}, class: "top__chatbox__creategroup__member__line"%>
+            <%# <span><%= student.name</span>  %>
+            <% @students.each do |student| %>
+            <%= student.name %>
+            <%= f.hidden_field :student_id, value: student.id %>
+            <%= f.submit class: "top__chatbox__creategroup__member__form" %>
           <% end %>
-          <%else%>
-          <%= link_to new_student_session_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
-            <div class="jobIndex__inner__right__sideContent__box__link__left">
-              <%= image_tag @images.find_by(id: job.id).url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
-            </div>
-            <div class="jobIndex__inner__right__sideContent__box__link__right">
-              <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
-              <p class="jobIndex__inner__right__sideContent__box__link__right__text"><%= job.job_description %></p>
-            </div>
-          <% end %>
-          <% end %>
-        </div>
         <% end %>
       </div>
     </div>
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+

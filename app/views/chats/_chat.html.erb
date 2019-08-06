@@ -1,13 +1,13 @@
 <div class="top__contentbox__right">
   <div class="top__contentbox__right__chatbox">
     <div class = "top__contentbox__right__chatbox__comments">
-    <% chats.each do |chat| %>
-      <% if chat.commentspeaker == 2 %>
+    <%# <% chats.each do |chat| %> 
+      <%# <% if chat.commentspeaker == 2 %> 
 
         <div class="top__contentbox__right__chatbox__comments__commentleft"><%# 左コメント %>
           <div class="top__contentbox__right__chatbox__comments__commentleft__box">
             <div class="top__contentbox__right__chatbox__comments__commentleft__box__content">
-              <div class="top__contentbox__right__chatbox__comments__commentleft__box__content__text"><%= chat.comment %></div>
+              <div class="top__contentbox__right__chatbox__comments__commentleft__box__content__text"><%#= chat.comment %></div>
             </div>
           </div>
         </div>
@@ -16,12 +16,12 @@
         </div>
         <div class="top__contentbox__right__chatbox__comments__clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
 
-      <%else chat.commentspeaker == 1 %>
+      <%# <%else chat.commentspeaker == 1 %> 
 
         <div class="top__contentbox__right__chatbox__comments__commentright"><%# 右コメント %>
           <div class="top__contentbox__right__chatbox__comments__commentright__box">
             <div class="top__contentbox__right__chatbox__comments__commentright__box__content">
-              <div class="top__contentbox__right__chatbox__comments__commentright__box__content__text"><%= chat.comment %></div>
+              <div class="top__contentbox__right__chatbox__comments__commentright__box__content__text"><%#= chat.comment %></div>
             </div>
           </div>
         </div>
@@ -29,28 +29,28 @@
           <img src="image.jpg" width="40" height="40" class="icon">
         </div>
         <div class="top__contentbox__right__chatbox__comments__clear"></div><!-- 回り込みを解除（スタイルはcssで充てる） -->
-      <% end %>
-    <% end %>
+      <%# <% end %> 
+    <%# <% end %> 
     </div>
     <div class="top__contentbox__right__chatbox__submit">
-      <% if student_signed_in? %>
-        <%= form_for(@chats , url: {controller: "chats", action: "create"}) do |f| %>
-          <%= f.text_field :comment, class: "top__contentbox__right__submit__message",id:"submit__button" %>
-          <%= f.hidden_field :student_id, value: current_student.id %>
-          <%= f.hidden_field :advisor_id, value: current_student.advisor.id %>
-          <%= f.hidden_field :commentspeaker, value: 1 %>
-          <%= f.submit %>
-        <% end %>
-      <% end %>
-      <% if advisor_signed_in? %>
-        <%= form_for(@chats , url: {controller: "chats", action: "create"}) do |f| %>
-          <%= f.text_field :comment, class: "top__contentbox__right__submit__message",id:"submit__button" %>
-          <%= f.hidden_field :student_id, value: current_advisor.id %>
-          <%= f.hidden_field :advisor_id, value: current_advisor.students.ids %>
-          <%= f.hidden_field :commentspeaker, value: 2 %>
-          <%= f.submit %>
-        <% end %>
-      <% end %>
+      <%# if student_signed_in? %>
+        <%#= form_for(@chats , url: {controller: "chats", action: "create"}) do |f| %>
+          <%#= f.text_field :comment, class: "top__contentbox__right__submit__message",id:"submit__button" %>
+          <%#= f.hidden_field :student_id, value: current_student.id %>
+          <%#= f.hidden_field :advisor_id, value: current_student.advisor.id %>
+          <%#= f.hidden_field :commentspeaker, value: 1 %>
+          <%#= f.submit %>
+        <%# end %>
+      <%# end %>
+      <%# if advisor_signed_in? %>
+        <%#= form_for(@chats , url: {controller: "chats", action: "create"}) do |f| %>
+          <%#= f.text_field :comment, class: "top__contentbox__right__submit__message",id:"submit__button" %>
+          <%#= f.hidden_field :student_id, value: current_advisor.id %>
+          <%#= f.hidden_field :advisor_id, value: current_advisor.students.ids %>
+          <%#= f.hidden_field :commentspeaker, value: 2 %>
+          <%#= f.submit %>
+        <%# end %>
+      <%# end %>
     </div>
   </div>
 </div>

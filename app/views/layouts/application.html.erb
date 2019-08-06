@@ -45,9 +45,10 @@
                   <i class="fa fa-book fa-2x"></i>
                 <% end %>
               </li>
-              <li class="header__wrapper__inner__right__list__student">
-                <%= link_to root_path, class: "header__wrapper__inner__right__list__icon__link" do %>
-                  <i class="fa fa-comments fa-2x"></i>
+              <%# group_path(current_student) %>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to new_group_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-comment fa-2x"></i>
                 <% end %>
               </li>
               <li class="header__wrapper__inner__right__list__menu">
@@ -92,6 +93,16 @@
               <li class="header__wrapper__inner__right__list__menu">
                 <%= link_to students_advisors_path, class: "header__wrapper__inner__right__list__icon__link" do %>
                   <i class="fa fa-user fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to new_group_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-file fa-2x"></i>
+                <% end %>
+              </li>
+              <li class="header__wrapper__inner__right__list__menu">
+                <%= link_to groups_path, class: "header__wrapper__inner__right__list__icon__link" do %>
+                  <i class="fa fa-comment fa-2x"></i>
                 <% end %>
               </li>
               <li class="header__wrapper__inner__right__list__menu">

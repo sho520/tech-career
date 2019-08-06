@@ -32,9 +32,10 @@ Rails.application.routes.draw do
   end
   get "advisors/:id" => "advisors#show"  #CAのmy page
 
-  resources :chats , only: [:index, :create]
-
-
-
+  resources :groups , only: [:index, :create, :new, :show,] do
+    post 'create_student_group', to: 'groups#create_student_group', on: :collection
+    resources :messages , only: [:index, :create, :new]
+  end
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
