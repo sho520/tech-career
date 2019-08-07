@@ -99,7 +99,7 @@
       width: 300px;
       min-height: 800px;
       margin: 20px 20px 0 20px;
-      background-color: #f1efef;
+      background-color: #fff;
       float: left;
       &__sideContent {
         &__title {
@@ -112,6 +112,7 @@
         &__box {
           box-shadow: 1px 1px 2px #333;
           margin: 10px 0 10px 0;
+          background-color: #f1efef;
           &:hover {
             opacity: 0.8;
           }

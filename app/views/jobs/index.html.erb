@@ -63,13 +63,16 @@
           </div>
         </div>
         <% end %>
+        <div class="jobIndex__inner__left__wrapper__pagenate">
+          <%= paginate @jobs %>
+        </div>
 
       </div>
     </div>
     <div class="jobIndex__inner__right">
 <!-- 新着コンテンツ -->
       <div class="jobIndex__inner__right__sideContent">
-        <h3 class="jobIndex__inner__right__sideContent__title">新着求人</h3>
+        <h3 class="jobIndex__inner__right__sideContent__title">新着求人10件</h3>
         <% @newjobs.each do |job| %>
         <div class="jobIndex__inner__right__sideContent__box">
           <% if student_signed_in? || advisor_signed_in?%>

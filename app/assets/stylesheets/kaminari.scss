@@ -1,0 +1,103 @@
+.jobIndex__inner__left__wrapper__pagenate {
+  margin-top: 40px;
+  text-align: center;
+  .pagination {
+    max-width: 440px;
+    margin: 0 auto;
+    .active {
+        background: grey;
+    }
+    .page {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      background-color: #2d2d2d;
+      line-height: 44px;
+      color: #fff;
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+    .next {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      background: #2d2d2d;
+      line-height: 44px;
+      color: #fff;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+
+    .last {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      background: #2d2d2d;
+      line-height: 44px;
+      color: #fff;
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+
+    .first {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      background: #2d2d2d;
+      line-height: 44px;
+      color: #fff;
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+
+    .prev {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50px;
+      background: #2d2d2d;
+      line-height: 44px;
+      color: #fff;
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+      }
+      &:hover {
+      opacity: 0.8;
+      }
+    }
+  }
+}
+.pagination span.page.current {
+  background-color: #C34035;
+}
