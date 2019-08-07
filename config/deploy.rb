@@ -64,5 +64,4 @@ set :default_env, {
 #   after :finishing, 'deploy:cleanup'
 # end
 
-set :linked_files, %w{config/credentials.yml.enc}
-set :linked_files, %w{ config/master.key }
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
