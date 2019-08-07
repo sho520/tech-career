@@ -9,7 +9,7 @@
       </div>
       <div class="student-edit__inner__wrapper__side">
         <!-- サイドバー -->
-        <% if current_student.image_url.present? %>
+        <% if current_student.image.present? %>
           <%= image_tag current_student.image.url, width: '180', class: "student-edit__inner__wrapper__side__img" %>
         <% else %>
           <%= image_tag 'mypage.png', width: '180', class: "student-edit__inner__wrapper__side__img" %>

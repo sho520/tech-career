@@ -2,15 +2,10 @@ class JobsController < ApplicationController
 
 
   def index
-    # @jobs = Job.all
-    # @chats = Chat.new
-    # @chat = Chat.all
-    # @images = JobImage.all
-    @jobs = Job.all()
-    @newjobs = Job.all.order(id: "DESC")
+    @jobs = Job.page(params[:page]).per(5)
+    @newjobs = Job.all.order(id: "DESC").limit(10)
     @chats = Chat.new
     @images = JobImage.all()
-
   end
 
   def new

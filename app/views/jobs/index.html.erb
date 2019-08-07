@@ -15,13 +15,21 @@
           <% if student_signed_in? || advisor_signed_in?%>
           <%= link_to job_path(id: job.id), class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
             <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
-              <%= image_tag job.image.url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% if job.image.present? %>
+                <%= image_tag job.image.url, width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% else %>
+                <%= image_tag 'noImage.png', width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% end %>
             </div>
           <% end %>
           <%else%>
           <%= link_to new_student_session_path, class: "jobIndex__inner__left__wrapper__content__imgLink" do %>
             <div class="jobIndex__inner__left__wrapper__content__imgLink__box">
-              <%= image_tag job.image.url,width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% if job.image.present? %>
+                <%= image_tag job.image.url,width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% else %>
+                <%= image_tag 'noImage.png', width: '250',height: '180', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% end %>
             </div>
           <% end %>
           <% end %>
@@ -55,19 +63,26 @@
           </div>
         </div>
         <% end %>
+        <div class="jobIndex__inner__left__wrapper__pagenate">
+          <%= paginate @jobs %>
+        </div>
 
       </div>
     </div>
     <div class="jobIndex__inner__right">
 <!-- 新着コンテンツ -->
       <div class="jobIndex__inner__right__sideContent">
-        <h3 class="jobIndex__inner__right__sideContent__title">新着求人</h3>
+        <h3 class="jobIndex__inner__right__sideContent__title">新着求人10件</h3>
         <% @newjobs.each do |job| %>
         <div class="jobIndex__inner__right__sideContent__box">
           <% if student_signed_in? || advisor_signed_in?%>
           <%= link_to root_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
             <div class="jobIndex__inner__right__sideContent__box__link__left">
-              <%= image_tag job.image.url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+              <% if job.image.present? %>
+                <%= image_tag job.image.url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+              <% else %>
+                <%= image_tag 'noImage.png', width: '130',height: '90', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% end %>
             </div>
             <div class="jobIndex__inner__right__sideContent__box__link__right">
               <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>
@@ -77,7 +92,11 @@
           <%else%>
           <%= link_to new_student_session_path,class: "jobIndex__inner__right__sideContent__box__link" do%>
             <div class="jobIndex__inner__right__sideContent__box__link__left">
-              <%= image_tag job.image.url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+              <% if job.image.present? %>
+                <%= image_tag job.image.url,width: '130',height: '90', class: "jobIndex__inner__right__sideContent__box__link__left__img" %>
+              <% else %>
+                <%= image_tag 'noImage.png', width: '130',height: '90', class: "jobIndex__inner__left__wrapper__content__imgLink__img" %>
+              <% end %>
             </div>
             <div class="jobIndex__inner__right__sideContent__box__link__right">
               <h4 class="jobIndex__inner__right__sideContent__box__link__right__title"><%= job.name %></h4>

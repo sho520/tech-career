@@ -1013,34 +1013,34 @@ Chat.create(
   advisor_id:2,
   commentspeaker:1,
 )
-
-8.upto(10) do |n|
-  JobImage.create(
-    job_id:1,
-    url: "photo#{n}"
-  )
-end
-1.upto(3) do |n|
-  JobImage.create(
-    job_id:2,
-    url: "photo#{n}"
-  )
-end
-6.upto(8) do |n|
-  JobImage.create(
-    job_id:3,
-    url: "photo#{n}"
-  )
-end
-3.upto(5) do |n|
-  JobImage.create(
-    job_id:4,
-    url: "photo#{n}"
-  )
-end
-7.upto(9) do |n|
-  JobImage.create(
-    job_id:5,
-    url: "photo#{n}"
-  )
-end
+# 現在は必要なくなったためコメントアウト
+# 8.upto(10) do |n|
+#   JobImage.create(
+#     job_id:1,
+#     url: "photo#{n}"
+#   )
+# end
+# 1.upto(3) do |n|
+#   JobImage.create(
+#     job_id:2,
+#     url: "photo#{n}"
+#   )
+# end
+# 6.upto(8) do |n|
+#   JobImage.create(
+#     job_id:3,
+#     url: "photo#{n}"
+#   )
+# end
+# 3.upto(5) do |n|
+#   JobImage.create(
+#     job_id:4,
+#     url: "photo#{n}"
+#   )
+# end
+# 7.upto(9) do |n|
+#   JobImage.create(
+#     job_id:5,
+#     url: "photo#{n}"
+#   )
+# end
