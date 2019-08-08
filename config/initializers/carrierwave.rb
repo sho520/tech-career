@@ -11,6 +11,7 @@ require 'carrierwave/storage/fog'
 #      aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
 #     region: 'ap-northeast-1'
 #   }
+
 #
 #   config.fog_directory  = 'techcareer0805'
 #   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/techcareer0805'
@@ -27,3 +28,4 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'techcareerimg'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/techcareerimg'
 end
+
