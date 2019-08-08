@@ -74,6 +74,12 @@
             });
         });
       </script>
+      <div class = "job__main__detail__6">
+        <%= link_to edit_job_path(@job.id) do %>
+          ▼編集
+        <% end %>
+      </div>
+
       <% if advisor_signed_in?%>
         <div class = "job__main__detail__state">
           <% if @job.job_state_id == 1%>

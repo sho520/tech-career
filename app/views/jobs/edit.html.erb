@@ -1,0 +1,396 @@
+<div class="job-form">
+  <section class="job-form__inner__title">求人編集フォーム</section>
+  <section class="adviser-new__inner__text">TECH::EXPERT求人system</section>
+  <div class="job-form__inner">
+    <%= form_for(@job) do |f| %>
+    <div class="job-form__inner__left">
+
+      <div class="job-form__inner__left__company">
+<!-- 会社概要 -->
+        <section class="job-form__inner__left__company__text">会社概要</section>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :企業名,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "株式会社div", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :業種,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.select :industry_id, [["システムインテグレータ・ソフトハウス", 1],["通信キャリア・データセンター・ISP", 2],["インターネット/Webサービス・ASP", 3],["Webマーケティング・ネット広告", 4],["モバイル/アプリサービス", 5],["ITコンサルティング", 6],["ソフトウェア/パッケージベンダ", 7],["その他IT/Web・通信・インターネット系", 8],["IoT・M2M・ロボット", 9],["AR/VR/MR", 10]],prompt: "--" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :資本金,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :capital, autofocus: true, autocomplete: "name", placeholder: "7000", class: "job-form__inner__left__company__field__input-price" %><span>千円</span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :売上高,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :sales, autofocus: true, autocomplete: "name", placeholder: "5000", class: "job-form__inner__left__company__field__input-price" %><span>千円</span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :従業員数,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.select :number_of_employee_id, [["30名未満",1],["30名以上〜50名未満",2], ["50名以上〜100名未満",3], ["100名以上〜300名未満",4], ["300名以上〜500名未満",5], ["500名以上〜1000名未満",6], ["1000名以上〜",7]],prompt: "--" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :設立年月,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.select :establish_date, [["1998",1]],prompt: "--" %><span> 年 </span>
+          <%= f.select :establish_date, [["1",1],["2",1],["3",1],["4",1]],prompt: "--" %><span> 月 </span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :市場情報,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :market_information, "上場", :checked=>'checked', class: "job-form__inner__left__company__field__radio" %> 上場 </label>
+          <label><%= f.radio_button :market_information, "未上場", class: "job-form__inner__left__company__field__radio" %> 未上場 </label>
+          <label><%= f.radio_button :market_information, "不明", class: "job-form__inner__left__company__field__radio" %> 不明 </label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :資本系,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :market_system, "自己資本", :checked=>'checked', class: "job-form__inner__left__company__field__radio" %><span> 自己資本</span></label>
+          <label><%= f.radio_button :market_system, "ベンチャー", class: "job-form__inner__left__company__field__radio" %><span> ベンチャー</span></label>
+          <label><%= f.radio_button :market_system, "その他", class: "job-form__inner__left__company__field__radio" %><span> その他</span></label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :企業URL,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :url, autofocus: true, autocomplete: "name", placeholder: "https://", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :所在地,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.select :location_id, [["北海道",1],["青森県",2],["岩手県",3],["宮城県",4],["秋田県",5],["山形県",6],["福島県",7],["茨城県",8],["栃木県",9],["群馬県",10],["埼玉県",11],["千葉県",12],["東京都",13],["神奈川県",14],["新潟県",15],["富山県",16],["石川県",17],["福井県",18],["山梨県",19],["長野県",20],["岐阜県",21],["静岡県",22],["愛知県",23],["三重県",24],["滋賀県",25],["京都府",26],["大阪府",27],["兵庫県",28],["奈良県",29],["和歌山県",30],["鳥取県",31],["島根県",32],["岡山県",33],["広島県",34],["山口県",35],["徳島県",36],["香川県",37],["愛媛県",38],["高知県",39],["福岡県",40],["佐賀県",41],["長崎県",42],["熊本県",43],["大分県",44],["宮崎県",45],["鹿児島県",46],["沖縄県",47],["海外",48]],prompt: "--",class: "job-form__inner__left__company__field__radio" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :事業内容,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_area :business, autofocus: true, autocomplete: "name", placeholder: "事業内容を入力してください", class: "job-form__inner__left__company__field__textarea" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :会社特徴,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_area :company_feature, autofocus: true, autocomplete: "name", placeholder: "会社の特徴を入力してください", class: "job-form__inner__left__company__field__textarea" %>
+        </div>
+<!-- 採用条件 -->
+        <section class="job-form__inner__left__company__text">採用条件</section>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :年齢,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :min_age, autofocus: true, autocomplete: "name", placeholder: "25", class: "job-form__inner__right__job__field__price" %><span>歳 〜 </span>
+          <%= f.text_field :max_age, autofocus: true, autocomplete: "name", placeholder: "39", class: "job-form__inner__right__job__field__price-second" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :年齢制限理由,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_area :reason_for_age_restriction, autofocus: true, autocomplete: "name", placeholder: "長期勤続によるキャリアの形成", class: "job-form__inner__left__company__field__textarea" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :面接回数,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :number_of_interviews, "1", :checked=>'checked' ,class: "job-form__inner__left__company__field__radio" %> 1回 </label>
+          <label><%= f.radio_button :number_of_interviews, "2" ,class: "job-form__inner__left__company__field__radio" %> 2回 </label>
+          <label><%= f.radio_button :number_of_interviews, "3" ,class: "job-form__inner__left__company__field__radio" %> 3回 </label>
+          <label><%= f.radio_button :number_of_interviews, "4" ,class: "job-form__inner__left__company__field__radio" %> 4回 </label>
+          <label><%= f.radio_button :number_of_interviews, "5" ,class: "job-form__inner__left__company__field__radio" %> 5回 </label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :学歴,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :educational_background, "学齢不問", :checked=>'checked',class: "job-form__inner__left__company__field__radio" %><span> 学歴不問 </span></label>
+          <label><%= f.radio_button :educational_background, "高卒以上",class: "job-form__inner__left__company__field__radio" %><span> 高卒以上 </span></label>
+          <label><%= f.radio_button :educational_background, "大卒以上",class: "job-form__inner__left__company__field__radio" %><span> 大卒以上 </span></label>
+          <label><%= f.radio_button :educational_background, "大学院以上",class: "job-form__inner__left__company__field__radio" %><span> 大学院以上 </span></label>
+
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :必要資格,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :required_qualification, autofocus: true, autocomplete: "name", placeholder: "必要資格を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :求める人物像,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :ideal_candidate, autofocus: true, autocomplete: "name", placeholder: "求める人物像を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :選考方法,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :contents_of_test, autofocus: true, autocomplete: "name", placeholder: "選考方法を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+<!-- 待遇 -->
+        <section class="job-form__inner__left__company__text">待遇</section>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :通勤手当,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :commute_allowance, "有", :checked=>'checked',class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :commute_allowance, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :残業手当,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :overtime_pay, "有", :checked=>'checked',class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :overtime_pay, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :その他手当,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :other_allowance, "有", :checked=>'checked',class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :other_allowance, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :各種保険,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+
+          <%= check_box_tag :various_insurance_id,2,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_insurance_ids][]" %><span> 雇用保険 </span>
+          <%= check_box_tag :various_insurance_id,3,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_insurance_ids][]" %><span> 労災保険 </span>
+          <%= check_box_tag :various_insurance_id,1,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_insurance_ids][]" %><span> 各種社会保険完備 </span><br>
+          <%= check_box_tag :various_insurance_id,4,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_insurance_ids][]" %><span> 健康保険 </span>
+          <%= check_box_tag :various_insurance_id,5,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_insurance_ids][]" %><span> 介護保険 </span>
+          <%= check_box_tag :various_insurance_id,6,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_insurance_ids][]" %><span> 厚生年金保険 </span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :諸手当,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= check_box_tag :various_allowance_id,1,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 通勤手当 </span>
+          <%= check_box_tag :various_allowance_id,2,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 残業手当 </span>
+          <%= check_box_tag :various_allowance_id,3,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 休日手当 </span>
+          <%= check_box_tag :various_allowance_id,4,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 深夜手当 </span><br>
+          <%= check_box_tag :various_allowance_id,5,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 役職手当 </span>
+          <%= check_box_tag :various_allowance_id,6,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 資格手当 </span>
+          <%= check_box_tag :various_allowance_id,7,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 皆勤手当 </span>
+          <%= check_box_tag :various_allowance_id,8,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 家族手当 </span><br>
+          <%= check_box_tag :various_allowance_id,9,false,class: "job-form__inner__left__company__field__checkbox",name:"job[various_allowance_ids][]" %><span> 住宅手当 </span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :休日休暇,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%=check_box_tag :holiday_vacation_id,1,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 夏期休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,2,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 災害休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,3,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 年末年始休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,4,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 慶弔休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,5,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 結婚休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,6,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 年次有給休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,7,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 病気休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,8,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 出産休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,9,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> ボランティア休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,10,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 異動休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,11,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 祝祭日 </span>
+          <%=check_box_tag :holiday_vacation_id,12,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 週休2日制 </span>
+          <%=check_box_tag :holiday_vacation_id,13,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 教育訓練休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,14,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> バースデー休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,15,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> リフレッシュ休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,16,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 転勤時休暇 </span><br>
+          <%=check_box_tag :holiday_vacation_id,17,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 完全週休2日制 </span>
+          <%=check_box_tag :holiday_vacation_id,18,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> アニバーサリー休暇 </span>
+          <%=check_box_tag :holiday_vacation_id,19,false,class: "job-form__inner__left__company__field__checkbox",name:"job[holiday_vacation__ids][]" %><span> 永年勤続休暇 </span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :年間休日,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :yearly_holiday, autofocus: true, autocomplete: "name", placeholder: "120", class: "job-form__inner__left__company__field__input-price" %><span>日</span>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :転勤の有無,class: 'job-form__inner__left__company__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :work_transfer, "有", :checked=>'checked',class: "job-form__inner__left__company__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :work_transfer, "無",class: "job-form__inner__left__company__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :勤務地1,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :working_place_1, autofocus: true, autocomplete: "name", placeholder: "勤務地を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :勤務地2,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :working_place_2, autofocus: true, autocomplete: "name", placeholder: "勤務地を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :勤務地3,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :working_place_3, autofocus: true, autocomplete: "name", placeholder: "勤務地を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+        <div class="job-form__inner__left__company__field">
+          <%= f.label :勤務地4,class: 'job-form__inner__left__company__field__label' %><br>
+          <%= f.text_field :working_place_4, autofocus: true, autocomplete: "name", placeholder: "勤務地を入力してください", class: "job-form__inner__left__company__field__input" %>
+        </div>
+
+
+      </div>
+    </div>
+<!-- ここから右コンテンツ -->
+    <div class="job-form__inner__right">
+
+      <div class="job-form__inner__right__job">
+
+        <section class="job-form__inner__right__job__text">求人内容</section>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :募集職種,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.text_field :position, autofocus: true, autocomplete: "name", placeholder: "Webエンジニア(サーバーサイド)", class: "job-form__inner__right__job__field__input" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :雇用形態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :employee_type_id, 1, :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 正社員 </span></label>
+          <label><%= f.radio_button :employee_type_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 契約社員 </span></label>
+          <label><%= f.radio_button :employee_type_id, 3,class: "job-form__inner__right__job__field__radio" %><span> パートタイマー </span></label>
+          <label><%= f.radio_button :employee_type_id, 4,class: "job-form__inner__right__job__field__radio" %><span> アルバイト </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :職務内容,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_area :job_description, autofocus: true, autocomplete: "name", placeholder: "職務内容を入力してください", class: "job-form__inner__right__job__field__textarea" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :必要業務経験,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_area :required_work_experience, autofocus: true, autocomplete: "name", placeholder: "必要業務経験を入力してください", class: "job-form__inner__right__job__field__textarea" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :就業時間,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.select :working_hours, [["08:00 - 17:00", "08:00 - 17:00"],["09:00 - 18:00", "09:00 - 18:00"],["10:00 - 19:00", "10:00 - 19:00"],["11:00 - 20:00", "11:00 - 20:00"],["12:00 - 21:00", "12:00 - 21:00"]],prompt: "--" ,class:"job-form__inner__right__job__field__select" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :休憩時間,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :break_time, "45", :checked=>'checked',class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 45分 </span></label>
+          <label><%= f.radio_button :break_time, "60",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 60分 </span></label>
+          <label><%= f.radio_button :break_time, "75",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 75分 </span></label>
+          <label><%= f.radio_button :break_time, "90",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 90分 </span></label>
+          <label><%= f.radio_button :break_time, "120",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 120分 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :残業の有無,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :about_overtime, "有", :checked=>'checked',class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :about_overtime, "無",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio",class: "job-form__inner__right__job__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :採用時期,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.select :recruitment_period, [["1998", 1]],prompt: "--" ,class:"form-control" %><span>  年</span>
+          <%= f.select :recruitment_period, [["1", 1],["2", 1],["3", 1],["4", 1]],prompt: "--" ,class:"form-control" %><span>  月</span>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :採用人数,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.select :number_of_recruitment_people, [["1", 1],["2", 2],["3", 3],["4", 4],["5", 5],["6", 6],["7", 7],["8", 8]],prompt: "--" ,class:"form-control" %><span>人</span>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :雇用期間,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_field :employment_period, autofocus: true, autocomplete: "name", placeholder: "期間の定めのない雇用契約", class: "job-form__inner__right__job__field__input" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :就業時間補足,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_area :add_info_working_time, autofocus: true, autocomplete: "name", placeholder: "入力してください", class: "job-form__inner__right__job__field__textarea-min" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :給与形態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :salary_type, "時給制", :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 時給制 </span></label>
+          <label><%= f.radio_button :salary_type, "日給制",class: "job-form__inner__right__job__field__radio" %><span> 日給制 </span></label>
+          <label><%= f.radio_button :salary_type, "週給制",class: "job-form__inner__right__job__field__radio" %><span> 週給制 </span></label>
+          <label><%= f.radio_button :salary_type, "月給制",class: "job-form__inner__right__job__field__radio" %><span> 月給制 </span></label>
+          <label><%= f.radio_button :salary_type, "年俸制",class: "job-form__inner__right__job__field__radio" %><span> 年俸制 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :基本給（単位：万円）,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.text_field :basic_salary, autofocus: true, autocomplete: "name", placeholder: "400", class: "job-form__inner__right__job__field__price" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :昇給の有無,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :promotion, "有", :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :promotion, "無",class: "job-form__inner__right__job__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :賞与,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :bonus, "1", :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 年1回 </span></label>
+          <label><%= f.radio_button :bonus, "2",class: "job-form__inner__right__job__field__radio" %><span> 年2回 </span></label>
+          <label><%= f.radio_button :bonus, "3",class: "job-form__inner__right__job__field__radio" %><span> 年3回 </span></label>
+          <label><%= f.radio_button :bonus, "4",class: "job-form__inner__right__job__field__radio" %><span> 年4回 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :最低年収（単位：万円）,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.text_field :min_annual_income, autofocus: true, autocomplete: "name", placeholder: "300", class: "job-form__inner__right__job__field__price" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :最高年収（単位：万円）,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.text_field :max_annual_income, autofocus: true, autocomplete: "name", placeholder: "550", class: "job-form__inner__right__job__field__price" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :年収補足,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_area :add_info_income, autofocus: true, autocomplete: "name", placeholder: "年収補足があれば入力してください", class: "job-form__inner__right__job__field__textarea-min" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :モデル年収,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_field :example_annual_income, autofocus: true, autocomplete: "name", placeholder: "32歳600万円勤続3年", class: "job-form__inner__right__job__field__input" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :試用期間,class: 'job-form__inner__right__job__field__label' %><br>
+          <label><%= f.radio_button :trial_period, "無",class: "job-form__inner__right__job__field__radio" %><span> 無 </span></label>
+          <%= f.text_field :trial_period, autofocus: true, autocomplete: "name", placeholder: "例:3ヶ月(無の場合は入力しないでください)", class: "job-form__inner__right__job__field__input" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :試用期間補足,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_area :add_info_trial_period, autofocus: true, autocomplete: "name", placeholder: "試用期間補足があれば入力してください", class: "job-form__inner__right__job__field__textarea-min" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :裁量労働制,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :discretionary_labor_system, "有", :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 有 </span></label>
+          <label><%= f.radio_button :discretionary_labor_system, "無",class: "job-form__inner__right__job__field__radio" %><span> 無 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :固定残業代,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_field :fixed_overtime_pay, autofocus: true, autocomplete: "name", placeholder: "入力してください", class: "job-form__inner__right__job__field__input" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :固定残業代補足,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_area :add_info_fixed_overtime_pay, autofocus: true, autocomplete: "name", placeholder: "入力してください", class: "job-form__inner__right__job__field__textarea-mic" %>
+        </div>
+
+        <section class="job-form__inner__left__company__text">その他</section>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :備考,class: 'job-form__inner__right__job__field__label' %><br>
+          <%= f.text_field :remark, autofocus: true, autocomplete: "name", placeholder: "入力は任意です", class: "job-form__inner__right__job__field__input" %>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :状態,class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <label><%= f.radio_button :job_state_id, 1, :checked=>'checked',class: "job-form__inner__right__job__field__radio" %><span> 募集中 </span></label>
+          <label><%= f.radio_button :job_state_id, 2,class: "job-form__inner__right__job__field__radio" %><span> 募集終了 </span></label>
+        </div>
+
+        <div class="job-form__inner__right__job__field">
+          <%= f.label :image, '画像をアップロード',class: 'job-form__inner__right__job__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br>
+          <%= f.file_field :image,class: "job-form__inner__right__job__field__image-url" %>
+        </div>
+
+
+      </div>
+      <p class="job-form__inner__right__submittext">上記の内容で求人を編集しますか？</p>
+      <%= f.button "求人情報を編集する", class: "job-form__inner__right__submit" %>
+    </div>
+
+  <% end %>
+  </div>
+</div>
