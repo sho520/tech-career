@@ -79,6 +79,5 @@ gem 'ransack'
 gem "font-awesome-rails"
 gem 'pry-rails'
 gem 'rails-i18n', '~> 5.1'
-gem 'fog-aws'
-gem 'aws-sdk-s3'
-# gem 'listen', '~> 3.1.5'
+# gem 'fog-aws'
+# gem 'aws-sdk-s3'
