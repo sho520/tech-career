@@ -1,5 +1,6 @@
 class Job < ApplicationRecord
   mount_uploader :image, ImageUploader
+  # has_one_attached :image
   belongs_to :location, optional: true
   belongs_to :employee_type, optional: true
   belongs_to :number_of_employee, optional: true

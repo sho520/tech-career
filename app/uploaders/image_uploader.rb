@@ -12,10 +12,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # else
   #   storage :fog
   # end
-
+  if Rails.env.production? || Rails.env.staging?
+    storage :fog
+  else
+    storage :file
+  end
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
+  # S3のディレクトリ名
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
@@ -46,9 +51,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg png)
   end
 
-  def filename
-    original_filename if original_filename
-  end
+  # def filename
+  #   original_filename if original_filename
+  # end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
