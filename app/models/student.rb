@@ -5,6 +5,7 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   mount_uploader :image, ImageUploader
+  # has_one_attached :image
   has_many :student_jobs
   has_many :jobs, through: :student_jobs
   belongs_to :advisor, optional: true
