@@ -5,6 +5,11 @@
     margin: 80px auto;
     width: 600px;
     background-color: #fbfbfb;
+    &__info {
+      p {
+        font-weight: bold;
+      }
+    }
 
     &__img {
       width: 250px;
