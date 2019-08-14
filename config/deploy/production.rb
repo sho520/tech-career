@@ -55,7 +55,7 @@
 # The server-based syntax can be used to override options:
 # ------------------------------------
 # server '52.193.121.88', user: 'ec2-user', roles: %w{app db web}
-server '3.113.211.76', user: 'ec2-user', roles: %w{app db web}
+server '3.114.151.165', user: 'ec2-user', roles: %w{app db web}
 # server '3.113.211.76',
 # user: 'ec2-user',
 # roles: %w{app db web}
