@@ -16,6 +16,6 @@ CarrierWave.configure do |config|
     }
 
     config.fog_directory  = 'tech-career'
-    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tech-career'
+    # config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tech-career'
   end
 end
