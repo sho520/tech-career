@@ -8,25 +8,25 @@
 
 
       <div class="adviser-new__inner__main__field">
-        <%= f.label :name,class: 'adviser-new__inner__main__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "スティーブ　ジョブ", class: "adviser-new__inner__main__field__input" %>
+        <%= f.label :名前,class: 'adviser-new__inner__main__field__label' %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br/>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "田中 花子", class: "adviser-new__inner__main__field__input" %>
       </div>
 
       <div class="adviser-new__inner__main__field">
-        <%= f.label :email %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br />
+        <%= f.label :メールアドレス %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example", class: "adviser-new__inner__main__field__input" %>
       </div>
 
       <div class="adviser-new__inner__main__field">
-        <%= f.label :password %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span>
+        <%= f.label :パスワード %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> 文字以上半角英数で入力してください)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワードを入力してください", class: "adviser-new__inner__main__field__input" %>
       </div>
 
       <div class="adviser-new__inner__main__field">
-        <%= f.label :password_confirmation %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br />
+        <%= f.label :パスワード確認 %><span class="from-wrapper__inner__main__formarea__field__flag">必須</span><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワードをもう一度入力してください", class: "adviser-new__inner__main__field__input" %>
       </div>
 

@@ -1,5 +1,9 @@
 <div class="adviser-login">
   <div class="adviser-login__inner">
+    <div class="adviser-login__inner__info">
+      <p>ログイン用メールアドレス</p><span>suzuki@suzuki</span>
+      <p>ログイン用パスワード</p><span>123456</span>
+    </div>
     <%= link_to root_path do %>
       <%= image_tag 'logo.png',class: "login-wrapper__inner__img" %>
     <% end %>
@@ -9,19 +13,19 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
         <div class="adviser-login__inner__main__field">
-          <%= f.label :email %><br />
+          <%= f.label :メールアドレス %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@example", class: "adviser-login__inner__main__field__input" %>
         </div>
 
         <div class="adviser-login__inner__main__field">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password", placeholder: "********", class: "adviser-login__inner__main__field__input" %>
+          <%= f.label :パスワード %><br />
+          <%= f.password_field :password, autocomplete: "current-password", placeholder: "ログインパスワードを入力してください", class: "adviser-login__inner__main__field__input" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
           <div class="field">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :記憶しますか？ %>
           </div>
         <% end %>
 
